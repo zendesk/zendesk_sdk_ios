@@ -1,0 +1,43 @@
+/* 
+  Localizable.strings
+  CoreSDKSample
+
+  Created by Zendesk on 18/03/2014.
+  Copyright (c) 2014 Zendesk. All rights reserved.
+*/
+
+
+//shared
+"ios.coreSDK.connectionError" = "No internet connection";
+
+
+// request creation
+"ios.coreSDK.createRequest.title" = "Contact Zendesk";
+"ios.coreSDK.createRequest.requestSubject" = "Zendesk SDK request";
+"ios.coreSDK.createRequest.cancel.button" = "Cancel";
+"ios.coreSDK.createRequest.submit.button" = "Submit";
+"ios.coreSDK.createRequest.description.placeholder" = "Description";
+"ios.coreSDK.createRequest.error.request" = "Your request failed to send";
+
+
+// request list
+"ios.coreSDK.requestList.empty" = "No requests currently open";
+"ios.coreSDK.requestList.error" = "Failed to get request list";
+"ios.coreSDK.requestList.retryButton" = "Retry";
+
+
+// request comments
+"ios.coreSDK.commentSubmittion.error" = "Failed to send comment";
+
+
+// device details labels
+"ios.ZDAPI.request.sendFeedback.device.osVersion" = "OS version:";
+"ios.ZDAPI.request.sendFeedback.device.model" = "Model:";
+"ios.ZDAPI.request.sendFeedback.device.location" = "Location Services:";
+"ios.ZDAPI.request.sendFeedback.device.totalMemory" = "Total Device Memory:";
+"ios.ZDAPI.request.sendFeedback.device.freeDiskspace" = "Free Diskspace:";
+"ios.ZDAPI.request.sendFeedback.device.batteryLevel" = "Battery Level:";
+
+// comment submission
+"ios.coreSDK.commentEntry.placeholder" = "Comment";
+

@@ -1,0 +1,372 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F1118BC61956013D001AAA9D /* ZendeskSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1118BC51956013D001AAA9D /* ZendeskSDK.framework */; };
+		F160B6D21949E2D600AEF42D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F160B6D11949E2D600AEF42D /* Foundation.framework */; };
+		F160B6D41949E2D600AEF42D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F160B6D31949E2D600AEF42D /* CoreGraphics.framework */; };
+		F160B6D61949E2D600AEF42D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F160B6D51949E2D600AEF42D /* UIKit.framework */; };
+		F160B6DE1949E2D600AEF42D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F160B6DD1949E2D600AEF42D /* main.m */; };
+		F160B7061949E34600AEF42D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F160B7031949E34600AEF42D /* Localizable.strings */; };
+		F160B7071949E34600AEF42D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F160B7051949E34600AEF42D /* Images.xcassets */; };
+		F160B70C1949E37F00AEF42D /* ZDAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F160B7091949E37F00AEF42D /* ZDAppDelegate.m */; };
+		F160B70D1949E37F00AEF42D /* ZDCoreSDKSampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F160B70B1949E37F00AEF42D /* ZDCoreSDKSampleViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F1118BC51956013D001AAA9D /* ZendeskSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ZendeskSDK.framework; path = CoreSDKSample/Frameworks/ZendeskSDK.framework; sourceTree = "<group>"; };
+		F160B6CE1949E2D600AEF42D /* CoreSDKSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreSDKSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F160B6D11949E2D600AEF42D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F160B6D31949E2D600AEF42D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		F160B6D51949E2D600AEF42D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		F160B6D91949E2D600AEF42D /* CoreSDKSample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CoreSDKSample-Info.plist"; sourceTree = "<group>"; };
+		F160B6DD1949E2D600AEF42D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F160B6DF1949E2D600AEF42D /* CoreSDKSample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CoreSDKSample-Prefix.pch"; sourceTree = "<group>"; };
+		F160B6EA1949E2D600AEF42D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		F160B7041949E34600AEF42D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
+		F160B7051949E34600AEF42D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Resources/Images.xcassets; sourceTree = "<group>"; };
+		F160B7081949E37F00AEF42D /* ZDAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDAppDelegate.h; sourceTree = "<group>"; };
+		F160B7091949E37F00AEF42D /* ZDAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDAppDelegate.m; sourceTree = "<group>"; };
+		F160B70A1949E37F00AEF42D /* ZDCoreSDKSampleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDCoreSDKSampleViewController.h; sourceTree = "<group>"; };
+		F160B70B1949E37F00AEF42D /* ZDCoreSDKSampleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDCoreSDKSampleViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F160B6CB1949E2D600AEF42D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F160B6D41949E2D600AEF42D /* CoreGraphics.framework in Frameworks */,
+				F160B6D61949E2D600AEF42D /* UIKit.framework in Frameworks */,
+				F1118BC61956013D001AAA9D /* ZendeskSDK.framework in Frameworks */,
+				F160B6D21949E2D600AEF42D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F160B6C51949E2D600AEF42D = {
+			isa = PBXGroup;
+			children = (
+				F160B6D71949E2D600AEF42D /* CoreSDKSample */,
+				F160B6D01949E2D600AEF42D /* Frameworks */,
+				F160B6CF1949E2D600AEF42D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F160B6CF1949E2D600AEF42D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F160B6CE1949E2D600AEF42D /* CoreSDKSample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F160B6D01949E2D600AEF42D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F1118BC51956013D001AAA9D /* ZendeskSDK.framework */,
+				F160B6D11949E2D600AEF42D /* Foundation.framework */,
+				F160B6D31949E2D600AEF42D /* CoreGraphics.framework */,
+				F160B6D51949E2D600AEF42D /* UIKit.framework */,
+				F160B6EA1949E2D600AEF42D /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F160B6D71949E2D600AEF42D /* CoreSDKSample */ = {
+			isa = PBXGroup;
+			children = (
+				F160B7001949E2E800AEF42D /* Resources */,
+				F160B6D81949E2D600AEF42D /* Supporting Files */,
+				F160B7081949E37F00AEF42D /* ZDAppDelegate.h */,
+				F160B7091949E37F00AEF42D /* ZDAppDelegate.m */,
+				F160B70A1949E37F00AEF42D /* ZDCoreSDKSampleViewController.h */,
+				F160B70B1949E37F00AEF42D /* ZDCoreSDKSampleViewController.m */,
+			);
+			path = CoreSDKSample;
+			sourceTree = "<group>";
+		};
+		F160B6D81949E2D600AEF42D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F160B6D91949E2D600AEF42D /* CoreSDKSample-Info.plist */,
+				F160B6DD1949E2D600AEF42D /* main.m */,
+				F160B6DF1949E2D600AEF42D /* CoreSDKSample-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F160B7001949E2E800AEF42D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F160B7021949E34600AEF42D /* en.lproj */,
+				F160B7051949E34600AEF42D /* Images.xcassets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		F160B7021949E34600AEF42D /* en.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				F160B7031949E34600AEF42D /* Localizable.strings */,
+			);
+			name = en.lproj;
+			path = Resources/en.lproj;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F160B6CD1949E2D600AEF42D /* CoreSDKSample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F160B6FA1949E2D600AEF42D /* Build configuration list for PBXNativeTarget "CoreSDKSample" */;
+			buildPhases = (
+				F1412D0B19559D0B0023C51C /* ShellScript */,
+				F160B6CA1949E2D600AEF42D /* Sources */,
+				F160B6CB1949E2D600AEF42D /* Frameworks */,
+				F160B6CC1949E2D600AEF42D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CoreSDKSample;
+			productName = CoreSDKSample;
+			productReference = F160B6CE1949E2D600AEF42D /* CoreSDKSample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F160B6C61949E2D600AEF42D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = Zendesk;
+			};
+			buildConfigurationList = F160B6C91949E2D600AEF42D /* Build configuration list for PBXProject "CoreSDKSample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = F160B6C51949E2D600AEF42D;
+			productRefGroup = F160B6CF1949E2D600AEF42D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F160B6CD1949E2D600AEF42D /* CoreSDKSample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F160B6CC1949E2D600AEF42D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F160B7061949E34600AEF42D /* Localizable.strings in Resources */,
+				F160B7071949E34600AEF42D /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		F1412D0B19559D0B0023C51C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ -f ../ZendeskSDK/BuildFramework.sh ]; then\n    \n    ../ZendeskSDK/BuildFramework.sh \"$CONFIGURATION\" \"$ARCHS\"\n    ../ZendeskSDK/InstallToSamples.sh\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F160B6CA1949E2D600AEF42D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F160B70D1949E37F00AEF42D /* ZDCoreSDKSampleViewController.m in Sources */,
+				F160B70C1949E37F00AEF42D /* ZDAppDelegate.m in Sources */,
+				F160B6DE1949E2D600AEF42D /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F160B7031949E34600AEF42D /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F160B7041949E34600AEF42D /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F160B6F81949E2D600AEF42D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "$(inherited)";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "armv7 armv7s i386";
+			};
+			name = Debug;
+		};
+		F160B6F91949E2D600AEF42D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				OTHER_LDFLAGS = "$(inherited)";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "armv7 armv7s i386";
+			};
+			name = Release;
+		};
+		F160B6FB1949E2D600AEF42D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/CoreSDKSample/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CoreSDKSample/CoreSDKSample-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = "CoreSDKSample/CoreSDKSample-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "$(inherited)";
+				PODS_ROOT = "${SRCROOT}/../Pods";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "armv7 armv7s i386 arm64 x86_64 ";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		F160B6FC1949E2D600AEF42D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/CoreSDKSample/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CoreSDKSample/CoreSDKSample-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = "CoreSDKSample/CoreSDKSample-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "$(inherited)";
+				PODS_ROOT = "${SRCROOT}/../Pods";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "armv7 armv7s i386 arm64 x86_64 ";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F160B6C91949E2D600AEF42D /* Build configuration list for PBXProject "CoreSDKSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F160B6F81949E2D600AEF42D /* Debug */,
+				F160B6F91949E2D600AEF42D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F160B6FA1949E2D600AEF42D /* Build configuration list for PBXNativeTarget "CoreSDKSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F160B6FB1949E2D600AEF42D /* Debug */,
+				F160B6FC1949E2D600AEF42D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F160B6C61949E2D600AEF42D /* Project object */;
+}
