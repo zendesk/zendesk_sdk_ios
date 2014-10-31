@@ -8,17 +8,19 @@
 
 
 #import <UIKit/UIKit.h>
-#import <ZendeskSDK/ZDCoreSDK.h>
+#import <ZendeskSDK/ZendeskSDK.h>
+#import "ZDCoreSDKSampleAppConfigurationViewController.h"
 
 
-@interface ZDCoreSDKSampleViewController : ZDUIUIViewController
+@interface ZDCoreSDKSampleViewController : ZDKUIViewController <ZDCoreSDKAppCondigurationDelegate>
 
 
 @property (nonatomic, strong) UIButton *requestCreationButton;
-@property (nonatomic, strong) ZDRequestListTable *requestList;
-@property (nonatomic, strong) UIScrollView *requestListContainer;
+@property (nonatomic, strong) UIButton *requestListInScrollViewButton;
+@property (nonatomic, strong) UIButton *requestListInTableButton;
+@property (nonatomic, strong) UIButton *helpCenterButton;
+@property (nonatomic, strong) UIButton *rmaButton;
 
-@property (nonatomic, strong) UIView *header;
 
 
 @end

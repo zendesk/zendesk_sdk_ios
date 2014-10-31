@@ -31,4 +31,5 @@ Pod::Spec.new do |s|
   s.ios.vendored_frameworks = 'ZendeskSDK.framework'
   s.xcconfig = { 'FRAMEWORK_SEARCH_PATHS' => '$(inherited)' }
   s.preserve_paths = 'ZendeskSDK.framework'
+  s.resources = ["ZendeskSDK.bundle", "ZendeskSDKStrings.bundle"]
 end

@@ -9,7 +9,7 @@
 
 #import "ZDAppDelegate.h"
 #import "ZDCoreSDKSampleViewController.h"
-#import <ZendeskSDK/ZDCoreSDK.h>
+#import <ZendeskSDK/ZendeskSDK.h>
 
 
 @implementation ZDAppDelegate
@@ -17,23 +17,14 @@
 
 - (BOOL) application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions
 {
-    [ZDDispatcher setDebugLogging:YES];
-
-    /////////////////////////////////////////////////////////////////////////////////////////////////////
-    // Basic SDK config
-    /////////////////////////////////////////////////////////////////////////////////////////////////////
-
-    [ZDCoreSDK configure:^(ZDAccount *account, ZDRequestCreationConfig *requestCreationConfig) {
-
-        // set the zendesk account
-        account.subdomain = @"yoursubdomain.zendesk.com";
-    }];
+    [ZDKDispatcher setDebugLogging:YES];
+    
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // OPTIONAL - you can choose to set tags or additional info at any stage
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    [ZDCoreSDK configure:^(ZDAccount *account, ZDRequestCreationConfig *requestCreationConfig) {
+    [ZDKRequests configure:^(ZDKAccount *account, ZDKRequestCreationConfig *requestCreationConfig) {
 
         // specify any additional tags desired
         requestCreationConfig.tags = [NSArray arrayWithObjects:@"tag_one", @"tag_two", nil];
@@ -44,8 +35,8 @@
         NSString *txt = [NSString stringWithFormat:@"%@%@\n\n%@",
                          [requestCreationConfig contentSeperator],
                          additionalText,
-                         [ZDDeviceInfo deviceInfoString]];
-
+                         [ZDKDeviceInfo deviceInfoString]];
+        account.userId = @"userId";
         requestCreationConfig.additionalRequestInfo = txt;
     }];
 
@@ -55,74 +46,103 @@
     /////////////////////////////////////////////////////////////////////////////////////////////////////
 
     // request creation screen
-    [[ZDCoreCreateRequestView appearance] setPlaceholderTextColor:[UIColor lightGrayColor]];
-    [[ZDCoreCreateRequestView appearance] setTextEntryColor:[UIColor colorWithWhite:0.2627f alpha:1.0f]];
-    [[ZDCoreCreateRequestView appearance] setBgColor:[UIColor whiteColor]];
-    [[ZDCoreCreateRequestView appearance] setTextEntryFont:[UIFont systemFontOfSize:12.0f]];
+    [[ZDKCreateRequestView appearance] setPlaceholderTextColor:[UIColor lightGrayColor]];
+    [[ZDKCreateRequestView appearance] setTextEntryColor:[UIColor colorWithWhite:0.2627f alpha:1.0f]];
+    [[ZDKCreateRequestView appearance] setViewBackgroundColor:[UIColor whiteColor]];
+    [[ZDKCreateRequestView appearance] setTextEntryFont:[UIFont systemFontOfSize:12.0f]];
 
+    [[ZDKCreateRequestView appearance] setEmailEntryFont:[UIFont systemFontOfSize:12.0f]];
+    [[ZDKCreateRequestView appearance] setEmailEntryBackgroundColor:[UIColor whiteColor]];
+    [[ZDKCreateRequestView appearance] setSeparatorBackgroundColor:[UIColor colorWithWhite:0.8980f alpha:1.0f]];
+    [[ZDKCreateRequestView appearance] setAutomaticallyHideNavBarOnLandscape:1];
     UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
+    
     spinner.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
-    [[ZDCoreCreateRequestView appearance] setSpinner:(id<ZDSpinnerDelegate>)spinner];
+    [[ZDKCreateRequestView appearance] setSpinner:(id<ZDKSpinnerDelegate>)spinner];
 
     // request list
-    [[ZDRequestListTable appearance] setTableBackgroundColor:[UIColor clearColor]];
-    [[ZDRequestListTable appearance] setCellSeparatorColor:[UIColor colorWithWhite:0.90f alpha:1.0f]];
+    [[ZDKRequestListTable appearance] setTableBackgroundColor:[UIColor clearColor]];
+    [[ZDKRequestListTable appearance] setCellSeparatorColor:[UIColor colorWithWhite:0.90f alpha:1.0f]];
 
     // loading cell
     spinner = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
     spinner.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
-    [[ZDRequestListLoadingTableCell appearance] setSpinner:(id<ZDSpinnerDelegate>)spinner];
+    [[ZDRequestListLoadingTableCell appearance] setSpinner:(id<ZDKSpinnerDelegate>)spinner];
 
     // request list cells
-    [[ZDRequestListTableCell appearance] setDescriptionFont:[UIFont systemFontOfSize:15]];
-    [[ZDRequestListTableCell appearance] setCreatedAtFont:[UIFont systemFontOfSize:13]];
-    [[ZDRequestListTableCell appearance] setUnreadColor:[UIColor colorWithRed:0.47059 green:0.6392 blue:0 alpha:1.0]];
-    [[ZDRequestListTableCell appearance] setDescriptionColor:[UIColor colorWithWhite:0.26f alpha:1.0f]];
-    [[ZDRequestListTableCell appearance] setCreatedAtColor:[UIColor colorWithWhite:0.54f alpha:1.0f]];
-    [[ZDRequestListTableCell appearance] setVerticalMargin:20.0f];
-    [[ZDRequestListTableCell appearance] setDescriptionTimestampMargin:5.0f];
-    [[ZDRequestListTableCell appearance] setLeftInset:25.0f];
-    [[ZDRequestListTableCell appearance] setCellBackgroundColor:[UIColor whiteColor]];
+    [[ZDKRequestListTableCell appearance] setDescriptionFont:[UIFont systemFontOfSize:15]];
+    [[ZDKRequestListTableCell appearance] setCreatedAtFont:[UIFont systemFontOfSize:13]];
+    [[ZDKRequestListTableCell appearance] setUnreadColor:[UIColor colorWithRed:0.47059 green:0.6392 blue:0 alpha:1.0]];
+    [[ZDKRequestListTableCell appearance] setDescriptionColor:[UIColor colorWithWhite:0.26f alpha:1.0f]];
+    [[ZDKRequestListTableCell appearance] setCreatedAtColor:[UIColor colorWithWhite:0.54f alpha:1.0f]];
+    [[ZDKRequestListTableCell appearance] setVerticalMargin:20.0f];
+    [[ZDKRequestListTableCell appearance] setDescriptionTimestampMargin:5.0f];
+    [[ZDKRequestListTableCell appearance] setLeftInset:25.0f];
+    [[ZDKRequestListTableCell appearance] setCellBackgroundColor:[UIColor whiteColor]];
 
     // no requests cell
     [[ZDRequestListEmptyTableCell appearance] setMessageFont:[UIFont systemFontOfSize:11.0f]];
     [[ZDRequestListEmptyTableCell appearance] setMessageColor:[UIColor colorWithWhite:0.3f alpha:1.0f]];
 
-    // request list error cell
-    [[ZDRequestListErrorTableCell appearance] setErrorFont:[UIFont systemFontOfSize:11.0f]];
-    [[ZDRequestListErrorTableCell appearance] setErrorColor:[UIColor colorWithRed:0.8f green:0.0f blue:0.0f alpha:0.8f]];
-    [[ZDRequestListErrorTableCell appearance] setRetryButtonFont:[UIFont systemFontOfSize:11.0f]];
-    [[ZDRequestListErrorTableCell appearance] setRetryButtonColor:[UIColor colorWithWhite:0.2627f alpha:1.0f]];
-    [[ZDRequestListErrorTableCell appearance] setRetryButtonBackgroundColor:[UIColor whiteColor]];
-    [[ZDRequestListErrorTableCell appearance] setRetryButtonBorderColor:[UIColor colorWithWhite:0.8470f alpha:1.0f]];
-
     // comments list agent comment cells
-    [[ZDAgentCommentTableCell appearance] setAvatarSize:40.0f];
-    [[ZDAgentCommentTableCell appearance] setAgentNameFont:[UIFont systemFontOfSize:14.0f]];
-    [[ZDAgentCommentTableCell appearance] setAgentNameColor:[UIColor colorWithWhite:0.25f alpha:1.0f]];
-    [[ZDAgentCommentTableCell appearance] setTimestampFont:[UIFont systemFontOfSize:11.0f]];
-    [[ZDAgentCommentTableCell appearance] setTimestampColor:[UIColor colorWithWhite:0.721f alpha:1.0f]];
-    [[ZDAgentCommentTableCell appearance] setBodyFont:[UIFont systemFontOfSize:15.0f]];
-    [[ZDAgentCommentTableCell appearance] setBodyColor:[UIColor colorWithWhite:0.38f alpha:1.0f]];
-    [[ZDAgentCommentTableCell appearance] setCellBackground:[UIColor whiteColor]];
+    [[ZDKAgentCommentTableCell appearance] setAvatarSize:40.0f];
+    [[ZDKAgentCommentTableCell appearance] setAgentNameFont:[UIFont systemFontOfSize:14.0f]];
+    [[ZDKAgentCommentTableCell appearance] setAgentNameColor:[UIColor colorWithWhite:0.25f alpha:1.0f]];
+    [[ZDKAgentCommentTableCell appearance] setTimestampFont:[UIFont systemFontOfSize:11.0f]];
+    [[ZDKAgentCommentTableCell appearance] setTimestampColor:[UIColor colorWithWhite:0.721f alpha:1.0f]];
+    [[ZDKAgentCommentTableCell appearance] setBodyFont:[UIFont systemFontOfSize:15.0f]];
+    [[ZDKAgentCommentTableCell appearance] setBodyColor:[UIColor colorWithWhite:0.38f alpha:1.0f]];
+    [[ZDKAgentCommentTableCell appearance] setCellBackground:[UIColor whiteColor]];
 
     // comments list end user comment cells
-    [[ZDEndUserCommentTableCell appearance] setTimestampFont:[UIFont systemFontOfSize:11.0f]];
-    [[ZDEndUserCommentTableCell appearance] setTimestampColor:[UIColor colorWithWhite:0.721f alpha:1.0f]];
-    [[ZDEndUserCommentTableCell appearance] setBodyFont:[UIFont systemFontOfSize:15.0f]];
-    [[ZDEndUserCommentTableCell appearance] setBodyColor:[UIColor colorWithWhite:0.38f alpha:1.0f]];
-    [[ZDEndUserCommentTableCell appearance] setCellBackground:[UIColor colorWithWhite:0.976f alpha:1.0f]];
+    [[ZDKEndUserCommentTableCell appearance] setTimestampFont:[UIFont systemFontOfSize:11.0f]];
+    [[ZDKEndUserCommentTableCell appearance] setTimestampColor:[UIColor colorWithWhite:0.721f alpha:1.0f]];
+    [[ZDKEndUserCommentTableCell appearance] setBodyFont:[UIFont systemFontOfSize:15.0f]];
+    [[ZDKEndUserCommentTableCell appearance] setBodyColor:[UIColor colorWithWhite:0.38f alpha:1.0f]];
+    [[ZDKEndUserCommentTableCell appearance] setCellBackground:[UIColor colorWithWhite:0.976f alpha:1.0f]];
 
+    // comments list loading cell
+    spinner = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
+    spinner.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
+    [[ZDKCommentsListLoadingTableCell appearance] setSpinner:(id<ZDKSpinnerDelegate>)spinner];
+    [[ZDKCommentsListLoadingTableCell appearance] setCellBackground:[UIColor whiteColor]];
+    [[ZDKCommentsListLoadingTableCell appearance] setLeftInset:25.0f];
+
+    
     // comment entry area
-    [[ZDCommentEntryView appearance] setTopBorderColor:[UIColor colorWithWhite:0.831f alpha:1.0f]];
-    [[ZDCommentEntryView appearance] setTextEntryFont:[UIFont systemFontOfSize:15]];
-    [[ZDCommentEntryView appearance] setTextEntryColor:[UIColor colorWithWhite:0.4f alpha:1.0f]];
-    [[ZDCommentEntryView appearance] setTextEntryBackgroundColor:[UIColor colorWithWhite:0.945f alpha:1.0f]];
-    [[ZDCommentEntryView appearance] setTextEntryBorderColor:[UIColor colorWithWhite:0.831f alpha:1.0f]];
-    [[ZDCommentEntryView appearance] setSendButtonFont:[UIFont systemFontOfSize:12]];
-    [[ZDCommentEntryView appearance] setSendButtonColor:[UIColor colorWithWhite:0.2627f alpha:1.0f]];
-    [[ZDCommentEntryView appearance] setAreaBackgroundColor:[UIColor whiteColor]];
+    [[ZDKCommentEntryView appearance] setTopBorderColor:[UIColor colorWithWhite:0.831f alpha:1.0f]];
+    [[ZDKCommentEntryView appearance] setTextEntryFont:[UIFont systemFontOfSize:15]];
+    [[ZDKCommentEntryView appearance] setTextEntryColor:[UIColor colorWithWhite:0.4f alpha:1.0f]];
+    [[ZDKCommentEntryView appearance] setTextEntryBackgroundColor:[UIColor colorWithWhite:0.945f alpha:1.0f]];
+    [[ZDKCommentEntryView appearance] setTextEntryBorderColor:[UIColor colorWithWhite:0.831f alpha:1.0f]];
+    [[ZDKCommentEntryView appearance] setSendButtonFont:[UIFont systemFontOfSize:12]];
+    [[ZDKCommentEntryView appearance] setSendButtonColor:[UIColor colorWithWhite:0.2627f alpha:1.0f]];
+    [[ZDKCommentEntryView appearance] setAreaBackgroundColor:[UIColor whiteColor]];
 
+    //Rate My App
+    [[ZDKRMADialogView appearance] setHeaderBackgroundColor:[UIColor whiteColor]];
+    [[ZDKRMADialogView appearance] setHeaderColor:[UIColor colorWithWhite:0.2627f alpha:1.0f]];
+    [[ZDKRMADialogView appearance] setHeaderFont:[UIFont systemFontOfSize:16.0f]];
+    [[ZDKRMADialogView appearance] setButtonBackgroundColor:[UIColor colorWithWhite:0.9451f alpha:1.0f]];
+    [[ZDKRMADialogView appearance] setButtonSelectedBackgroundColor:[UIColor whiteColor]];
+    [[ZDKRMADialogView appearance] setButtonColor:[UIColor colorWithWhite:0.2627f alpha:1.0f]];
+    [[ZDKRMADialogView appearance] setButtonFont:[UIFont systemFontOfSize:14.0f]];
+    [[ZDKRMADialogView appearance] setSeparatorLineColor:[UIColor colorWithWhite:0.8470f alpha:1.0f]];
+    
+    // style thefeedback view
+    [[ZDKRMAFeedbackView appearance] setHeaderFont:[UIFont systemFontOfSize:16.0f]];
+    [[ZDKRMAFeedbackView appearance] setSubheaderFont:[UIFont systemFontOfSize:12.0f]];
+    [[ZDKRMAFeedbackView appearance] setSeparatorLineColor:[UIColor colorWithWhite:0.8470f alpha:1.0f]];
+    [[ZDKRMAFeedbackView appearance] setButtonBackgroundColor:[UIColor colorWithWhite:0.9451f alpha:1.0f]];
+    [[ZDKRMAFeedbackView appearance] setButtonColor:[UIColor colorWithWhite:0.2627f alpha:1.0f]];
+    [[ZDKRMAFeedbackView appearance] setButtonSelectedColor:[UIColor colorWithWhite:0.2627f alpha:0.3f]];
+    [[ZDKRMAFeedbackView appearance] setButtonFont:[UIFont systemFontOfSize:14.0f]];
+    [[ZDKRMAFeedbackView appearance] setTextEntryFont:[UIFont systemFontOfSize:12.0f]];
+    
+    UIActivityIndicatorView *rmaSpinner = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
+    spinner.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
+    [[ZDKRMAFeedbackView appearance] setSpinner:(id<ZDKSpinnerDelegate>)rmaSpinner];
+    
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////
     // Sample app boilerplate
