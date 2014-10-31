@@ -7,19 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F1118BC61956013D001AAA9D /* ZendeskSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1118BC51956013D001AAA9D /* ZendeskSDK.framework */; };
+		C333A54319E29F1E0046B858 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C333A54119E29EC40046B858 /* SystemConfiguration.framework */; };
+		C3347CF719E45CA8002E703E /* ZendeskSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3347CF619E45CA8002E703E /* ZendeskSDK.framework */; };
+		C35E673419E457BB006F8296 /* RequestListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C35E673119E457BB006F8296 /* RequestListTableViewController.m */; };
+		C35E673519E457BB006F8296 /* RequestListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C35E673319E457BB006F8296 /* RequestListViewController.m */; };
+		C38D73BC1A03C9A60058C48A /* ZendeskSDKStrings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C38D73BB1A03C9A60058C48A /* ZendeskSDKStrings.bundle */; };
+		C3E803B519F81CE3002554BE /* ZendeskSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C3E803B419F81CE3002554BE /* ZendeskSDK.bundle */; };
+		D71A34B119F557020055E573 /* ZDSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D71A34AF19F557020055E573 /* ZDSecondViewController.m */; };
+		D71A34BC19F58D0D0055E573 /* ZDRateMyAppDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D71A34BB19F58D0D0055E573 /* ZDRateMyAppDemoViewController.m */; };
+		D7384ED219E9868A006E8C74 /* ZDCoreSDKSampleAppConfigurationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7384ED119E9868A006E8C74 /* ZDCoreSDKSampleAppConfigurationViewController.m */; };
 		F160B6D21949E2D600AEF42D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F160B6D11949E2D600AEF42D /* Foundation.framework */; };
 		F160B6D41949E2D600AEF42D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F160B6D31949E2D600AEF42D /* CoreGraphics.framework */; };
 		F160B6D61949E2D600AEF42D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F160B6D51949E2D600AEF42D /* UIKit.framework */; };
 		F160B6DE1949E2D600AEF42D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F160B6DD1949E2D600AEF42D /* main.m */; };
-		F160B7061949E34600AEF42D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F160B7031949E34600AEF42D /* Localizable.strings */; };
 		F160B7071949E34600AEF42D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F160B7051949E34600AEF42D /* Images.xcassets */; };
 		F160B70C1949E37F00AEF42D /* ZDAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F160B7091949E37F00AEF42D /* ZDAppDelegate.m */; };
 		F160B70D1949E37F00AEF42D /* ZDCoreSDKSampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F160B70B1949E37F00AEF42D /* ZDCoreSDKSampleViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F1118BC51956013D001AAA9D /* ZendeskSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ZendeskSDK.framework; path = CoreSDKSample/Frameworks/ZendeskSDK.framework; sourceTree = "<group>"; };
+		C333A54119E29EC40046B858 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		C3347CF619E45CA8002E703E /* ZendeskSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ZendeskSDK.framework; path = CoreSDKSample/Frameworks/ZendeskSDK.framework; sourceTree = "<group>"; };
+		C35E673019E457BB006F8296 /* RequestListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestListTableViewController.h; sourceTree = "<group>"; };
+		C35E673119E457BB006F8296 /* RequestListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestListTableViewController.m; sourceTree = "<group>"; };
+		C35E673219E457BB006F8296 /* RequestListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestListViewController.h; sourceTree = "<group>"; };
+		C35E673319E457BB006F8296 /* RequestListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestListViewController.m; sourceTree = "<group>"; };
+		C38D73BB1A03C9A60058C48A /* ZendeskSDKStrings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ZendeskSDKStrings.bundle; sourceTree = "<group>"; };
+		C3E803B419F81CE3002554BE /* ZendeskSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ZendeskSDK.bundle; sourceTree = "<group>"; };
+		D71A34AE19F557020055E573 /* ZDSecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZDSecondViewController.h; path = RateMyApp/ZDSecondViewController.h; sourceTree = "<group>"; };
+		D71A34AF19F557020055E573 /* ZDSecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZDSecondViewController.m; path = RateMyApp/ZDSecondViewController.m; sourceTree = "<group>"; };
+		D71A34BA19F58D0D0055E573 /* ZDRateMyAppDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZDRateMyAppDemoViewController.h; path = RateMyApp/ZDRateMyAppDemoViewController.h; sourceTree = "<group>"; };
+		D71A34BB19F58D0D0055E573 /* ZDRateMyAppDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZDRateMyAppDemoViewController.m; path = RateMyApp/ZDRateMyAppDemoViewController.m; sourceTree = "<group>"; };
+		D7384ED019E9868A006E8C74 /* ZDCoreSDKSampleAppConfigurationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDCoreSDKSampleAppConfigurationViewController.h; sourceTree = "<group>"; };
+		D7384ED119E9868A006E8C74 /* ZDCoreSDKSampleAppConfigurationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDCoreSDKSampleAppConfigurationViewController.m; sourceTree = "<group>"; };
 		F160B6CE1949E2D600AEF42D /* CoreSDKSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreSDKSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F160B6D11949E2D600AEF42D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F160B6D31949E2D600AEF42D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -28,7 +48,6 @@
 		F160B6DD1949E2D600AEF42D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F160B6DF1949E2D600AEF42D /* CoreSDKSample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CoreSDKSample-Prefix.pch"; sourceTree = "<group>"; };
 		F160B6EA1949E2D600AEF42D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		F160B7041949E34600AEF42D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
 		F160B7051949E34600AEF42D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Resources/Images.xcassets; sourceTree = "<group>"; };
 		F160B7081949E37F00AEF42D /* ZDAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDAppDelegate.h; sourceTree = "<group>"; };
 		F160B7091949E37F00AEF42D /* ZDAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDAppDelegate.m; sourceTree = "<group>"; };
@@ -41,9 +60,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3347CF719E45CA8002E703E /* ZendeskSDK.framework in Frameworks */,
+				C333A54319E29F1E0046B858 /* SystemConfiguration.framework in Frameworks */,
 				F160B6D41949E2D600AEF42D /* CoreGraphics.framework in Frameworks */,
 				F160B6D61949E2D600AEF42D /* UIKit.framework in Frameworks */,
-				F1118BC61956013D001AAA9D /* ZendeskSDK.framework in Frameworks */,
 				F160B6D21949E2D600AEF42D /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -51,11 +71,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C3E803B319F81CE3002554BE /* Bundles */ = {
+			isa = PBXGroup;
+			children = (
+				C38D73BB1A03C9A60058C48A /* ZendeskSDKStrings.bundle */,
+				C3E803B419F81CE3002554BE /* ZendeskSDK.bundle */,
+			);
+			name = Bundles;
+			path = CoreSDKSample/Bundles;
+			sourceTree = "<group>";
+		};
+		D71A34AA19F5556B0055E573 /* RateMyApp */ = {
+			isa = PBXGroup;
+			children = (
+				D71A34BA19F58D0D0055E573 /* ZDRateMyAppDemoViewController.h */,
+				D71A34BB19F58D0D0055E573 /* ZDRateMyAppDemoViewController.m */,
+				D71A34AE19F557020055E573 /* ZDSecondViewController.h */,
+				D71A34AF19F557020055E573 /* ZDSecondViewController.m */,
+			);
+			name = RateMyApp;
+			sourceTree = "<group>";
+		};
+		D71A34B219F5577A0055E573 /* RequestList */ = {
+			isa = PBXGroup;
+			children = (
+				C35E673019E457BB006F8296 /* RequestListTableViewController.h */,
+				C35E673119E457BB006F8296 /* RequestListTableViewController.m */,
+				C35E673219E457BB006F8296 /* RequestListViewController.h */,
+				C35E673319E457BB006F8296 /* RequestListViewController.m */,
+			);
+			name = RequestList;
+			sourceTree = "<group>";
+		};
 		F160B6C51949E2D600AEF42D = {
 			isa = PBXGroup;
 			children = (
 				F160B6D71949E2D600AEF42D /* CoreSDKSample */,
 				F160B6D01949E2D600AEF42D /* Frameworks */,
+				C3E803B319F81CE3002554BE /* Bundles */,
 				F160B6CF1949E2D600AEF42D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -71,7 +124,8 @@
 		F160B6D01949E2D600AEF42D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F1118BC51956013D001AAA9D /* ZendeskSDK.framework */,
+				C3347CF619E45CA8002E703E /* ZendeskSDK.framework */,
+				C333A54119E29EC40046B858 /* SystemConfiguration.framework */,
 				F160B6D11949E2D600AEF42D /* Foundation.framework */,
 				F160B6D31949E2D600AEF42D /* CoreGraphics.framework */,
 				F160B6D51949E2D600AEF42D /* UIKit.framework */,
@@ -83,12 +137,16 @@
 		F160B6D71949E2D600AEF42D /* CoreSDKSample */ = {
 			isa = PBXGroup;
 			children = (
+				D71A34B219F5577A0055E573 /* RequestList */,
+				D71A34AA19F5556B0055E573 /* RateMyApp */,
 				F160B7001949E2E800AEF42D /* Resources */,
 				F160B6D81949E2D600AEF42D /* Supporting Files */,
 				F160B7081949E37F00AEF42D /* ZDAppDelegate.h */,
 				F160B7091949E37F00AEF42D /* ZDAppDelegate.m */,
 				F160B70A1949E37F00AEF42D /* ZDCoreSDKSampleViewController.h */,
 				F160B70B1949E37F00AEF42D /* ZDCoreSDKSampleViewController.m */,
+				D7384ED019E9868A006E8C74 /* ZDCoreSDKSampleAppConfigurationViewController.h */,
+				D7384ED119E9868A006E8C74 /* ZDCoreSDKSampleAppConfigurationViewController.m */,
 			);
 			path = CoreSDKSample;
 			sourceTree = "<group>";
@@ -106,19 +164,9 @@
 		F160B7001949E2E800AEF42D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				F160B7021949E34600AEF42D /* en.lproj */,
 				F160B7051949E34600AEF42D /* Images.xcassets */,
 			);
 			name = Resources;
-			sourceTree = "<group>";
-		};
-		F160B7021949E34600AEF42D /* en.lproj */ = {
-			isa = PBXGroup;
-			children = (
-				F160B7031949E34600AEF42D /* Localizable.strings */,
-			);
-			name = en.lproj;
-			path = Resources/en.lproj;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,7 +221,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F160B7061949E34600AEF42D /* Localizable.strings in Resources */,
+				C38D73BC1A03C9A60058C48A /* ZendeskSDKStrings.bundle in Resources */,
+				C3E803B519F81CE3002554BE /* ZendeskSDK.bundle in Resources */,
 				F160B7071949E34600AEF42D /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -203,22 +252,16 @@
 			files = (
 				F160B70D1949E37F00AEF42D /* ZDCoreSDKSampleViewController.m in Sources */,
 				F160B70C1949E37F00AEF42D /* ZDAppDelegate.m in Sources */,
+				C35E673419E457BB006F8296 /* RequestListTableViewController.m in Sources */,
+				D71A34B119F557020055E573 /* ZDSecondViewController.m in Sources */,
+				D7384ED219E9868A006E8C74 /* ZDCoreSDKSampleAppConfigurationViewController.m in Sources */,
+				C35E673519E457BB006F8296 /* RequestListViewController.m in Sources */,
 				F160B6DE1949E2D600AEF42D /* main.m in Sources */,
+				D71A34BC19F58D0D0055E573 /* ZDRateMyAppDemoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		F160B7031949E34600AEF42D /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F160B7041949E34600AEF42D /* en */,
-			);
-			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		F160B6F81949E2D600AEF42D /* Debug */ = {
@@ -253,7 +296,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "$(inherited)";
 				SDKROOT = iphoneos;
@@ -288,7 +331,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_LDFLAGS = "$(inherited)";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -304,13 +347,13 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/CoreSDKSample/Frameworks",
+					"$(PROJECT_DIR)/CoreSDKSample/Frameworks/**",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CoreSDKSample/CoreSDKSample-Prefix.pch";
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "CoreSDKSample/CoreSDKSample-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "$(inherited)";
@@ -328,13 +371,13 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/CoreSDKSample/Frameworks",
+					"$(PROJECT_DIR)/CoreSDKSample/Frameworks/**",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CoreSDKSample/CoreSDKSample-Prefix.pch";
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "CoreSDKSample/CoreSDKSample-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "$(inherited)";

@@ -8,6 +8,10 @@
 
 
 #import "ZDCoreSDKSampleViewController.h"
+#import "RequestListViewController.h"
+#import "RequestListTableViewController.h"
+#import "ZDRateMyAppDemoViewController.h"
+#import <ZendeskSDK/ZendeskSDK.h>
 
 
 @implementation ZDCoreSDKSampleViewController
@@ -17,107 +21,91 @@
 {
     [super viewDidLoad];
     
-    self.title = @"Core SDK Sample";
+    self.title = @"SDK Sample App";
 
     _requestCreationButton = [self buildButtonWithFrame:CGRectZero andTitle:@"Present CoreSDK Request Creation"];
     _requestCreationButton.accessibilityIdentifier = @"zdrma.sampleapp.push-view-button";
     _requestCreationButton.backgroundColor = [UIColor whiteColor];
     [_requestCreationButton addTarget:self action:@selector(createRequest) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:_requestCreationButton];
+    [self.contentView addSubview:_requestCreationButton];
 
-    // request list header
-    _header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 25)];
-    _header.backgroundColor = [UIColor colorWithWhite:0.97f alpha:1.0f];
-    [self.view addSubview:_header];
+    _requestListInScrollViewButton = [self buildButtonWithFrame:CGRectZero andTitle:@"Request List in UIScrollView"];
+    _requestListInScrollViewButton.accessibilityIdentifier = @"zdrma.sampleapp.requests-in-scrollview-button";
+    _requestListInScrollViewButton.backgroundColor = [UIColor whiteColor];
+    [_requestListInScrollViewButton addTarget:self action:@selector(requestListInScrollView) forControlEvents:UIControlEventTouchUpInside];
+    [self.contentView addSubview:_requestListInScrollViewButton];
 
-    float borderHeight = [UIScreen mainScreen].scale == 1.0 ? 1 : 0.5;
-
-    UIView *topBorder = [[UIView alloc] initWithFrame:CGRectMake(0, 0, _header.frame.size.width, borderHeight)];
-    topBorder.backgroundColor = [UIColor colorWithWhite:0.88f alpha:1.0f];
-    topBorder.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-    [_header addSubview:topBorder];
-
-    UILabel *headerLabel = [[UILabel alloc] initWithFrame:CGRectMake(25.0f, 0, _header.frame.size.width, _header.frame.size.height)];
-    headerLabel.backgroundColor = [UIColor clearColor];
-    headerLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-    headerLabel.text = @"YOUR REQUESTS";
-    headerLabel.textColor = [UIColor colorWithWhite:0.33f alpha:1.0f];
-    headerLabel.font = [UIFont systemFontOfSize:11];
-    [_header addSubview:headerLabel];
-
-    UIView *lowerBorder = [[UIView alloc] initWithFrame:CGRectMake(0, _header.frame.size.height - borderHeight, _header.frame.size.width, borderHeight)];
-    lowerBorder.backgroundColor = [UIColor colorWithWhite:0.88f alpha:1.0f];
-    lowerBorder.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-    [_header addSubview:lowerBorder];
-
-
-    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    // Create the request list and add it to your UI and register for events
-    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-    // set the user details
-    [ZDCoreSDK configure:^(ZDAccount *account, ZDRequestCreationConfig *requestCreationConfig) {
-
-        account.userToken = @"a_token";
-        account.clientId = @"a_client_id";
-        account.email = @"example@example.com";
-    }];
-
+    _requestListInTableButton = [self buildButtonWithFrame:CGRectZero andTitle:@"Request List in UITableView"];
+    _requestListInTableButton.accessibilityIdentifier = @"zdrma.sampleapp.requests-in-scrollview-button";
+    _requestListInTableButton.backgroundColor = [UIColor whiteColor];
+    [_requestListInTableButton addTarget:self action:@selector(requestListInTable) forControlEvents:UIControlEventTouchUpInside];
+    [self.contentView addSubview:_requestListInTableButton];
     
     
-    // wrap the request list view into a scrollview.
-    _requestList = [ZDCoreSDK newRequestListWith:self andSelector:@selector(requestListUpdated)];
-    _requestListContainer = [[UIScrollView alloc] initWithFrame:CGRectZero];
-    [self.requestListContainer addSubview:_requestList];
+    _helpCenterButton = [self buildButtonWithFrame:CGRectZero andTitle:@"Show Help Center"];
+    _helpCenterButton.accessibilityIdentifier = @"zdrma.sampleapp.requests-in-scrollview-button";
+    _helpCenterButton.backgroundColor = [UIColor whiteColor];
+    [_helpCenterButton addTarget:self action:@selector(support) forControlEvents:UIControlEventTouchUpInside];
+    [self.contentView addSubview:_helpCenterButton];
+
+    _rmaButton = [self buildButtonWithFrame:CGRectZero andTitle:@"Show Rate My App"];
+    _rmaButton.accessibilityIdentifier = @"zdrma.sampleapp.requests-in-scrollview-button";
+    _rmaButton.backgroundColor = [UIColor whiteColor];
+    [_rmaButton addTarget:self action:@selector(rateMyApp) forControlEvents:UIControlEventTouchUpInside];
+    [self.contentView addSubview:_rmaButton];
     
-    [self.view addSubview:_requestListContainer];
+    ZDCoreSDKSampleAppConfigurationViewController *configurationVC = [[ZDCoreSDKSampleAppConfigurationViewController alloc] initWithNibName:nil bundle:nil];
+    configurationVC.delegate = self;
+    
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:configurationVC];
+
+
+    [self.parentViewController presentViewController:navController animated:NO completion:^{}];
 }
 
+- (void) requestListInScrollView
+{
+    RequestListViewController *vc = [RequestListViewController new];
+    vc.title = self.title;
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+
+- (void) requestListInTable
+{
+    RequestListTableViewController *vc = [RequestListTableViewController new];
+    vc.title = self.title;
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+
+- (void) support
+{
+    [ZDKHelpCenter showHelpCenterWithNavController:self.navigationController];
+}
+
+- (void) rateMyApp
+{
+    ZDRateMyAppDemoViewController *vc = [[ZDRateMyAppDemoViewController alloc] initWithNibName:nil bundle:nil];
+    [self.navigationController pushViewController:vc animated:YES];
+}
 
 - (void) viewWillLayoutSubviews
 {
     [super viewWillLayoutSubviews];
 
-    _requestCreationButton.frame = CGRectMake(20.0f, [self topViewOffset] + 20.0f,
-                                              self.view.frame.size.width - 40.0f, 30.0f);
-
-    _header.frame = CGRectMake(0, [self topViewOffset] + 70.0f, self.view.frame.size.width, _header.frame.size.height);
-
-    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    // On layout setup the request list frame as desired, using 'tableHeight' to get the table height
-    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-    float containerOriginY = CGRectGetMaxY(_header.frame);
-    float containerHeight = self.view.frame.size.height - containerOriginY;
+    CGFloat width = self.contentView.frame.size.width - 40.0f;
     
-    _requestListContainer.frame = CGRectMake(0, containerOriginY , self.view.frame.size.width, containerHeight);
-    _requestListContainer.contentSize = CGSizeMake(self.view.frame.size.width, [_requestList tableHeight]);
+    _requestCreationButton.frame = CGRectMake(20.0f, 20.0f, width, 30.0f);
+
+    _requestListInScrollViewButton.frame = CGRectMake(20.0f, 60.0f, width, 30.0f);
+
+    _requestListInTableButton.frame = CGRectMake(20.0f, 100.0f, width, 30.0f);
     
-    _requestList.frame= CGRectMake(0, 0, self.view.frame.size.width, [_requestList tableHeight]);
-}
-
-
-- (void) requestListUpdated
-{
-    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    // On receiving a notification the table has been updated, use the new height to arrange your UI
-    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-    [UIView animateWithDuration:0.25f animations:^{
-        _requestList.frame= CGRectMake(0, CGRectGetMaxY(_header.frame), self.view.frame.size.width, [_requestList tableHeight]);
-    }];
+    _helpCenterButton.frame = CGRectMake(20.0f, 140.0f, width, 30.0f);
     
-    [self.view setNeedsLayout];
-}
+    _rmaButton.frame = CGRectMake(20.0f, 180.0f, width, 30.0f);
 
-
-- (void) dealloc
-{
-    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    // Remember to remove this class as a notification observer on dealloc
-    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-    [_requestList unregisterForEvents:self];
 }
 
 
@@ -130,11 +118,8 @@
     // Show the request creation screen
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    [ZDCoreSDK showRequestCreationWithNavController:self.navigationController
+    [ZDKRequests showRequestCreationWithNavController:self.navigationController
                                       withSuccess:^(NSData *data) {
-
-        //  refresh the request list
-        [_requestList refresh];
 
         // do something here if you want to...
 
@@ -169,6 +154,12 @@
     return button;
 }
 
+- (void) configuration:(NSString *) url withAppId:(NSString *) appId withClientId:(NSString *) clientId withUserId:(NSString *) userId {
+    NSLog(@"configuration made, url: %@, appId: %@, clientId: %@ and userToken: %@",url,appId,clientId, userId);
+
+    [[ZDKConfig instance] initializeWithAppId:appId zendeskUrl:url oAuthClientId:clientId andUserId:userId];
+    
+}
 
 @end
 
