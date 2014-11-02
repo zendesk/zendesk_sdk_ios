@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name         = "ZendeskSDK"
-  s.version      = "0.9.1"
-  s.summary      = "Zendesk SDK 0.9.1 beta"
+  s.version      = "0.9.2"
+  s.summary      = "Zendesk SDK 0.9.2 beta"
   s.homepage     = "https://github.com/zendesk/zendesk_sdk_ios"
   s.license      = { 
     :type => 'Copyright', 
@@ -25,7 +25,7 @@ Pod::Spec.new do |s|
   }
   s.author       = 'Zendesk'
   s.source       = { :git => "https://github.com/zendesk/zendesk_sdk_ios.git", :tag => s.version.to_s }
-  s.platform     = :ios, '5.0'
+  s.platform     = :ios, '6.0'
   s.source_files = 'ZendeskSDK.framework/Versions/A/Headers/*.h'
   s.requires_arc = true
   s.ios.vendored_frameworks = 'ZendeskSDK.framework'
