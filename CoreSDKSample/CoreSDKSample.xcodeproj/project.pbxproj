@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		C333A54319E29F1E0046B858 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C333A54119E29EC40046B858 /* SystemConfiguration.framework */; };
 		C3347CF719E45CA8002E703E /* ZendeskSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3347CF619E45CA8002E703E /* ZendeskSDK.framework */; };
-		C35E673419E457BB006F8296 /* RequestListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C35E673119E457BB006F8296 /* RequestListTableViewController.m */; };
-		C35E673519E457BB006F8296 /* RequestListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C35E673319E457BB006F8296 /* RequestListViewController.m */; };
 		C38D73BC1A03C9A60058C48A /* ZendeskSDKStrings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C38D73BB1A03C9A60058C48A /* ZendeskSDKStrings.bundle */; };
 		C3E803B519F81CE3002554BE /* ZendeskSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C3E803B419F81CE3002554BE /* ZendeskSDK.bundle */; };
 		D71A34B119F557020055E573 /* ZDSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D71A34AF19F557020055E573 /* ZDSecondViewController.m */; };
@@ -28,10 +26,6 @@
 /* Begin PBXFileReference section */
 		C333A54119E29EC40046B858 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		C3347CF619E45CA8002E703E /* ZendeskSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ZendeskSDK.framework; path = CoreSDKSample/Frameworks/ZendeskSDK.framework; sourceTree = "<group>"; };
-		C35E673019E457BB006F8296 /* RequestListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestListTableViewController.h; sourceTree = "<group>"; };
-		C35E673119E457BB006F8296 /* RequestListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestListTableViewController.m; sourceTree = "<group>"; };
-		C35E673219E457BB006F8296 /* RequestListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestListViewController.h; sourceTree = "<group>"; };
-		C35E673319E457BB006F8296 /* RequestListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestListViewController.m; sourceTree = "<group>"; };
 		C38D73BB1A03C9A60058C48A /* ZendeskSDKStrings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ZendeskSDKStrings.bundle; sourceTree = "<group>"; };
 		C3E803B419F81CE3002554BE /* ZendeskSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ZendeskSDK.bundle; sourceTree = "<group>"; };
 		D71A34AE19F557020055E573 /* ZDSecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZDSecondViewController.h; path = RateMyApp/ZDSecondViewController.h; sourceTree = "<group>"; };
@@ -52,7 +46,7 @@
 		F160B7081949E37F00AEF42D /* ZDAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDAppDelegate.h; sourceTree = "<group>"; };
 		F160B7091949E37F00AEF42D /* ZDAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDAppDelegate.m; sourceTree = "<group>"; };
 		F160B70A1949E37F00AEF42D /* ZDCoreSDKSampleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDCoreSDKSampleViewController.h; sourceTree = "<group>"; };
-		F160B70B1949E37F00AEF42D /* ZDCoreSDKSampleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDCoreSDKSampleViewController.m; sourceTree = "<group>"; };
+		F160B70B1949E37F00AEF42D /* ZDCoreSDKSampleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = ZDCoreSDKSampleViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,17 +86,6 @@
 			name = RateMyApp;
 			sourceTree = "<group>";
 		};
-		D71A34B219F5577A0055E573 /* RequestList */ = {
-			isa = PBXGroup;
-			children = (
-				C35E673019E457BB006F8296 /* RequestListTableViewController.h */,
-				C35E673119E457BB006F8296 /* RequestListTableViewController.m */,
-				C35E673219E457BB006F8296 /* RequestListViewController.h */,
-				C35E673319E457BB006F8296 /* RequestListViewController.m */,
-			);
-			name = RequestList;
-			sourceTree = "<group>";
-		};
 		F160B6C51949E2D600AEF42D = {
 			isa = PBXGroup;
 			children = (
@@ -137,7 +120,6 @@
 		F160B6D71949E2D600AEF42D /* CoreSDKSample */ = {
 			isa = PBXGroup;
 			children = (
-				D71A34B219F5577A0055E573 /* RequestList */,
 				D71A34AA19F5556B0055E573 /* RateMyApp */,
 				F160B7001949E2E800AEF42D /* Resources */,
 				F160B6D81949E2D600AEF42D /* Supporting Files */,
@@ -252,10 +234,8 @@
 			files = (
 				F160B70D1949E37F00AEF42D /* ZDCoreSDKSampleViewController.m in Sources */,
 				F160B70C1949E37F00AEF42D /* ZDAppDelegate.m in Sources */,
-				C35E673419E457BB006F8296 /* RequestListTableViewController.m in Sources */,
 				D71A34B119F557020055E573 /* ZDSecondViewController.m in Sources */,
 				D7384ED219E9868A006E8C74 /* ZDCoreSDKSampleAppConfigurationViewController.m in Sources */,
-				C35E673519E457BB006F8296 /* RequestListViewController.m in Sources */,
 				F160B6DE1949E2D600AEF42D /* main.m in Sources */,
 				D71A34BC19F58D0D0055E573 /* ZDRateMyAppDemoViewController.m in Sources */,
 			);
