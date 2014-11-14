@@ -16,8 +16,8 @@
 
 
 @property (nonatomic, strong) UIButton *requestCreationButton;
-@property (nonatomic, strong) UIButton *requestListInScrollViewButton;
-@property (nonatomic, strong) UIButton *requestListInTableButton;
+@property (nonatomic, strong) UIButton *requestListButton;
+@property (nonatomic, strong) UITextField *helpCenterLabelsInput;
 @property (nonatomic, strong) UIButton *helpCenterButton;
 @property (nonatomic, strong) UIButton *rmaButton;
 
