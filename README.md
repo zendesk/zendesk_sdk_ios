@@ -1,4 +1,4 @@
-# Zendesk Mobile SDK for iOS v0.9.2 beta
+# Zendesk Mobile SDK for iOS v0.9.3 beta
 
 Zendesk SDK for mobile is a quick, convenient way to get customer support into your mobile apps. With just a few lines of code, you can provide your end users with an easy way to get in touch from any mobile app.
 
