@@ -1,0 +1,29 @@
+//
+//  ZDKAvatarProvider.h
+//  ZendeskSDK
+//
+//  Created by Zendesk on 10/11/2014.
+//  Copyright (c) 2014 Zendesk. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+/**
+ *  Block invoked to pass data back from API call
+ *
+ *  @param avatar UIImage of the response from server, can be nil on error
+ *  @param error  NSError returned on during error state, can be nil on success
+ */
+typedef void (^ZDKAvatarCallback)(UIImage *avatar, NSError *error);
+
+@interface ZDKAvatarProvider : NSObject
+
+/**
+ *  Get the image/avatar data for a given URL
+ *
+ *  @param avatarUrl NSString url of the image to be fetched
+ *  @param callback  block callback executed on error or success states
+ */
+- (void) getAvatarForUrl:(NSString *)avatarUrl withCallback:(ZDKAvatarCallback)callback;
+
+@end
