@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>9D1D5AE1-8E24-408D-973B-D609665F0A81</string>
+	<key>IDESourceControlProjectName</key>
+	<string>CoreSDKSample</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>BF608BA0F8E697630E291EA213821F71A8278753</key>
+		<string>ssh://github.com/zendesk/zendesk_sdk_ios.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>CoreSDKSample/CoreSDKSample.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>BF608BA0F8E697630E291EA213821F71A8278753</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/zendesk/zendesk_sdk_ios.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>BF608BA0F8E697630E291EA213821F71A8278753</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>BF608BA0F8E697630E291EA213821F71A8278753</string>
+			<key>IDESourceControlWCCName</key>
+			<string>zendesk_sdk_ios</string>
+		</dict>
+	</array>
+</dict>
+</plist>
