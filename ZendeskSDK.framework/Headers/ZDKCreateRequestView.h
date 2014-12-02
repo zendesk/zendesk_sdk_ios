@@ -1,10 +1,18 @@
-//
-//  ZDKCoreCreateRequestView.h
-//  ZendeskSDK
-//
-//  Created by Zendesk on 31/10/2014.
-//  Copyright (c) 2014 Zendesk. All rights reserved.
-//
+/*
+ *
+ *  ZDKCoreCreateRequestView.h
+ *  ZendeskSDK
+ *
+ *  Created by Zendesk on 31/10/2014.  
+ *
+ *  Copyright (c) 2014 Zendesk. All rights reserved.
+ *
+ *  By downloading or using the Zendesk Mobile SDK, You agree to the Zendesk Terms
+ *  of Service https://www.zendesk.com/company/terms and Application Developer and API License
+ *  Agreement https://www.zendesk.com/company/application-developer-and-api-license-agreement and
+ *  acknowledge that such terms govern Your use of and access to the Mobile SDK.
+ *
+ */
 
 #import <UIKit/UIKit.h>
 #import "ZDKSpinnerDelegate.h"
@@ -23,15 +31,6 @@
  */
 @property (nonatomic, strong) ZDKUITextView *textView;
 
-/**
- * Text view for request email address
- */
-@property (nonatomic, strong) UITextField *emailTextView;
-
-/**
- * Spacer view between description and email field
- */
-@property (nonatomic, strong) UIView *seperatorView;
 
 /**
  * Color for the text views placeholder text.
@@ -65,30 +64,6 @@
  * Loading spinner for the request creation view.
  */
 @property (nonatomic, strong) id<ZDKSpinnerDelegate> spinner UI_APPEARANCE_SELECTOR;
-
-
-/**
- * Color of the separator between description and email text inputs
- */
-@property (nonatomic, strong) UIColor *separatorBackgroundColor UI_APPEARANCE_SELECTOR;
-
-
-/**
- * Font for the email entry view.
- */
-@property (nonatomic, strong) UIFont *emailEntryFont UI_APPEARANCE_SELECTOR;
-
-
-/**
- * Color for the email entry text
- */
-@property (nonatomic, strong) UIColor *emailEntryTextColor UI_APPEARANCE_SELECTOR;
-
-
-/**
- * Background color for the email entry view
- */
-@property (nonatomic, strong) UIColor *emailEntryBackgroundColor UI_APPEARANCE_SELECTOR;
 
 
 /**

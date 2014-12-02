@@ -1,10 +1,18 @@
-//
-//  ZDKJsonUtil.h
-//  ZendeskSDK
-//
-//  Created by Zendesk on 09/11/2014.
-//  Copyright (c) 2014 Zendesk. All rights reserved.
-//
+/*
+ *
+ *  ZDKJsonUtil.h
+ *  ZendeskSDK
+ *
+ *  Created by Zendesk on 09/11/2014.  
+ *
+ *  Copyright (c) 2014 Zendesk. All rights reserved.
+ *
+ *  By downloading or using the Zendesk Mobile SDK, You agree to the Zendesk Terms
+ *  of Service https://www.zendesk.com/company/terms and Application Developer and API License
+ *  Agreement https://www.zendesk.com/company/application-developer-and-api-license-agreement and
+ *  acknowledge that such terms govern Your use of and access to the Mobile SDK.
+ *
+ */
 
 #import <Foundation/Foundation.h>
 
@@ -28,5 +36,47 @@
  */
 + (id) cleanJSONVal:(id)val;
 
+
+/**
+ *  Convert JSON based dictionary to an object of type Class
+ *
+ *  @param json       NSDictionary of JSON
+ *  @param classToMap class to be converted to
+ *
+ *  @return instance of type class from JSON
+ */
++ (id) convertJsonObject:(NSDictionary *)json toObjectOfType:(Class)classToMap;
+
+
+/**
+ *  Converts an array of json into an array of objects. The objects 
+ *  in the return array will be instances of the class that was passed in.
+ *
+ *  @param jsonArray  An array of json objects
+ *  @param classToMap The class to map the json objects to.
+ *
+ *  @return An array of objects.
+ */
++ (NSMutableArray *) convertArrayOfJsonObjects:(NSArray *)jsonArray toArrayOfType:(Class)classToMap;
+
+
+/**
+ *  Generates a dictionary represontation of a classes properties.
+ *
+ *  @param objectToConvert An instance of the class to convert.
+ *  @param aClass          The class being converted.
+ *
+ *  @return A dictionary with the properties of a class keyed by the property names. 
+ */
++ (NSDictionary *) convertObjectToDictionary:(id)objectToConvert forClass:(Class)aClass;
+
+/**
+ *  Fetch Array of properties of a class
+ *
+ *  @param aClass class to get properties for
+ *
+ *  @return NSMutableArray of properties for the class specified
+ */
++ (NSMutableArray *)arrayWithPropertiesOfObject:(Class)aClass;
 
 @end

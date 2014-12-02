@@ -1,10 +1,18 @@
-//
-//  ZDKAccount.h
-//  ZendeskSDK
-//
-//  Created by Zendesk on 06/06/2014.
-//  Copyright (c) 2014 Zendesk. All rights reserved.
-//
+/*
+ *
+ *  ZDKAccount.h
+ *  ZendeskSDK
+ *
+ *  Created by Zendesk on 06/06/2014.  
+ *
+ *  Copyright (c) 2014 Zendesk. All rights reserved.
+ *
+ *  By downloading or using the Zendesk Mobile SDK, You agree to the Zendesk Terms
+ *  of Service https://www.zendesk.com/company/terms and Application Developer and API License
+ *  Agreement https://www.zendesk.com/company/application-developer-and-api-license-agreement and
+ *  acknowledge that such terms govern Your use of and access to the Mobile SDK.
+ *
+ */
 
 
 #import <Foundation/Foundation.h>
@@ -49,29 +57,16 @@ typedef NS_ENUM(NSInteger, ZDKAccountState) {
 
 
 /**
- * End users email address, this should be set at runtime before any other methods are invoked.
- */
-@property (nonatomic, strong) NSString *email;
-
-/**
- * An identifier that can be used to identify your user.
- */
-@property (nonatomic, strong) NSString *userId;
-
-/**
  * The oauth client id that was supplied when you set up oauth in web interface
  */
 @property (nonatomic, strong) NSString *oAuthClientId;
+
 
 /**
  * The current Zendesk oauth token.
  */
 @property (nonatomic, strong) NSString *oauthToken;
 
-/**
- * The zendesk user id of the user in the current subdomain.
- */
-@property (nonatomic, strong) NSNumber *zendeskUserId;
 
 /**
  * Indicates account state and whether the account state has been invalidated by a credential change.

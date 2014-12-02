@@ -1,14 +1,22 @@
-//
-//  ZDKConfig.h
-//  ZendeskSDK
-//
-//  Created by Zendesk on 29/10/2014.
-//  Copyright (c) 2014 Zendesk. All rights reserved.
-//
+/*
+ *
+ *  ZDKConfig.h
+ *  ZendeskSDK
+ *
+ *  Created by Zendesk on 29/10/2014.  
+ *
+ *  Copyright (c) 2014 Zendesk. All rights reserved.
+ *
+ *  By downloading or using the Zendesk Mobile SDK, You agree to the Zendesk Terms
+ *  of Service https://www.zendesk.com/company/terms and Application Developer and API License
+ *  Agreement https://www.zendesk.com/company/application-developer-and-api-license-agreement and
+ *  acknowledge that such terms govern Your use of and access to the Mobile SDK.
+ *
+ */
 
 #import <Foundation/Foundation.h>
-
-@class ZDKAppSettings, ZDKAccount;
+#import "ZDKIdentity.h"
+@class ZDKAppSettings, ZDKAccount, ZDKSdkStorage;
 
 /*
  * ZDKConfig is responsible for initialization of
@@ -17,7 +25,8 @@
 @interface ZDKConfig : NSObject
 
 @property (nonatomic, readonly) ZDKAccount *account;
-
+@property (nonatomic, strong) NSArray *customTicketFields;
+@property (nonatomic, strong) NSNumber *ticketFormId;
 
 /**
  * Get the API instance (singleton).
@@ -32,33 +41,11 @@
  *
  *  @param applicationId The application id of your SDK app, as found in the web interface.
  *  @param zendeskUrl    The full URL of your Zendesk instance, https://{subdomain}.zendesk.com
- */
-- (void) initializeWithAppId:(NSString *)applicationId
-               andZendeskUrl:(NSString *)zendeskUrl;
-
-/**
- *  Initialize the SDK.
- *
- *  This initializer is deprecated and is likely to be removed in the next release.
- *
- *  @param applicationId The application id of your SDK app, as found in the web interface.
- *  @param zendeskUrl    The full URL of your Zendesk instance, https://{subdomain}.zendesk.com
- *  @param oAuthClientId Your client ID, can be nil if not using any authentication.
- *  @param userId        An identifier that can be used to identify your user.
+ *  @param oAuthClientId The oAuthClientId required as part of the authentication process
  */
 - (void) initializeWithAppId:(NSString *)applicationId
                   zendeskUrl:(NSString *)zendeskUrl
-               oAuthClientId:(NSString *)oAuthClientId
-                   andUserId:(NSString *)userId __attribute__((deprecated));
-
-
-
-/**
- * Get the SDK Settings for an instance of Zendesk.
- *
- * @return The SDK Settings for the configured instance of Zendesk.
- */
-- (ZDKAppSettings *) getSDKSettings;
+                 andClientId:(NSString *)oAuthClientId;
 
 
 /**
@@ -85,5 +72,11 @@
  */
 - (void) setReloadInterval:(NSTimeInterval)interval;
 
+/**
+ *  Set userIdentity for the user
+ *
+ *  @param aUserIdentity instance of NSObject that implements the protcol ZDKIdentity
+ */
+- (void) setUserIdentity:(NSObject<ZDKIdentity> *) aUserIdentity;
 
 @end

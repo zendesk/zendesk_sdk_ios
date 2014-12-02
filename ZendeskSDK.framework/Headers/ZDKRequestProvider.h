@@ -1,10 +1,18 @@
-//
-//  ZDKRequestProvider.h
-//  ZendeskSDK
-//
-//  Created by Zendesk on 08/11/2014.
-//  Copyright (c) 2014 Zendesk. All rights reserved.
-//
+/*
+ *
+ *  ZDKRequestProvider.h
+ *  ZendeskSDK
+ *
+ *  Created by Zendesk on 08/11/2014.  
+ *
+ *  Copyright (c) 2014 Zendesk. All rights reserved.
+ *
+ *  By downloading or using the Zendesk Mobile SDK, You agree to the Zendesk Terms
+ *  of Service https://www.zendesk.com/company/terms and Application Developer and API License
+ *  Agreement https://www.zendesk.com/company/application-developer-and-api-license-agreement and
+ *  acknowledge that such terms govern Your use of and access to the Mobile SDK.
+ *
+ */
 
 #import <Foundation/Foundation.h>
 @class ZDKCommentsResponse,ZDKComment;
@@ -45,14 +53,12 @@ typedef void (^ZDKCreateRequestCallback)(id result, NSError *error);
 /**
  *  Calls a request service to create an anonymized request on behalf of the end-user.C
  *
- *  @param email       Users email address to authenticate the requester
  *  @param subject     Message describing the subject of the request
  *  @param description More detailed description of a problem
  *  @param tags        List of label that mark the request
  *  @param callback    callback invoked in response to remote API invokation
  */
-- (void) createRequestWithEmail:(NSString *)email
-                     andSubject:(NSString *)subject
+- (void) createRequestWithSubject:(NSString *)subject
                  andDescription:(NSString *)description
                         andTags:(NSArray *)tags
                     andCallback:(ZDKCreateRequestCallback) callback;
@@ -91,7 +97,7 @@ typedef void (^ZDKCreateRequestCallback)(id result, NSError *error);
  *  @param requestId Id of a request to add this comment to
  *  @param callback  Callback that will deliver a
  */
-- (void) addComment:(NSString *) comment forRequestId:(NSNumber *)requestId withCallback:(ZDKRequestAddCommentCallback) callback;
+- (void) addComment:(NSString *) comment forRequestId:(NSString *)requestId withCallback:(ZDKRequestAddCommentCallback) callback;
 
 
 @end

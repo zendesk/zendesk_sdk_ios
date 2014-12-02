@@ -1,10 +1,18 @@
-//
-//  ZDKRMA.h
-//  ZendeskSDK
-//
-//  Created by Zendesk on 25/02/2014.
-//  Copyright (c) 2014 Zendesk. All rights reserved.
-//
+/*
+ *
+ *  ZDKRMA.h
+ *  ZendeskSDK
+ *
+ *  Created by Zendesk on 25/02/2014.  
+ *
+ *  Copyright (c) 2014 Zendesk. All rights reserved.
+ *
+ *  By downloading or using the Zendesk Mobile SDK, You agree to the Zendesk Terms
+ *  of Service https://www.zendesk.com/company/terms and Application Developer and API License
+ *  Agreement https://www.zendesk.com/company/application-developer-and-api-license-agreement and
+ *  acknowledge that such terms govern Your use of and access to the Mobile SDK.
+ *
+ */
 
 #import <Foundation/Foundation.h>
 #import "ZDKRMAConfigObject.h"
@@ -41,10 +49,23 @@
  * viewDidAppear, or an equivalent method. This will use the shouldShowBlock in ZDKRMAConfigObject to
  * decide if the dialog should be shown.
  *
- * @discussion If ZDKRMA is not properly configure this mithed will log an error and return.
+ * @discussion If ZDKRMA is not properly configure this method will log an error and return.
  * @param view A view that RMA will be displayed over.
  */
 + (void) showInView:(UIView*)view;
+
+
+/**
+ * To show the ZDKRMA dialog in a view, call this methed in either viewWillAppear or
+ * viewDidAppear, or an equivalent method. This method will always show a dialog irrespective of
+ * the settings in ZDKRMAConfigObject.
+ *
+ * @discussion Any actions commited by the user from the RMA dialog shown by this method
+ * will conflict with the behaviour of showInView. showInView will not display a RMA dialog if it has
+ * been previously presented to the user.
+ * @param view A view that RMA will be displayed over.
+ */
++ (void) showAlwaysInView:(UIView*)view;
 
 
 /**

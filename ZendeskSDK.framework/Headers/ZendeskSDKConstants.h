@@ -1,10 +1,18 @@
-//
-//  ZendeskSDKConstants.h
-//  ZendeskSDK
-//
-//  Created by Zendesk on 08/10/2014.
-//  Copyright (c) 2014 Zendesk. All rights reserved.
-//
+/*
+ *
+ *  ZendeskSDKConstants.h
+ *  ZendeskSDK
+ *
+ *  Created by Zendesk on 08/10/2014.  
+ *
+ *  Copyright (c) 2014 Zendesk. All rights reserved.
+ *
+ *  By downloading or using the Zendesk Mobile SDK, You agree to the Zendesk Terms
+ *  of Service https://www.zendesk.com/company/terms and Application Developer and API License
+ *  Agreement https://www.zendesk.com/company/application-developer-and-api-license-agreement and
+ *  acknowledge that such terms govern Your use of and access to the Mobile SDK.
+ *
+ */
 
 
 
@@ -211,6 +219,7 @@ extern NSString * const ZDD_TypeJSON;
 extern NSString * const ZDD_UserAgent;
 extern NSString * const ZDD_UserAgentValue;
 extern NSString * const ZDD_AcceptLanguage;
+extern NSString * const ZDD_ClientIdentifier;
 
 
 #pragma mark - Error Domain
@@ -283,3 +292,6 @@ extern NSString * const ZDKRMANotificationFeedbackSuccess;
 /** Posted immediately after an unsuccessful submission of RMA feedback. */
 extern NSString * const ZDKRMANotificationFeedbackError;
 
+#pragma mark - Authentication types
+extern NSString * const ZDK_AUTHENTICATION_JWT;
+extern NSString * const ZDK_AUTHENTICATION_ANONYMOUS;
