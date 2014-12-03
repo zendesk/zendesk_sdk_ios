@@ -1,0 +1,100 @@
+/*
+ *
+ *  ZDKBundleUtils.h
+ *  ZendeskSDK
+ *
+ *  Created by Zesnesk on 22/10/2014.  
+ *
+ *  Copyright (c) 2014 Zendesk. All rights reserved.
+ *
+ *  By downloading or using the Zendesk Mobile SDK, You agree to the Zendesk Terms
+ *  of Service https://www.zendesk.com/company/terms and Application Developer and API License
+ *  Agreement https://www.zendesk.com/company/application-developer-and-api-license-agreement and
+ *  acknowledge that such terms govern Your use of and access to the Mobile SDK.
+ *
+ */
+
+#import <Foundation/Foundation.h>
+
+
+@interface ZDKBundleUtils : NSObject
+
+
+/**
+ * Gets the framework resource bundle.
+ *
+ * @return The frameworks resource NSBundle or nil if the SDK bundle was not found.
+ */
++ (NSBundle *) frameworkResourceBundle;
+
+
+/**
+ * Gets the framework strings bundle.
+ *
+ * @return The frameworks strings NSBundle or nil if the SDK bundle was not found.
+ */
++ (NSBundle *) frameworkStringsBundle;
+
+
+/**
+ * Get the path for a resource in the SDK bundle.
+ *
+ * @param name The resource name.
+ * @param extension The file extension.
+ * @return The path for the css file, or nil if file was not found.
+ */
++ (NSString *) pathForFrameworkResource:(NSString *)name ofType:(NSString *)extension;
+
+
+/**
+ * Get the help center css file in the SDK bundle and return as a string.
+ *
+ * @return A string containing css for help center.
+ */
++ (NSString *) helpCenterCss;
+
+
+/**
+ * Get the help center css file in the host apps main bundle and return as a string.
+ *
+ * If you want your own style sheet for help center include a file named
+ * help_center_article_style.css in your project and ensure it's included in the
+ * Copy Bundle Resources build phase.
+ *
+ * @return A string containing css for help center.
+ */
++ (NSString *) userDefinedHelpCenterCss;
+
+/**
+ *  Get a dictionary of iOS devices. Keys are model identifiers e.g. @"iPhone3,1" 
+ *  @see ModelIdentifier.plist in ZendeskSDK.bundle
+ *
+ *  @return A device model string e.g. iPhone 4s
+ */
++ (NSDictionary *) deviceModelIdentifier;
+
+
+/**
+ *  The name of the frameworks strings table
+ *
+ *  @return The string table name.
+ */
++ (NSString *) stringsTableName;
+
+
+/**
+ *  Returns the conversations image from ZendeskSDK bundle.
+ *
+ *  @return An image, or nil if the image was not found.
+ */
++ (UIImage *) conversationsImage;
+
+
+/**
+ *  Returns the create request image from ZendeskSDK bundle.
+ *
+ *  @return An image, or nil if the image was not found.
+ */
++ (UIImage *) createRequestImage;
+
+@end
