@@ -24,14 +24,6 @@ pod 'ZendeskSDK', :git => 'https://github.com/zendesk/zendesk_sdk_ios.git'
 
 Copyright 2014 Zendesk
 
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
+By dowloading or using the Zendesk Mobile SDK, You agree to the Zendesk Terms of Service (https://www.zendesk.com/company/terms) and Application Developer and API License Agreement (https://www.zendesk.com/company/application-developer-and-api-license-agreement) and acknowledge that such terms govern Your use of and access to the Mobile SDK.
 
-   http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
+If You make any Contributions (defined below) to the Zendesk Mobile SDK, You hereby grant Zendesk a royalty-free, worldwide, transferable, sub-licensable, irrevocable and perpetual license to incorporate into the Service or the Zendesk API or otherwise use and commercially exploit any Contributions. “Contribution” shall mean any work of authorship, including any modifications or additions to the Mobile SDK or derivative works thereof, that is submitted to Zendesk by You.
