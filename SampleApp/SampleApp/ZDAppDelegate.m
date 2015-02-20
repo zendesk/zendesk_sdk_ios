@@ -44,28 +44,68 @@
     /////////////////////////////////////////////////////////////////////////////////////////////////////
     // OPTIONAL - Customize appearance
     /////////////////////////////////////////////////////////////////////////////////////////////////////
+    [self setAppearanceProperties];
 
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////////
+    // Sample app boilerplate
+    /////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+
+    self.window.backgroundColor = [UIColor colorWithWhite:0.94f alpha:1.0f];
+    
+    // top view controller
+    ZDSampleViewController *vc = [[ZDSampleViewController alloc] initWithNibName:nil bundle:nil];
+    
+    // nav controller
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:vc];
+    navController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    
+    // assign nav controller as root
+    self.window.rootViewController = navController;
+    
+    // make key window
+    [self.window makeKeyAndVisible];
+    
+    if (SYSTEM_VERSION_GREATER_THAN_SEVEN) {
+        
+        // status bar
+        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+        
+        // nav bar
+        NSDictionary *navbarAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
+                                          [UIColor whiteColor] ,UITextAttributeTextColor, nil];
+        [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+        [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.4705f green:0.6392f blue:0.0f alpha:1.0f]];
+        [[UINavigationBar appearance] setTitleTextAttributes:navbarAttributes];
+    }
+    return YES;
+}
+
+- (void) setAppearanceProperties
+{
     // request creation screen
     [[ZDKCreateRequestView appearance] setPlaceholderTextColor:[UIColor lightGrayColor]];
     [[ZDKCreateRequestView appearance] setTextEntryColor:[UIColor colorWithWhite:0.2627f alpha:1.0f]];
     [[ZDKCreateRequestView appearance] setViewBackgroundColor:[UIColor whiteColor]];
     [[ZDKCreateRequestView appearance] setTextEntryFont:[UIFont systemFontOfSize:12.0f]];
-
+    
     [[ZDKCreateRequestView appearance] setAutomaticallyHideNavBarOnLandscape:1];
     UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
     
     spinner.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
     [[ZDKCreateRequestView appearance] setSpinner:(id<ZDKSpinnerDelegate>)spinner];
-
+    
     // request list
     [[ZDKRequestListTable appearance] setTableBackgroundColor:[UIColor clearColor]];
     [[ZDKRequestListTable appearance] setCellSeparatorColor:[UIColor colorWithWhite:0.90f alpha:1.0f]];
-
+    
     // loading cell
     spinner = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
     spinner.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
     [[ZDRequestListLoadingTableCell appearance] setSpinner:(id<ZDKSpinnerDelegate>)spinner];
-
+    
     // request list cells
     [[ZDKRequestListTableCell appearance] setDescriptionFont:[UIFont systemFontOfSize:15]];
     [[ZDKRequestListTableCell appearance] setCreatedAtFont:[UIFont systemFontOfSize:13]];
@@ -76,11 +116,11 @@
     [[ZDKRequestListTableCell appearance] setDescriptionTimestampMargin:5.0f];
     [[ZDKRequestListTableCell appearance] setLeftInset:25.0f];
     [[ZDKRequestListTableCell appearance] setCellBackgroundColor:[UIColor whiteColor]];
-
+    
     // no requests cell
     [[ZDRequestListEmptyTableCell appearance] setMessageFont:[UIFont systemFontOfSize:11.0f]];
     [[ZDRequestListEmptyTableCell appearance] setMessageColor:[UIColor colorWithWhite:0.3f alpha:1.0f]];
-
+    
     // comments list agent comment cells
     [[ZDKAgentCommentTableCell appearance] setAvatarSize:40.0f];
     [[ZDKAgentCommentTableCell appearance] setAgentNameFont:[UIFont systemFontOfSize:14.0f]];
@@ -90,21 +130,23 @@
     [[ZDKAgentCommentTableCell appearance] setBodyFont:[UIFont systemFontOfSize:15.0f]];
     [[ZDKAgentCommentTableCell appearance] setBodyColor:[UIColor colorWithWhite:0.38f alpha:1.0f]];
     [[ZDKAgentCommentTableCell appearance] setCellBackground:[UIColor whiteColor]];
-
+    
+  
+    
     // comments list end user comment cells
     [[ZDKEndUserCommentTableCell appearance] setTimestampFont:[UIFont systemFontOfSize:11.0f]];
     [[ZDKEndUserCommentTableCell appearance] setTimestampColor:[UIColor colorWithWhite:0.721f alpha:1.0f]];
     [[ZDKEndUserCommentTableCell appearance] setBodyFont:[UIFont systemFontOfSize:15.0f]];
     [[ZDKEndUserCommentTableCell appearance] setBodyColor:[UIColor colorWithWhite:0.38f alpha:1.0f]];
     [[ZDKEndUserCommentTableCell appearance] setCellBackground:[UIColor colorWithWhite:0.976f alpha:1.0f]];
-
+    
     // comments list loading cell
     spinner = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
     spinner.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
     [[ZDKCommentsListLoadingTableCell appearance] setSpinner:(id<ZDKSpinnerDelegate>)spinner];
     [[ZDKCommentsListLoadingTableCell appearance] setCellBackground:[UIColor whiteColor]];
     [[ZDKCommentsListLoadingTableCell appearance] setLeftInset:25.0f];
-
+    
     
     // comment entry area
     [[ZDKCommentEntryView appearance] setTopBorderColor:[UIColor colorWithWhite:0.831f alpha:1.0f]];
@@ -115,7 +157,7 @@
     [[ZDKCommentEntryView appearance] setSendButtonFont:[UIFont systemFontOfSize:12]];
     [[ZDKCommentEntryView appearance] setSendButtonColor:[UIColor colorWithWhite:0.2627f alpha:1.0f]];
     [[ZDKCommentEntryView appearance] setAreaBackgroundColor:[UIColor whiteColor]];
-
+    
     //Rate My App
     [[ZDKRMADialogView appearance] setHeaderBackgroundColor:[UIColor whiteColor]];
     [[ZDKRMADialogView appearance] setHeaderColor:[UIColor colorWithWhite:0.2627f alpha:1.0f]];
@@ -160,7 +202,7 @@
     [[ZDKSupportTableViewCell appearance] setTitleLabelBackground:[UIColor whiteColor]];
     [[ZDKSupportTableViewCell appearance] setTitleLabelColor:[UIColor colorWithWhite:0.2627f alpha:1.0f]];
     [[ZDKSupportTableViewCell appearance] setTitleLabelFont:[UIFont systemFontOfSize:18.0f]];
-
+    
     [[ZDKSupportArticleTableViewCell appearance] setBackgroundColor:[UIColor whiteColor]];
     [[ZDKSupportArticleTableViewCell appearance] setArticleParentsLabelFont:[UIFont systemFontOfSize:12.0f]];
     [[ZDKSupportArticleTableViewCell appearance] setArticleParentsLabelColor:[UIColor lightGrayColor]];
@@ -176,50 +218,35 @@
     [[ZDKSupportAttachmentCell appearance] setFileSizeLabelBackground:[UIColor colorWithWhite:0.94f alpha:1.0f]];
     [[ZDKSupportAttachmentCell appearance] setFileSizeLabelColor:[UIColor grayColor]];
     [[ZDKSupportAttachmentCell appearance] setFileSizeLabelFont:[UIFont systemFontOfSize:12.0f]];
-
-
-
     
-   
     UIActivityIndicatorView *rmaSpinner = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
     spinner.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
     [[ZDKRMAFeedbackView appearance] setSpinner:(id<ZDKSpinnerDelegate>)rmaSpinner];
     
+    
+    //New stuff
+    [[ZDKCommentInputView appearance] setTextEntryBackgroundColor:[UIColor colorWithWhite:0.945f alpha:1.0f]];
+    
+    
+    [[ZDKAttachmentView appearance] setBackgroundColor:[UIColor whiteColor]];
+    [[ZDKAttachmentView appearance] setCloseButtonBackgroundColor:[UIColor whiteColor]];
+    
+    [[ZDKCommentInputView appearance] setAreaBackgroundColor:[UIColor whiteColor]];
+    [[ZDKCommentInputView appearance] setBackgroundColor:[UIColor whiteColor]];
+    
+    [[UITableView appearance] setSeparatorColor:[UIColor colorWithWhite:0.8470f alpha:1.0f]];
+    
+    [[ZDKUIImageScrollView appearance] setBackgroundColor:[UIColor whiteColor]];
+    
+    [[ZDKRequestCommentAttachmentLoadingTableCell appearance] setBackgroundColor:[UIColor colorWithWhite:0.8470f alpha:1.0f]];
+    [[ZDKCommentsListLoadingTableCell appearance] setBackgroundColor:[UIColor colorWithWhite:0.9211 alpha:1.f]];
+    
+    [[ZDKRequestCommentAttachmentTableCell appearance] setBackgroundColor:[UIColor whiteColor]];
+    
 
-    /////////////////////////////////////////////////////////////////////////////////////////////////////
-    // Sample app boilerplate
-    /////////////////////////////////////////////////////////////////////////////////////////////////////
-
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-
-    self.window.backgroundColor = [UIColor colorWithWhite:0.94f alpha:1.0f];
+    [[ZDKUILoadingView appearance] setBackgroundColor:[UIColor colorWithWhite:0.9211 alpha:1.f]];
     
-    // top view controller
-    ZDSampleViewController *vc = [[ZDSampleViewController alloc] initWithNibName:nil bundle:nil];
     
-    // nav controller
-    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:vc];
-    navController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
-    
-    // assign nav controller as root
-    self.window.rootViewController = navController;
-    
-    // make key window
-    [self.window makeKeyAndVisible];
-    
-    if (SYSTEM_VERSION_GREATER_THAN_SEVEN) {
-        
-        // status bar
-        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
-        
-        // nav bar
-        NSDictionary *navbarAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
-                                          [UIColor whiteColor] ,UITextAttributeTextColor, nil];
-        [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
-        [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.4705f green:0.6392f blue:0.0f alpha:1.0f]];
-        [[UINavigationBar appearance] setTitleTextAttributes:navbarAttributes];
-    }
-    return YES;
 }
 
 

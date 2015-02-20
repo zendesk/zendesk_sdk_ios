@@ -35,7 +35,9 @@ ZDKUIIsLandscape()
  * Base view controller class used by ZD components containing frequently used methods.
  */
 @interface ZDKUIViewController : UIViewController {
-    
+
+    UIViewAnimationOptions _animationCurve;
+    NSTimeInterval _animationDuration;
     CGFloat _keyboardHeight;
     CGFloat _toastHeight;
 }
@@ -86,11 +88,34 @@ ZDKUIIsLandscape()
 
 
 /**
+ *  Called when the the keyboard has been shown.
+ *
+ *  @param aNotification the notifiction
+ */
+- (void) keyboardDidShow:(NSNotification *)aNotification;
+
+
+/**
  * Called when the keyboard is about to be hidden, invoke [super keyboardWillBeShown:] to
  * set the currentKeyboardHeight variable with the3 height of the keyboard.
  * @param aNotification the notification
  */
 - (void) keyboardWillBeHidden:(NSNotification*)aNotification;
+
+
+/**
+ *  Callked when the keyboard has hidden.
+ *
+ *  @param aNotification the notification
+ */
+- (void) keyboardDidHide:(NSNotification *)aNotification;
+
+/**
+ *  Updates values associated with the keyboard displaying/dismissing
+ *
+ *  @param userInfo the user info dictionary from keyboard notifications.
+ */
+- (void) updateAnimationValuesFromUserInfo:(NSDictionary*)userInfo;
 
 
 #pragma mark Layout 

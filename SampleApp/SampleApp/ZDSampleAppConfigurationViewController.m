@@ -87,6 +87,7 @@ static CGFloat const    ZDSDKPadding              = 15.f;
                                       keyboardType:UIKeyboardTypeURL
                                          returnKey:UIReturnKeyNext
                                             andTag:1];
+    [urlEntry setAccessibilityIdentifier:@"urlEntryField"];
 
     [self.scrollViewContent addSubview:urlEntry];
 
@@ -95,6 +96,7 @@ static CGFloat const    ZDSDKPadding              = 15.f;
                                         keyboardType:UIKeyboardTypeAlphabet
                                            returnKey:UIReturnKeyNext
                                               andTag:2];
+    [appIdEntry setAccessibilityIdentifier:@"appIdEntryField"];
 
     [self.scrollViewContent addSubview:appIdEntry];
 
@@ -103,6 +105,7 @@ static CGFloat const    ZDSDKPadding              = 15.f;
                                            keyboardType:UIKeyboardTypeAlphabet
                                               returnKey:UIReturnKeyNext
                                                  andTag:3];
+    [clientIdEntry setAccessibilityIdentifier:@"clientIdEntryField"];
 
     [self.scrollViewContent addSubview:clientIdEntry];
 
@@ -115,11 +118,12 @@ static CGFloat const    ZDSDKPadding              = 15.f;
     // Authentication switch
     authenticationType = [[UISegmentedControl alloc] initWithItems:@[@"JWT",@"Anonymous"]];
     authenticationType.translatesAutoresizingMaskIntoConstraints = NO;
-    authenticationType.selectedSegmentIndex = 0;
+    authenticationType.selectedSegmentIndex = 1;
     authenticationType.tintColor = [UIColor colorWithRed:0.4705f green:0.6392f blue:0.0f alpha:1.0f];
 
     [authenticationType addTarget:self action:@selector(authTypeChanged:) forControlEvents: UIControlEventValueChanged];
 
+    [authenticationType setAccessibilityIdentifier:@"authenticationType"];
     [self.scrollViewContent addSubview:authenticationType];
 
 
@@ -128,6 +132,9 @@ static CGFloat const    ZDSDKPadding              = 15.f;
                                                  keyboardType:UIKeyboardTypeAlphabet
                                                     returnKey:UIReturnKeyDone
                                                        andTag:4];
+    [userIdentifierEntry setAccessibilityIdentifier:@"jwtUserIdField"];
+    
+    userIdentifierEntry.hidden = YES;
 
     [self.scrollViewContent addSubview:userIdentifierEntry];
 
@@ -136,7 +143,8 @@ static CGFloat const    ZDSDKPadding              = 15.f;
                                        keyboardType:UIKeyboardTypeAlphabet
                                           returnKey:UIReturnKeyNext
                                              andTag:INT16_MAX];
-    nameEntry.hidden = YES;
+    [nameEntry setAccessibilityIdentifier:@"anonymousUserNameField"];
+    nameEntry.hidden = NO;
 
     [self.scrollViewContent addSubview:nameEntry];
 
@@ -145,7 +153,8 @@ static CGFloat const    ZDSDKPadding              = 15.f;
                                         keyboardType:UIKeyboardTypeAlphabet
                                            returnKey:UIReturnKeyNext
                                               andTag:5];
-    emailEntry.hidden = YES;
+    [emailEntry setAccessibilityIdentifier:@"anonymousEmailField"];
+    emailEntry.hidden = NO;
 
     [self.scrollViewContent addSubview:emailEntry];
 
@@ -154,7 +163,8 @@ static CGFloat const    ZDSDKPadding              = 15.f;
                                              keyboardType:UIKeyboardTypeAlphabet
                                                 returnKey:UIReturnKeyDone
                                                    andTag:6];
-    externalIdEntry.hidden = YES;
+    [externalIdEntry setAccessibilityIdentifier:@"anonymousExternalIdField"];
+    externalIdEntry.hidden = NO;
 
     [self.scrollViewContent addSubview:externalIdEntry];
     
@@ -249,6 +259,9 @@ static CGFloat const    ZDSDKPadding              = 15.f;
     nameEntry.text = @"";
     emailEntry.text = @"";
     externalIdEntry.text = @"";
+    
+    [[ZDKSdkStorage instance] clearUserData];
+    [[ZDKSdkStorage instance].settingsStorage deleteStoredData];
 }
 
 

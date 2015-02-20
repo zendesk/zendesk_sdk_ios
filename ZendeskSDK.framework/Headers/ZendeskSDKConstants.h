@@ -3,7 +3,7 @@
  *  ZendeskSDKConstants.h
  *  ZendeskSDK
  *
- *  Created by Zendesk on 08/10/2014.  
+ *  Created by Zendesk on 08/10/2014.
  *
  *  Copyright (c) 2014 Zendesk. All rights reserved.
  *
@@ -112,6 +112,35 @@ extern NSString * const ZDKAPI_RequestsError;
  */
 extern NSString * const ZDKAPI_ReachabilityChangedNotification;
 
+/**
+ *  Notification that an upload attachment request has started.
+ */
+extern NSString * const ZDKAPI_UploadAttachmentStarting;
+
+/**
+ *  Notification that an upload attachment request has succeded.
+ */
+extern NSString * const ZDKAPI_UploadAttachmentSuccess;
+
+/**
+ *  Notification that an upload attachment request faild.
+ */
+extern NSString * const ZDKAPI_UploadAttachmentError;
+
+/**
+ *  Notification that an upload deletion is starting.
+ */
+extern NSString * const ZDKAPI_DeleteUploadStarting;
+
+/**
+ *  Notification that an upload deletion succeeded.
+ */
+extern NSString * const ZDKAPI_DeleteUploadSuccess;
+
+/**
+ *  Notificaion that an upload deletion failed.
+ */
+extern NSString * const ZDKAPI_DeleteUploadError;
 
 
 #pragma mark - Help Center
@@ -214,12 +243,19 @@ extern NSString * const ZDD_HTTPDelete;
 
 // HEADERS
 extern NSString * const ZDD_ContentType;
+extern NSString * const ZDD_ContentLength;
 extern NSString * const ZDD_Accept;
 extern NSString * const ZDD_TypeJSON;
 extern NSString * const ZDD_UserAgent;
 extern NSString * const ZDD_UserAgentValue;
 extern NSString * const ZDD_AcceptLanguage;
 extern NSString * const ZDD_ClientIdentifier;
+
+// MIME types
+extern NSString * const ZDD_MIMETypeJPEG;
+extern NSString * const ZDD_MIMETypePNG;
+extern NSString * const ZDD_MIMETypeGIF;
+extern NSString * const ZDD_MIMETypeTIFF;
 
 
 #pragma mark - Error Domain

@@ -17,6 +17,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ZDKSpinnerDelegate.h"
+
 @class ZDKRequest;
 
 #define ZDSDK_REQUEST_CELL_DESCRIPTION_FONT [UIFont systemFontOfSize:15.0f]

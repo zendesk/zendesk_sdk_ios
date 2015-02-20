@@ -53,6 +53,9 @@
 
 @property (nonatomic, retain) NSString *errorString;
 
+@property (nonatomic, strong) UIColor *tableSeparatorColor UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIColor *viewBackgroundColor UI_APPEARANCE_SELECTOR;
+
 /**
  * Init with provided frame and request.
  *

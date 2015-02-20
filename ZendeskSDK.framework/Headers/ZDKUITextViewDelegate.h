@@ -15,9 +15,13 @@
  */
 
 #import <Foundation/Foundation.h>
+@class ZDKUITextView;
 
 @protocol ZDKUITextViewDelegate <UITextViewDelegate>
 
 - (void) caretPosition:(CGRect)caret;
+
+@optional
+- (void) updateLayout:(ZDKUITextView*)textView;
 
 @end

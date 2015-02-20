@@ -20,7 +20,7 @@
 CG_INLINE CGRect
 CGRectMakeCenteredInScreen(CGFloat width, CGFloat height)
 {
-    CGRect screen = [[UIScreen mainScreen] bounds];
+    CGRect screen = [UIScreen mainScreen].bounds;
     
     UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
     
@@ -70,6 +70,39 @@ CGCenterRectInRect(CGRect rect, CGRect inRect)
 
 
 /**
+ *  Gets the UI_APPEARANCE_SELECTOR value for a view.
+ *
+ *  @param view     the appearance value will come from this view.
+ *  @param selector the appearance selector.
+ *
+ *  @return the appearance value or nil if none has been set.
+ */
++ (id) appearanceForView:(UIView*)view selector:(SEL)selector;
+
+
+/**
+ *  Gets the UI_APPEARANCE_SELECTOR value for a view returning a default if none has been set.
+ *
+ *  @param view         the appearance value will come from this view.
+ *  @param selector     the appearance selector.
+ *  @param defaultValue a default value to use if no appearance value has been set.
+ *
+ *  @return an appearance value.
+ */
++ (id) appearanceForView:(UIView*)view selector:(SEL)selector defaultValue:(id)defaultValue;
+
+
+/**
+ *  Checks to see if the majorVersionNumber is less than the current device version
+ *
+ *  @param majorVersionNumber is a single integer, eg: 7
+ *
+ *  @return YES if the current device number is less than majorVersionNumber.
+ */
++ (BOOL) isOlderVersion:(NSNumber *) majorVersionNumber;
+
+
+/**
  * isNewVersion checks to see if the majorVersionNumber is greater than the current device version
  * @param majorVersionNumber is a single integer, eg: 7
  */
@@ -99,5 +132,51 @@ CGCenterRectInRect(CGRect rect, CGRect inRect)
  * @return A new button.
  */
 + (UIButton*) buildButtonWithFrame:(CGRect)frame andTitle:(NSString*)title;
+
+
+/**
+ *  Returns current interface orientation. If orientation is unknown presume portrait
+ *
+ *  @return Current interface orientation
+ */
++ (UIInterfaceOrientation) currentInterfaceOrientation;
+
+
+/**
+ *  <#Description#>
+ *
+ *  @param size  <#size description#>
+ *  @param width <#width description#>
+ *
+ *  @return <#return value description#>
+ */
++ (CGFloat) scaledHeightForSize:(CGSize)size constrainedByWidth:(CGFloat)width;
+
+
+/**
+ *  <#Description#>
+ *
+ *  @return <#return value description#>
+ */
++ (BOOL) isPad;
+
+
+/**
+ *  <#Description#>
+ *
+ *  @return <#return value description#>
+ */
++ (BOOL) isLandscape;
+
+
+/*
+ *  Physically transform an image to match its imageRotation property.
+ *
+ *  @param image Image to rotate.
+ *
+ *  @return Correctly rotated image.
+ */
++ (UIImage *)fixOrientationOfImage:(UIImage*)image;
+
 
 @end

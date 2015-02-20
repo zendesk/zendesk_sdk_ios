@@ -1,6 +1,6 @@
 /*
  *
- *  ZDKHelpCenterProvide.h
+ *  ZDKHelpCenterProvider.h
  *  ZendeskSDK
  *
  *  Created by Zendesk on 06/11/2014.  
@@ -15,6 +15,7 @@
  */
 
 #import <Foundation/Foundation.h>
+#import "ZDKHelpCenterSearch.h"
 
 /**
  * Callback block.
@@ -64,6 +65,15 @@ typedef void (^ZDKHelpCenterCallback)(NSArray *items, NSError *error);
  *  @param callback The callback which will be called upon a successful or an erroneous response.
  */
 - (void) searchForArticlesUsingQuery:(NSString *)query andLabels:(NSArray *)labels withCallback: (ZDKHelpCenterCallback) callback;
+
+/**
+ *  This method will search articles in your Help Center filtered by the parameters in the given ZDKHelpCenterSearch
+ *  
+ *  @param search   The search to perform.
+ *  @param callback The callback which will be called upon a successful or an erroneous response.
+ *  @see <a href="https://developer.zendesk.com/rest_api/docs/help_center/search">Searching Help Center.</a>
+ */
+- (void) searchArticles:(ZDKHelpCenterSearch*) search withCallback: (ZDKHelpCenterCallback) callback;
 
 /**
  *  This method returns a list of attachments for a single article.

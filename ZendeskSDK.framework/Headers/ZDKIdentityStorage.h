@@ -20,6 +20,12 @@
 @interface ZDKIdentityStorage : NSObject
 
 /**
+ *  Store and fetch object that implements ZDKIdentity protocol in local storage
+ */
+@property (nonatomic, strong, getter=storedIdentity, setter=storeIdentity:) id<ZDKIdentity> identity;
+
+
+/**
  *  Get UUID from local storage or generate if required
  *
  *  @return NSString of UUID that has been generated
@@ -31,7 +37,7 @@
  *
  *  @param identity NSObject that implements ZDKIdentity protocol
  */
-- (void) storeIdentity:(NSObject <ZDKIdentity> *) identity;
+- (void) storeIdentity:(id <ZDKIdentity>) identity;
 
 /**
  *  Fetch stored Identity from local storage
@@ -47,6 +53,7 @@
  */
 - (NSString *) storedOAuthToken;
 
+
 /**
  *  Stores an OAuth token to be stored
  *
@@ -54,9 +61,11 @@
  */
 - (void) storeOAuthToken:(NSString *)oAuthToken;
 
+
 /**
  * Deletes ALL storage
  */
 - (void) deleteStoredData;
+
 
 @end

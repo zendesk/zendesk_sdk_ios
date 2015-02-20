@@ -15,7 +15,7 @@
  */
 
 #import <Foundation/Foundation.h>
-@class ZDKAppSettings;
+@class ZDKAppSettings, ZDKSettings;
 
 /**
  *  Block used to pass response from API call
@@ -23,7 +23,7 @@
  *  @param settings ZDKAppSettings returned based on applicationId set in ZDKConfig.init, can be nill on error
  *  @param error    NSError passed when an error has occured, can be nil on success
  */
-typedef void (^ZDKSettingsCallback)(ZDKAppSettings *settings, NSError *error);
+typedef void (^ZDKSettingsCallback)(ZDKSettings *settings, NSError *error);
 
 @interface ZDKSettingsProvider : NSObject
 
@@ -33,5 +33,14 @@ typedef void (^ZDKSettingsCallback)(ZDKAppSettings *settings, NSError *error);
  *  @param callback block callback invoked on success and error states
  */
 - (void) getSdkSettingsWithCallback:(ZDKSettingsCallback) callback;
+
+/**
+ *  Get SDK Settings from Zendesk instance using the specified locale.
+ *
+ *  @param locale   IETF language code. Config returned from server will contain this string if the local is supported, will
+ *                  be the default locale otherwise
+ *  @param callback block callback invoked on success and error states
+ */
+- (void) getSdkSettingsWithLocale:(NSString *)locale andCallback:(ZDKSettingsCallback) callback;
 
 @end

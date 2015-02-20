@@ -15,9 +15,15 @@
  */
 
 #import <Foundation/Foundation.h>
-@class ZDKAppSettings;
+
+@class ZDKSettings;
 
 @interface ZDKSettingsStorage : NSObject
+
+/**
+ *  The stored ZDKSettings.
+ */
+@property (nonatomic) ZDKSettings *settings;
 
 
 /**
@@ -37,27 +43,11 @@
 
 
 /**
- *  Gets the stored ZDKAppSettings
+ *  This method can check to see if there are any stored Settings
  *
- *  @return instance of ZDKAppSettings
+ *  @return true if the Storage contains the ZDKSettings, false otherwise.
  */
-- (ZDKAppSettings *) storedAppSettings;
-
-
-/**
- *  Saves the supplied ZDKAppSettings instance
- *
- *  @param appSettings instance of ZDKAppSettings
- */
-- (void) storeAppSettings:(ZDKAppSettings *) appSettings;
-
-
-/**
- *  This method can check to see if there are any stored App Settings
- *
- *  @return true if the Storage contains the ZDKAppSettings, false otherwise.
- */
-- (BOOL) hasStoredAppSettings;
+- (BOOL) hasStoredSettings;
 
 
 /**

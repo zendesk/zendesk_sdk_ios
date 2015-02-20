@@ -18,15 +18,58 @@
 #import "ZDKIdentity.h"
 @class ZDKAppSettings, ZDKAccount, ZDKSdkStorage;
 
+
 /*
  * ZDKConfig is responsible for initialization of
  * the SDK and manages the backend configuration.
  */
 @interface ZDKConfig : NSObject
 
+
+/**
+ *  The ZDKAccount for the configuration.
+ */
 @property (nonatomic, readonly) ZDKAccount *account;
+
+
+/**
+ * An array for custom fields.
+ *
+ * @see <a href="https://developer.zendesk.com/embeddables/docs/ios/providers#using-custom-fields-and-custom-forms">Custom fields and forms documentation</a>
+ */
 @property (nonatomic, strong) NSArray *customTicketFields;
+
+
+/**
+ * Form id for ticket creation.
+ *
+ * The ticket form id will be ignored if your Zendesk doesn't support it.  Currently
+ * Enterprise and higher plans support this.
+ *
+ * @see <a href="https://developer.zendesk.com/embeddables/docs/ios/providers#using-custom-fields-and-custom-forms">Custom fields and forms documentation</a>
+ */
 @property (nonatomic, strong) NSNumber *ticketFormId;
+
+
+/**
+ *  Returns YES if authentication type is Anonymous and NO if it authentication is JWT.
+ */
+@property (readonly) BOOL isAnonymousAuth;
+
+
+/**
+ *  Override the default locale specified via the SDK admin.
+ *  A request is made to check the language is supported. If it is not supported, or the request fails, the default
+ *  language remians in place. Should be an IETF language tag.
+ */
+@property (nonatomic, copy) NSString *userLocale;
+
+
+/**
+ *  Enable COPPA for SDK. 
+ */
+@property (nonatomic, assign) BOOL coppaEnabled;
+
 
 /**
  * Get the API instance (singleton).
@@ -34,10 +77,9 @@
  */
 + (instancetype) instance;
 
+
 /**
  *  Initialize the SDK.
- *
- *  This initializer is deprecated and is likely to be removed in the next release.
  *
  *  @param applicationId The application id of your SDK app, as found in the web interface.
  *  @param zendeskUrl    The full URL of your Zendesk instance, https://{subdomain}.zendesk.com
@@ -78,5 +120,6 @@
  *  @param aUserIdentity instance of NSObject that implements the protcol ZDKIdentity
  */
 - (void) setUserIdentity:(NSObject<ZDKIdentity> *) aUserIdentity;
+
 
 @end

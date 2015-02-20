@@ -93,5 +93,10 @@
 - (void) invalidateToken;
 
 
+/**
+ *  Inform the delegate that the user identity is invalid and should be discarded.
+ */
+- (void) invalidateIdentity;
+
 @end
 

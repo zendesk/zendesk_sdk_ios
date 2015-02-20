@@ -15,7 +15,9 @@
  */
 
 #import <Foundation/Foundation.h>
+
 @class ZDKCommentsResponse,ZDKComment;
+
 /**
  *  Block defined for callback to be used for handling async server responses for fetching a list of requests
  *
@@ -51,17 +53,32 @@ typedef void (^ZDKCreateRequestCallback)(id result, NSError *error);
 @interface ZDKRequestProvider : NSObject
 
 /**
- *  Calls a request service to create an anonymized request on behalf of the end-user.C
+ *  Calls a request service to create a request on behalf of the end-user.
  *
  *  @param subject     Message describing the subject of the request
  *  @param description More detailed description of a problem
  *  @param tags        List of label that mark the request
  *  @param callback    callback invoked in response to remote API invokation
  */
-- (void) createRequestWithSubject:(NSString *)subject
-                 andDescription:(NSString *)description
-                        andTags:(NSArray *)tags
-                    andCallback:(ZDKCreateRequestCallback) callback;
+- (void) createRequestWithSubject:(NSString *) subject
+                   andDescription:(NSString *) description
+                          andTags:(NSArray *) tags
+                      andCallback:(ZDKCreateRequestCallback) callback;
+
+/**
+ *  Calls a request service to create a request with attachments on behalf of the end-user.
+ *
+ *  @param subject     Message describing the subject of the request
+ *  @param description More detailed description of a problem
+ *  @param tags        List of label that mark the request
+ *  @param attachments List of ZDKUploadResponse objects
+ *  @param callback    callback invoked in response to remote API invokation
+ */
+- (void) createRequestWithSubject:(NSString *) subject
+                      description:(NSString *) description
+                             tags:(NSArray *) tags
+                      attachments:(NSArray *) attachments
+                      andCallback:(ZDKCreateRequestCallback) callback;
 
 /**
  * Gets all requests that user has opened.
@@ -95,9 +112,24 @@ typedef void (^ZDKCreateRequestCallback)(id result, NSError *error);
  *
  *  @param comment   The text of the comment to create
  *  @param requestId Id of a request to add this comment to
- *  @param callback  Callback that will deliver a
+ *  @param callback  Callback that will deliver a ZDKComment
  */
-- (void) addComment:(NSString *) comment forRequestId:(NSString *)requestId withCallback:(ZDKRequestAddCommentCallback) callback;
+- (void) addComment:(NSString *) comment forRequestId:(NSString *) requestId withCallback:(ZDKRequestAddCommentCallback) callback;
+
+
+/**
+ * Add a comment message to a request with attachments on behalf of the end-user.
+ * It will also get an access token if one has not been previously stored.
+ *
+ *  @param comment   The text of the comment to create
+ *  @param requestId Id of a request to add this comment to
+ *  @param attachments List of ZDKUploadResponse objects
+ *  @param callback  Callback that will deliver a ZDKComment.
+ */
+- (void) addComment:(NSString *) comment
+       forRequestId:(NSString *) requestId
+        attachments:(NSArray *) attachments
+       withCallback:(ZDKRequestAddCommentCallback) callback;
 
 
 @end

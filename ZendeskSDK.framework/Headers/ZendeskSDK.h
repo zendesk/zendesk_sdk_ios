@@ -24,17 +24,31 @@ FOUNDATION_EXPORT const unsigned char ZendeskSDKVersionString[];
 
 
 #import <ZendeskSDK/ZDKAccount.h>
+#import <ZendeskSDK/ZDKAccountSettings.h>
 #import <ZendeskSDK/ZDKAnonymousIdentity.h>
 #import <ZendeskSDK/ZDKAPIDispatcher.h>
 #import <ZendeskSDK/ZDKAppSettings.h>
 #import <ZendeskSDK/ZDKArticleView.h>
 #import <ZendeskSDK/ZDKArticleViewController.h>
+#import <ZendeskSDK/ZDKAttachment.h>
+#import <ZendeskSDK/ZDKAttachmentCache.h>
+#import <ZendeskSDK/ZDKAttachmentCollectionViewCell.h>
+#import <ZendeskSDK/ZDKAttachmentSettings.h>
+#import <ZendeskSDK/ZDKAttachmentView.h>
+#import <ZendeskSDK/ZDKAttachmentViewController.h>
+#import <ZendeskSDK/ZDKAttachmentViewDataSource.h>
 #import <ZendeskSDK/ZDKAvatarProvider.h>
 #import <ZendeskSDK/ZDKBundleUtils.h>
 #import <ZendeskSDK/ZDKCoding.h>
 #import <ZendeskSDK/ZDKComment.h>
 #import <ZendeskSDK/ZDKCommentEntryView.h>
+#import <ZendeskSDK/ZDKCommentInputView.h>
+#import <ZendeskSDK/ZDKCommentInputViewController.h>
 #import <ZendeskSDK/ZDKCommentsResponse.h>
+#import <ZendeskSDK/ZDKCommentsTableViewController.h>
+#import <ZendeskSDK/ZDKCommentsTableViewDataSource.h>
+#import <ZendeskSDK/ZDKCommentsTableViewDelegate.h>
+#import <ZendeskSDK/ZDKCommentsViewController.h>
 #import <ZendeskSDK/ZDKCommentWithUser.h>
 #import <ZendeskSDK/ZDKConfig.h>
 #import <ZendeskSDK/ZDKContactUsSettings.h>
@@ -60,6 +74,7 @@ FOUNDATION_EXPORT const unsigned char ZendeskSDKVersionString[];
 #import <ZendeskSDK/ZDKHelpCenterConversationsUIDelegate.h>
 #import <ZendeskSDK/ZDKHelpCenterDataSource.h>
 #import <ZendeskSDK/ZDKHelpCenterProvider.h>
+#import <ZendeskSDK/ZDKHelpCenterSearch.h>
 #import <ZendeskSDK/ZDKHelpCenterSearchDataSource.h>
 #import <ZendeskSDK/ZDKHelpCenterSection.h>
 #import <ZendeskSDK/ZDKHelpCenterSectionsDataSource.h>
@@ -67,6 +82,7 @@ FOUNDATION_EXPORT const unsigned char ZendeskSDKVersionString[];
 #import <ZendeskSDK/ZDKHelpCenterTableDelegate.h>
 #import <ZendeskSDK/ZDKIdentity.h>
 #import <ZendeskSDK/ZDKIdentityStorage.h>
+#import <ZendeskSDK/ZDKImageViewerViewController.h>
 #import <ZendeskSDK/ZDKJsonUtil.h>
 #import <ZendeskSDK/ZDKJwtIdentity.h>
 #import <ZendeskSDK/ZDKKeychainWrapper.h>
@@ -75,6 +91,8 @@ FOUNDATION_EXPORT const unsigned char ZendeskSDKVersionString[];
 #import <ZendeskSDK/ZDKRateMyAppSettings.h>
 #import <ZendeskSDK/ZDKReachability.h>
 #import <ZendeskSDK/ZDKRequest.h>
+#import <ZendeskSDK/ZDKRequestCommentAttachmentLoadingTableCell.h>
+#import <ZendeskSDK/ZDKRequestCommentAttachmentTableCell.h>
 #import <ZendeskSDK/ZDKRequestCommentsTable.h>
 #import <ZendeskSDK/ZDKRequestCommentsView.h>
 #import <ZendeskSDK/ZDKRequestCommentsViewController.h>
@@ -86,6 +104,7 @@ FOUNDATION_EXPORT const unsigned char ZendeskSDKVersionString[];
 #import <ZendeskSDK/ZDKRequests.h>
 #import <ZendeskSDK/ZDKRequestsResponse.h>
 #import <ZendeskSDK/ZDKRequestStorage.h>
+#import <ZendeskSDK/ZDKRequestWithAttachmentsUtil.h>
 #import <ZendeskSDK/ZDKRMA.h>
 #import <ZendeskSDK/ZDKRMAConfigObject.h>
 #import <ZendeskSDK/ZDKRMADataObject.h>
@@ -93,6 +112,7 @@ FOUNDATION_EXPORT const unsigned char ZendeskSDKVersionString[];
 #import <ZendeskSDK/ZDKRMADialogViewController.h>
 #import <ZendeskSDK/ZDKRMAFeedbackView.h>
 #import <ZendeskSDK/ZDKSdkStorage.h>
+#import <ZendeskSDK/ZDKSettings.h>
 #import <ZendeskSDK/ZDKSettingsProvider.h>
 #import <ZendeskSDK/ZDKSettingsStorage.h>
 #import <ZendeskSDK/ZDKSpinnerDelegate.h>
@@ -101,14 +121,19 @@ FOUNDATION_EXPORT const unsigned char ZendeskSDKVersionString[];
 #import <ZendeskSDK/ZDKSupportTableViewCell.h>
 #import <ZendeskSDK/ZDKSupportView.h>
 #import <ZendeskSDK/ZDKSupportViewController.h>
+#import <ZendeskSDK/ZDKStringUtil.h>
 #import <ZendeskSDK/ZDKToast.h>
 #import <ZendeskSDK/ZDKToastStyle.h>
 #import <ZendeskSDK/ZDKToastView.h>
 #import <ZendeskSDK/ZDKUIActivityView.h>
+#import <ZendeskSDK/ZDKUIImageScrollView.h>
+#import <ZendeskSDK/ZDKUILoadingView.h>
 #import <ZendeskSDK/ZDKUITextView.h>
 #import <ZendeskSDK/ZDKUITextViewDelegate.h>
 #import <ZendeskSDK/ZDKUIUtil.h>
 #import <ZendeskSDK/ZDKUIViewController.h>
 #import <ZendeskSDK/ZDKUser.h>
+#import <ZendeskSDK/ZDKUploadProvider.h>
+#import <ZendeskSDK/ZDKUploadResponse.h>
 #import <ZendeskSDK/ZendeskSDK.h>
 #import <ZendeskSDK/ZendeskSDKConstants.h>
