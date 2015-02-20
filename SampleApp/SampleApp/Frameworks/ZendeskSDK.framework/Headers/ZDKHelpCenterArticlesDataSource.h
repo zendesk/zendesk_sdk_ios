@@ -14,7 +14,7 @@
  *
  */
 
-#import <ZendeskSDK/ZendeskSDK.h>
+#import "ZDKHelpCenterDataSource.h"
 
 @interface ZDKHelpCenterArticlesDataSource : ZDKHelpCenterDataSource
 

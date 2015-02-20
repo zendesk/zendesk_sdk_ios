@@ -54,6 +54,12 @@
  */
 - (void) prepareUsingCommentWithUser:(ZDKCommentWithUser *)commentWithUser;
 
+/**
+ *  Convience method for cell reuse identifires.
+ *
+ *  @return a cell reuse identifier derived from NSStringFromClass.
+ */
++ (NSString *) reuseId;
 
 @end
 

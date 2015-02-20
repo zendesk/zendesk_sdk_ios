@@ -25,6 +25,24 @@
 
 
 /**
+ *  Frame of spinner.
+ */
+@property (nonatomic) CGRect frame;
+
+
+/**
+ *  Is the spinner hidden? YES or NO.
+ */
+@property (nonatomic) BOOL hidden;
+
+
+/**
+ *  The center of the view.
+ */
+@property (nonatomic) CGPoint center;
+
+
+/**
  * Start the spinner animating.
  */
 - (void) startAnimating;
@@ -34,45 +52,6 @@
  * Stop the spinner animating.
  */
 - (void) stopAnimating;
-
-
-/**
- * Is the view hidden?
- * @return true if hidden
- */
-- (BOOL) hidden;
-
-
-/**
- * Set the views hidden state.
- * @param isHidden set as true to hide, if setting to hidden the animation wil be stopped
- */
-- (void) setHidden:(BOOL)isHidden;
-
-
-/**
- * Get the current frame of the view.
- @ @return the view frame
- */
-- (CGRect) frame;
-
-/**
- * Get the current center of the view
- @ @return the view center
- */
-- (CGPoint) center;
-
-/**
- * Set the center of the view
- * @param center to be set
- */
-- (void) setCenter:(CGPoint)center;
-
-/**
- * Set the frame of the view.
- * @param frame the frame to set
- */
-- (void) setFrame:(CGRect)frame;
 
 
 @end

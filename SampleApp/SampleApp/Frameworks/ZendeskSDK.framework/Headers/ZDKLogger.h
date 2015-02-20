@@ -16,7 +16,9 @@
 
 #import <Foundation/Foundation.h>
 
+
 @interface ZDKLogger : NSObject
+
 
 /**
  *  SDK Logger
@@ -24,6 +26,7 @@
  *  @param format format string for log message.
  */
 + (void) log:(NSString *)format, ...;
+
 
 /**
  *  Set logger enabled

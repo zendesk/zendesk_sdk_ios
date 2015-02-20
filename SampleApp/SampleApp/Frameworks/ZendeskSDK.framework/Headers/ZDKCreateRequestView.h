@@ -31,6 +31,20 @@
  */
 @property (nonatomic, strong) ZDKUITextView *textView;
 
+/**
+ *  Button to allow user to attach images
+ */
+@property (nonatomic, strong) UIButton *attachImageButton;
+
+/**
+ *  Action sheet to allow attachment selection from camera or camera roll
+ */
+@property (nonatomic, strong) UIActionSheet *attachmentSourceSelectSheet;
+
+/**
+ *  Action sheet to allow deltion of attachments.
+ */
+@property (nonatomic, strong) UIActionSheet *attachmentOptionsSelectSheet;
 
 /**
  * Color for the text views placeholder text.
@@ -61,6 +75,39 @@
 
 
 /**
+ *  Attachment button image.
+ */
+@property (nonatomic, strong) UIImage *attachmentButtonImage UI_APPEARANCE_SELECTOR;
+
+/**
+ *  Attachment button border color.
+ */
+@property (nonatomic, strong) UIColor *attachmentButtonBorderColor UI_APPEARANCE_SELECTOR;
+
+/**
+ *  Attachment button corner radius.
+ */
+@property (nonatomic, assign) CGFloat attachmentButtonCornerRadius UI_APPEARANCE_SELECTOR;
+
+/**
+ *  Attachment button border width.
+ */
+@property (nonatomic, assign) CGFloat attachmentButtonBorderWidth UI_APPEARANCE_SELECTOR;
+
+/**
+ *  Attachment button background color
+ */
+@property (nonatomic, strong) UIColor *attachmentButtonBackground UI_APPEARANCE_SELECTOR;
+
+
+/**
+ *  Action sheet style
+ */
+@property (nonatomic, assign) UIActionSheetStyle attachmentActionSheetStyle UI_APPEARANCE_SELECTOR;
+
+
+
+/**
  * Loading spinner for the request creation view.
  */
 @property (nonatomic, strong) id<ZDKSpinnerDelegate> spinner UI_APPEARANCE_SELECTOR;
@@ -70,6 +117,17 @@
  * Number either 0 == NO, anything else is YES
  */
 @property (nonatomic, assign) NSInteger automaticallyHideNavBarOnLandscape  UI_APPEARANCE_SELECTOR;
+
+
+/**
+ *  Height of the textView frame
+ */
+@property (nonatomic, readonly, assign) NSInteger textViewHeight;
+
+/**
+ *  Initalize attachmentSourceSelectionSheet.
+ */
+- (void) initAttachmentSourceSheet;
 
 
 @end

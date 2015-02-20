@@ -129,6 +129,12 @@ typedef NS_ENUM(NSInteger, ZDKRMAFeedbackDialogState) {
 @property (nonatomic, strong) UIFont *textEntryFont UI_APPEARANCE_SELECTOR;
 @property (nonatomic, strong) UIFont *buttonFont UI_APPEARANCE_SELECTOR;
 @property (nonatomic, strong) id<ZDKSpinnerDelegate> spinner UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIColor *viewBackgroundColor UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIColor *headerColor UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIColor *subHeaderColor UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIColor *textEntryColor UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIColor *textEntryBackgroundColor UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIColor *placeHolderColor UI_APPEARANCE_SELECTOR;
 
 @property (nonatomic, strong) NSString *successImageName;
 @property (nonatomic, strong) NSString *errorImageName;

@@ -14,8 +14,8 @@
 
 @implementation ZDSampleViewController
 
-@synthesize rmaButton, requestCreationButton, requestListButton, helpCenterButton, helpCenterLabelsInput;
 
+@synthesize rmaButton, requestCreationButton, requestListButton, helpCenterButton, helpCenterLabelsInput;
 
 - (void) viewDidLoad
 {
@@ -24,33 +24,33 @@
     self.title = @"SDK Sample";
     
     rmaButton = [self buildButtonWithFrame:CGRectZero andTitle:@"Show Rate My App"];
-    rmaButton.accessibilityIdentifier = @"zdrma.sampleapp.requests-in-scrollview-button";
+    rmaButton.accessibilityIdentifier = @"rmaButton";
     rmaButton.backgroundColor = [UIColor whiteColor];
     [rmaButton addTarget:self action:@selector(rateMyApp) forControlEvents:UIControlEventTouchUpInside];
     [self.contentView addSubview:rmaButton];
 
     requestCreationButton = [self buildButtonWithFrame:CGRectZero andTitle:@"Contact Zendesk"];
-    requestCreationButton.accessibilityIdentifier = @"zdrma.sampleapp.push-view-button";
+    requestCreationButton.accessibilityIdentifier = @"contactZendeskButton";
     requestCreationButton.backgroundColor = [UIColor whiteColor];
     [requestCreationButton addTarget:self action:@selector(createRequest) forControlEvents:UIControlEventTouchUpInside];
     [self.contentView addSubview:requestCreationButton];
 
     requestListButton = [self buildButtonWithFrame:CGRectZero andTitle:@"Ticket List"];
-    requestListButton.accessibilityIdentifier = @"zdrma.sampleapp.requests-in-scrollview-button";
+    requestListButton.accessibilityIdentifier = @"ticketListButton";
     requestListButton.backgroundColor = [UIColor whiteColor];
     [requestListButton addTarget:self action:@selector(requestListView) forControlEvents:UIControlEventTouchUpInside];
     [self.contentView addSubview:requestListButton];
 
 
     helpCenterLabelsInput = [self buildTextFieldWithFrame:CGRectZero andPlaceholder:@"label1,label2,label3 (optional)"];
-    helpCenterLabelsInput.accessibilityIdentifier = @"zdrma.sampleapp.labels-text-input-field";
+    helpCenterLabelsInput.accessibilityIdentifier = @"hcLabelsField";
     helpCenterLabelsInput.backgroundColor = [UIColor whiteColor];
     //helpCenterButton pulls these out
     [self.contentView addSubview:helpCenterLabelsInput];
     
     
     helpCenterButton = [self buildButtonWithFrame:CGRectZero andTitle:@"Support"];
-    helpCenterButton.accessibilityIdentifier = @"zdrma.sampleapp.requests-in-scrollview-button";
+    helpCenterButton.accessibilityIdentifier = @"supportButton";
     helpCenterButton.backgroundColor = [UIColor whiteColor];
     [helpCenterButton addTarget:self action:@selector(support) forControlEvents:UIControlEventTouchUpInside];
     [self.contentView addSubview:helpCenterButton];
@@ -94,7 +94,15 @@
 
 - (void) requestListView
 {
-    [ZDKRequests showRequestListWithNavController:self.navigationController];
+    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        _modalNavController = [[UINavigationController alloc] init];
+        [ZDKRequests showRequestListWithNavController:_modalNavController];
+        [_modalNavController setModalPresentationStyle:UIModalPresentationFormSheet];
+    
+        [self presentViewController:_modalNavController animated:YES completion:nil];
+    } else {
+        [ZDKRequests showRequestListWithNavController:self.navigationController];
+    }
 }
 
 
@@ -103,12 +111,29 @@
     if(helpCenterLabelsInput.hasText){
         NSString *labelString = helpCenterLabelsInput.text;
         NSArray *labels = [labelString componentsSeparatedByString:@","];
-        [ZDKHelpCenter showHelpCenterWithNavController:self.navigationController filterByArticleLabels:labels];
+        
+        if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+            _modalNavController = [[UINavigationController alloc] init];
+            [ZDKHelpCenter showHelpCenterWithNavController:_modalNavController filterByArticleLabels:labels];
+            [_modalNavController setModalPresentationStyle:UIModalPresentationFormSheet];
+        
+            [self presentViewController:_modalNavController animated:YES completion:nil];
+        } else {
+            [ZDKHelpCenter showHelpCenterWithNavController:self.navigationController filterByArticleLabels:labels];
+        }
     }else{
-        [ZDKHelpCenter showHelpCenterWithNavController:self.navigationController];
+        
+        if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+            _modalNavController = [[UINavigationController alloc] init];
+            [ZDKHelpCenter showHelpCenterWithNavController:_modalNavController];
+            [_modalNavController setModalPresentationStyle:UIModalPresentationFormSheet];
+        
+            [self presentViewController:_modalNavController animated:YES completion:nil];
+        } else {
+           [ZDKHelpCenter showHelpCenterWithNavController:self.navigationController];
+        }
     }
 }
-
 
 - (void) rateMyApp
 {
@@ -126,6 +151,9 @@
     // Show the request creation screen
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        [self.navigationController setModalPresentationStyle:UIModalPresentationFormSheet];
+    }
     [ZDKRequests showRequestCreationWithNavController:self.navigationController];
 }
 

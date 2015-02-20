@@ -15,7 +15,7 @@
  */
 
 #import <Foundation/Foundation.h>
-@class ZDKRequestStorage, ZDKIdentityStorage, ZDKSettingsStorage, ZDKRateMyAppStorage;
+@class ZDKRequestStorage, ZDKIdentityStorage, ZDKSettingsStorage;
 
 @interface ZDKSdkStorage : NSObject
 
@@ -23,7 +23,7 @@
 @property (nonatomic, readonly) ZDKRequestStorage *requestStorage;
 @property (nonatomic, readonly) ZDKIdentityStorage *identityStorage;
 @property (nonatomic, readonly) ZDKSettingsStorage *settingsStorage;
-@property (nonatomic, readonly) ZDKRateMyAppStorage *rmaAppStorage;
+
 
 /**
  * Clears user data from storage.

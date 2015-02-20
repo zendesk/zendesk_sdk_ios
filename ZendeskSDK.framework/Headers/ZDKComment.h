@@ -40,6 +40,11 @@
  */
 @property (nonatomic, strong) NSDate *createdAt;
 
+/**
+ *  Collection of ZDKAttachments associated with this comment
+ */
+@property (nonatomic, strong) NSArray *attachments;
+
 
 /**
  * Initialise the model object with the account details ands the dispatcher to be used for requests.

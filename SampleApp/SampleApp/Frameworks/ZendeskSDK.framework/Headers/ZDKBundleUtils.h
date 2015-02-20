@@ -97,4 +97,22 @@
  */
 + (UIImage *) createRequestImage;
 
+/**
+ *  Returns the attachment image from ZendeskSDK bundle.
+ *
+ *  @return An image, or nil if the image was not found.
+ */
++ (UIImage *) attachmentImage;
+
+
+/**
+ *  Returns an image resource from ZendeskSDK bundle.
+ *
+ *  @param name the name of the image.
+ *  @param extension the extension of the image.
+ *
+ *  @return An image, or nil if the image was not found.
+ */
++ (UIImage *) imageNamed:(NSString *)name ofType:(NSString *)extension;
+
 @end

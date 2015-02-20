@@ -50,7 +50,7 @@ typedef NS_ENUM(NSUInteger, ZDKSupportViewState) {
 /**
  *  The state of the support view. 
  */
-@property (nonatomic, readonly) ZDKSupportViewState viewState;
+@property (nonatomic) ZDKSupportViewState viewState;
 
 /**
  * Lists categorys, sections and articles.

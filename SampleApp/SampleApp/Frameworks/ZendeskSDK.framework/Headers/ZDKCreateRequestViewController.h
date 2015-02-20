@@ -16,16 +16,25 @@
 
 
 #import <UIKit/UIKit.h>
+#import <MobileCoreServices/MobileCoreServices.h>
+
 #import "ZDKAPIDispatcher.h"
 #import "ZDKUITextViewDelegate.h"
 #import "ZDKUIViewController.h"
+#import "ZDKUITextView.h"
 
 @class ZDKCreateRequestView;
 
 /**
  * Request creation view controller.
  */
-@interface ZDKCreateRequestViewController : ZDKUIViewController <ZDKUITextViewDelegate, UITextFieldDelegate>
+@interface ZDKCreateRequestViewController : ZDKUIViewController<ZDKUITextViewDelegate,
+                                                                UITextFieldDelegate,
+                                                                UIActionSheetDelegate,
+                                                                UIImagePickerControllerDelegate,
+                                                                UINavigationControllerDelegate,
+                                                                UITableViewDelegate,
+                                                                UITableViewDataSource>
 
 
 /**

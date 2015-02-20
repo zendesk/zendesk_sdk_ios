@@ -14,9 +14,7 @@
  *
  */
 #import <Foundation/Foundation.h>
-
-#import "ZDKSupportTableViewCell.h"
-
+#import "ZDKHelpCenterProvider.h"
 
 
 
@@ -32,6 +30,8 @@ typedef void (^ZDKHelpCenterCellConfigureBlock)(id cell, id item);
 @interface ZDKHelpCenterDataSource : NSObject <UITableViewDataSource> {
     BOOL _hasItems;
     NSArray *_items;
+    ZDKHelpCenterProvider *_provider;
+    ZDKHelpCenterCallback _callback;
 }
 
 
@@ -46,6 +46,11 @@ typedef void (^ZDKHelpCenterCellConfigureBlock)(id cell, id item);
  */
 @property (nonatomic, copy, readonly) NSArray *items;
 
+
+/**
+ * Help Center provider.
+ */
+@property (nonatomic, readonly) ZDKHelpCenterProvider *provider;
 
 
 /**
@@ -62,7 +67,7 @@ typedef void (^ZDKHelpCenterCellConfigureBlock)(id cell, id item);
 - (id)itemAtIndexPath:(NSIndexPath *)indexPath;
 
 /**
- * Returns cell identifier for the data source. Default ZDKHelpCenterTableViewCell. Override if using a different cell typr
+ * Returns cell identifier for the data source. Default ZDKHelpCenterTableViewCell. Override if using a different cell type.
  */
 + (NSString *) cellIdentifierForDataSource;
 

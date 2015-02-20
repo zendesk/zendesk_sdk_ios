@@ -24,13 +24,13 @@
 /**
  * API success block.
  */
-typedef void (^ZDKAPISuccess) (id);
+typedef void (^ZDKAPISuccess) (id result);
 
 
 /**
  * API error block
  */
-typedef void (^ZDKAPIError) (NSError*);
+typedef void (^ZDKAPIError) (NSError *error);
 
 
 /**
