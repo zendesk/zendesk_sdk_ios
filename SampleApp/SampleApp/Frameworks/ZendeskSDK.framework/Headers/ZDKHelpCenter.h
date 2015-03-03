@@ -16,6 +16,7 @@
 
 #import <Foundation/Foundation.h>
 #import "ZDKHelpCenterConversationsUIDelegate.h"
+#import "ZDKUIViewController.h"
 
 
 @interface ZDKHelpCenter : NSObject <ZDKHelpCenterConversationsUIDelegate>
@@ -23,11 +24,30 @@
 
 
 /**
- *  Displays the Help Center view on top the view controller that is passed in.
+ *  Displays the Help Center view on top the navigation controller that is passed in.
  *
  *  @param navController The UINavigationController from which to pressent the request creation view.
  */
 + (void) showHelpCenterWithNavController:(UINavigationController*)navController;
+
+
+/**
+ *  Displays the Help Center view on top the navigation controller that is passed in.
+ *
+ *  @param navController The UINavigationController from which to pressent the request creation view.
+ *  @param aGuide        Should the request list respect top and bottom layout guide? Pass in
+ *                       one of the const values, ZDKLayoutRespectAll, ZDKLayoutRespectNone,
+ *                       ZDKLayoutRespectTop and ZDKLayoutRespectBottom.
+ */
++ (void) showHelpCenterWithNavController:(UINavigationController*)navController layoutGudie:(ZDKLayoutGuide)aGuide;
+
+
+/**
+ *  Modally display the Help Center view on top the navigation controller that is passed in.
+ *
+ *  @param navController The UINavigationController from which to pressent the request creation view.
+ */
++ (void) presentHelpCenterWithNavController:(UINavigationController*)navController;
 
 
 /**
@@ -37,6 +57,29 @@
  *  @param labels        Array of labels. Articles containing only these labels are displayed.
  */
 + (void) showHelpCenterWithNavController:(UINavigationController *)navController filterByArticleLabels:(NSArray *)labels;
+
+
+/**
+ *  Displays the Help Center view on top of the view controller that is passed in.
+ *
+ *  @param navController The UINavigationController from which to pressent the request creation view.
+ *  @param labels        Array of labels. Articles containing only these labels are displayed.
+ *  @param aGuide        Should the request list respect top and bottom layout guide? Pass in
+ *                       one of the const values, ZDKLayoutRespectAll, ZDKLayoutRespectNone,
+ *                       ZDKLayoutRespectTop and ZDKLayoutRespectBottom.
+ */
++ (void) showHelpCenterWithNavController:(UINavigationController *)navController
+                   filterByArticleLabels:(NSArray *)labels
+                             layoutGudie:(ZDKLayoutGuide)aGuide;
+
+
+/**
+ *  Modally display the Help Center view on top of the navigation controller that is passed in.
+ *
+ *  @param navController The UINavigationController from which to pressent the request creation view.
+ *  @param labels        Array of labels. Articles containing only these labels are displayed.
+ */
++ (void) presentHelpCenterWithNavController:(UINavigationController *)navController filterByArticleLabels:(NSArray *)labels;
 
 
 /**

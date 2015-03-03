@@ -24,6 +24,7 @@
 /**
  * Comments view containing the comments list/table and the comment entry and addition view.
  */
+__deprecated_msg(" As of version 1.1.1.1");
 @interface ZDKRequestCommentsView : UIView <UITextViewDelegate>
 
 

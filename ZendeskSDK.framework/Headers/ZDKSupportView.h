@@ -93,7 +93,7 @@ typedef NS_ENUM(NSUInteger, ZDKSupportViewState) {
 /**
  * Searchbar UIBarstyle.
  */
-@property (nonatomic, assign) UIBarStyle searchBarStyle UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) NSNumber *searchBarStyle UI_APPEARANCE_SELECTOR;
 
 /**
  * Color of the table seperator.
@@ -132,12 +132,12 @@ typedef NS_ENUM(NSUInteger, ZDKSupportViewState) {
 /**
  * Border width of contact support button, shown on no search results.
  */
-@property (nonatomic, assign) CGFloat noResultsContactButtonBorderWidth UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) NSNumber *noResultsContactButtonBorderWidth UI_APPEARANCE_SELECTOR;
 
 /**
  * Corner radius of contact support button, shown on no search results.
  */
-@property (nonatomic, assign) CGFloat noResultsContactButtonCornerRadius UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) NSNumber *noResultsContactButtonCornerRadius UI_APPEARANCE_SELECTOR;
 
 /**
  * Font of contact support button, shown on no search results.
@@ -147,7 +147,7 @@ typedef NS_ENUM(NSUInteger, ZDKSupportViewState) {
 /**
  * UIEdgeInsets of contact support button, shown on no search results.
  */
-@property (nonatomic, assign) UIEdgeInsets noResultsContactButtonEdgeInsets UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) NSValue *noResultsContactButtonEdgeInsets UI_APPEARANCE_SELECTOR;
 
 /**
  * Title color of contact support button in normal state.
@@ -168,9 +168,9 @@ typedef NS_ENUM(NSUInteger, ZDKSupportViewState) {
 #pragma mark Nav bar appearance
 
 /**
- * Number either 0 == NO, anything else is YES
+ * Add @ anotation when setting, either @NO or @YES.
  */
-@property (nonatomic, assign) NSInteger automaticallyHideNavBarOnLandscape  UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) NSNumber *automaticallyHideNavBarOnLandscape  UI_APPEARANCE_SELECTOR;
 
 
 @end

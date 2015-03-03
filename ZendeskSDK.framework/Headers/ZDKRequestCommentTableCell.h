@@ -19,8 +19,8 @@
 #import "ZDKSpinnerDelegate.h"
 @class ZDKCommentWithUser;
 
-#define ZD_COMMENT_CELL_AGENT_BODY_FONT [UIFont systemFontOfSize:15.0f];
-#define ZD_COMMENT_CELL_AGENT_BODY_COLOR [UIColor colorWithWhite:0.38f alpha:1.0f];
+#define ZD_COMMENT_CELL_AGENT_BODY_FONT [UIFont systemFontOfSize:15.0f]
+#define ZD_COMMENT_CELL_AGENT_BODY_COLOR [UIColor colorWithWhite:0.38f alpha:1.0f]
 #define ZD_COMMENT_CELL_AGENT_BG_COLOR [UIColor whiteColor]
 #define ZD_COMMENT_CELL_AGENT_TIMESTAMP_FONT [UIFont systemFontOfSize:11.0f]
 #define ZD_COMMENT_CELL_AGENT_TIMESTAMP_COLOR [UIColor colorWithWhite:0.721f alpha:1.0f]
@@ -67,7 +67,7 @@
 #pragma mark - agent
 
 
-#define ZD_COMMENT_CELL_AGENT_AVATAR_SIZE 40.0f
+static CGFloat const ZD_COMMENT_CELL_AGENT_AVATAR_SIZE = 40.f;
 #define ZD_COMMENT_CELL_AGENT_NAME_FONT [UIFont systemFontOfSize:14.0f]
 #define ZD_COMMENT_CELL_AGENT_NAME_COLOR [UIColor colorWithWhite:0.25f alpha:1.0f]
 
@@ -96,7 +96,7 @@
 /**
  * Avatar diameter.
  */
-@property (nonatomic, assign) CGFloat avatarSize UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) NSNumber *avatarSize UI_APPEARANCE_SELECTOR;
 
 /**
  * Agent name text font.
@@ -228,7 +228,7 @@
 /**
  * Left content inset.
  */
-@property (nonatomic, assign) CGFloat leftInset UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) NSNumber *leftInset UI_APPEARANCE_SELECTOR;
 
 /**
  * Spinner to indicate the loading state.

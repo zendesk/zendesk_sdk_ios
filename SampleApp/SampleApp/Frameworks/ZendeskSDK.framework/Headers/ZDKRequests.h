@@ -17,15 +17,10 @@
 
 #import <Foundation/Foundation.h>
 #import "ZDKAPIDispatcher.h"
-#import "ZDKCreateRequestViewController.h"
-#import "ZDKRequestListTableCell.h"
-#import "ZDKRequestListTable.h"
-#import "ZDKRequestCommentsViewController.h"
-#import "ZDKRequestCommentsView.h"
-#import "ZDKRequestCommentsTable.h"
-#import "ZDKCommentEntryView.h"
-#import "ZDKRequestCommentTableCell.h"
 #import "ZDKCreateRequestUIDelegate.h"
+#import "ZDKUIViewController.h"
+
+@class ZDKRequestListTable;
 
 #pragma mark Request creation config
 
@@ -127,11 +122,30 @@ typedef void (^ZDSDKConfigBlock) (ZDKAccount *account, ZDKRequestCreationConfig 
 
 
 /**
+ *  Displays a request list view controller modally. 
+ *
+ *  @param navController A navigation controller from which to push the request creation view.
+ */
++ (void) presentRequestListWithNavController:(UINavigationController *)navController;
+
+
+/**
  *  Displays a request list view controller.
  *
  *  @param navController A navigation controller from which to push the request creation view.
  */
 + (void) showRequestListWithNavController:(UINavigationController *)navController;
+
+
+/**
+ *  Displays a request list view controller.
+ *
+ *  @param navController A navigation controller from which to push the request creation view.
+ *  @param aGuide        Should the request list respect top and bottom layout guide? Pass in 
+ *                       one of the const values, ZDKLayoutRespectAll, ZDKLayoutRespectNone, 
+ *                       ZDKLayoutRespectTop and ZDKLayoutRespectBottom.
+ */
++ (void) showRequestListWithNavController:(UINavigationController *)navController layoutGudie:(ZDKLayoutGuide)aGuide;
 
 
 /**
@@ -141,7 +155,7 @@ typedef void (^ZDSDKConfigBlock) (ZDKAccount *account, ZDKRequestCreationConfig 
  * @param selector the selector to be invoked on table update events
  * @return a new request list component
  */
-+ (ZDKRequestListTable*) newRequestListWith:(id)observer andSelector:(SEL)selector;
++ (ZDKRequestListTable*) newRequestListWith:(id)observer andSelector:(SEL)selector __deprecated_msg(" As of version 1.1.1.1");
 
 
 /**

@@ -74,6 +74,14 @@
 
 
 /**
+ *  Returns the cell height for the current table state, e.g. loading or loaded.
+ *
+ *  @return a table cell height. 
+ */
+- (CGFloat) cellHeight;
+
+
+/**
  * Register the observer for NSNotification events that the list has been updated.
  *
  * @param observer the instance to be added as observer

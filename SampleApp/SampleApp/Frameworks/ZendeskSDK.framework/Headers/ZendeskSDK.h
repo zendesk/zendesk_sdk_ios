@@ -16,12 +16,6 @@
 
 #import <UIKit/UIKit.h>
 
-//! Project version number for ZendeskSDK.
-FOUNDATION_EXPORT double ZendeskSDKVersionNumber;
-
-//! Project version string for ZendeskSDK.
-FOUNDATION_EXPORT const unsigned char ZendeskSDKVersionString[];
-
 
 #import <ZendeskSDK/ZDKAccount.h>
 #import <ZendeskSDK/ZDKAccountSettings.h>

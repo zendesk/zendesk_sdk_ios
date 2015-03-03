@@ -14,8 +14,11 @@
  *
  */
 
-#import "ZDKRequests.h"
-#import "ZDKCreateRequestUIDelegate.h"
+#import "ZDKUIViewController.h"
+
+@class ZDKRequestListTable;
+
+@protocol ZDKCreateRequestUIDelegate;
 
 @interface ZDKRequestListViewController : ZDKUIViewController
 

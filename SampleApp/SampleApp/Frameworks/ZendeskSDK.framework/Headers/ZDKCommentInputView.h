@@ -120,6 +120,10 @@
  */
 @property (nonatomic, strong) UIColor *areaBackgroundColor UI_APPEARANCE_SELECTOR;
 
+
+/**
+ *  Background color of attachment buttton.
+ */
 @property (nonatomic, strong) UIColor *attachmentButtonBackgroundColor UI_APPEARANCE_SELECTOR;
 
 

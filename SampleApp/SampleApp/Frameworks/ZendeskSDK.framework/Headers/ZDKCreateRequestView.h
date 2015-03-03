@@ -39,12 +39,12 @@
 /**
  *  Action sheet to allow attachment selection from camera or camera roll
  */
-@property (nonatomic, strong) UIActionSheet *attachmentSourceSelectSheet;
+@property (nonatomic, strong) UIActionSheet *attachmentSourceSelectSheet __deprecated_msg(" As of version 1.1.1.1");;
 
 /**
  *  Action sheet to allow deltion of attachments.
  */
-@property (nonatomic, strong) UIActionSheet *attachmentOptionsSelectSheet;
+@property (nonatomic, strong) UIActionSheet *attachmentOptionsSelectSheet __deprecated_msg(" As of version 1.1.1.1");;
 
 /**
  * Color for the text views placeholder text.
@@ -87,12 +87,12 @@
 /**
  *  Attachment button corner radius.
  */
-@property (nonatomic, assign) CGFloat attachmentButtonCornerRadius UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) NSNumber *attachmentButtonCornerRadius UI_APPEARANCE_SELECTOR;
 
 /**
  *  Attachment button border width.
  */
-@property (nonatomic, assign) CGFloat attachmentButtonBorderWidth UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) NSNumber *attachmentButtonBorderWidth UI_APPEARANCE_SELECTOR;
 
 /**
  *  Attachment button background color
@@ -103,8 +103,7 @@
 /**
  *  Action sheet style
  */
-@property (nonatomic, assign) UIActionSheetStyle attachmentActionSheetStyle UI_APPEARANCE_SELECTOR;
-
+@property (nonatomic, strong) NSNumber *attachmentActionSheetStyle UI_APPEARANCE_SELECTOR;
 
 
 /**
@@ -114,9 +113,9 @@
 
 
 /**
- * Number either 0 == NO, anything else is YES
+ * Add @ anotation when setting, either @NO or @YES.
  */
-@property (nonatomic, assign) NSInteger automaticallyHideNavBarOnLandscape  UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) NSNumber *automaticallyHideNavBarOnLandscape  UI_APPEARANCE_SELECTOR;
 
 
 /**
@@ -127,7 +126,8 @@
 /**
  *  Initalize attachmentSourceSelectionSheet.
  */
-- (void) initAttachmentSourceSheet;
+- (void) initAttachmentSourceSheet __deprecated_msg(" As of version 1.1.1.1");;
+
 
 
 @end

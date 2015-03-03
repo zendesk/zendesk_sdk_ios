@@ -45,6 +45,8 @@ static CGFloat const    ZDSDKPadding              = 15.f;
 @synthesize urlDescription, authenticationOption;
 @synthesize urlEntry, appIdEntry, clientIdEntry, userIdentifierEntry, nameEntry, emailEntry, externalIdEntry;
 @synthesize scrollView;
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];

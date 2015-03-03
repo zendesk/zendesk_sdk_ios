@@ -25,9 +25,9 @@
 #define ZDSDK_REQUEST_CELL_UNREAD_COLOR [UIColor colorWithRed:0.47059f green:0.6392f blue:0.0f alpha:1.0f]
 #define ZDSDK_REQUEST_CELL_DESCRIPTION_COLOR [UIColor colorWithWhite:0.26f alpha:1.0f]
 #define ZDSDK_REQUEST_CELL_CREATED_AT_COLOR [UIColor colorWithWhite:0.54f alpha:1.0f]
-#define ZDSDK_REQUEST_CELL_VERTICAL_MARGIN 20.0f
-#define ZDSDK_REQUEST_CELL_DESCRIPTION_TS_MARGIN 5.0f
-#define ZDSDK_REQUEST_CELL_LEFT_INSET 25.0f
+static CGFloat const ZDSDK_REQUEST_CELL_VERTICAL_MARGIN = 20.0f;
+static CGFloat const ZDSDK_REQUEST_CELL_DESCRIPTION_TS_MARGIN = 5.0f;
+static CGFloat const ZDSDK_REQUEST_CELL_LEFT_INSET = 25.0f;
 #define ZDSDK_REQUEST_CELL_BACKGROUND_COLOR [UIColor whiteColor]
 
 #define ZDSDK_REQUEST_CELL_EMPTY_FONT [UIFont systemFontOfSize:11.0f]
@@ -89,22 +89,22 @@
 /**
  * Vertical margin between the cell content and the cell edge.
  */
-@property (nonatomic, assign) CGFloat verticalMargin UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) NSNumber *verticalMargin UI_APPEARANCE_SELECTOR;
 
 /**
  * Vertrical margin between the description text and the timestamp/created at text
  */
-@property (nonatomic, assign) CGFloat descriptionTimestampMargin UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) NSNumber *descriptionTimestampMargin UI_APPEARANCE_SELECTOR;
 
 /**
  * Left content inset.
  */
-@property (nonatomic, assign) CGFloat leftInset UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) NSNumber *leftInset UI_APPEARANCE_SELECTOR;
 
 /**
  * Background color of the cell.
  */
-@property (nonatomic, assign) UIColor *cellBackgroundColor UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIColor *cellBackgroundColor UI_APPEARANCE_SELECTOR;
 
 
 /**

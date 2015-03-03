@@ -24,7 +24,7 @@
 
 - (void) didCloseAttachmentView;
 
-- (void) attachmentTooLarge;
+- (void) attachmentTooLarge:(NSData *)data;
 
 - (void) attachmentsView:(ZDKAttachmentView *)attachmentView didSelectAttachment:(NSString *)attachment data:(NSData*)data;
 
