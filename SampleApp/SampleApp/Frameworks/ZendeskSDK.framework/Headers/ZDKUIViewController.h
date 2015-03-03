@@ -20,15 +20,17 @@
 @class ZDKReachability, ZDKToastView;
 
 
-/**
- * Helper for device orientation.
- */
-CG_INLINE BOOL
-ZDKUIIsLandscape()
-{
-    UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
-    return UIInterfaceOrientationIsLandscape(orientation);
-}
+struct ZDKLayoutGuide {
+    BOOL layoutTopGuide;
+    BOOL layoutBottomGuide;
+};
+
+typedef struct ZDKLayoutGuide ZDKLayoutGuide;
+
+extern ZDKLayoutGuide const ZDKLayoutRespectAll;
+extern ZDKLayoutGuide const ZDKLayoutRespectNone;
+extern ZDKLayoutGuide const ZDKLayoutRespectTop;
+extern ZDKLayoutGuide const ZDKLayoutRespectBottom;
 
 
 /**
@@ -41,6 +43,12 @@ ZDKUIIsLandscape()
     CGFloat _keyboardHeight;
     CGFloat _toastHeight;
 }
+
+
+/**
+ * Should the view controller respect topLayoutGuide and bottomLayoutGuide introduced in iOS7.
+ */
+@property (nonatomic, assign) ZDKLayoutGuide layoutGuide;
 
 
 /** 

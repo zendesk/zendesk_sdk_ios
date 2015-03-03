@@ -22,7 +22,10 @@
 
 /**
  * View controller for presenting the request comments and add-comment interface.
+ *
+ * @deprecated No longer used by default. Replaced by ZDKCommentsViewController.
  */
+__deprecated_msg(" As of version 1.1.1.1")
 @interface ZDKRequestCommentsViewController : ZDKUIViewController
 
 

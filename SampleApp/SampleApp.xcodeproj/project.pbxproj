@@ -23,41 +23,9 @@
 		F160B6D61949E2D600AEF42D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F160B6D51949E2D600AEF42D /* UIKit.framework */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		C3347CFD19E51E28002E703E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C3347CF819E51E28002E703E /* ZendeskSDK.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = C333A42119DEDF050046B858;
-			remoteInfo = ZendeskSDK;
-		};
-		C3347D0119E51E34002E703E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C3347CF819E51E28002E703E /* ZendeskSDK.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = C333A42019DEDF050046B858;
-			remoteInfo = ZendeskSDK;
-		};
-		C38D73B71A03BFE60058C48A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C3347CF819E51E28002E703E /* ZendeskSDK.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = C38D73A91A03B13E0058C48A;
-			remoteInfo = ZendeskSDKStrings;
-		};
-		C3E803B119F81CB6002554BE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C3347CF819E51E28002E703E /* ZendeskSDK.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = C3E8039C19F80B17002554BE;
-			remoteInfo = ZendeskSDKResources;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		837AB70E1A8E511700B86214 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		C333A54119E29EC40046B858 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		C3347CF819E51E28002E703E /* ZendeskSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ZendeskSDK.xcodeproj; path = ../ZendeskSDK/ZendeskSDK.xcodeproj; sourceTree = "<group>"; };
 		C38311B31A1A352B00F7979A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = SampleApp/main.m; sourceTree = "<group>"; };
 		C38311B41A1A352B00F7979A /* SampleApp-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "SampleApp-Info.plist"; path = "SampleApp/SampleApp-Info.plist"; sourceTree = "<group>"; };
 		C38311B51A1A352B00F7979A /* SampleApp-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "SampleApp-Prefix.pch"; path = "SampleApp/SampleApp-Prefix.pch"; sourceTree = "<group>"; };
@@ -97,16 +65,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C3347CF919E51E28002E703E /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				C3347CFE19E51E28002E703E /* ZendeskSDK.framework */,
-				C3E803B219F81CB6002554BE /* ZendeskSDK.bundle */,
-				C38D73B81A03BFE60058C48A /* ZendeskSDKStrings.bundle */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		C38311BB1A1A353200F7979A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -184,7 +142,6 @@
 			isa = PBXGroup;
 			children = (
 				837AB70E1A8E511700B86214 /* MobileCoreServices.framework */,
-				C3347CF819E51E28002E703E /* ZendeskSDK.xcodeproj */,
 				C3EF3EFD1A1A1B5400168A69 /* ZendeskSDK.framework */,
 				C333A54119E29EC40046B858 /* SystemConfiguration.framework */,
 				F160B6D11949E2D600AEF42D /* Foundation.framework */,
@@ -209,7 +166,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				C3347D0219E51E34002E703E /* PBXTargetDependency */,
 			);
 			name = SampleApp;
 			productName = CoreSDKSample;
@@ -240,42 +196,12 @@
 			mainGroup = F160B6C51949E2D600AEF42D;
 			productRefGroup = F160B6CF1949E2D600AEF42D /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = C3347CF919E51E28002E703E /* Products */;
-					ProjectRef = C3347CF819E51E28002E703E /* ZendeskSDK.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				F160B6CD1949E2D600AEF42D /* SampleApp */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		C3347CFE19E51E28002E703E /* ZendeskSDK.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = ZendeskSDK.framework;
-			remoteRef = C3347CFD19E51E28002E703E /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		C38D73B81A03BFE60058C48A /* ZendeskSDKStrings.bundle */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = ZendeskSDKStrings.bundle;
-			remoteRef = C38D73B71A03BFE60058C48A /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		C3E803B219F81CB6002554BE /* ZendeskSDK.bundle */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = ZendeskSDK.bundle;
-			remoteRef = C3E803B119F81CB6002554BE /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		F160B6CC1949E2D600AEF42D /* Resources */ = {
@@ -304,14 +230,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		C3347D0219E51E34002E703E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = ZendeskSDK;
-			targetProxy = C3347D0119E51E34002E703E /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		F160B6F81949E2D600AEF42D /* Debug */ = {

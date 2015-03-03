@@ -66,16 +66,83 @@ CGCenterRectInRect(CGRect rect, CGRect inRect)
 }
 
 
+/**
+ * Helper for device orientation.
+ */
+CG_INLINE BOOL
+ZDKUIIsLandscape()
+{
+    UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
+    return UIInterfaceOrientationIsLandscape(orientation);
+}
+
+
+/**
+ * Returns the full screen frame with no attempt to account for the status bar.
+ */
+CG_INLINE CGRect
+ZDKUIScreenFrame()
+{
+    CGSize screenSize = [UIScreen mainScreen].bounds.size;
+
+    CGFloat width = screenSize.width;
+    CGFloat height = screenSize.height;
+
+    if (ZDKUIIsLandscape() && width < height) {
+
+        width = height;
+        height = screenSize.width;
+    }
+
+    return CGRectMake(0, 0, width, height);
+}
+
+
+/**
+ * Get the origin of the supplied view in the window.
+ */
+CG_INLINE CGPoint
+ZDKUIOriginInWindow(UIView *view)
+{
+    return [view convertPoint:view.bounds.origin
+                       toView:[UIApplication sharedApplication].keyWindow.rootViewController.view];
+}
+
+
+
 @interface ZDKUIUtil : NSObject
+
+
+/**
+ *  Gets the UI_APPEARANCE_SELECTOR value for a class.
+ *
+ *  @param class    The appearance value will come from this class.
+ *  @param selector The appearance selector
+ *
+ *  @return An appearance value or nil if none have been set.
+ */
++ (id) appearanceForClass:(Class)class selector:(SEL)selector;
+
+
+/**
+ *  Gets the UI_APPEARANCE_SELECTOR value for a class returning a default value if none have been set.
+ *
+ *  @param class        The appearance value will come from this class.
+ *  @param selector     The appearance selector
+ *  @param defaultValue The default value to use if no appearance value has been set.
+ *
+ *  @return An appearance value.
+ */
++ (id) appearanceForClass:(Class)class selector:(SEL)selector defaultValue:(id)defaultValue;
 
 
 /**
  *  Gets the UI_APPEARANCE_SELECTOR value for a view.
  *
- *  @param view     the appearance value will come from this view.
- *  @param selector the appearance selector.
+ *  @param view     The appearance value will come from this view.
+ *  @param selector The appearance selector.
  *
- *  @return the appearance value or nil if none has been set.
+ *  @return The appearance value or nil if none has been set.
  */
 + (id) appearanceForView:(UIView*)view selector:(SEL)selector;
 
@@ -83,11 +150,11 @@ CGCenterRectInRect(CGRect rect, CGRect inRect)
 /**
  *  Gets the UI_APPEARANCE_SELECTOR value for a view returning a default if none has been set.
  *
- *  @param view         the appearance value will come from this view.
- *  @param selector     the appearance selector.
- *  @param defaultValue a default value to use if no appearance value has been set.
+ *  @param view         The appearance value will come from this view.
+ *  @param selector     The appearance selector.
+ *  @param defaultValue A default value to use if no appearance value has been set.
  *
- *  @return an appearance value.
+ *  @return An appearance value.
  */
 + (id) appearanceForView:(UIView*)view selector:(SEL)selector defaultValue:(id)defaultValue;
 

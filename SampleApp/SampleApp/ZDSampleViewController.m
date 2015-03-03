@@ -94,13 +94,13 @@
 
 - (void) requestListView
 {
-    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        _modalNavController = [[UINavigationController alloc] init];
-        [ZDKRequests showRequestListWithNavController:_modalNavController];
-        [_modalNavController setModalPresentationStyle:UIModalPresentationFormSheet];
-    
-        [self presentViewController:_modalNavController animated:YES completion:nil];
+    if([ZDKUIUtil isPad]) {
+
+        self.navigationController.modalPresentationStyle = UIModalPresentationFormSheet;
+        [ZDKRequests presentRequestListWithNavController:self.navigationController];
+
     } else {
+        
         [ZDKRequests showRequestListWithNavController:self.navigationController];
     }
 }
@@ -108,29 +108,32 @@
 
 - (void) support
 {
-    if(helpCenterLabelsInput.hasText){
+    self.navigationController.modalPresentationStyle = UIModalPresentationFormSheet;
+    
+    if (helpCenterLabelsInput.hasText) {
+
         NSString *labelString = helpCenterLabelsInput.text;
         NSArray *labels = [labelString componentsSeparatedByString:@","];
-        
-        if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-            _modalNavController = [[UINavigationController alloc] init];
-            [ZDKHelpCenter showHelpCenterWithNavController:_modalNavController filterByArticleLabels:labels];
-            [_modalNavController setModalPresentationStyle:UIModalPresentationFormSheet];
-        
-            [self presentViewController:_modalNavController animated:YES completion:nil];
+
+
+        if([ZDKUIUtil isPad]) {
+
+            [ZDKHelpCenter presentHelpCenterWithNavController:self.navigationController filterByArticleLabels:labels];
+
         } else {
+
             [ZDKHelpCenter showHelpCenterWithNavController:self.navigationController filterByArticleLabels:labels];
         }
-    }else{
-        
-        if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-            _modalNavController = [[UINavigationController alloc] init];
-            [ZDKHelpCenter showHelpCenterWithNavController:_modalNavController];
-            [_modalNavController setModalPresentationStyle:UIModalPresentationFormSheet];
-        
-            [self presentViewController:_modalNavController animated:YES completion:nil];
+
+    } else {
+
+        if([ZDKUIUtil isPad]) {
+
+            [ZDKHelpCenter presentHelpCenterWithNavController:self.navigationController];
+
         } else {
-           [ZDKHelpCenter showHelpCenterWithNavController:self.navigationController];
+
+            [ZDKHelpCenter showHelpCenterWithNavController:self.navigationController];
         }
     }
 }
@@ -151,9 +154,11 @@
     // Show the request creation screen
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        [self.navigationController setModalPresentationStyle:UIModalPresentationFormSheet];
+    if([ZDKUIUtil isPad]) {
+        
+        self.navigationController.modalPresentationStyle = UIModalPresentationFormSheet;
     }
+
     [ZDKRequests showRequestCreationWithNavController:self.navigationController];
 }
 

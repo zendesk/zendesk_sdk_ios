@@ -14,6 +14,11 @@
  *
  */
 
+//! Project version number for ZendeskSDK.
+FOUNDATION_EXPORT double ZendeskSDKVersionNumber;
+
+//! Project version string for ZendeskSDK.
+FOUNDATION_EXPORT NSString * const ZendeskSDKVersionString;
 
 
 #pragma mark - ZDKToast
@@ -247,7 +252,6 @@ extern NSString * const ZDD_ContentLength;
 extern NSString * const ZDD_Accept;
 extern NSString * const ZDD_TypeJSON;
 extern NSString * const ZDD_UserAgent;
-extern NSString * const ZDD_UserAgentValue;
 extern NSString * const ZDD_AcceptLanguage;
 extern NSString * const ZDD_ClientIdentifier;
 

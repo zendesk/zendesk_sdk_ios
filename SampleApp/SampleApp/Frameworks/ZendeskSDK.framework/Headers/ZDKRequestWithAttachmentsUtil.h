@@ -23,27 +23,64 @@
 
 @interface ZDKRequestWithAttachmentsUtil : NSObject
 
-
+/**
+ *  Upload a file to Zendesk, provider wrapper.
+ *
+ *  @param data        Data to upload.
+ *  @param filename    The filename.
+ *  @param contentType MIME type.
+ *  @param callback    Callback executed after request completes.
+ */
 - (void) uploadAttachment:(NSData*)data
              withFilename:(NSString*)filename
            andContentType:(NSString*)contentType
                  callback:(ZDKUploadCallback)callback;
 
-
+/**
+ *  Create a request in Zendesk. If there are uploads in progress this call waits
+ *  for them to finish. It will then attach the completed upload tokens to the request.
+ *  Note: It is excpected that sperate instances of this class will be used when sending comments
+ *  and requests.
+ *
+ *  @param request  The request description field.
+ *  @param tags     Request tags.
+ *  @param callback Callback executed after request completes.
+ */
 - (void) createRequest:(ZDKRequest*)request
               withTags:(NSArray*)tags
            andCallback:(ZDKCreateRequestCallback)callback;
 
-- (void) deleteFilename:(NSString*)filename;
-
-
-
+/**
+ *  Add a comment to a request in Zendesk. If there are uploads in progress this call waits
+ *  for them to finish. It will then attach the completed upload tokens to the request.
+ *  Note: It is excpected that sperate instances of this class will be used when sending comments
+ *  and requests.
+ *
+ *  @param comment   Comment description field.
+ *  @param requestId The ID of the request to add the comment too.
+ *  @param callback  Callback executed after request returns.
+ */
 - (void)addComment:(ZDKComment *)comment
       forRequestId:(NSString *)requestId
       withCallback:(ZDKRequestAddCommentCallback)callback;
 
 
+/**
+ *  Delete a file that has been uploaded. Files can be deleted at anytime before they have
+ *  been associated with a comment or request.
+ *
+ *  @param filename The filename to delete.
+ */
+- (void) deleteFilename:(NSString*)filename;
 
+
+/**
+ *  Mimetype for NSData, only supports images.
+ *
+ *  @param data Data to determine type of.
+ *
+ *  @return MIME type as string.
+ */
 - (NSString *) MIMETypeForData:(NSData*)data;
 
 
