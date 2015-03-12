@@ -34,7 +34,7 @@
 /**
  * Comment entry text view and send button.
  */
-__deprecated_msg(" As of version 1.1.1.1");
+__deprecated_msg(" As of version 1.1.1.1")
 @interface ZDKCommentEntryView : UIView
 
 

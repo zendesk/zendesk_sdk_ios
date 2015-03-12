@@ -23,7 +23,7 @@
 /**
  * Table presenting the list of comments for a request.
  */
-__deprecated_msg(" As of version 1.1.1.1");
+__deprecated_msg(" As of version 1.1.1.1")
 @interface ZDKRequestCommentsTable : UITableView <UITableViewDataSource, UITableViewDelegate, ZDKCommentListRetryDelegate>
 
 
