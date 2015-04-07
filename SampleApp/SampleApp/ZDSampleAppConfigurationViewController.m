@@ -8,6 +8,8 @@
 
 #import "ZDSampleAppConfigurationViewController.h"
 
+#import "ZDSampleViewController.h"
+
 typedef NS_ENUM(NSUInteger, ZDSDKAuth) {
     ZDSDKAuthJwt,
     ZDSDKAuthAnonymous,
@@ -15,6 +17,17 @@ typedef NS_ENUM(NSUInteger, ZDSDKAuth) {
 
 static NSString * const ZDSDKSampleAppDefaultsKey = @"ZDSDKSampleAppDefaultsKey";
 static CGFloat const    ZDSDKPadding              = 15.f;
+
+static NSString * const QR_URL_START = @"zdimport://importsettings?";
+static NSString * const QR_OAUTH_CLIENT_ID = @"oauth_client_id";
+static NSString * const QR_ZENDESK_URL = @"zendesk_url";
+static NSString * const QR_APPLICATION_ID = @"application_id";
+static NSString * const QR_AUTH_TYPE = @"authentication_type";
+static NSString * const QR_JWT_USER_ID = @"jwt_user_identifier";
+static NSString * const QR_ANON_NAME = @"anonymous_name";
+static NSString * const QR_ANON_EMAIL = @"anonymous_email";
+static NSString * const QR_ANON_EXTERNL_ID = @"anonymous_external_id";
+
 
 @interface ZDSampleAppConfigurationViewController ()
 
@@ -28,6 +41,8 @@ static CGFloat const    ZDSDKPadding              = 15.f;
 @property (nonatomic, strong) UITextField *nameEntry;
 @property (nonatomic, strong) UITextField *emailEntry;
 @property (nonatomic, strong) UITextField *externalIdEntry;
+
+@property (nonatomic, strong) UIButton *qrCodeButton;
 
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) UIView *scrollViewContent;
@@ -44,7 +59,7 @@ static CGFloat const    ZDSDKPadding              = 15.f;
 @synthesize authenticationType;
 @synthesize urlDescription, authenticationOption;
 @synthesize urlEntry, appIdEntry, clientIdEntry, userIdentifierEntry, nameEntry, emailEntry, externalIdEntry;
-@synthesize scrollView;
+@synthesize scrollView, qrCodeButton;
 
 
 - (void)viewDidLoad
@@ -170,6 +185,20 @@ static CGFloat const    ZDSDKPadding              = 15.f;
 
     [self.scrollViewContent addSubview:externalIdEntry];
     
+    qrCodeButton = [ZDSampleViewController buildButtonWithFrame:CGRectZero andTitle:@"QR Code"];
+    [qrCodeButton setAccessibilityIdentifier:@"QRCodeButton"];
+    qrCodeButton.hidden = NO;
+    qrCodeButton.translatesAutoresizingMaskIntoConstraints = NO;
+    [qrCodeButton addTarget:self action:@selector(qrButtonAction) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.scrollViewContent addSubview:qrCodeButton];
+    
+    //AVFoundation AVMetadataMachineReadableCodeObject (QR code reader) was only introduced in iOS7
+    //So if we are on iOS6 don't show the QR code scanner button. It is left on the view
+    //so layout will work correctly.
+    if ( ! [ZDKUIUtil isNewerVersion:@(6)]) {
+        qrCodeButton.hidden = YES;
+    }
   
     [self setupConstraints];
     
@@ -217,18 +246,18 @@ static CGFloat const    ZDSDKPadding              = 15.f;
                                             userIdentifierEntry,
                                             nameEntry,
                                             emailEntry,
-                                            externalIdEntry);
+                                            externalIdEntry, qrCodeButton);
 
     NSDictionary *metrics = @{@"padding":@(ZDSDKPadding), @"height":@(ZDSDKPadding * 2)};
 
+    
+    [self.scrollViewContent addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-padding-[qrCodeButton]-padding-|"
+                                                                                   options:NSLayoutFormatAlignmentMask
+                                                                                   metrics:metrics
+                                                                                     views:views]];
 
-    [self.scrollViewContent addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-padding-[urlDescription]-padding-|"
-                                                                             options:NSLayoutFormatAlignmentMask
-                                                                             metrics:metrics
-                                                                               views:views]];
 
-
-    [self.scrollViewContent addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-[urlDescription(<=90)]-padding-[urlEntry(height)]-padding-[appIdEntry(height)]-padding-[clientIdEntry(height)]-padding-[authenticationOption(<=90)]-padding-[authenticationType(height)]"
+    [self.scrollViewContent addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-[qrCodeButton(<=90)]-[urlDescription(<=90)]-padding-[urlEntry(height)]-padding-[appIdEntry(height)]-padding-[clientIdEntry(height)]-padding-[authenticationOption(<=90)]-padding-[authenticationType(height)]"
                                                                              options:NSLayoutFormatAlignAllLeft | NSLayoutFormatAlignAllRight
                                                                              metrics:metrics
                                                                                views:views]];
@@ -444,6 +473,62 @@ static CGFloat const    ZDSDKPadding              = 15.f;
     textField.leftViewMode = UITextFieldViewModeAlways;
 }
 
+#pragma mark - QR code scanner
+
+- (void) qrButtonAction
+{
+    ZDSampleAppScanViewController * scanner = [[ZDSampleAppScanViewController alloc] init];
+    scanner.delegate = self;
+    [self presentViewController:scanner animated:YES completion:nil];
+}
+
+- (void) didScan:(NSString *)result
+{
+    
+    NSMutableDictionary *urlDictionary = [[NSMutableDictionary alloc] init];
+    //This will blow up if qr code changes.
+    result = [result componentsSeparatedByString:QR_URL_START][1];
+    NSArray *urlComponents = [result componentsSeparatedByString:@"&"];
+    
+    
+    for (NSString *keyValuePair in urlComponents)
+    {
+        NSArray *pairComponents = [keyValuePair componentsSeparatedByString:@"="];
+        NSString *key = [[pairComponents firstObject] stringByRemovingPercentEncoding];
+        NSString *value = [[pairComponents lastObject] stringByRemovingPercentEncoding];
+        value = [value stringByRemovingPercentEncoding];
+        
+        [urlDictionary setObject:value forKey:key];
+    }
+    
+    [self clearButtonPressed];
+    
+    urlEntry.text = [urlDictionary objectForKey:QR_ZENDESK_URL];
+    appIdEntry.text = [urlDictionary objectForKey:QR_APPLICATION_ID];
+    clientIdEntry.text = [urlDictionary objectForKey:QR_OAUTH_CLIENT_ID];
+    
+    if ([[urlDictionary objectForKey:QR_AUTH_TYPE] isEqualToString:@"jwt"]){
+        userIdentifierEntry.text = [urlDictionary objectForKey:QR_JWT_USER_ID];
+        
+        if( authenticationType.selectedSegmentIndex == ZDSDKAuthAnonymous ) {
+            authenticationType.selectedSegmentIndex = 0;
+            [self authTypeChanged:authenticationType];
+        }
+        
+    } else {
+        nameEntry.text = [urlDictionary objectForKey:QR_ANON_NAME];
+        emailEntry.text = [urlDictionary objectForKey:QR_ANON_EMAIL];
+        externalIdEntry.text = [urlDictionary objectForKey:QR_ANON_EXTERNL_ID];
+        
+        if( authenticationType.selectedSegmentIndex == ZDSDKAuthJwt ) {
+            authenticationType.selectedSegmentIndex = 1;
+            [self authTypeChanged:authenticationType];
+        }
+        
+    }
+    
+    
+}
 
 
 @end

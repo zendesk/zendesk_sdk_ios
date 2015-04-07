@@ -67,6 +67,7 @@
 #import <ZendeskSDK/ZDKHelpCenterCategory.h>
 #import <ZendeskSDK/ZDKHelpCenterConversationsUIDelegate.h>
 #import <ZendeskSDK/ZDKHelpCenterDataSource.h>
+#import <ZendeskSDK/ZDKHelpCenterDeflection.h>
 #import <ZendeskSDK/ZDKHelpCenterProvider.h>
 #import <ZendeskSDK/ZDKHelpCenterSearch.h>
 #import <ZendeskSDK/ZDKHelpCenterSearchDataSource.h>
@@ -82,6 +83,9 @@
 #import <ZendeskSDK/ZDKKeychainWrapper.h>
 #import <ZendeskSDK/ZDKLogger.h>
 #import <ZendeskSDK/ZDKNSCodingUtil.h>
+#import <ZendeskSDK/ZDKPushRegistrationProvider.h>
+#import <ZendeskSDK/ZDKPushRegistrationRequest.h>
+#import <ZendeskSDK/ZDKPushRegistrationResponse.h>
 #import <ZendeskSDK/ZDKRateMyAppSettings.h>
 #import <ZendeskSDK/ZDKReachability.h>
 #import <ZendeskSDK/ZDKRequest.h>
@@ -131,3 +135,4 @@
 #import <ZendeskSDK/ZDKUploadResponse.h>
 #import <ZendeskSDK/ZendeskSDK.h>
 #import <ZendeskSDK/ZendeskSDKConstants.h>
+#import <ZendeskSDK/ZDKPushUtil.h>

@@ -16,13 +16,25 @@
 
 #import "ZDKHelpCenterDataSource.h"
 
-@interface ZDKHelpCenterAttachmentsDataSource : ZDKHelpCenterDataSource
 
 /**
- * Initializes a data source with a cell identifire, configuration block and a provider.
- * @param articleId The articleId passed as a String, the article to which attachments will be fetched
+ *  Data source for Help Center attachments.
+ *
+ *  @since 0.9.3.1
  */
+@interface ZDKHelpCenterAttachmentsDataSource : ZDKHelpCenterDataSource
 
+
+/**
+ *  Initializes a data source with a cell identifire, configuration block and a provider.
+ *
+ *  @since 0.9.3.1
+ *
+ *  @param articleId The articleId passed as a String, the article to which attachments will be fetched.
+ *
+ *  @return A new instance.
+ */
 - (instancetype) initWithArticleId:(NSString *)articleId ;
+
 
 @end

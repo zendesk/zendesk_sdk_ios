@@ -17,37 +17,51 @@
 
 /**
  * A comment on a Zendesk request.
+ *
+ *  @since 0.9.3.1
  */
 @interface ZDKComment : NSObject
 
 /**
  * The id of this comment in Zendesk.
+ *
+ *  @since 0.9.3.1
  */
 @property (nonatomic, readonly) NSNumber *commentId;
 
 /**
  * The comment body/text.
+ *
+ *  @since 0.9.3.1
  */
 @property (nonatomic, strong) NSString *body;
 
 /**
  * The Zendesk user id of the author.
+ *
+ *  @since 0.9.3.1
  */
 @property (nonatomic, strong) NSNumber *authorId;
 
 /**
- * The timestmp fpr the creation of this comment.
+ * The timestmp for the creation of this comment.
+ *
+ *  @since 0.9.3.1
  */
 @property (nonatomic, strong) NSDate *createdAt;
 
 /**
- *  Collection of ZDKAttachments associated with this comment
+ *  Collection of ZDKAttachments associated with this comment.
+ *
+ *  @since 0.9.3.1
  */
 @property (nonatomic, strong) NSArray *attachments;
 
 
 /**
  * Initialise the model object with the account details ands the dispatcher to be used for requests.
+ *
+ *  @since 0.9.3.1
  *
  * @param dictionary the dictionary generated from the API json
  */

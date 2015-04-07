@@ -16,14 +16,23 @@
 
 #import "ZDKHelpCenterDataSource.h"
 
+
+/**
+ *  Data source for Help Center categories.
+ *
+ *  @since 0.9.3.1
+ */
 @interface ZDKHelpCenterCategoriesDataSource : ZDKHelpCenterDataSource
 
 
 /**
- * Initializes a data source and fetches the categories for the configured Zendesk instance.
+ *  Initializes a data source and fetches the categories for the configured Zendesk instance.
  *
+ *  @since 0.9.3.1
+ *
+ *  @return A new instance.
  */
-
 - (instancetype) init;
+
 
 @end

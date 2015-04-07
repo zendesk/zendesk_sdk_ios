@@ -23,35 +23,54 @@
 
 
 /**
- * Settings model object associated with the remote configuration of Rate My App component within your Zendesk instance
+ * Settings model object associated with the remote configuration of Rate My App component within your Zendesk instance.
+ *
+ *  @since 0.9.3.1
  */
 @property (nonatomic, readonly) ZDKRateMyAppSettings *rateMyAappSettings;
 
 
 /**
- * Settings model object associated with the remote configuration of Conversations component within your Zendesk instance
+ * Settings model object associated with the remote configuration of Conversations component within your Zendesk instance.
+ *
+ *  @since 0.9.3.1
  */
 @property (nonatomic, readonly) ZDKConversationsSettings *conversationsSettings;
 
 
 /**
- * Settings model object associated with the remote configuration of Contact component within your Zendesk instance
+ * Settings model object associated with the remote configuration of Contact component within your Zendesk instance.
+ *
+ *  @since 0.9.3.1
  */
 @property (nonatomic, readonly) ZDKContactUsSettings *contactUsSettings;
 
 
 /**
- * Settings model object associated with the remote configuration of Help Cetner component within your Zendesk instance
+ * Settings model object associated with the remote configuration of Help Cetner component within your Zendesk instance.
+ *
+ *  @since 0.9.3.1
  */
 @property (nonatomic, readonly) ZDKHelpCenterSettings *helpCenterSettings;
 
 
 /**
- *  Authentication type, anonymous or jwt
+ *  Authentication type, anonymous or jwt.
+ *
+ *  @since 0.9.3.1
  */
 @property (nonatomic, readonly) NSString *authentication;
 
 
+/**
+ *  Initialize with a dictionary representation.
+ *
+ *  @since 0.9.3.1
+ *
+ *  @param dictionary a dictionary with settings data.
+ *
+ *  @return A new instance.
+ */
 - (id) initWithDictionary: (NSDictionary *) dictionary;
 
 @end

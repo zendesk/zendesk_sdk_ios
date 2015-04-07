@@ -21,67 +21,95 @@
 
 /**
  * Helper class for retrieving device information.
+ *
+ *  @since 0.9.3.1
  */
 @interface ZDKDeviceInfo : NSObject
 
 
 /**
- * Get a String of the device type, e.g. 'iPad 3 (WiFi)'
- * @return the device type if recognised, the base OS device type string if not recognised.
+ *  Get a String of the device type, e.g. 'iPad 3 (WiFi)'
+ *
+ *  @since 0.9.3.1
+ *
+ *  @return the device type if recognised, the base OS device type string if not recognised.
  */
 + (NSString *) deviceType;
 
 
 /**
- * Get the total device memory.
- * @return the device memory in GB
+ *  Get the total device memory.
+ *
+ *  @since 0.9.3.1
+ *
+ *  @return the device memory in GB
  */
 + (double) totalDeviceMemory;
 
 
 /**
- * Get the free disk space of the device.
- * @return the free disk space of the device in GB
+ *  Get the free disk space of the device.
+ *
+ *  @since 0.9.3.1
+ *
+ *  @return the free disk space of the device in GB
  */
 + (double) freeDiskspace;
 
 
 /**
- * Get the total disk space of the device.
- * @return the total disk space of the device in GB
+ *  Get the total disk space of the device.
+ *
+ *  @since 0.9.3.1
+ *
+ *  @return the total disk space of the device in GB
  */
 + (double) totalDiskspace;
 
 
 /**
- * The current battery level of the device.
- * @return the current battery level of the device as a percentage
+ *  The current battery level of the device.
+ *
+ *  @since 0.9.3.1
+ *
+ *  @return the current battery level of the device as a percentage
  */
 + (CGFloat) batteryLevel;
 
 
 /**
- * The current region setting of the device.
- * @return the current region
+ *  The current region setting of the device.
+ *
+ *  @since 0.9.3.1
+ *
+ *  @return the current region
  */
 + (NSString*) region;
 
 
 /**
- * The current language of the device
- * @return the language
+ *  The current language of the device
+ *
+ *  @since 0.9.3.1
+ *
+ *  @return the language
  */
 + (NSString*) language;
 
 
 /**
- * Returns a formatted strong of all device info.
- * @return all device info
+ *  Returns a formatted strong of all device info.
+ *
+ *  @since 0.9.3.1
+ *
+ *  @return all device info
  */
 + (NSString*) deviceInfoString;
 
 /**
  *  Returns an NSDictionary of all device info.
+ *
+ *  @since 1.0.0.1
  *
  *  @return all device info
  */

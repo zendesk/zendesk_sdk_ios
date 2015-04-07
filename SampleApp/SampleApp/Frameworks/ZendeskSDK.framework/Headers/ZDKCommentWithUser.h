@@ -17,11 +17,37 @@
 #import <Foundation/Foundation.h>
 @class ZDKComment, ZDKUser;
 
+/**
+ *  Aggregate model for comments with users.
+ *
+ *  @since 0.9.3.1
+ */
 @interface ZDKCommentWithUser : NSObject
 
+/**
+ *  The comment model.
+ *
+ *  @since 0.9.3.1
+ */
 @property (nonatomic, readonly) ZDKComment *comment;
+
+/**
+ *  The user associated with the comment model.
+ *
+ *  @since 0.9.3.1
+ */
 @property (nonatomic, readonly) ZDKUser *user;
 
+/**
+ *  Build an instance with comment and a user.
+ *
+ *  @since 0.9.3.1
+ *
+ *  @param comment A comment to build with.
+ *  @param users   A user to associate to a comment.
+ *
+ *  @return A new instance.
+ */
 + (instancetype) buildCommentWithUser:(ZDKComment *)comment withUsers:(NSArray *)users;
 
 @end

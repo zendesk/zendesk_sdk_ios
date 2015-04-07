@@ -16,6 +16,7 @@
 
 #import <Foundation/Foundation.h>
 #import "ZDKHelpCenterSearch.h"
+#import "ZDKHelpCenterDeflection.h"
 
 /**
  * Callback block.
@@ -67,7 +68,7 @@ typedef void (^ZDKHelpCenterCallback)(NSArray *items, NSError *error);
 - (void) searchForArticlesUsingQuery:(NSString *)query andLabels:(NSArray *)labels withCallback: (ZDKHelpCenterCallback) callback;
 
 /**
- *  This method will search articles in your Help Center filtered by the parameters in the given ZDKHelpCenterSearch
+ *  This method will search articles in your Help Center filtered by the parameters in the given ZDKHelpCenterSearch model.
  *  
  *  @param search   The search to perform.
  *  @param callback The callback which will be called upon a successful or an erroneous response.
@@ -90,5 +91,16 @@ typedef void (^ZDKHelpCenterCallback)(NSArray *items, NSError *error);
  *  @param callback the callback that is invoked when a request is either successful or has errors
  */
 - (void) getArticlesByLabels:(NSArray *)labels withCallback: (ZDKHelpCenterCallback) callback;
+
+
+/**
+ *  Fetch a list of suggested articles filtered by the parameters in the given ZDKHelpCenterDeflection model.
+ *
+ *  @since 1.2.0.1
+ *
+ *  @param search   The search to preform
+ *  @param callback The callback that is invoked when a request is either successful or has error.
+ */
+- (void) getSuggestedArticles:(ZDKHelpCenterDeflection*)search withCallback:(ZDKHelpCenterCallback)callback;
 
 @end

@@ -18,25 +18,34 @@
 
 @class ZDKDispatcherResponse;
 
+/**
+ *  ETag lookup.
+ *
+ *  @since 0.9.3.1
+ */
 @interface ZDKETag : NSObject
 
 #pragma mark etags
 
 
 /**
- * Adds the etag to the request if one is known.
+ *  Adds the etag to the request if one is known.
  *
- * @param request the request to which the etag will be added
+ *  @since 0.9.3.1
+ *
+ *  @param request the request to which the etag will be added
  */
 + (void) addEtagToRequest:(NSMutableURLRequest*)request;
 
 
 
 /**
- * Store the etag from the request and check if the response is 'unmodified'
+ *  Store the etag from the request and check if the response is 'unmodified'
  *
- * @param response the response data
- * @return YES if the response was 'unmodified' otherwise NO
+ *  @since 0.9.3.1
+ *
+ *  @param response the response data
+ *  @return YES if the response was 'unmodified' otherwise NO
  */
 + (BOOL) unmodified:(ZDKDispatcherResponse*)response;
 
@@ -45,8 +54,10 @@
 /**
  * Get an ETag for a url if it is known.
  *
- * @param url the URL for the request or response.
- * @return An ETag or nil if none was found.
+ *  @since 0.9.3.1
+ *
+ *  @param url the URL for the request or response.
+ *  @return An ETag or nil if none was found.
  */
 + (NSString *) eTagForURL:(NSURL*)url;
 

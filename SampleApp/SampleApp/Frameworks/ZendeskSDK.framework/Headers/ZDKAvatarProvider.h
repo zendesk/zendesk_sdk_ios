@@ -19,15 +19,25 @@
 /**
  *  Block invoked to pass data back from API call
  *
+ *  @since 0.9.3.1
+ *
  *  @param avatar UIImage of the response from server, can be nil on error
  *  @param error  NSError returned on during error state, can be nil on success
  */
 typedef void (^ZDKAvatarCallback)(UIImage *avatar, NSError *error);
 
+
+/**
+ *  Provider for images/avatars.
+ *
+ *  @since 0.9.3.1
+ */
 @interface ZDKAvatarProvider : NSObject
 
 /**
  *  Get the image/avatar data for a given URL
+ *
+ *  @since 0.9.3.1
  *
  *  @param avatarUrl NSString url of the image to be fetched
  *  @param callback  block callback executed on error or success states

@@ -22,50 +22,90 @@
 
 
 /**
- * API success block.
+ *  API success block.
+ *
+ *  @since 0.9.3.1
  */
 typedef void (^ZDKAPISuccess) (id result);
 
 
 /**
- * API error block
+ *  API error block.
+ *
+ *  @since 0.9.3.1
  */
 typedef void (^ZDKAPIError) (NSError *error);
 
 
 /**
- * ZDKAPI Error codes.
+ *  ZDKAPI Error codes.
+ *
+ *  @since 0.9.3.1
  */
 typedef NS_ENUM(NSInteger, ZDKAPIErrorCode) {
 
-    /** No internet connection available according to Reachability. */
+    /** 
+     *  No internet connection available according to Reachability.
+     *
+     *  @since 0.9.3.1
+     */
     ZDKAPIErrorUnreachable,
 
-    /** Connection could not be established. */
+    /** 
+     *  Connection could not be established.
+     *
+     *  @since 0.9.3.1
+     */
     ZDKAPIErrorConnection,
 
-    /** Authentication failed. */
+    /** 
+     *  Authentication failed.
+     *
+     *  @since 0.9.3.1
+     */
     ZDKAPIErrorAuth,
 
-    /** Request failed. */
+    /** 
+     *  Request failed.
+     *
+     *  @since 0.9.3.1
+     */
     ZDKAPIErrorRequest,
 
-    /** No valid subdomain has been set. */
+    /** 
+     *  No valid subdomain has been set.
+     *
+     *  @since 0.9.3.1
+     */
     ZDKAPIErrorSubdomain,
 
-    /** No sdk client id. */
+    /** 
+     *  No sdk client id.
+     *
+     *  @since 0.9.3.1
+     */
     ZDKAPIErrorClientId,
 
-    /** No token or user email. */
+    /** 
+     *  No token or user email.
+     *
+     *  @since 0.9.3.1
+     */
     ZDKAPIErrorUserId,
 
-    /** Invalid delegate config for request. */
+    /** 
+     *  Invalid delegate config for request.
+     *
+     *  @since 0.9.3.1
+     */
     ZDKAPIErrorDelegateConfig,
 };
 
 
 /**
  *  Convenience method for executing a block on the request queue.
+ *
+ *  @since 0.9.3.1
  *
  *  @param queue The queue that will execute the block.
  *  @param block Block the block to be executed.
@@ -77,8 +117,10 @@ static inline void zdk_on_queue(dispatch_queue_t queue, dispatch_block_t block)
 
 
 /**
- * Convenience method for executing a block on the UI queue
- * @param block the block to be executed
+ *  Convenience method for executing a block on the UI queue
+ *
+ *  @since 0.9.3.1
+ *  @param block the block to be executed
  */
 static inline void zdk_on_main_thread(dispatch_block_t block)
 {
@@ -87,22 +129,30 @@ static inline void zdk_on_main_thread(dispatch_block_t block)
 
 
 /**
- * ZDKAPI Login state
+ *  ZDKAPI Login state.
+ *
+ *  @since 0.9.3.1
  */
 typedef NS_ENUM(NSInteger, ZDKAPILoginState) {
 
     /**
-     * The SDK has not yet authenticated during this session.
+     *  The SDK has not yet authenticated during this session.
+     *
+     *  @since 0.9.3.1
      */
     ZDKAPILoginStateNotLoggedIn,
 
     /**
-     * The SDK is in the process of loggin in.
+     *  The SDK is in the process of loggin in.
+     *
+     *  @since 0.9.3.1
      */
     ZDKAPILoginStateLoggingIn,
 
     /**
-     * The SDK has an oauth token that was valid the last time it was used.
+     *  The SDK has an oauth token that was valid the last time it was used.
+     *
+     *  @since 0.9.3.1
      */
     ZDKAPILoginStateLoggedIn
 };
@@ -113,7 +163,9 @@ typedef NS_ENUM(NSInteger, ZDKAPILoginState) {
 
 
 /**
- * The core communications controller.
+ *  The core communications controller.
+ *
+ *  @since 0.9.3.1
  */
 @interface ZDKDispatcher : NSObject
 
@@ -122,24 +174,28 @@ typedef NS_ENUM(NSInteger, ZDKAPILoginState) {
 
 
 /**
- * Enable or disable debug logging output.
+ *  Enable or disable debug logging output.
  *
- * @param enabled YES for debug logging.
+ *  @since 0.9.3.1
+ *
+ *  @param enabled YES for debug logging.
  */
 + (void) setDebugLogging:(BOOL)enabled;
 
 
 /**
- * Verifies the configuration, logs in if necessary and then executes the request on the request queue.
- * This method handles putting the requets process into the request queue and then ensuring that the final
- * responses are sent on the main thread.
+ *  Verifies the configuration, logs in if necessary and then executes the request on the request queue.
+ *  This method handles putting the requets process into the request queue and then ensuring that the final
+ *  responses are sent on the main thread.
  *
- * If the error block is invoked with a 'ZDKAPIErrorUnreachable' error then this is an immediate response on the same thread.
+ *  If the error block is invoked with a 'ZDKAPIErrorUnreachable' error then this is an immediate response on the same thread.
  *
- * @param requestBlock block which builds the NSMutableURLRequest
- * @param successBlock block which will be invoked on the main thread if the request is successful
- * @param errorBlock block which will be invoked on the main thread if the request fails
- * @param requiresAuth boolen indicating if the request requires authentication
+ *  @since 0.9.3.1
+ *
+ *  @param requestBlock block which builds the NSMutableURLRequest
+ *  @param successBlock block which will be invoked on the main thread if the request is successful
+ *  @param errorBlock block which will be invoked on the main thread if the request fails
+ *  @param requiresAuth boolen indicating if the request requires authentication
  */
 - (void) executeRequest:(NSMutableURLRequest* (^)(void))requestBlock
               onSuccess:(ZDKAPISuccess)successBlock

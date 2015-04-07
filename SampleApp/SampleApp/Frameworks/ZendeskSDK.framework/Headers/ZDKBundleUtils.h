@@ -16,12 +16,18 @@
 
 #import <Foundation/Foundation.h>
 
-
+/**
+ *  Util for working with ZendeskSDK bundles.
+ *
+ *  @since 0.9.3.1
+ */
 @interface ZDKBundleUtils : NSObject
 
 
 /**
  * Gets the framework resource bundle.
+ *
+ *  @since 0.9.3.1
  *
  * @return The frameworks resource NSBundle or nil if the SDK bundle was not found.
  */
@@ -31,6 +37,8 @@
 /**
  * Gets the framework strings bundle.
  *
+ *  @since 0.9.3.1
+ *
  * @return The frameworks strings NSBundle or nil if the SDK bundle was not found.
  */
 + (NSBundle *) frameworkStringsBundle;
@@ -38,6 +46,8 @@
 
 /**
  * Get the path for a resource in the SDK bundle.
+ *
+ *  @since 0.9.3.1
  *
  * @param name The resource name.
  * @param extension The file extension.
@@ -48,6 +58,8 @@
 
 /**
  * Get the help center css file in the SDK bundle and return as a string.
+ *
+ *  @since 0.9.3.1
  *
  * @return A string containing css for help center.
  */
@@ -69,6 +81,8 @@
  *  Get a dictionary of iOS devices. Keys are model identifiers e.g. @"iPhone3,1" 
  *  @see ModelIdentifier.plist in ZendeskSDK.bundle
  *
+ *  @since 0.9.3.1
+ *
  *  @return A device model string e.g. iPhone 4s
  */
 + (NSDictionary *) deviceModelIdentifier;
@@ -76,6 +90,8 @@
 
 /**
  *  The name of the frameworks strings table
+ *
+ *  @since 0.9.3.1
  *
  *  @return The string table name.
  */
@@ -85,6 +101,8 @@
 /**
  *  Returns the conversations image from ZendeskSDK bundle.
  *
+ *  @since 0.9.3.1
+ *
  *  @return An image, or nil if the image was not found.
  */
 + (UIImage *) conversationsImage;
@@ -93,12 +111,16 @@
 /**
  *  Returns the create request image from ZendeskSDK bundle.
  *
+ *  @since 0.9.3.1
+ *
  *  @return An image, or nil if the image was not found.
  */
 + (UIImage *) createRequestImage;
 
 /**
  *  Returns the attachment image from ZendeskSDK bundle.
+ *
+ *  @since 1.1.0.1
  *
  *  @return An image, or nil if the image was not found.
  */
@@ -107,6 +129,8 @@
 
 /**
  *  Returns an image resource from ZendeskSDK bundle.
+ *
+ *  @since 1.1.0.1
  *
  *  @param name the name of the image.
  *  @param extension the extension of the image.

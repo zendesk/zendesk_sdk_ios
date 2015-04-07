@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		837AB70F1A8E511700B86214 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 837AB70E1A8E511700B86214 /* MobileCoreServices.framework */; };
+		83D3E9A01AA9EF36006DB98C /* ZDSampleAppScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83D3E99F1AA9EF36006DB98C /* ZDSampleAppScanViewController.m */; };
 		C333A54319E29F1E0046B858 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C333A54119E29EC40046B858 /* SystemConfiguration.framework */; };
 		C38311B61A1A352B00F7979A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C38311B31A1A352B00F7979A /* main.m */; };
 		C38311C31A1A358500F7979A /* ZDAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C38311BE1A1A358500F7979A /* ZDAppDelegate.m */; };
 		C38311C41A1A358500F7979A /* ZDSampleAppConfigurationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C38311C01A1A358500F7979A /* ZDSampleAppConfigurationViewController.m */; };
 		C38311C51A1A358500F7979A /* ZDSampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C38311C21A1A358500F7979A /* ZDSampleViewController.m */; };
+		C3A2C8A11ABAD575006EA3E7 /* NSData+ZDKSampleApp.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A2C8A01ABAD575006EA3E7 /* NSData+ZDKSampleApp.m */; };
 		C3EF3EF61A1A1B1900168A69 /* ZDRateMyAppDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3EF3EF31A1A1B1900168A69 /* ZDRateMyAppDemoViewController.m */; };
 		C3EF3EFB1A1A1B3700168A69 /* ZendeskSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C3EF3EF91A1A1B3700168A69 /* ZendeskSDK.bundle */; };
 		C3EF3EFC1A1A1B3700168A69 /* ZendeskSDKStrings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C3EF3EFA1A1A1B3700168A69 /* ZendeskSDKStrings.bundle */; };
@@ -25,6 +27,8 @@
 
 /* Begin PBXFileReference section */
 		837AB70E1A8E511700B86214 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		83D3E99E1AA9EF36006DB98C /* ZDSampleAppScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZDSampleAppScanViewController.h; path = SampleApp/ZDSampleAppScanViewController.h; sourceTree = "<group>"; };
+		83D3E99F1AA9EF36006DB98C /* ZDSampleAppScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZDSampleAppScanViewController.m; path = SampleApp/ZDSampleAppScanViewController.m; sourceTree = "<group>"; };
 		C333A54119E29EC40046B858 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		C38311B31A1A352B00F7979A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = SampleApp/main.m; sourceTree = "<group>"; };
 		C38311B41A1A352B00F7979A /* SampleApp-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "SampleApp-Info.plist"; path = "SampleApp/SampleApp-Info.plist"; sourceTree = "<group>"; };
@@ -35,6 +39,8 @@
 		C38311C01A1A358500F7979A /* ZDSampleAppConfigurationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZDSampleAppConfigurationViewController.m; path = SampleApp/ZDSampleAppConfigurationViewController.m; sourceTree = "<group>"; };
 		C38311C11A1A358500F7979A /* ZDSampleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZDSampleViewController.h; path = SampleApp/ZDSampleViewController.h; sourceTree = "<group>"; };
 		C38311C21A1A358500F7979A /* ZDSampleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZDSampleViewController.m; path = SampleApp/ZDSampleViewController.m; sourceTree = "<group>"; };
+		C3A2C89F1ABAD575006EA3E7 /* NSData+ZDKSampleApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+ZDKSampleApp.h"; path = "SampleApp/NSData+ZDKSampleApp.h"; sourceTree = "<group>"; };
+		C3A2C8A01ABAD575006EA3E7 /* NSData+ZDKSampleApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+ZDKSampleApp.m"; path = "SampleApp/NSData+ZDKSampleApp.m"; sourceTree = "<group>"; };
 		C3EF3EF21A1A1B1900168A69 /* ZDRateMyAppDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDRateMyAppDemoViewController.h; sourceTree = "<group>"; };
 		C3EF3EF31A1A1B1900168A69 /* ZDRateMyAppDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDRateMyAppDemoViewController.m; sourceTree = "<group>"; };
 		C3EF3EF91A1A1B3700168A69 /* ZendeskSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ZendeskSDK.bundle; sourceTree = "<group>"; };
@@ -81,14 +87,26 @@
 				C3EF3EF11A1A1B1900168A69 /* RateMyApp */,
 				C3EF3EFF1A1A1B7C00168A69 /* Resources */,
 				C38311BB1A1A353200F7979A /* Supporting Files */,
+				C3A2C8A51ABAD58E006EA3E7 /* Categories */,
 				C38311BD1A1A358500F7979A /* ZDAppDelegate.h */,
 				C38311BE1A1A358500F7979A /* ZDAppDelegate.m */,
 				C38311BF1A1A358500F7979A /* ZDSampleAppConfigurationViewController.h */,
 				C38311C01A1A358500F7979A /* ZDSampleAppConfigurationViewController.m */,
 				C38311C11A1A358500F7979A /* ZDSampleViewController.h */,
 				C38311C21A1A358500F7979A /* ZDSampleViewController.m */,
+				83D3E99E1AA9EF36006DB98C /* ZDSampleAppScanViewController.h */,
+				83D3E99F1AA9EF36006DB98C /* ZDSampleAppScanViewController.m */,
 			);
 			name = SampleApp;
+			sourceTree = "<group>";
+		};
+		C3A2C8A51ABAD58E006EA3E7 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				C3A2C89F1ABAD575006EA3E7 /* NSData+ZDKSampleApp.h */,
+				C3A2C8A01ABAD575006EA3E7 /* NSData+ZDKSampleApp.m */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 		C3EF3EF11A1A1B1900168A69 /* RateMyApp */ = {
@@ -155,9 +173,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F160B6CD1949E2D600AEF42D /* SampleApp */ = {
+		F160B6CD1949E2D600AEF42D /* SDK-Sample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F160B6FA1949E2D600AEF42D /* Build configuration list for PBXNativeTarget "SampleApp" */;
+			buildConfigurationList = F160B6FA1949E2D600AEF42D /* Build configuration list for PBXNativeTarget "SDK-Sample" */;
 			buildPhases = (
 				F160B6CA1949E2D600AEF42D /* Sources */,
 				F160B6CB1949E2D600AEF42D /* Frameworks */,
@@ -167,7 +185,7 @@
 			);
 			dependencies = (
 			);
-			name = SampleApp;
+			name = "SDK-Sample";
 			productName = CoreSDKSample;
 			productReference = F160B6CE1949E2D600AEF42D /* SDK-Sample.app */;
 			productType = "com.apple.product-type.application";
@@ -182,7 +200,18 @@
 				ORGANIZATIONNAME = Zendesk;
 				TargetAttributes = {
 					F160B6CD1949E2D600AEF42D = {
-						DevelopmentTeam = A7576AWDXT;
+						DevelopmentTeam = 7529UAQB93;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.GameCenter = {
+								enabled = 0;
+							};
+							com.apple.InAppPurchase = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -198,7 +227,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F160B6CD1949E2D600AEF42D /* SampleApp */,
+				F160B6CD1949E2D600AEF42D /* SDK-Sample */,
 			);
 		};
 /* End PBXProject section */
@@ -222,7 +251,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C38311C51A1A358500F7979A /* ZDSampleViewController.m in Sources */,
+				83D3E9A01AA9EF36006DB98C /* ZDSampleAppScanViewController.m in Sources */,
 				C38311C31A1A358500F7979A /* ZDAppDelegate.m in Sources */,
+				C3A2C8A11ABAD575006EA3E7 /* NSData+ZDKSampleApp.m in Sources */,
 				C38311C41A1A358500F7979A /* ZDSampleAppConfigurationViewController.m in Sources */,
 				C38311B61A1A352B00F7979A /* main.m in Sources */,
 				C3EF3EF61A1A1B1900168A69 /* ZDRateMyAppDemoViewController.m in Sources */,
@@ -341,7 +372,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Zendesk Inc";
 				CODE_SIGN_RESOURCE_RULES_PATH = "$(SDKROOT)/ResourceRules.plist";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -375,7 +406,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F160B6FA1949E2D600AEF42D /* Build configuration list for PBXNativeTarget "SampleApp" */ = {
+		F160B6FA1949E2D600AEF42D /* Build configuration list for PBXNativeTarget "SDK-Sample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F160B6FB1949E2D600AEF42D /* Debug */,

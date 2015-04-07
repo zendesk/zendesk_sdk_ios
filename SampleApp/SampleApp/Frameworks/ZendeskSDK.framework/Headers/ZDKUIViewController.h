@@ -154,6 +154,16 @@ extern ZDKLayoutGuide const ZDKLayoutRespectBottom;
 
 
 /**
+ *  Gets the active SDK view controller.
+ *
+ *  @since 1.2.0.1
+ *
+ *  @return The current SDK view controller.
+ */
++ (ZDKUIViewController *) activeController;
+
+
+/**
  * Get the top view controller from thw app window.
  *
  * @return the top view controller for the app.

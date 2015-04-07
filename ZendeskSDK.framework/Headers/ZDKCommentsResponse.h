@@ -16,10 +16,31 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ *  Collection model for comments.
+ *
+ *  @since 0.9.3.1
+ */
 @interface ZDKCommentsResponse : NSObject
 
+
+/**
+ *  Array of comments with users.
+ *
+ *  @since 0.9.3.1
+ */
 @property (nonatomic, readonly) NSArray *commmentsWithUsers;
 
+
+/**
+ *  Parse data from an API and create an array of comments with users.
+ *
+ *  @since 0.9.3.1
+ *
+ *  @param dictionary JSON data from an API call.
+ *
+ *  @return An array of commens with users.
+ */
 + (NSArray *) parseData:(NSDictionary *) dictionary;
 
 @end

@@ -16,6 +16,7 @@
 
 
 @synthesize rmaButton, requestCreationButton, requestListButton, helpCenterButton, helpCenterLabelsInput;
+@synthesize registerPush, unregisterPush;
 
 - (void) viewDidLoad
 {
@@ -23,38 +24,51 @@
     
     self.title = @"SDK Sample";
     
-    rmaButton = [self buildButtonWithFrame:CGRectZero andTitle:@"Show Rate My App"];
+    rmaButton = [ZDSampleViewController buildButtonWithFrame:CGRectZero andTitle:@"Show Rate My App"];
     rmaButton.accessibilityIdentifier = @"rmaButton";
     rmaButton.backgroundColor = [UIColor whiteColor];
     [rmaButton addTarget:self action:@selector(rateMyApp) forControlEvents:UIControlEventTouchUpInside];
     [self.contentView addSubview:rmaButton];
 
-    requestCreationButton = [self buildButtonWithFrame:CGRectZero andTitle:@"Contact Zendesk"];
+    requestCreationButton = [ZDSampleViewController buildButtonWithFrame:CGRectZero andTitle:@"Contact Zendesk"];
     requestCreationButton.accessibilityIdentifier = @"contactZendeskButton";
     requestCreationButton.backgroundColor = [UIColor whiteColor];
     [requestCreationButton addTarget:self action:@selector(createRequest) forControlEvents:UIControlEventTouchUpInside];
     [self.contentView addSubview:requestCreationButton];
 
-    requestListButton = [self buildButtonWithFrame:CGRectZero andTitle:@"Ticket List"];
+    requestListButton = [ZDSampleViewController buildButtonWithFrame:CGRectZero andTitle:@"Ticket List"];
     requestListButton.accessibilityIdentifier = @"ticketListButton";
     requestListButton.backgroundColor = [UIColor whiteColor];
     [requestListButton addTarget:self action:@selector(requestListView) forControlEvents:UIControlEventTouchUpInside];
     [self.contentView addSubview:requestListButton];
 
 
-    helpCenterLabelsInput = [self buildTextFieldWithFrame:CGRectZero andPlaceholder:@"label1,label2,label3 (optional)"];
+    helpCenterLabelsInput = [ZDSampleViewController buildTextFieldWithFrame:CGRectZero andPlaceholder:@"label1,label2,label3 (optional)"];
     helpCenterLabelsInput.accessibilityIdentifier = @"hcLabelsField";
     helpCenterLabelsInput.backgroundColor = [UIColor whiteColor];
     //helpCenterButton pulls these out
     [self.contentView addSubview:helpCenterLabelsInput];
     
     
-    helpCenterButton = [self buildButtonWithFrame:CGRectZero andTitle:@"Support"];
+    helpCenterButton = [ZDSampleViewController buildButtonWithFrame:CGRectZero andTitle:@"Support"];
     helpCenterButton.accessibilityIdentifier = @"supportButton";
     helpCenterButton.backgroundColor = [UIColor whiteColor];
     [helpCenterButton addTarget:self action:@selector(support) forControlEvents:UIControlEventTouchUpInside];
     [self.contentView addSubview:helpCenterButton];
+    
 
+    registerPush = [ZDSampleViewController buildButtonWithFrame:CGRectZero andTitle:@"Register Push"];
+    registerPush.accessibilityIdentifier = @"registerButton";
+    registerPush.backgroundColor = [UIColor whiteColor];
+    [registerPush addTarget:self action:@selector(registerForPush) forControlEvents:UIControlEventTouchUpInside];
+    [self.contentView addSubview:registerPush];
+    
+    unregisterPush = [ZDSampleViewController buildButtonWithFrame:CGRectZero andTitle:@"Unregister Push"];
+    unregisterPush.accessibilityIdentifier = @"unregisterButton";
+    unregisterPush.backgroundColor = [UIColor whiteColor];
+    [unregisterPush addTarget:self action:@selector(unregisterForPush) forControlEvents:UIControlEventTouchUpInside];
+    [self.contentView addSubview:unregisterPush];
+    
     [self setupConstraints];
 
     ZDSampleAppConfigurationViewController *configurationVC = [[ZDSampleAppConfigurationViewController alloc] initWithNibName:nil bundle:nil];
@@ -75,14 +89,16 @@
                                                          requestCreationButton,
                                                          requestListButton,
                                                          helpCenterLabelsInput,
-                                                         helpCenterButton);
+                                                         helpCenterButton,
+                                                         registerPush,
+                                                         unregisterPush);
 
     [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-padding-[rmaButton]-padding-|"
                                                                              options:NSLayoutFormatAlignmentMask
                                                                              metrics:metrics
                                                                                views:views]];
 
-    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-[rmaButton(height)]-padding-[requestCreationButton(height)]-padding-[requestListButton(height)]-padding-[helpCenterLabelsInput(height)]-padding-[helpCenterButton(height)]"
+    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-[rmaButton(height)]-padding-[requestCreationButton(height)]-padding-[requestListButton(height)]-padding-[helpCenterLabelsInput(height)]-padding-[helpCenterButton(height)]-padding-[registerPush(height)]-padding-[unregisterPush(height)]"
                                                                              options:NSLayoutFormatAlignAllLeft | NSLayoutFormatAlignAllRight
                                                                              metrics:metrics
                                                                                views:views]];
@@ -108,7 +124,6 @@
 
 - (void) support
 {
-    self.navigationController.modalPresentationStyle = UIModalPresentationFormSheet;
     
     if (helpCenterLabelsInput.hasText) {
 
@@ -118,6 +133,7 @@
 
         if([ZDKUIUtil isPad]) {
 
+            self.navigationController.modalPresentationStyle = UIModalPresentationFormSheet;
             [ZDKHelpCenter presentHelpCenterWithNavController:self.navigationController filterByArticleLabels:labels];
 
         } else {
@@ -129,6 +145,7 @@
 
         if([ZDKUIUtil isPad]) {
 
+            self.navigationController.modalPresentationStyle = UIModalPresentationFormSheet;
             [ZDKHelpCenter presentHelpCenterWithNavController:self.navigationController];
 
         } else {
@@ -162,11 +179,69 @@
     [ZDKRequests showRequestCreationWithNavController:self.navigationController];
 }
 
+#pragma mark Push notifications
+
+- (void) registerForPush
+{
+    
+    NSString *identifier = [self getDeviceId];
+    
+    [[ZDKConfig instance] enablePush:identifier callback:^(ZDKPushRegistrationResponse *registrationResponse, NSError *error) {
+        
+        NSString *title;
+
+        if (error) {
+            
+            title = @"Registration Failed";
+            [ZDKLogger log:@"Couldn't register device: %@. Error: %@", identifier, error];
+            
+        } else if (registrationResponse) {
+            
+            title = @"Registration Successful";
+            [ZDKLogger log:@"Successfully registered device: %@", identifier];
+        }
+
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:title message:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        [alert show];
+    }];
+}
+
+- (void) unregisterForPush
+{
+    NSString *identifier = [self getDeviceId];
+    
+    [[ZDKConfig instance] disablePush:identifier callback:^(NSNumber *responseCode, NSError *error) {
+
+        NSString *title;
+
+        if (error) {
+            
+            title = @"Failed to Unregister";
+            [ZDKLogger log:@"Couldn't unregister device: %@. Error: %@", identifier, error];
+            
+        } else if (responseCode) {
+            
+            title = @"Unregistered";
+            [ZDKLogger log:@"Successfully unregistered device: %@", identifier];
+        }
+
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:title message:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        [alert show];
+    }];
+    
+}
+
+- (NSString*) getDeviceId
+{
+    NSString *result = [[NSUserDefaults standardUserDefaults] objectForKey:APPLE_PUSH_UUID];
+    
+    return result;
+}
 
 #pragma mark - control creation
 
 
-- (UIControl *) buildControl:(UIControl *) control
++ (UIControl *) buildControl:(UIControl *) control
 {
     control.layer.borderColor = [UIColor colorWithWhite:0.8470f alpha:1.0f].CGColor;
     control.translatesAutoresizingMaskIntoConstraints = NO;
@@ -176,7 +251,7 @@
 }
 
 
-- (UITextField *) buildTextFieldWithFrame:(CGRect)frame andPlaceholder:(NSString *)placeholder
++ (UITextField *) buildTextFieldWithFrame:(CGRect)frame andPlaceholder:(NSString *)placeholder
 {
     UITextField * textField = [[UITextField alloc] initWithFrame:frame];
     textField = (UITextField *)[self buildControl:textField];
@@ -187,7 +262,7 @@
 }
 
 
-- (UIButton *) buildButtonWithFrame:(CGRect)frame andTitle:(NSString*)title
++ (UIButton *) buildButtonWithFrame:(CGRect)frame andTitle:(NSString*)title
 {
     UIButton *button = [[UIButton alloc] initWithFrame:frame];
     button = (UIButton *)[self buildControl:button];

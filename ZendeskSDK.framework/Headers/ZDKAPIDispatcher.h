@@ -24,10 +24,20 @@
 
 /**
  * ZDKAPI is the primary access point for API requests.
+ *
+ *  @since 0.9.3.1
  */
 @interface ZDKAPIDispatcher : ZDKDispatcher <ZDKDispatcherDelegate>
 
+/**
+ *  Returns the singleton instance of the dispatcher.
+ *
+ *  @since 0.9.3.1
+ *
+ *  @return the dispatcher.
+ */
 + (instancetype) instance;
+
 
 + (NSMutableDictionary *) getSharedHeaders;
 
