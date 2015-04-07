@@ -17,14 +17,38 @@
 
 #import <Foundation/Foundation.h>
 
-
+/**
+ *  A model for the responses from the dispatcher.
+ *
+ *  @since 0.9.3.1
+ */
 @interface ZDKDispatcherResponse : NSObject
 
-
+/**
+ *  The HTTP response from the request.
+ *
+ *  @since 0.9.3.1
+ */
 @property (nonatomic, strong) NSHTTPURLResponse *response;
+
+/**
+ *  The data from the request.
+ *
+ *  @since 0.9.3.1
+ */
 @property (nonatomic, strong) NSData *data;
 
 
+/**
+ *  Init a ZDKDispatcherResponse.
+ *
+ *  @since 0.9.3.1
+ *
+ *  @param response A HTTP response.
+ *  @param data     Data from a HTTP response.
+ *
+ *  @return a new instance.
+ */
 - (instancetype) initWithResponse:(NSHTTPURLResponse*)response andData:(NSData*)data;
 
 

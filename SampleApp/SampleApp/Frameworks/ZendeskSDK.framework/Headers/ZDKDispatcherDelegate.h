@@ -18,7 +18,11 @@
 #import <Foundation/Foundation.h>
 #import "ZDKDispatcherResponse.h"
 
-
+/**
+ *  Delegate methods for ZDKDispatcher.
+ *
+ *  @since 0.9.3.1
+ */
 @protocol ZDKDispatcherDelegate <NSObject>
 
 
@@ -26,19 +30,23 @@
 
 
 /**
- * Checks if config is valid for auth requirements
+ *  Checks if config is valid for auth requirements
  *
- * @param authRequired bool indicating if auth is a requirement for this request
+ *  @since 0.9.3.1
  *
- * @return YES is config is sufficient to perform a request
+ *  @param authRequired bool indicating if auth is a requirement for this request
+ *
+ *  @return YES is config is sufficient to perform a request
  */
 - (BOOL) validAccount:(BOOL)authRequired;
 
 
 /**
- * Helper for generating validation errors, override to implement.
+ *  Helper for generating validation errors, override to implement.
  *
- * @return error as appropriate for the current config
+ *  @since 0.9.3.1
+ *
+ *  @return error as appropriate for the current config
  */
 - (NSError*) accountError;
 
@@ -50,27 +58,33 @@
 
 
 /**
- * Check if login is currently required or we already have validated credentials.
+ *  Check if login is currently required or we already have validated credentials.
  *
- * @return YES is login is required
+ *  @since 0.9.3.1
+ *
+ *  @return YES is login is required
  */
 - (BOOL) needToLogin;
 
 
 /**
- * Generate a login request, this should be a self contained request and not result in a form.
+ *  Generate a login request, this should be a self contained request and not result in a form.
  *
- * @return the login request to be sent
+ *  @since 0.9.3.1
+ *
+ *  @return the login request to be sent
  */
 - (NSMutableURLRequest*) createLoginRequest;
 
 
 /**
- * Override to handle the responses to the login request.
+ *  Override to handle the responses to the login request.
  *
- * @param responseData the login response data
+ *  @since 0.9.3.1
  *
- * @return YES if login was successful
+ *  @param responseData the login response data
+ *
+ *  @return YES if login was successful
  */
 - (BOOL) handleLoginResponse:(ZDKDispatcherResponse*)responseData;
 
@@ -79,22 +93,28 @@
 
 
 /**
- * Add auth info to the request
+ *  Add auth info to the request
  *
- * @param request the request to be updated
+ *  @since 0.9.3.1
+ *
+ *  @param request the request to be updated
  */
 - (void) addAuthToRequest:(NSMutableURLRequest*)request;
 
 
 
 /**
- * Inform the delegate that the token is invalid and should be discarded.
+ *  Inform the delegate that the token is invalid and should be discarded.
+ *
+ *  @since 0.9.3.1
  */
 - (void) invalidateToken;
 
 
 /**
  *  Inform the delegate that the user identity is invalid and should be discarded.
+ *
+ *  @since 0.9.3.1
  */
 - (void) invalidateIdentity;
 

@@ -33,6 +33,8 @@
 
 /**
  * Comment entry text view and send button.
+ *
+ *  @since 0.9.3.1
  */
 __deprecated_msg(" As of version 1.1.1.1")
 @interface ZDKCommentEntryView : UIView
@@ -40,77 +42,107 @@ __deprecated_msg(" As of version 1.1.1.1")
 
 /**
  * The request object for this comment is for.
+ *
+ *  @since 0.9.3.1
  */
 @property (nonatomic, strong) ZDKRequest *request;
 
 /**
  * The top border line of the component.
+ *
+ *  @since 0.9.3.1
  */
 @property (nonatomic, strong) UIView *topBorder;
 
 /**
  * The rounded corner background to the text input field.
+ *
+ *  @since 0.9.3.1
  */
 @property (nonatomic, strong) UIView *textViewBackground;
 
 /**
  * The text entry field.
+ *
+ *  @since 0.9.3.1
  */
 @property (nonatomic, strong) ZDKUITextView *textView;
 
 /**
  * The send button.
+ *
+ *  @since 0.9.3.1
  */
 @property (nonatomic, strong) UIButton *sendButton;
 
 /**
  * Flag to indicate if sending the comment is in progress.
+ *
+ *  @since 0.9.3.1
  */
 @property (nonatomic, assign) BOOL sending;
 
 /**
  * Color of border line at top of text entry area.
+ *
+ *  @since 0.9.3.1
  */
 @property (nonatomic, strong) UIColor *topBorderColor UI_APPEARANCE_SELECTOR;
 
 /**
  * Font for the text entry view and it's placeholder.
+ *
+ *  @since 0.9.3.1
  */
 @property (nonatomic, strong) UIFont *textEntryFont UI_APPEARANCE_SELECTOR;
 
 /**
  * Color of the text entry text.
+ *
+ *  @since 0.9.3.1
  */
 @property (nonatomic, strong) UIColor *textEntryColor UI_APPEARANCE_SELECTOR;
 
 /**
  * Text entry box background color.
+ *
+ *  @since 0.9.3.1
  */
 @property (nonatomic, strong) UIColor *textEntryBackgroundColor UI_APPEARANCE_SELECTOR;
 
 /**
  * Text entry box border color.
+ *
+ *  @since 0.9.3.1
  */
 @property (nonatomic, strong) UIColor *textEntryBorderColor UI_APPEARANCE_SELECTOR;
 
 /**
  * Send button font.
+ *
+ *  @since 0.9.3.1
  */
 @property (nonatomic, strong) UIFont *sendButtonFont UI_APPEARANCE_SELECTOR;
 
 /**
  * Send button text color.
+ *
+ *  @since 0.9.3.1
  */
 @property (nonatomic, strong) UIColor *sendButtonColor UI_APPEARANCE_SELECTOR;
 
 /**
  * Comment entry area background color.
+ *
+ *  @since 0.9.3.1
  */
 @property (nonatomic, strong) UIColor *areaBackgroundColor UI_APPEARANCE_SELECTOR;
 
 
 /**
  * Init with provided frame and request.
+ *
+ *  @since 0.9.3.1
  *
  * @param frame the frame in which to render the UI
  * @param request the request object this comment is for
@@ -122,6 +154,8 @@ __deprecated_msg(" As of version 1.1.1.1")
 /**
  * Returns the height that would be necessary to render the complete text of 
  * the text entry view given the current width of the component.
+ *
+ *  @since 0.9.3.1
  *
  * @return the preferred height of the component
  */

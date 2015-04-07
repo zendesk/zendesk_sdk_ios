@@ -26,7 +26,9 @@
 @class ZDKCreateRequestView;
 
 /**
- * Request creation view controller.
+ *  Request creation view controller.
+ *
+ *  @since 0.9.3.1
  */
 @interface ZDKCreateRequestViewController : ZDKUIViewController<ZDKUITextViewDelegate,
                                                                 UITextFieldDelegate,
@@ -38,29 +40,37 @@
 
 
 /**
- * API success block, called after succesfull request creation.
+ *  API success block, called after succesfull request creation.
+ *
+ *  @since 0.9.3.1
  */
 @property (nonatomic, copy) ZDKAPISuccess onSuccess;
 
 
 /**
- * API error block, called after a request creation error.
+ *  API error block, called after a request creation error.
+ *
+ *  @since 0.9.3.1
  */
 @property (nonatomic, copy) ZDKAPIError onError;
 
 
 /**
- * The request creation view.
+ *  The request creation view.
+ *
+ *  @since 0.9.3.1
  */
 @property (nonatomic, strong) ZDKCreateRequestView *createRequestView;
 
 
 /**
- * Init with provided success and error blocks.
+ *  Init with provided success and error blocks.
  *
- * @param success the success
- * @param error the request object this comment is for
- * @return the instance
+ *  @since 0.9.3.1
+ *
+ *  @param success the success
+ *  @param error the request object this comment is for
+ *  @return the instance
  */
 - (instancetype) initWithSuccess:(ZDKAPISuccess)success
                         andError:(ZDKAPIError)error;

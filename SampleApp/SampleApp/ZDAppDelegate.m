@@ -7,6 +7,7 @@
 //
 
 
+#import "NSData+ZDKSampleApp.h"
 #import "ZDAppDelegate.h"
 #import "ZDSampleViewController.h"
 #import <ZendeskSDK/ZendeskSDK.h>
@@ -15,11 +16,64 @@
 @implementation ZDAppDelegate
 
 
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
+{
+    [ZDKLogger log:@"Device failed to register with error: %@\n%@", error, error.localizedDescription];
+}
+
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+{
+    NSString *identifier = [deviceToken deviceIdentifier];
+
+    [ZDKLogger log:@"Device registered for remote notifications with identifier: %@", identifier ];
+
+    [[NSUserDefaults standardUserDefaults] setObject:identifier forKey:APPLE_PUSH_UUID];
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
+{
+    NSData *storedConfig = [[NSUserDefaults standardUserDefaults] objectForKey:@"ZDSDKSampleAppDefaultsKey"];
+
+    if (storedConfig) {
+
+        NSDictionary *config = (NSDictionary *)[NSKeyedUnarchiver unarchiveObjectWithData:storedConfig];
+
+        if (config) {
+
+            [ZDKPushUtil handlePush:userInfo
+                     forApplication:application
+                  presentationStyle:UIModalPresentationFormSheet
+                        layoutGuide:ZDKLayoutRespectTop
+                          withAppId:config[@"appId"]
+                         zendeskUrl:config[@"url"]
+                           clientId:config[@"clientId"]
+             fetchCompletionHandler:completionHandler];
+        }
+    }
+
+}
+
+
 - (BOOL) application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions
 {
     [ZDKDispatcher setDebugLogging:YES];
     
     [ZDKLogger enable:YES];
+
+    // Register the app for remote notifications
+    if ([UIApplication instancesRespondToSelector:@selector(registerForRemoteNotifications)]) {
+
+        UIUserNotificationType types = UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound;
+        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:types categories:nil];
+        [application registerUserNotificationSettings:settings];
+        [application registerForRemoteNotifications];
+
+    } else if ([UIApplication instancesRespondToSelector:@selector(registerForRemoteNotificationTypes:)]) {
+
+        UIRemoteNotificationType types = UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound;
+        [application registerForRemoteNotificationTypes:types];
+    }
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // OPTIONAL - you can choose to set tags or additional info at any stage
@@ -32,13 +86,27 @@
 
         // add some custom content to the description
         NSString *additionalText = @"Some sample extra content.";
-
-        NSString *txt = [NSString stringWithFormat:@"%@%@",
-                         [requestCreationConfig contentSeperator],
-                         additionalText];
+        NSString *txt = [NSString stringWithFormat:@"%@%@", [requestCreationConfig contentSeperator], additionalText];
 
         requestCreationConfig.additionalRequestInfo = txt;
     }];
+    
+    
+    [ZDKRMA configure:^(ZDKAccount *account, ZDKRMAConfigObject *config) {  
+        
+        //account.email = @"example@example.com";
+
+        
+        // configgure additional info
+        NSString *versionString = [NSString stringWithFormat:@"%@ (%@)",
+                                   [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"],
+                                   [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]];
+        
+        NSString *appVersion = [NSString stringWithFormat:@"App version: %@", versionString];
+        
+        config.additionalRequestInfo = [NSString stringWithFormat:@"Additional info here.\n%@", appVersion];
+    }];
+
 
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -237,17 +305,17 @@
     [[ZDKSupportView appearance] setNoResultsContactButtonTitleColorDisabled:[UIColor whiteColor]];
     
     //HC search cell
-    [[ZDKSupportTableViewCell appearance] setBackgroundColor:[UIColor blackColor]];
+    [[ZDKSupportTableViewCell appearance] setViewBackgroundColor:[UIColor blackColor]];
     [[ZDKSupportTableViewCell appearance] setTitleLabelBackground:[UIColor blackColor]];
     [[ZDKSupportTableViewCell appearance] setTitleLabelColor:[UIColor colorWithWhite:0.88f alpha:1.0f]];
     [[ZDKSupportTableViewCell appearance] setTitleLabelFont:[UIFont systemFontOfSize:18.0f]];
     
-    [[ZDKSupportArticleTableViewCell appearance] setBackgroundColor:[UIColor blackColor]];
+    [[ZDKSupportArticleTableViewCell appearance] setViewBackgroundColor:[UIColor blackColor]];
     [[ZDKSupportArticleTableViewCell appearance] setArticleParentsLabelFont:[UIFont systemFontOfSize:12.0f]];
     [[ZDKSupportArticleTableViewCell appearance] setArticleParentsLabelColor:[UIColor darkGrayColor]];
     [[ZDKSupportArticleTableViewCell appearance] setArticleParnetsLabelBackground:[UIColor blackColor]];
     [[ZDKSupportArticleTableViewCell appearance] setTitleLabelFont:[UIFont systemFontOfSize:18.0f]];
-    [[ZDKSupportArticleTableViewCell appearance] setTitleLabelColor:[UIColor colorWithWhite:0.2627f alpha:1.0f]];
+    [[ZDKSupportArticleTableViewCell appearance] setTitleLabelColor:[UIColor lightGrayColor]];
     [[ZDKSupportArticleTableViewCell appearance] setTitleLabelBackground:[UIColor blackColor]];
     
     [[ZDKSupportAttachmentCell appearance] setBackgroundColor:[UIColor darkGrayColor]];

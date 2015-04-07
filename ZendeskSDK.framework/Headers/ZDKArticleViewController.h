@@ -21,18 +21,26 @@
 @class ZDKArticleView, ZDKHelpCenterArticle;
 
 
-
+/**
+ *  View controller for an article view.
+ *
+ *  @since 0.9.3.1
+ */
 @interface ZDKArticleViewController : ZDKUIViewController
 
 
 /**
  * The article view.
+ *
+ *  @since 0.9.3.1
  */
 @property (nonatomic, strong) ZDKArticleView *articleView;
 
 
 /**
  * Initializes the article controller with an article.
+ *
+ *  @since 0.9.3.1
  *
  * @param article A help center article.
  */

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <ZendeskSDK/ZendeskSDK.h>
+#import "ZDSampleAppScanViewController.h"
 
 @protocol ZDAppCondigurationDelegate <NSObject>
 
@@ -15,7 +16,7 @@
 
 @end
 
-@interface ZDSampleAppConfigurationViewController : ZDKUIViewController <UITextFieldDelegate>
+@interface ZDSampleAppConfigurationViewController : ZDKUIViewController <UITextFieldDelegate, ZDSampleAppScanViewControllerDelegate>
 
 @property (nonatomic, strong) id <ZDAppCondigurationDelegate> delegate;
 

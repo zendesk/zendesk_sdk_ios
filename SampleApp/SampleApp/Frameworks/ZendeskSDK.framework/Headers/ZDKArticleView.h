@@ -18,32 +18,50 @@
 
 @class ZDKHelpCenterArticle;
 
+
+/**
+ *  A Help Center Article.
+ *
+ *  @since 0.9.3.1
+ */
 @interface ZDKArticleView : UIView
 
 
 /**
- * Scroll view that contains the article webview and attachments table
+ * Scroll view that contains the article webview and attachments table.
+ *
+ *  @since 0.9.3.1
  */
 @property (nonatomic, strong) UIScrollView *article;
 
 /**
  * The article body.
+ *
+ *  @since 0.9.3.1
  */
 @property (nonatomic, strong) UIWebView *articleWebView;
 
 
 /**
  * A table for article attachments.
+ *
+ *  @since 0.9.3.1
  */
 @property (nonatomic, strong) UITableView *attachments;
 
 
-
+/**
+ *  Returns the loading state of the article view.
+ *
+ *  @since 0.9.3.1
+ */
 @property (nonatomic, assign, readonly, getter=isLoading) BOOL loading;
 
 
 /**
  * Initializes the article controller with an article.
+ *
+ *  @since 0.9.3.1
  *
  * @param article A help center article.
  */
@@ -52,6 +70,8 @@
 
 /**
  * Reloads the help center article webview on rotation.
+ *
+ *  @since 0.9.3.1
  *
  */
 - (void) reloadArticleForRotation;

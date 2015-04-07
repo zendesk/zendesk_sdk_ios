@@ -16,13 +16,23 @@
 
 #import "ZDKHelpCenterDataSource.h"
 
-@interface ZDKHelpCenterArticlesDataSource : ZDKHelpCenterDataSource
 
 /**
- * Initializes a data source with a sectionId to fetch articles for that sectionId.
- * @param sectionId The sectionId passed from selecting a category
+ *  Help Center article datasource.
+ *
+ *  @since 0.9.3.1
  */
+@interface ZDKHelpCenterArticlesDataSource : ZDKHelpCenterDataSource
 
+
+/**
+ *  Initializes a data source with a sectionId to fetch articles for that sectionId.
+ *
+ *  @since 0.9.3.1
+ *
+ *  @param sectionId The sectionId passed from selecting a category
+ */
 - (instancetype) initWithSectionId:(NSString *)sectionId;
+
 
 @end
