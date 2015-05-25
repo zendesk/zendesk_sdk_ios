@@ -23,10 +23,22 @@ Pod::Spec.new do |s|
   s.author       = 'Zendesk'
   s.source       = { :git => "https://github.com/zendesk/zendesk_sdk_ios.git", :tag => s.version.to_s }
   s.platform     = :ios, '6.0'
-  s.source_files = 'ZendeskSDK.framework/Headers/*.h'
   s.requires_arc = true
-  s.ios.vendored_frameworks = 'ZendeskSDK.framework'
-  s.xcconfig = { 'FRAMEWORK_SEARCH_PATHS' => '$(inherited)' }
-  s.preserve_paths = 'ZendeskSDK.framework'
-  s.resources = ["ZendeskSDK.bundle", "ZendeskSDKStrings.bundle"]
+
+  # Using subspecs to support installation without Localization part
+  s.default_subspecs = 'Core', 'Localization'
+
+  s.subspec 'Core' do |ss|
+    ss.public_header_files = 'ZendeskSDK.framework/Headers/*.h'
+    ss.ios.vendored_frameworks = 'ZendeskSDK.framework'
+    ss.preserve_paths = 'ZendeskSDK.framework'
+    ss.xcconfig = { 'FRAMEWORK_SEARCH_PATHS' => '$(inherited)' }
+    ss.resources = ["ZendeskSDK.bundle"]
+  end
+
+  s.subspec 'Localization' do |ss|
+    ss.resources = ["ZendeskSDKStrings.bundle"]
+    ss.dependency 'ZendeskSDK/Core'
+  end
+
 end
