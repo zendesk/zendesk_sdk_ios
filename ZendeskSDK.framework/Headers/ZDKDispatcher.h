@@ -180,7 +180,7 @@ typedef NS_ENUM(NSInteger, ZDKAPILoginState) {
  *
  *  @param enabled YES for debug logging.
  */
-+ (void) setDebugLogging:(BOOL)enabled;
++ (void) setDebugLogging:(BOOL)enabled __deprecated_msg(" As of version 1.3.0.1");
 
 
 /**

@@ -14,7 +14,7 @@
  *
  */
 
-#import <ZendeskSDK/ZendeskSDK.h>
+#import <Foundation/Foundation.h>
 
 @interface ZDKAttachmentCache : NSObject
 

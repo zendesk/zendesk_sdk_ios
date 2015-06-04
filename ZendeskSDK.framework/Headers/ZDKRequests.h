@@ -32,6 +32,7 @@
 
     NSArray *tags;
     NSString *additionalRequestInfo;
+    NSString *subject;
 
 }
 
@@ -46,6 +47,13 @@
  * Additional free text to be appended to the request description.
  */
 @property (strong) NSString *additionalRequestInfo;
+
+/**
+ *  Request subject.
+ *
+ *  @since 1.3.0.1
+ */
+@property (strong) NSString *subject;
 
 
 /**
@@ -148,17 +156,6 @@ typedef void (^ZDSDKConfigBlock) (ZDKAccount *account, ZDKRequestCreationConfig 
  *                       ZDKLayoutRespectTop and ZDKLayoutRespectBottom.
  */
 + (void) showRequestListWithNavController:(UINavigationController *)navController layoutGuide:(ZDKLayoutGuide)aGuide;
-
-/**
- *  Deprecated as of version 1.2, use: + (void) showRequestListWithNavController:(UINavigationController *)navController layoutGuide:(ZDKLayoutGuide)aGuide;
- *  Displays a request list view controller.
- *
- *  @param navController A navigation controller from which to push the request list view.
- *  @param aGuide        Should the request list respect top and bottom layout guide? Pass in 
- *                       one of the const values, ZDKLayoutRespectAll, ZDKLayoutRespectNone, 
- *                       ZDKLayoutRespectTop and ZDKLayoutRespectBottom.
- */
-+ (void) showRequestListWithNavController:(UINavigationController *)navController layoutGudie:(ZDKLayoutGuide)aGuide __deprecated_msg(" As of version 1.2, use showRequestListWithNavController:layoutGuide:");
 
 
 /**

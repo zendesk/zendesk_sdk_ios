@@ -16,100 +16,6 @@
 
 #import <Foundation/Foundation.h>
 
-
-CG_INLINE CGRect
-CGRectMakeCenteredInScreen(CGFloat width, CGFloat height)
-{
-    CGRect screen = [UIScreen mainScreen].bounds;
-    
-    UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
-    
-    CGRect rect;
-    
-    if (orientation == UIInterfaceOrientationLandscapeLeft ||
-        orientation == UIInterfaceOrientationLandscapeRight) {
-        rect = CGRectMake(CGRectGetMidY(screen) - (width * 0.5f),
-                          CGRectGetMidX(screen) - (height * 0.5f), width, height);
-        
-    } else {
-        rect = CGRectMake(CGRectGetMidX(screen) - (width * 0.5f),
-                          CGRectGetMidY(screen) - (height * 0.5f), width, height);
-    }
-    return rect;
-}
-
-
-CG_INLINE CGRect
-CGMakeCenteredRectInRect(CGFloat width, CGFloat height, CGRect rect)
-{
-    return CGRectMake(CGRectGetMidX(rect) - (width * 0.5f),
-                      CGRectGetMidY(rect) - (height * 0.5f), width, height);
-}
-
-
-CG_INLINE CGRect
-CGMakeCenteredRectOnXInRect(CGFloat width, CGFloat height, CGFloat y, CGRect frame)
-{
-    CGRect rect;
-    rect = CGRectMake(CGRectGetMidX(frame) - (width * 0.5f), y, width, height);
-    return rect;
-}
-
-
-CG_INLINE CGRect
-CGCenterRectInRect(CGRect rect, CGRect inRect)
-{
-    return CGRectMake((CGRectGetHeight(inRect) - CGRectGetMinX(rect)) * 0.5f,
-                      (CGRectGetHeight(inRect) - CGRectGetHeight(rect)) * 0.5f,
-                      CGRectGetWidth(rect),
-                      CGRectGetHeight(rect));
-}
-
-
-/**
- * Helper for device orientation.
- */
-CG_INLINE BOOL
-ZDKUIIsLandscape()
-{
-    UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
-    return UIInterfaceOrientationIsLandscape(orientation);
-}
-
-
-/**
- * Returns the full screen frame with no attempt to account for the status bar.
- */
-CG_INLINE CGRect
-ZDKUIScreenFrame()
-{
-    CGSize screenSize = [UIScreen mainScreen].bounds.size;
-
-    CGFloat width = screenSize.width;
-    CGFloat height = screenSize.height;
-
-    if (ZDKUIIsLandscape() && width < height) {
-
-        width = height;
-        height = screenSize.width;
-    }
-
-    return CGRectMake(0, 0, width, height);
-}
-
-
-/**
- * Get the origin of the supplied view in the window.
- */
-CG_INLINE CGPoint
-ZDKUIOriginInWindow(UIView *view)
-{
-    return [view convertPoint:view.bounds.origin
-                       toView:[UIApplication sharedApplication].keyWindow.rootViewController.view];
-}
-
-
-
 @interface ZDKUIUtil : NSObject
 
 
@@ -247,3 +153,116 @@ ZDKUIOriginInWindow(UIView *view)
 
 
 @end
+
+CG_INLINE CGRect
+CGRectMakeCenteredInScreen(CGFloat width, CGFloat height)
+{
+    CGRect screen = [UIScreen mainScreen].bounds;
+    
+    UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
+    
+    CGRect rect;
+    
+    if (orientation == UIInterfaceOrientationLandscapeLeft ||
+        orientation == UIInterfaceOrientationLandscapeRight) {
+        rect = CGRectMake(CGRectGetMidY(screen) - (width * 0.5f),
+                          CGRectGetMidX(screen) - (height * 0.5f), width, height);
+        
+    } else {
+        rect = CGRectMake(CGRectGetMidX(screen) - (width * 0.5f),
+                          CGRectGetMidY(screen) - (height * 0.5f), width, height);
+    }
+    return rect;
+}
+
+
+CG_INLINE CGRect
+CGMakeCenteredRectInRect(CGFloat width, CGFloat height, CGRect rect)
+{
+    return CGRectMake(CGRectGetMidX(rect) - (width * 0.5f),
+                      CGRectGetMidY(rect) - (height * 0.5f), width, height);
+}
+
+
+CG_INLINE CGRect
+CGMakeCenteredRectOnXInRect(CGFloat width, CGFloat height, CGFloat y, CGRect frame)
+{
+    CGRect rect;
+    rect = CGRectMake(CGRectGetMidX(frame) - (width * 0.5f), y, width, height);
+    return rect;
+}
+
+
+CG_INLINE CGRect
+CGCenterRectInRect(CGRect rect, CGRect inRect)
+{
+    return CGRectMake((CGRectGetHeight(inRect) - CGRectGetMinX(rect)) * 0.5f,
+                      (CGRectGetHeight(inRect) - CGRectGetHeight(rect)) * 0.5f,
+                      CGRectGetWidth(rect),
+                      CGRectGetHeight(rect));
+}
+
+
+/**
+ * Helper for device orientation.
+ */
+CG_INLINE BOOL
+ZDKUIIsLandscape()
+{
+    UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
+    return UIInterfaceOrientationIsLandscape(orientation);
+}
+
+
+/**
+ * Returns the full screen frame with no attempt to account for the status bar.
+ */
+CG_INLINE CGRect
+ZDKUIScreenFrame()
+{
+    CGSize screenSize = [UIScreen mainScreen].bounds.size;
+    
+    CGFloat width = screenSize.width;
+    CGFloat height = screenSize.height;
+    
+    if (ZDKUIIsLandscape() && width < height) {
+        
+        width = height;
+        height = screenSize.width;
+    }
+    
+    return CGRectMake(0, 0, width, height);
+}
+
+
+/**
+ * Get the origin of the supplied view in the window.
+ */
+CG_INLINE CGPoint
+ZDKUIOriginInWindow(UIView *view)
+{
+    UIView *superView = view;
+    do {
+        superView = superView.superview;
+    } while (superView.superview);
+    CGPoint point = [view convertPoint:view.bounds.origin toView:superView];
+    if ([ZDKUIUtil isNewerVersion:@(7)]) {
+        return point;
+    }
+    CGRect screenBounds = [UIScreen mainScreen].bounds;
+    switch ([[UIApplication sharedApplication] statusBarOrientation]) {
+        case UIInterfaceOrientationPortraitUpsideDown: {
+            return CGPointMake(screenBounds.size.width - point.x, screenBounds.size.height - point.y);
+        }
+        case UIInterfaceOrientationLandscapeLeft: {
+            return CGPointMake(screenBounds.size.height - point.y, point.x);
+        }
+        case UIInterfaceOrientationLandscapeRight: {
+            return CGPointMake(point.y, screenBounds.size.width - point.x);
+        }
+        default: {
+            return point;
+        }
+    }
+}
+

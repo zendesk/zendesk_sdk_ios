@@ -256,6 +256,53 @@ extern NSString * const ZD_HC_DeflectionSearchError;
 
 
 /**
+ *  Notificaion that a Help Center article upvote request started
+ */
+extern NSString * const ZD_HC_UpvoteStarting;
+
+/**
+ *  Notificaion that a Help Center article upvote request succeeded
+ */
+extern NSString * const ZD_HC_UpvoteSuccess;
+
+/**
+ *  Notificaion that a Help Center article upvote request failed
+ */
+extern NSString * const ZD_HC_UpvoteError;
+
+
+/**
+ *  Notificaion that a Help Center article downvote request started
+ */
+extern NSString * const ZD_HC_DownvoteStarting;
+
+/**
+ *  Notificaion that a Help Center article downvote request succeeded
+ */
+extern NSString * const ZD_HC_DownvoteSuccess;
+
+/**
+ *  Notificaion that a Help Center article downvote request failed
+ */
+extern NSString * const ZD_HC_DownvoteError;
+
+/**
+ *  Notificaion that a Help Center vote deletion request started
+ */
+extern NSString * const ZD_HC_VoteDeleteStarting;
+
+/**
+ *  Notificaion that a Help Center vote deletion request succeeded
+ */
+extern NSString * const ZD_HC_VoteDeleteSuccess;
+
+/**
+ *  Notificaion that a Help Center vote deletion request failed
+ */
+extern NSString * const ZD_HC_VoteDeleteError;
+
+
+/**
  * Notification that a help centre request errored.
  */
 extern NSString * const ZD_HC_RequestError;

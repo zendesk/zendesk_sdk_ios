@@ -101,6 +101,46 @@
  */
 @property (assign, nonatomic) BOOL outdated;
 
+/**
+ *  The total sum of votes on this article.
+ *
+ *  @since 1.3.0.1
+ */
+@property (nonatomic, strong) NSNumber *voteSum;
+
+/**
+ *  The number of votes cast on this article.
+ *
+ *  @since 1.3.0.1
+ */
+@property (nonatomic, strong) NSNumber *voteCount;
+
+/**
+ *  The locale of this article
+ * 
+ *  @since 1.3.0.1
+ */
+@property (nonatomic, strong) NSString *locale;
+
+
+
+/**
+ *  Gets the number of upvotes for this aricle.
+ *
+ *  @since 1.3.0.1
+ *
+ *  @return The number of upvotes for this article or -1 if the number of votes cannot be determined due to an error
+ */
+- (NSInteger) getUpvoteCount;
+
+/**
+ *  Get the number of downvotes for this article.
+ *
+ *  @since 1.3.0.1
+ *
+ *  @return The number of downvotes for this article or -1 if the number of votes cannot be determned due to an error.
+ */
+- (NSInteger) getDownvoteCount;
 
 
 /**

@@ -29,4 +29,7 @@
  */
 - (instancetype) initWithJwtUserIdentifier:(NSString *)jwtUserIdentifier;
 
+
+- (BOOL) hasIdentifer;
+
 @end

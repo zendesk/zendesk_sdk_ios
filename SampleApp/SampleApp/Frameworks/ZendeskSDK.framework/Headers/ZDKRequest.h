@@ -16,7 +16,7 @@
 
 
 /**
- * Object representing a Zendesk end user request.
+ * Object representing a Zendesk end user request returned by the server.
  */
 @interface ZDKRequest : NSObject
 

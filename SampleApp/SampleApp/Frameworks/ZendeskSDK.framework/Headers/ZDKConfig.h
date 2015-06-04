@@ -17,9 +17,17 @@
 #import <Foundation/Foundation.h>
 #import "ZDKIdentity.h"
 #import "ZDKPushRegistrationProvider.h"
+#import "ZDKDispatcher.h"
 
 
 @class ZDKAppSettings, ZDKAccount, ZDKSdkStorage;
+
+/**
+ *  SDK configuration file found and SDK initialized successfully.
+ *
+ *  @since 1.3.0.1
+ */
+typedef void (^ZDKInitializeSuccess)(void);
 
 
 /*
@@ -106,6 +114,23 @@
 + (instancetype) instance;
 
 
+
+/**
+ *  Initialize the SDK with callbacks.
+ *
+ *  @param applicationId The application id of your SDK app, as found in the web interface.
+ *  @param zendeskUrl    The full URL of your Zendesk instance, https://{subdomain}.zendesk.com
+ *  @param oAuthClientId The oAuthClientId required as part of the authentication process
+ *  @param successBlock  Callback executed on successful initialization of the SDK.
+ *  @param errorBlock    Callback executed if initialization fails.
+ */
+- (void) initializeWithAppId:(NSString *)applicationId
+                  zendeskUrl:(NSString *)zendeskUrl
+                    ClientId:(NSString *)oAuthClientId
+                   onSuccess:(ZDKInitializeSuccess)successBlock
+                     onError:(ZDKAPIError)errorBlock;
+
+
 /**
  *  Initialize the SDK.
  *
@@ -118,7 +143,6 @@
 - (void) initializeWithAppId:(NSString *)applicationId
                   zendeskUrl:(NSString *)zendeskUrl
                  andClientId:(NSString *)oAuthClientId;
-
 
 /**
  *  Reload the config from the server, reload will be started if a reload

@@ -193,12 +193,12 @@
         if (error) {
             
             title = @"Registration Failed";
-            [ZDKLogger log:@"Couldn't register device: %@. Error: %@", identifier, error];
+            [ZDKLogger e:@"Couldn't register device: %@. Error: %@", identifier, error];
             
         } else if (registrationResponse) {
             
             title = @"Registration Successful";
-            [ZDKLogger log:@"Successfully registered device: %@", identifier];
+            [ZDKLogger d:@"Successfully registered device: %@", identifier];
         }
 
         UIAlertView * alert = [[UIAlertView alloc] initWithTitle:title message:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
@@ -217,12 +217,12 @@
         if (error) {
             
             title = @"Failed to Unregister";
-            [ZDKLogger log:@"Couldn't unregister device: %@. Error: %@", identifier, error];
+            [ZDKLogger e:@"Couldn't unregister device: %@. Error: %@", identifier, error];
             
         } else if (responseCode) {
             
             title = @"Unregistered";
-            [ZDKLogger log:@"Successfully unregistered device: %@", identifier];
+            [ZDKLogger d:@"Successfully unregistered device: %@", identifier];
         }
 
         UIAlertView * alert = [[UIAlertView alloc] initWithTitle:title message:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
@@ -282,7 +282,11 @@
 - (void)configuration:(NSString *)url withAppId:(NSString *)appId andClientId:(NSString *)clientId
 {
     NSLog(@"configuration made, url: %@, appId: %@ and clientId: %@",url,appId,clientId);
-    [[ZDKConfig instance] initializeWithAppId:appId zendeskUrl:url andClientId:clientId];
+    [[ZDKConfig instance] initializeWithAppId:appId zendeskUrl:url ClientId:clientId onSuccess:^() {
+        NSLog(@"Config found, SDK is ready");
+    } onError:^(NSError *error) {
+        NSLog(@"Config could not be fetched.");
+    }];
 }
 
 
