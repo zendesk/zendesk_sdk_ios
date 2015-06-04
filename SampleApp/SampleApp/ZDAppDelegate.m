@@ -18,7 +18,7 @@
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
 {
-    [ZDKLogger log:@"Device failed to register with error: %@\n%@", error, error.localizedDescription];
+    [ZDKLogger e:@"Device failed to register with error: %@\n%@", error, error.localizedDescription];
 }
 
 
@@ -26,7 +26,7 @@
 {
     NSString *identifier = [deviceToken deviceIdentifier];
 
-    [ZDKLogger log:@"Device registered for remote notifications with identifier: %@", identifier ];
+    [ZDKLogger d:@"Device registered for remote notifications with identifier: %@", identifier ];
 
     [[NSUserDefaults standardUserDefaults] setObject:identifier forKey:APPLE_PUSH_UUID];
 }
@@ -89,6 +89,9 @@
         NSString *txt = [NSString stringWithFormat:@"%@%@", [requestCreationConfig contentSeperator], additionalText];
 
         requestCreationConfig.additionalRequestInfo = txt;
+        
+        //Set the subject of requests created by the user.
+        requestCreationConfig.subject = @"App Ticket";
     }];
     
     

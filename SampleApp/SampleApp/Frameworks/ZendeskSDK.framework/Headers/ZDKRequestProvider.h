@@ -16,7 +16,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class ZDKCommentsResponse,ZDKComment, ZDKRequest;
+@class ZDKCommentsResponse, ZDKComment, ZDKRequest, ZDKCreateRequest;
 
 
 /**
@@ -64,6 +64,7 @@ typedef void (^ZDKCreateRequestCallback)(id result, NSError *error);
 @interface ZDKRequestProvider : NSObject
 
 /**
+ *  Deprecated as of version 1.3.0.1, use createRequest:withCallback
  *  Calls a request service to create a request on behalf of the end-user.
  *
  *  @param subject     Message describing the subject of the request
@@ -74,9 +75,10 @@ typedef void (^ZDKCreateRequestCallback)(id result, NSError *error);
 - (void) createRequestWithSubject:(NSString *) subject
                    andDescription:(NSString *) description
                           andTags:(NSArray *) tags
-                      andCallback:(ZDKCreateRequestCallback) callback;
+                      andCallback:(ZDKCreateRequestCallback) callback __deprecated_msg(" As of version 1.3.0.1, use createRequest:withCallback:");
 
 /**
+ *  Deprecated as of version 1.3.0.1, use createRequest:withCallback 
  *  Calls a request service to create a request with attachments on behalf of the end-user.
  *
  *  @param subject     Message describing the subject of the request
@@ -89,7 +91,19 @@ typedef void (^ZDKCreateRequestCallback)(id result, NSError *error);
                       description:(NSString *) description
                              tags:(NSArray *) tags
                       attachments:(NSArray *) attachments
-                      andCallback:(ZDKCreateRequestCallback) callback;
+                      andCallback:(ZDKCreateRequestCallback) callback __deprecated_msg(" As of version 1.3.0.1, use createRequest:withCallback");
+
+
+/**
+ *  Calls a request service to create a request on behalf of the end user.
+ *
+ *  @param request  Request model object.
+ *  @param callback callback invoked in response to remote API invokation.
+ *
+ *  @since 1.3.0.1
+ */
+- (void) createRequest:(ZDKCreateRequest*)request
+          withCallback:(ZDKCreateRequestCallback)callback;
 
 
 /**

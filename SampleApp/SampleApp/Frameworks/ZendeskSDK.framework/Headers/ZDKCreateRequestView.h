@@ -42,20 +42,6 @@
 @property (nonatomic, strong) UIButton *attachImageButton;
 
 /**
- *  Action sheet to allow attachment selection from camera or camera roll.
- *
- *  @since 1.1.0.1
- */
-@property (nonatomic, strong) UIActionSheet *attachmentSourceSelectSheet __deprecated_msg(" As of version 1.1.1.1");;
-
-/**
- *  Action sheet to allow deltion of attachments.
- *
- *  @since 1.1.0.1
- */
-@property (nonatomic, strong) UIActionSheet *attachmentOptionsSelectSheet __deprecated_msg(" As of version 1.1.1.1");;
-
-/**
  * Color for the text views placeholder text.
  *
  *  @since 0.9.3.1
@@ -150,20 +136,13 @@
  */
 @property (nonatomic, strong) NSNumber *automaticallyHideNavBarOnLandscape  UI_APPEARANCE_SELECTOR;
 
+
 /**
  *  Height of the textView frame
  *
  *  @since 1.1.0.1
  */
 @property (nonatomic, readonly, assign) NSInteger textViewHeight;
-
-/**
- *  Initalize attachmentSourceSelectionSheet.
- *
- *  @since 1.1.0.1
- */
-- (void) initAttachmentSourceSheet __deprecated_msg(" As of version 1.1.1.1");;
-
 
 
 @end

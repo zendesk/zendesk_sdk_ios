@@ -300,13 +300,13 @@ static NSString * const QR_ANON_EXTERNL_ID = @"anonymous_external_id";
 {
 
     NSMutableDictionary *valuesToSave = [[NSMutableDictionary alloc] initWithCapacity:4];
-    [valuesToSave setObject:urlEntry.text forKey:@"url"];
-    [valuesToSave setObject:appIdEntry.text forKey:@"appId"];
-    [valuesToSave setObject:clientIdEntry.text forKey:@"clientId"];
-    [valuesToSave setObject:userIdentifierEntry.text forKey:@"userId"];
-    [valuesToSave setObject:nameEntry.text forKey:@"name"];
-    [valuesToSave setObject:emailEntry.text forKey:@"email"];
-    [valuesToSave setObject:externalIdEntry.text forKey:@"externalId"];
+    [valuesToSave setObject:urlEntry.text ? urlEntry.text : @"" forKey:@"url"];
+    [valuesToSave setObject:appIdEntry.text ? appIdEntry.text : @"" forKey:@"appId"];
+    [valuesToSave setObject:clientIdEntry.text ? clientIdEntry.text : @"" forKey:@"clientId"];
+    [valuesToSave setObject:userIdentifierEntry.text ? userIdentifierEntry.text : @"" forKey:@"userId"];
+    [valuesToSave setObject:nameEntry.text ? nameEntry.text : @"" forKey:@"name"];
+    [valuesToSave setObject:emailEntry.text ? emailEntry.text : @"" forKey:@"email"];
+    [valuesToSave setObject:externalIdEntry.text ? externalIdEntry.text : @"" forKey:@"externalId"];
     [valuesToSave setObject:@(authenticationType.selectedSegmentIndex) forKey:@"authType"];
 
 
