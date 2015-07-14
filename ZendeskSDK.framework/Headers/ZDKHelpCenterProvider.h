@@ -106,6 +106,17 @@ typedef void (^ZDKHelpCenterGenericCallback)(id response, NSError *error);
 
 
 /**
+ *  Fetch an article by ID.
+ *
+ *  @param articleId The ID of the article to fetch.
+ *  @param callback  The callback that is invoked when a request is either successful or has error.
+ *
+ *  @since 1.3.1.1
+ */
+- (void) getArticleById:(NSString *)articleId withCallback:(ZDKHelpCenterCallback) callback;
+
+
+/**
  *  Fetch a list of suggested articles filtered by the parameters in the given ZDKHelpCenterDeflection model.
  *
  *  @since 1.2.0.1
@@ -114,6 +125,18 @@ typedef void (^ZDKHelpCenterGenericCallback)(id response, NSError *error);
  *  @param callback The callback that is invoked when a request is either successful or has error.
  */
 - (void) getSuggestedArticles:(ZDKHelpCenterDeflection*)search withCallback:(ZDKHelpCenterCallback)callback;
+
+
+/**
+ *  Used for the purpose of reporting in Zendesk. This will record an article as being viewed by the client. 
+ *
+ *  @since 1.3.0.1
+ *
+ *  @param articleId     The id of the article which has been viewed.
+ *  @param articleLocale The locale of the article.
+ *  @param callback      A completion callback. Can be nil.
+ */
+- (void) submitRecordArticleView:(NSString*)articleId locale:(NSString*)articleLocale withCallback:(ZDKHelpCenterGenericCallback)callback;
 
 
 /**

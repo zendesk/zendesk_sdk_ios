@@ -221,9 +221,8 @@
     
     // comments list loading cell
     UIActivityIndicatorView *commentSpinner = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
-    commentSpinner = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
     commentSpinner.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhite;
-    [[ZDKCommentsListLoadingTableCell appearance] setSpinner:(id<ZDKSpinnerDelegate>)spinner];
+    [[ZDKCommentsListLoadingTableCell appearance] setSpinner:(id<ZDKSpinnerDelegate>)commentSpinner];
     [[ZDKCommentsListLoadingTableCell appearance] setCellBackground:[UIColor blackColor]];
     [[ZDKCommentsListLoadingTableCell appearance] setLeftInset:@25.0f];
     
