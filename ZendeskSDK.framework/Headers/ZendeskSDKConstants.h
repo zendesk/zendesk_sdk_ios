@@ -198,6 +198,20 @@ extern NSString * const ZD_HC_ArticlesStarting;
 extern NSString * const ZD_HC_ArticlesUpdated;
 
 /**
+ *  Notification that help centre arcticle is being fetched.
+ *
+ *  @since 1.3.1.1
+ */
+extern NSString * const ZD_HC_ArticleByIdStarting;
+
+/**
+ *  Notification that an article was successfulyl retrieved.
+ *
+ *  @since 1.3.1.1
+ */
+extern NSString * const ZD_HC_ArticleByIdSuccess;
+
+/**
  * Notification that help centre attachments are being fetched.
  */
 extern NSString * const ZD_HC_AttachmentsStarting;

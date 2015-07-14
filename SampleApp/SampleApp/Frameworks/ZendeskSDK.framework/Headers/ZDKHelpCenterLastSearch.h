@@ -41,6 +41,14 @@
 
 
 /**
+ *  True if an article was the first viewed from a search result, false otherwise.
+ *
+ *  @since 1.3.1.1
+ */
+@property (nonatomic) BOOL uniqueSearchResultClick;
+
+
+/**
  *  Create a new last search model.
  *
  *  @since 1.3.0.1
@@ -74,13 +82,21 @@
 
 
 /**
+ *  Un-sets the unique search result click flag
+ *
+ *  @since 1.3.1.1
+ */
++ (void) unsetUniqueSearchResultClick;
+
+
+/**
  *  Get the cached last search.
  *
  *  @since 1.3.0.1
  *
  *  @return The last search.
  */
-+ (ZDKHelpCenterLastSearch *)getLastSearch;
++ (instancetype)getLastSearch;
 
 
 /**

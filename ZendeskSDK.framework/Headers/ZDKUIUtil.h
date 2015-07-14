@@ -165,8 +165,14 @@ CGRectMakeCenteredInScreen(CGFloat width, CGFloat height)
     
     if (orientation == UIInterfaceOrientationLandscapeLeft ||
         orientation == UIInterfaceOrientationLandscapeRight) {
-        rect = CGRectMake(CGRectGetMidY(screen) - (width * 0.5f),
-                          CGRectGetMidX(screen) - (height * 0.5f), width, height);
+        if([ZDKUIUtil isOlderVersion:@8])
+        {
+            rect = CGRectMake(CGRectGetMidY(screen) - (width * 0.5f),
+                              CGRectGetMidX(screen) - (height * 0.5f), width, height);
+        }else{
+            rect = CGRectMake(CGRectGetMidX(screen) - (width * 0.5f),
+                              CGRectGetMidY(screen) - (height * 0.5f), width, height);
+        }
         
     } else {
         rect = CGRectMake(CGRectGetMidX(screen) - (width * 0.5f),
