@@ -41,14 +41,6 @@
 
 
 /**
- *  True if an article was the first viewed from a search result, false otherwise.
- *
- *  @since 1.3.1.1
- */
-@property (nonatomic) BOOL uniqueSearchResultClick;
-
-
-/**
  *  Create a new last search model.
  *
  *  @since 1.3.0.1
@@ -69,44 +61,5 @@
  *  @return A dictionary with the property names as keys and property values as values.
  */
 - (NSDictionary *) toJson;
-
-
-/**
- *  Cache a search.
- *
- *  @since 1.3.0.1
- *
- *  @param lastSearch The search to be cached.
- */
-+ (void) cacheLastSearch:(ZDKHelpCenterLastSearch*)lastSearch;
-
-
-/**
- *  Un-sets the unique search result click flag
- *
- *  @since 1.3.1.1
- */
-+ (void) unsetUniqueSearchResultClick;
-
-
-/**
- *  Get the cached last search.
- *
- *  @since 1.3.0.1
- *
- *  @return The last search.
- */
-+ (instancetype)getLastSearch;
-
-
-/**
- *  Returns a dictionary representation of the last search model.
- *
- *  @since 1.3.0.1
- *
- *  @return A dictionary representation of the model.
- */
-+ (NSDictionary *)getLastSearchJSON;
-
 
 @end
