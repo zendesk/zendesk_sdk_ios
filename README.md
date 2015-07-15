@@ -15,7 +15,7 @@ You can also reference this repository as a cocoapod:
 
 
 ````
-pod 'ZendeskSDK', :git => 'https://github.com/zendesk/zendesk_sdk_ios.git'
+pod 'ZendeskSDK', :git => 'https://github.com/zendesk/zendesk_sdk_ios.git', :tag => '1.3.1.2'
 
 ````
 
