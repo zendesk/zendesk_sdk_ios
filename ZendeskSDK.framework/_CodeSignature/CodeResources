@@ -222,7 +222,7 @@
 		</data>
 		<key>Headers/ZDKHelpCenterLastSearch.h</key>
 		<data>
-		0sf5kSIeWlENFv5WOtcX8cWGRpc=
+		Zb5n/QaRhtrAyAuM4ObhnDRh0nM=
 		</data>
 		<key>Headers/ZDKHelpCenterProvider.h</key>
 		<data>
@@ -243,6 +243,10 @@
 		<key>Headers/ZDKHelpCenterSectionsDataSource.h</key>
 		<data>
 		KZDCquXvZI42ygsyc6iFvgzjciQ=
+		</data>
+		<key>Headers/ZDKHelpCenterSessionCache.h</key>
+		<data>
+		ziXMh6LYLHkRlNFM3jNvxlZSV4I=
 		</data>
 		<key>Headers/ZDKHelpCenterSettings.h</key>
 		<data>
@@ -482,7 +486,7 @@
 		</data>
 		<key>Headers/ZendeskSDK.h</key>
 		<data>
-		Ptr+e+QuITSubBg0NJsLeHTvKtk=
+		5BgxeW7K6VpNl5hFf9gdDBgSc0s=
 		</data>
 		<key>Headers/ZendeskSDKConstants.h</key>
 		<data>
@@ -490,7 +494,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		/LhJRAVR0DhhprNjVCf7OQ0nwG0=
+		tyZ94+vr8i0qd59kKCLcEnVzQ+0=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -717,7 +721,7 @@
 		</data>
 		<key>Headers/ZDKHelpCenterLastSearch.h</key>
 		<data>
-		0sf5kSIeWlENFv5WOtcX8cWGRpc=
+		Zb5n/QaRhtrAyAuM4ObhnDRh0nM=
 		</data>
 		<key>Headers/ZDKHelpCenterProvider.h</key>
 		<data>
@@ -738,6 +742,10 @@
 		<key>Headers/ZDKHelpCenterSectionsDataSource.h</key>
 		<data>
 		KZDCquXvZI42ygsyc6iFvgzjciQ=
+		</data>
+		<key>Headers/ZDKHelpCenterSessionCache.h</key>
+		<data>
+		ziXMh6LYLHkRlNFM3jNvxlZSV4I=
 		</data>
 		<key>Headers/ZDKHelpCenterSettings.h</key>
 		<data>
@@ -977,7 +985,7 @@
 		</data>
 		<key>Headers/ZendeskSDK.h</key>
 		<data>
-		Ptr+e+QuITSubBg0NJsLeHTvKtk=
+		5BgxeW7K6VpNl5hFf9gdDBgSc0s=
 		</data>
 		<key>Headers/ZendeskSDKConstants.h</key>
 		<data>

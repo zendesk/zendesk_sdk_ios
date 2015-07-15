@@ -60,9 +60,9 @@
 #import <ZendeskSDK/ZDKETag.h>
 #import <ZendeskSDK/ZDKHelpCenter.h>
 #import <ZendeskSDK/ZDKHelpCenterArticle.h>
+#import <ZendeskSDK/ZDKHelpCenterArticleVote.h>
 #import <ZendeskSDK/ZDKHelpCenterArticlesByLabelDataSource.h>
 #import <ZendeskSDK/ZDKHelpCenterArticlesDataSource.h>
-#import <ZendeskSDK/ZDKHelpCenterArticleVote.h>
 #import <ZendeskSDK/ZDKHelpCenterAttachment.h>
 #import <ZendeskSDK/ZDKHelpCenterAttachmentsDataSource.h>
 #import <ZendeskSDK/ZDKHelpCenterCategoriesDataSource.h>
@@ -76,6 +76,7 @@
 #import <ZendeskSDK/ZDKHelpCenterSearchDataSource.h>
 #import <ZendeskSDK/ZDKHelpCenterSection.h>
 #import <ZendeskSDK/ZDKHelpCenterSectionsDataSource.h>
+#import <ZendeskSDK/ZDKHelpCenterSessionCache.h>
 #import <ZendeskSDK/ZDKHelpCenterSettings.h>
 #import <ZendeskSDK/ZDKHelpCenterSimpleArticle.h>
 #import <ZendeskSDK/ZDKHelpCenterTableDelegate.h>
