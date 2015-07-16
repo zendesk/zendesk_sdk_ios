@@ -20,7 +20,6 @@
 
 @interface ZDKHelpCenterSessionCache : NSObject
 
-@property (nonatomic) ZDKHelpCenterLastSearch *last_search;
 
 /**
  *  Cache a search. This has the side efect of setting a unique search result click BOOL to yes.
@@ -41,9 +40,19 @@
 
 
 /**
+ *  Get the last search
+ *
+ *  @return The last search, can be nil.
+ *
+ *  @since 1.3.3.1
+ */
++ (ZDKHelpCenterLastSearch *)getLastSearch;
+
+
+/**
  *  Used when submitting an article view with the Help Center provider.
  *
- *  @return A dictionary containing the last search model and a unique search result click.
+ *  @return A dictionary containing the last search model and a unique search result click. nil if no search has been preformed.
  *
  *  @since 1.3.2.1
  */
