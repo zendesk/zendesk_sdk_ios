@@ -18,6 +18,7 @@
 #import "ZDKIdentity.h"
 #import "ZDKPushRegistrationProvider.h"
 #import "ZDKDispatcher.h"
+#import "ZendeskSDKConstants.h"
 
 
 @class ZDKAppSettings, ZDKAccount, ZDKSdkStorage;
@@ -83,7 +84,15 @@ typedef void (^ZDKInitializeSuccess)(void);
  *
  *  @since 1.1.0.1
  */
-@property (readonly) BOOL isAnonymousAuth;
+@property (readonly) BOOL isAnonymousAuth __deprecated_msg("Deprecated as of 1.3.4.1. Use `[ZDKConfig instance].authenticationType` instead.");
+
+
+/**
+ *  The authentication type associated with the current Zendesk SDK user.
+ *
+ *  @since 1.3.4.1
+ */
+@property (nonatomic, assign, readonly) ZDKAuthenticationType authenticationType;
 
 
 /**
