@@ -1,14 +1,14 @@
-Zendesk provides a number of ways to add additional information to tickets. This helps provide context for agents or can be even used to trigger business logic. The iOS and Android mobile SDKs provide four ways to append additional information. This information is stored globally so it can be set at anytime before a ticket is created. Below is a brief summary followed by examples of how to use each type in the mobile SDKs.
+Zendesk provides a number of ways to add additional information to tickets. This helps provide context for agents or can even be used to trigger business logic. The iOS and Android mobile SDKs provide four ways to append additional information to created tickets. This information is stored globally so it can be set at any time before a ticket is created and will be added to every ticket submitted over the lifetime of the app. Below is a brief summary followed by examples of how to use each type in the mobile SDKs. All of the examples below add metadata to tickets created by the Zendesk Mobile SDK. They have no effect on the UI provided with the SDK.
 
 
 * **Ticket Fields:** Ticket fields contain data about a ticket, such as subject, requester, status, and description. For more information please see [About Ticket Fields](https://support.zendesk.com/hc/en-us/articles/203661506-About-ticket-fields).
-* **Tags:** Tags are words you can use to add more context to tickets. For more information please see [Using Tags](https://support.zendesk.com/hc/en-us/articles/203662096-Using-tags).
-* **Additional test:** The iOS and Android mobile SDKs allow you to appended additional text directly to each ticket created.
-* **Ticket forms (Enterprise only):** A ticket form is a set of predefined ticket fields for a specific support request. For more information please see [Creating Ticket Forms](https://support.zendesk.com/hc/en-us/articles/203661616-Creating-ticket-forms-to-support-multiple-request-types-Enterprise-).
+* **Tags:** Tags are strings you can use to add more context to tickets. For more information please see [Using Tags](https://support.zendesk.com/hc/en-us/articles/203662096-Using-tags).
+* **Additional Text:** The iOS and Android mobile SDKs allow you to appended additional text directly to each ticket created.
+* **Ticket Forms (Enterprise only):** A ticket form is a set of predefined ticket fields for a specific support request. For more information please see [Creating Ticket Forms](https://support.zendesk.com/hc/en-us/articles/203661616-Creating-ticket-forms-to-support-multiple-request-types-Enterprise-).
 
 
 ### Ticket Fields
-One important pre-requisite before adding ticket fields to requests created in the mobile SDKs is to make said ticket fields editable by end-users, as all of the Mobile SDKs interactions with Zendesk are done so from the perspective of an end user. If you do not do this the values set in the requests will be discarded. This can be done in Admin -> Ticket Fields (Under the Manage subheading) and clicking edit beside the relevant ticket field. From here you can make the field editable by end-users.
+One important prerequisite before adding ticket fields to requests created in the mobile SDKs is to make said ticket fields editable by end-users, as all of the Mobile SDKs interactions with Zendesk are done so from the perspective of an end user. If you do not do this the values set in the requests will be discarded. This can be done in Admin -> Ticket Fields (Under the Manage subheading) and clicking edit beside the relevant ticket field. From here you can make the field editable by end-users.
 
 ![Ticket fields admin pages](images/ticket_fields_admin.png)
 
