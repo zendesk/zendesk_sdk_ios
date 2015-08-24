@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
      LICENSE
   }
   s.author       = 'Zendesk'
-  s.source       = { :git => "https://github.com/zendesk/zendesk_sdk_ios.git", :tag => s.version.to_s }
+  s.source       = { :git => "https://github.com/zendesk/zendesk_sdk_ios.git", :tag => s.version }
   s.platform     = :ios, '6.0'
   s.requires_arc = true
 
