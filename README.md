@@ -15,10 +15,18 @@ You can also reference this repository as a cocoapod:
 
 
 ````
-pod 'ZendeskSDK', :git => 'https://github.com/zendesk/zendesk_sdk_ios.git'
+source 'https://github.com/zendesk/Specs.git'
 
+pod 'ZendeskSDK'
 ````
 
+To choose a specific version: 
+
+```
+source 'https://github.com/zendesk/Specs.git'
+
+pod 'ZendeskSDK', '~> RELEASE_VERSION_TAG'
+```
 
 ## Copyright and license
 
