@@ -32,7 +32,7 @@ Pod::Spec.new do |s|
     ss.public_header_files = 'ZendeskSDK.framework/Headers/*.h'
     ss.ios.vendored_frameworks = 'ZendeskSDK.framework'
     ss.preserve_paths = 'ZendeskSDK.framework'
-    ss.xcconfig = { 'FRAMEWORK_SEARCH_PATHS' => '$(inherited)' }
+    ss.xcconfig = { 'FRAMEWORK_SEARCH_PATHS' => '$(inherited)', 'CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES' => 'YES' }
     ss.resources = ["ZendeskSDK.bundle"]
   end
 
