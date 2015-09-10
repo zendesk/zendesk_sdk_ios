@@ -74,7 +74,7 @@
 @property (strong, nonatomic) NSString *article_details;
 
 /**
- *  A string containing the category and section an article belongs to.
+ *  A string containing the category and section an article belongs to. This can be nil.
  *
  *  @since 0.9.3.1
  */
@@ -160,7 +160,7 @@
  *
  *  @return An array of ZDKHelpCenterArticle objects.
  */
-+ (NSArray *) parseArticles:(NSDictionary *)json;
++ (NSArray *) parseArticles:(NSDictionary *)json __deprecated_msg("As of version 1.4.0.1");
 
 
 /**
@@ -170,7 +170,7 @@
  *
  *  @return An array of ZDKHelpCenterArticle objects.
  */
-+ (NSArray *) parseArticleSearchResults:(NSDictionary *)json;
++ (NSArray *) parseArticleSearchResults:(NSDictionary *)json __deprecated_msg("As of version 1.4.0.1");
 
 
 /**
@@ -181,7 +181,7 @@
  *  @param root Root key in json
  *  @return An array of ZDKHelpCenter Article objects.
  */
-+ (NSArray *) parseArticlesWithRootKey:(NSDictionary *)json withRootKey:(NSString *)root;
++ (NSArray *) parseArticlesWithRootKey:(NSDictionary *)json withRootKey:(NSString *)root __deprecated_msg("As of version 1.4.0.1");
 
 
 @end

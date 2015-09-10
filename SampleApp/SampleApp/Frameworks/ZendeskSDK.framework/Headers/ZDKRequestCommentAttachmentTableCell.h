@@ -24,8 +24,18 @@
  *  Sets up this cell with the UIImage parameter.
  *
  *  @param attachment a UIImage that will be displayed in the cell.
+ *  @param constraint A max width for the image. This is used to resize the image to save memory.
+ *
+ *  @since 1.4.0.1
  */
-- (void) prepareWithImage:(UIImage *)attachment;
+- (void) prepareWithImage:(UIImage *)attachment andWidthConstraint:(CGFloat)constraint;
+
+/**
+ *  Sets up this cell with the UIImage parameter.
+ *
+ *  @param attachment a UIImage that will be displayed in the cell.
+ */
+- (void) prepareWithImage:(UIImage *)attachment __deprecated_msg(" As of version 1.4.0.1");
 
 
 /**
