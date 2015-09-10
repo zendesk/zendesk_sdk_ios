@@ -43,6 +43,21 @@
  */
 @property (nonatomic, assign) BOOL isAgent;
 
+/**
+ *  Tags associated with the user.
+ *
+ *  @since 1.4.0.1
+ */
+@property (nonatomic, strong) NSArray *tags;
+
+/**
+ *  User fields for this user as a dictionary with the key being the name of the user field
+ *  and the corresponding value being the value of the user field set for this user.
+ *
+ *  @since 1.4.0.1
+ */
+@property (nonatomic, strong) NSDictionary *userFields;
+
 
 /**
  * Initialise with dictionary generated from API json.

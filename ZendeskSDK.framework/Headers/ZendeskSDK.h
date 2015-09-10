@@ -70,7 +70,9 @@
 #import <ZendeskSDK/ZDKHelpCenterConversationsUIDelegate.h>
 #import <ZendeskSDK/ZDKHelpCenterDataSource.h>
 #import <ZendeskSDK/ZDKHelpCenterDeflection.h>
+#import <ZendeskSDK/ZDKHelpCenterFlatArticle.h>
 #import <ZendeskSDK/ZDKHelpCenterLastSearch.h>
+#import <ZendeskSDK/ZDKHelpCenterParser.h>
 #import <ZendeskSDK/ZDKHelpCenterProvider.h>
 #import <ZendeskSDK/ZDKHelpCenterSearch.h>
 #import <ZendeskSDK/ZDKHelpCenterSearchDataSource.h>
@@ -136,5 +138,6 @@
 #import <ZendeskSDK/ZDKUploadProvider.h>
 #import <ZendeskSDK/ZDKUploadResponse.h>
 #import <ZendeskSDK/ZDKUser.h>
-#import <ZendeskSDK/ZendeskSDK.h>
+#import <ZendeskSDK/ZDKUserField.h>
+#import <ZendeskSDK/ZDKUserProvider.h>
 #import <ZendeskSDK/ZendeskSDKConstants.h>

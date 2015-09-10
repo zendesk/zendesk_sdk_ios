@@ -23,8 +23,7 @@
 
     // Shows the dialog if the configuration permits it
     [ZDKRMA showInView:self.view];
+
 }
-
-
 @end
 
