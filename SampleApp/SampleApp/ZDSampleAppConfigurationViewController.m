@@ -228,6 +228,11 @@ static NSString * const QR_ANON_EXTERNL_ID = @"anonymous_external_id";
     [self registerForKeyboardNotifications];
 }
 
+- (void) dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 
 - (void) setupConstraints
 {
@@ -405,6 +410,8 @@ static NSString * const QR_ANON_EXTERNL_ID = @"anonymous_external_id";
 
 - (void)keyboardWillBeShown:(NSNotification*)aNotification
 {
+    [super keyboardWillBeShown:aNotification];
+    
     CGFloat margin = ZDSDKPadding + authenticationType.frame.size.height +
                      ZDSDKPadding + nameEntry.frame.size.height +
                      ZDSDKPadding + emailEntry.frame.size.height +
@@ -526,7 +533,7 @@ static NSString * const QR_ANON_EXTERNL_ID = @"anonymous_external_id";
         }
         
     }
-    
+   
     
 }
 

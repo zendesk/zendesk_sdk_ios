@@ -29,6 +29,10 @@ typedef NS_ENUM(NSUInteger, ZDKNavBarConversationsUIType) {
      *  Nav bar button with image for conversations.
      */
     ZDKNavBarConversationsUITypeImage,
+    /**
+     *  No conversations nav bar in Help Center. 
+     */
+    ZDKNavBarConversationsUITypeNone,
 };
 
 @protocol ZDKHelpCenterConversationsUIDelegate <NSObject>

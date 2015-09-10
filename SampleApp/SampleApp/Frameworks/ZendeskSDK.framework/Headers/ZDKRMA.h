@@ -101,5 +101,14 @@
 + (void) notifyFeedbackError;
 
 
+/**
+ *  The instance of ZDKRMA
+ *
+ *  @return Singleton instance of ZDKRMA
+ *
+ *  @since 1.4.0.1
+ */
++ (instancetype) instance;
+
 
 @end
