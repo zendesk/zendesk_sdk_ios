@@ -95,6 +95,7 @@ typedef void (^ZDKInitializeSuccess)(void);
 @property (nonatomic, assign, readonly) ZDKAuthenticationType authenticationType;
 
 
+
 /**
  *  Override the default locale specified via the SDK admin.
  *  A request is made to check the language is supported. If it is not supported, or the request fails, the default
@@ -130,8 +131,8 @@ typedef void (^ZDKInitializeSuccess)(void);
  *  @param applicationId The application id of your SDK app, as found in the web interface.
  *  @param zendeskUrl    The full URL of your Zendesk instance, https://{subdomain}.zendesk.com
  *  @param oAuthClientId The oAuthClientId required as part of the authentication process
- *  @param successBlock  Callback executed on successful initialization of the SDK.
- *  @param errorBlock    Callback executed if initialization fails.
+ *  @param successBlock  Callback executed on successful initialization of the SDK. Can be nil.
+ *  @param errorBlock    Callback executed if initialization fails. Can be nil.
  */
 - (void) initializeWithAppId:(NSString *)applicationId
                   zendeskUrl:(NSString *)zendeskUrl
@@ -193,13 +194,36 @@ typedef void (^ZDKInitializeSuccess)(void);
 
 /**
  *  Register the device for push notifications.
+ *  Deprecated as 1.4.0.1, please use enablePushWithDeviceID or enablePushWithUAChannelID.
  *
  *  @since 1.2.0.1
  *
- *  @param identitfier The device identifier
+ *  @param identifier The device identifier
  *  @param callback    Callback that will provide a newly created device ZDKPushRegistrationResponse.
  */
-- (void) enablePush:(NSString *)identitfier callback:(ZDKPushRegistrationCallback)callback;
+- (void) enablePush:(NSString *)identifier callback:(ZDKPushRegistrationCallback)callback __deprecated_msg("As of version 1.4.0.1, please use enablePushWithDeviceID or enablePushWithUAChannelID");
+
+
+/**
+ *  Register the device for push notifications with APNS ID.
+ *
+ *  @param identifier The APNS device identifier.
+ *  @param callback   Callback that will provide a newly created device ZDKPushRegistrationResponse.
+ *
+ *  @since 1.4.0.1
+ */
+- (void) enablePushWithDeviceID:(NSString *)identifier callback:(ZDKPushRegistrationCallback)callback;
+
+
+/**
+ *  Register the device for push notifications with Urban Airship channel ID.
+ *
+ *  @param identifier The Urban Airship channel ID
+ *  @param callback   Callback that will provide a newly created device ZDKPushRegistrationResponse.
+ *
+ *  @since 1.4.0.1
+ */
+- (void) enablePushWithUAChannelID:(NSString *)identifier callback:(ZDKPushRegistrationCallback)callback;
 
 
 /**
@@ -207,10 +231,10 @@ typedef void (^ZDKInitializeSuccess)(void);
  *
  *  @since 1.2.0.1
  *
- *  @param identitfier The device identifier
+ *  @param identifier The device identifier
  *  @param callback    Callback that provides the HTTP status code for the deletion request.
  */
-- (void) disablePush:(NSString *)identitfier callback:(ZDKPushDeletionCallback)callback;
+- (void) disablePush:(NSString *)identifier callback:(ZDKPushDeletionCallback)callback;
 
 
 @end
