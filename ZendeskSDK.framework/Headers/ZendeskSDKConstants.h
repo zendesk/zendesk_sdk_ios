@@ -22,6 +22,7 @@ FOUNDATION_EXPORT NSString * const ZendeskSDKVersionString;
 
 
 #pragma mark - ZDKToast
+
 /**
  * Default toast animation time.
  */
@@ -161,6 +162,113 @@ extern NSString * const ZDKAPI_RequestByIdSuccess;
  */
 extern NSString * const ZDKAPI_RequestByIdError;
 
+/**
+ *  Notification that a request to add tags to the user profile is about to start
+ *
+ *  @since 1.4.0.1
+ */
+extern NSString * const ZDKAPI_AddUserTagsStarting;
+
+/**
+ *  Notification that a request to add user tags was completed successfully.
+ *
+ *  @since 1.4.0.1
+ */
+extern NSString * const ZDKAPI_AddUserTagsSuccess;
+
+/**
+ *  Notifcation that a request to add user tags failed.
+ *
+ *  @since 1.4.0.1
+ */
+extern NSString * const ZDKAPI_AddUserTagsFailure;
+
+/**
+ *  Notification that a request to delete tags from a user is about to start.
+ *
+ *  @since 1.4.0.1
+ */
+extern NSString * const ZDKAPI_DeleteUserTagsStarting;
+
+/**
+ *  Notification that a request to delete tags from a user succeded.
+ *
+ *  @since 1.4.0.1
+ */
+extern NSString * const ZDKAPI_DeleteUserTagsSuccess;
+
+/**
+ *  Notification that a request to delete tags from a user failed.
+ *
+ *  @since 1.4.0.1
+ */
+extern NSString * const ZDKAPI_DeleteUserTagsFailure;
+
+/**
+ *  Notification that a request to get user fields is starting.
+ *
+ *  @since 1.4.0.1
+ */
+extern NSString * const ZDKAPI_GetUserFieldsStarting;
+
+/**
+ *  Notification that a request to get user fields has succeded.
+ *
+ *  @since 1.4.0.1
+ */
+extern NSString * const ZDKAPI_GetUserFieldsSuccess;
+
+/**
+ *  Notification that a request to get user fields has failed.
+ *
+ *  @since 1.4.0.1
+ */
+extern NSString * const ZDKAPI_GetUserFieldsFailure;
+
+/**
+ *  Notification that a request to add a user field is starting
+ *
+ *  @since 1.4.0.1
+ */
+extern NSString * const ZDKAPI_SetUserFieldsStarting;
+
+/**
+ *  Notification that a request to add a user field has succeded
+ *
+ *  @since 1.4.0.1
+ */
+extern NSString * const ZDKAPI_SetUserFieldsSuccess;
+
+/**
+ *  Notification that a reuest to add a user field has failed
+ *
+ *  @since 1.4.0.1
+ */
+extern NSString * const ZDKAPI_SetUserFieldsFailure;
+
+/**
+ *  Notification that a request to get a user has started
+ *
+ *  @since 1.4.0.1
+ */
+extern NSString * const ZDKAPI_GetUserStarting;
+
+/**
+ *  Notification that a request to get a user has succeded
+ *
+ *  @since 1.4.0.1
+ */
+extern NSString * const ZDKAPI_GetUserSuccess;
+
+/**
+ *  Notification that a request to a user has failed
+ *
+ *  @since 1.4.0.1
+ */
+extern NSString * const ZDKAPI_GetUserFailure;
+
+
+
 
 
 #pragma mark - Help Center
@@ -235,12 +343,20 @@ extern NSString * const ZD_HC_SearchStarting;
  */
 extern NSString * const ZD_HC_SearchSuccess;
 
-
 /**
  * Notification that a help centre category was selected.
  */
 extern NSString * const ZD_HC_CategorySelected;
 
+/**
+ * Notification that a help centre category was being fetched.
+ */
+extern NSString * const ZD_HC_CategoryByIdStarting;
+
+/**
+ * Notification that a help centre category was successfully retrieved.
+ */
+extern NSString * const ZD_HC_CategoryByIdSuccess;
 
 /**
  * Notification that a help centre category was selected.
@@ -251,6 +367,16 @@ extern NSString * const ZD_HC_SectionSelected;
  * Notification that a help centre article was selected.
  */
 extern NSString * const ZD_HC_SectionArticle;
+
+/*
+ * Notification that a help centre section was being fetched
+ */
+extern NSString * const ZD_HC_SectionByIdStarting;
+
+/*
+ * Notification that a help centre section was successfully retrieved.
+ */
+extern NSString * const ZD_HC_SectionByIdSuccess;
 
 /**
  *  Notification that a help center deflection search was started.
@@ -266,7 +392,6 @@ extern NSString * const ZD_HC_DeflectionSearchSuccess;
  *  Notification that a help center deflection search failed.
  */
 extern NSString * const ZD_HC_DeflectionSearchError;
-
 
 /**
  *  Notificaion that a Help Center article upvote request started
@@ -452,3 +577,4 @@ typedef NS_ENUM(NSUInteger, ZDKAuthenticationType){
      */
     ZDKAuthenticationTypeAnonymous,
 };
+

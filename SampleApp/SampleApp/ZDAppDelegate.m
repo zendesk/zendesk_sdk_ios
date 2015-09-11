@@ -57,9 +57,10 @@
 
 - (BOOL) application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions
 {
-    [ZDKDispatcher setDebugLogging:YES];
-    
     [ZDKLogger enable:YES];
+
+#if !TARGET_IPHONE_SIMULATOR
+
 
     // Register the app for remote notifications
     if ([UIApplication instancesRespondToSelector:@selector(registerForRemoteNotifications)]) {
@@ -74,6 +75,9 @@
         UIRemoteNotificationType types = UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound;
         [application registerForRemoteNotificationTypes:types];
     }
+
+#endif
+
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // OPTIONAL - you can choose to set tags or additional info at any stage
@@ -139,6 +143,9 @@
     // make key window
     [self.window makeKeyAndVisible];
     
+    //Add auth to image requests in Help Center.
+    [NSURLProtocol registerClass:[ZDKAuthenticationURLProtocol class]];
+    
     if (SYSTEM_VERSION_GREATER_THAN_SEVEN) {
         
         // status bar
@@ -154,6 +161,11 @@
     return YES;
 }
 
+- (void)applicationWillTerminate:(UIApplication *)application
+{
+    [NSURLProtocol unregisterClass:[ZDKAuthenticationURLProtocol class]];
+}
+
 - (void) setAppearanceProperties
 {
     // request creation screen
@@ -161,8 +173,8 @@
     [[ZDKCreateRequestView appearance] setTextEntryColor:[UIColor whiteColor]];
     [[ZDKCreateRequestView appearance] setTextEntryBackgroundColor:[UIColor blackColor]];
     [[ZDKCreateRequestView appearance] setViewBackgroundColor:[UIColor blackColor]];
-    [[ZDKCreateRequestView appearance] setTextEntryFont:[UIFont systemFontOfSize:12.0f]];
-    
+    [[ZDKCreateRequestView appearance] setTextEntryFont:[UIFont systemFontOfSize:14.0f]];
+        
     [[ZDKCreateRequestView appearance] setAttachmentButtonImage:[ZDKBundleUtils imageNamed:@"icoAttach" ofType:@"png"]];
     [[ZDKCreateRequestView appearance] setAttachmentButtonBackground:[UIColor blackColor]];
     [[ZDKCreateRequestView appearance] setAttachmentButtonBorderColor:[UIColor darkGrayColor]];

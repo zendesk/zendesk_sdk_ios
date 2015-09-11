@@ -35,6 +35,13 @@
 @property (nonatomic, strong) ZDKUITextView *textView;
 
 /**
+ * Text field for email input. Only shown if using anonymous and conversations disabled.
+ *
+ *  @since 1.4.0.1
+ */
+@property (nonatomic, strong) UITextField *emailField;
+
+/**
  *  Button to allow user to attach images
  *
  *  @since 1.1.0.1
@@ -76,6 +83,12 @@
  */
 @property (nonatomic, strong) UIFont *textEntryFont UI_APPEARANCE_SELECTOR;
 
+/**
+ *  For for the email filed
+ *
+ *  @since 1.4.0.1
+ */
+@property (nonatomic, strong) UIFont *emailFieldFont UI_APPEARANCE_SELECTOR;
 
 /**
  *  Attachment button image.

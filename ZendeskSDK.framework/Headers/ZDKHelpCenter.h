@@ -26,7 +26,6 @@
 @interface ZDKHelpCenter : NSObject <ZDKHelpCenterConversationsUIDelegate>
 
 
-
 /**
  *  Displays the Help Center view on top the navigation controller that is passed in.
  *
@@ -85,7 +84,6 @@
                    filterByArticleLabels:(NSArray *)labels
                              layoutGuide:(ZDKLayoutGuide)aGuide;
 
-
 /**
  *  Modally display the Help Center view on top of the navigation controller that is passed in.
  *
@@ -116,5 +114,75 @@
  */
 + (void) setNavBarConversationsUIType:(ZDKNavBarConversationsUIType)uiType;
 
+
+/**
+ *  Displays the Help Center sections view for a given category ID on top the navigation controller that is passed in.
+ *
+ *  @since 1.3.1.1
+ *
+ *  @param navController The UINavigationController from which to present the help center view controller.
+ *  @param categoryId    The ID of the parent Help Center category which the displayed sections belong to.
+ *  @param categoryName  The categoryName to display in the title bar. The categoryName will default to "Support" if set to nil.
+ *  @param aGuide        Should the request list respect top and bottom layout guide? Pass in
+ *                       one of the const values, ZDKLayoutRespectAll, ZDKLayoutRespectNone,
+ *                       ZDKLayoutRespectTop and ZDKLayoutRespectBottom.
+ */
++ (void) showHelpCenterWithNavController:(UINavigationController *)navController
+                      filterByCategoryId:(NSString *)categoryId
+                            categoryName:(NSString *)categoryName
+                             layoutGuide:(ZDKLayoutGuide)aGuide;
+
+
+/**
+ *  Displays the Help Center articles view on top the navigation controller that is passed in.
+ *
+ *  @since 1.3.1.1
+ *
+ *  @param navController The UINavigationController from which to present the help center view controller.
+ *  @param sectionId     The ID of the parent Help Center section which the displayed articles belong to.
+ *  @param sectionName   The sectionName to display in the title bar. The sectionName will default to "Support" if set to nil.
+ *  @param aGuide        Should the request list respect top and bottom layout guide? Pass in
+ *                       one of the const values, ZDKLayoutRespectAll, ZDKLayoutRespectNone,
+ *                       ZDKLayoutRespectTop and ZDKLayoutRespectBottom.
+ */
++ (void) showHelpCenterWithNavController:(UINavigationController *)navController
+                       filterBySectionId:(NSString *)sectionId
+                             sectionName:(NSString *)sectionName
+                             layoutGuide:(ZDKLayoutGuide)aGuide;
+
+/**
+ *  Modally display the Help Center view on top of the navigation controller that is passed in for a given category ID.
+ *
+ *  @since 1.3.1.1
+ *
+ *  @param navController The UINavigationController from which to present the help center view controller.
+ *  @param categoryId    The ID of the parent Help Center category which the displayed sections belong to.
+ *  @param categoryName  The categoryName to display in the title bar. The categoryName will default to "Support" if set to nil.
+ *  @param aGuide        Should the request list respect top and bottom layout guide? Pass in
+ *                       one of the const values, ZDKLayoutRespectAll, ZDKLayoutRespectNone,
+ *                       ZDKLayoutRespectTop and ZDKLayoutRespectBottom.
+ */
++ (void) presentHelpCenterWithNavController:(UINavigationController *)navController
+                      filterByCategoryId:(NSString *)categoryId
+                            categoryName:(NSString *)categoryName
+                             layoutGuide:(ZDKLayoutGuide)aGuide;
+
+
+/**
+ *  Modally display the Help Center view on top of the navigation controller that is passed in for a given section ID.
+ *
+ *  @since 1.3.1.1
+ *
+ *  @param navController The UINavigationController from which to present the help center view controller.
+ *  @param sectionId     The ID of the parent Help Center section which the displayed articles belong to.
+ *  @param sectionName   The sectionName to display in the title bar. The sectionName will default to "Support" if set to nil.
+ *  @param aGuide        Should the request list respect top and bottom layout guide? Pass in
+ *                       one of the const values, ZDKLayoutRespectAll, ZDKLayoutRespectNone,
+ *                       ZDKLayoutRespectTop and ZDKLayoutRespectBottom.
+ */
++ (void) presentHelpCenterWithNavController:(UINavigationController *)navController
+                       filterBySectionId:(NSString *)sectionId
+                             sectionName:(NSString *)sectionName
+                             layoutGuide:(ZDKLayoutGuide)aGuide;
 
 @end
