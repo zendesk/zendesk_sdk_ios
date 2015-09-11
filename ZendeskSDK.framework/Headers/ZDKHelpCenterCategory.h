@@ -18,12 +18,82 @@
 
 @interface ZDKHelpCenterCategory : NSObject
 
+/**
+ *  Category id.
+ *
+ *  @since 0.9.3.1
+ */
 @property (strong, nonatomic) NSString *sid;
+
+/**
+ *  Category Name.
+ *
+ *  @since 0.9.3.1
+ */
 @property (strong, nonatomic) NSString *name;
+
+/**
+ *  Category Description.
+ *
+ *  @since 0.9.3.1
+ */
 @property (strong, nonatomic) NSString *categoryDescription;
+
+/**
+ *  Position in Category list.
+ *
+ *  @since 0.9.3.1
+ */
 @property (assign, nonatomic) NSInteger position;
+
+/**
+ *  Whether the category is outdated or not.
+ *
+ *  @since 1.4.0.1
+ */
 @property (assign, nonatomic) BOOL outdated;
 
+/**
+ *  Current Locale.
+ *
+ *  @since 1.4.0.1
+ */
+@property (strong, nonatomic) NSString *locale;
+
+/**
+ *  Source locale of this category
+ *
+ *  @since 1.4.0.1
+ */
+@property (strong, nonatomic) NSString *sourceLocale;
+
+/**
+ *  API url of the Category in the help center
+ *
+ *  @since 1.4.0.1
+ */
+@property (strong, nonatomic) NSString *url;
+
+/**
+ *  url of the Category in the help center
+ *
+ *  @since 1.4.0.1
+ */
+@property (strong, nonatomic) NSString *html_url;
+
+/**
+ *  Time at which the category was last updated at.
+ *
+ *  @since 1.4.0.1
+ */
+@property (strong, nonatomic) NSString *updatedAt;
+
+/**
+ *  Time at whieh the category was created at
+ *
+ *  @since 1.4.0.1
+ */
+@property (strong, nonatomic) NSString *createdAt;
 
 /**
  * Parses a single Help Center json category object.
@@ -36,6 +106,7 @@
 /**
  * Parses a collection of Help Center json category objects
  *
+ * @return An array of ZDKHelpCenterCatefory objects.
  */
 + (NSArray *) parseCategories:(NSDictionary *)json;
 

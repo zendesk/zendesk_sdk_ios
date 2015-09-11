@@ -47,6 +47,13 @@
  */
 @property (nonatomic, readonly) NSString *device_type;
 
+/**
+ *  Token type, only used to identify Urban Airship channels, nil otherwise.
+ *
+ *  @since 1.4.0.1
+ */
+@property (nonatomic) NSString *token_type;
+
 
 /**
  *  Returns a dictionary representation of the object.
