@@ -118,7 +118,7 @@
 		</data>
 		<key>Headers/ZDKConfig.h</key>
 		<data>
-		Sx8Po4H52NmEddKunGTnmcG8WeU=
+		YmxOOmylozwY0z53uGyuoyBIljg=
 		</data>
 		<key>Headers/ZDKContactUsSettings.h</key>
 		<data>
@@ -138,7 +138,7 @@
 		</data>
 		<key>Headers/ZDKCreateRequestView.h</key>
 		<data>
-		kWxCg44lPuTc31zuyQM5gKyjNEM=
+		4jagwbmCRBqQkEW8ywRZ+yl2oSk=
 		</data>
 		<key>Headers/ZDKCreateRequestViewController.h</key>
 		<data>
@@ -174,11 +174,11 @@
 		</data>
 		<key>Headers/ZDKHelpCenter.h</key>
 		<data>
-		BtgQFatxl+PXncYN68CnlGHjOcA=
+		4kSUXTi0RMb03T7Bsu895tNCzHE=
 		</data>
 		<key>Headers/ZDKHelpCenterArticle.h</key>
 		<data>
-		lzsvsBa1m7mDS1w1L3eXFP2rLgY=
+		0d90gj1x4oqBdSiEnd7JyA5v4mw=
 		</data>
 		<key>Headers/ZDKHelpCenterArticleVote.h</key>
 		<data>
@@ -206,11 +206,11 @@
 		</data>
 		<key>Headers/ZDKHelpCenterCategory.h</key>
 		<data>
-		IAD0IUAUzgZyK29G+W759m5CHLE=
+		OlgrJydfXceCOqejbJPxS0U2OFE=
 		</data>
 		<key>Headers/ZDKHelpCenterConversationsUIDelegate.h</key>
 		<data>
-		JH/MhrQXry4VoyEa/B0R7rlaDKc=
+		on7DWSuIb9dxBMecrLDHS1fTe64=
 		</data>
 		<key>Headers/ZDKHelpCenterDataSource.h</key>
 		<data>
@@ -220,13 +220,21 @@
 		<data>
 		9NU6L9tg6ew+dwsI4DBkPZfPusQ=
 		</data>
+		<key>Headers/ZDKHelpCenterFlatArticle.h</key>
+		<data>
+		YZmXcS9y/6BdrYgKNG6ugphW3Yk=
+		</data>
 		<key>Headers/ZDKHelpCenterLastSearch.h</key>
 		<data>
 		Zb5n/QaRhtrAyAuM4ObhnDRh0nM=
 		</data>
+		<key>Headers/ZDKHelpCenterParser.h</key>
+		<data>
+		8HlwQGUJ2ChQmZ2vT2PvLw2d5dw=
+		</data>
 		<key>Headers/ZDKHelpCenterProvider.h</key>
 		<data>
-		yYSaFulOzkXM8x+dyDb1F8yi8Do=
+		izXdByAP7PNtbpdthlQLUMvvnA8=
 		</data>
 		<key>Headers/ZDKHelpCenterSearch.h</key>
 		<data>
@@ -238,7 +246,7 @@
 		</data>
 		<key>Headers/ZDKHelpCenterSection.h</key>
 		<data>
-		xmVygsWg7kRrFA+8LNPYjuPuXfs=
+		9W2BrshBFuw+vuSX+eWcdyuaVIE=
 		</data>
 		<key>Headers/ZDKHelpCenterSectionsDataSource.h</key>
 		<data>
@@ -294,11 +302,11 @@
 		</data>
 		<key>Headers/ZDKPushRegistrationProvider.h</key>
 		<data>
-		dUjmsfpEuXq0Y7Slrt6dvvZ9Esk=
+		Hfl3ilzFTKwu4TfGsDXjrHYMO6w=
 		</data>
 		<key>Headers/ZDKPushRegistrationRequest.h</key>
 		<data>
-		wG9ddNcgYAd9GdrxGymAYIHVrT0=
+		0sGAthhwK7i7Y4d2iMHWwHHevss=
 		</data>
 		<key>Headers/ZDKPushRegistrationResponse.h</key>
 		<data>
@@ -310,7 +318,7 @@
 		</data>
 		<key>Headers/ZDKRMA.h</key>
 		<data>
-		KRtZfnW9CH4j48OI24JN4xFvNps=
+		R6xh0WOGc0kvnRjh1qIcdgVsW+k=
 		</data>
 		<key>Headers/ZDKRMAConfigObject.h</key>
 		<data>
@@ -350,7 +358,7 @@
 		</data>
 		<key>Headers/ZDKRequestCommentAttachmentTableCell.h</key>
 		<data>
-		IUoV/YAfn9UQE01LwVeMlzwzD9E=
+		EaaM2Qa2Ws/L8SB07k6Jp2LPGfg=
 		</data>
 		<key>Headers/ZDKRequestCommentTableCell.h</key>
 		<data>
@@ -430,7 +438,7 @@
 		</data>
 		<key>Headers/ZDKSupportViewController.h</key>
 		<data>
-		JfWKmoBn3LdAxDeszVVr5QgA1nk=
+		l95XGgpyMz+E4fa8G8eHsIxWVWg=
 		</data>
 		<key>Headers/ZDKToast.h</key>
 		<data>
@@ -482,23 +490,35 @@
 		</data>
 		<key>Headers/ZDKUser.h</key>
 		<data>
-		wBw0ww5yoXlDxYeqrwAOHFsthRA=
+		bdqNGN79m391HVb0HMwS1rumPhE=
+		</data>
+		<key>Headers/ZDKUserField.h</key>
+		<data>
+		6CKB0CHjen8iEcQ3f84MHmPqoBk=
+		</data>
+		<key>Headers/ZDKUserProvider.h</key>
+		<data>
+		CFvPkZySWl0MyT+UMEqIR+bQtJI=
 		</data>
 		<key>Headers/ZendeskSDK.h</key>
 		<data>
-		5BgxeW7K6VpNl5hFf9gdDBgSc0s=
+		R/amq6Gg3sJEeSLP8e2O06dYBsg=
 		</data>
 		<key>Headers/ZendeskSDKConstants.h</key>
 		<data>
-		Tluqz0/PfzGRb/zolRvDI50Rg2I=
+		0EjRnJNj5sfWA3CXA/stYYBbzzA=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		/t47HsviOP2XKlbM6fWQRfcM4gA=
+		fDbMunYtKY0reQkI12p849QaFOI=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
 		3WkBW1eSXwpIb4TSrHeQ/UPBk7w=
+		</data>
+		<key>PrivateHeaders/ZDKValidator.h</key>
+		<data>
+		7w15FazeL5UhXSZrokuYm8Z7ZyM=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -617,7 +637,7 @@
 		</data>
 		<key>Headers/ZDKConfig.h</key>
 		<data>
-		Sx8Po4H52NmEddKunGTnmcG8WeU=
+		YmxOOmylozwY0z53uGyuoyBIljg=
 		</data>
 		<key>Headers/ZDKContactUsSettings.h</key>
 		<data>
@@ -637,7 +657,7 @@
 		</data>
 		<key>Headers/ZDKCreateRequestView.h</key>
 		<data>
-		kWxCg44lPuTc31zuyQM5gKyjNEM=
+		4jagwbmCRBqQkEW8ywRZ+yl2oSk=
 		</data>
 		<key>Headers/ZDKCreateRequestViewController.h</key>
 		<data>
@@ -673,11 +693,11 @@
 		</data>
 		<key>Headers/ZDKHelpCenter.h</key>
 		<data>
-		BtgQFatxl+PXncYN68CnlGHjOcA=
+		4kSUXTi0RMb03T7Bsu895tNCzHE=
 		</data>
 		<key>Headers/ZDKHelpCenterArticle.h</key>
 		<data>
-		lzsvsBa1m7mDS1w1L3eXFP2rLgY=
+		0d90gj1x4oqBdSiEnd7JyA5v4mw=
 		</data>
 		<key>Headers/ZDKHelpCenterArticleVote.h</key>
 		<data>
@@ -705,11 +725,11 @@
 		</data>
 		<key>Headers/ZDKHelpCenterCategory.h</key>
 		<data>
-		IAD0IUAUzgZyK29G+W759m5CHLE=
+		OlgrJydfXceCOqejbJPxS0U2OFE=
 		</data>
 		<key>Headers/ZDKHelpCenterConversationsUIDelegate.h</key>
 		<data>
-		JH/MhrQXry4VoyEa/B0R7rlaDKc=
+		on7DWSuIb9dxBMecrLDHS1fTe64=
 		</data>
 		<key>Headers/ZDKHelpCenterDataSource.h</key>
 		<data>
@@ -719,13 +739,21 @@
 		<data>
 		9NU6L9tg6ew+dwsI4DBkPZfPusQ=
 		</data>
+		<key>Headers/ZDKHelpCenterFlatArticle.h</key>
+		<data>
+		YZmXcS9y/6BdrYgKNG6ugphW3Yk=
+		</data>
 		<key>Headers/ZDKHelpCenterLastSearch.h</key>
 		<data>
 		Zb5n/QaRhtrAyAuM4ObhnDRh0nM=
 		</data>
+		<key>Headers/ZDKHelpCenterParser.h</key>
+		<data>
+		8HlwQGUJ2ChQmZ2vT2PvLw2d5dw=
+		</data>
 		<key>Headers/ZDKHelpCenterProvider.h</key>
 		<data>
-		yYSaFulOzkXM8x+dyDb1F8yi8Do=
+		izXdByAP7PNtbpdthlQLUMvvnA8=
 		</data>
 		<key>Headers/ZDKHelpCenterSearch.h</key>
 		<data>
@@ -737,7 +765,7 @@
 		</data>
 		<key>Headers/ZDKHelpCenterSection.h</key>
 		<data>
-		xmVygsWg7kRrFA+8LNPYjuPuXfs=
+		9W2BrshBFuw+vuSX+eWcdyuaVIE=
 		</data>
 		<key>Headers/ZDKHelpCenterSectionsDataSource.h</key>
 		<data>
@@ -793,11 +821,11 @@
 		</data>
 		<key>Headers/ZDKPushRegistrationProvider.h</key>
 		<data>
-		dUjmsfpEuXq0Y7Slrt6dvvZ9Esk=
+		Hfl3ilzFTKwu4TfGsDXjrHYMO6w=
 		</data>
 		<key>Headers/ZDKPushRegistrationRequest.h</key>
 		<data>
-		wG9ddNcgYAd9GdrxGymAYIHVrT0=
+		0sGAthhwK7i7Y4d2iMHWwHHevss=
 		</data>
 		<key>Headers/ZDKPushRegistrationResponse.h</key>
 		<data>
@@ -809,7 +837,7 @@
 		</data>
 		<key>Headers/ZDKRMA.h</key>
 		<data>
-		KRtZfnW9CH4j48OI24JN4xFvNps=
+		R6xh0WOGc0kvnRjh1qIcdgVsW+k=
 		</data>
 		<key>Headers/ZDKRMAConfigObject.h</key>
 		<data>
@@ -849,7 +877,7 @@
 		</data>
 		<key>Headers/ZDKRequestCommentAttachmentTableCell.h</key>
 		<data>
-		IUoV/YAfn9UQE01LwVeMlzwzD9E=
+		EaaM2Qa2Ws/L8SB07k6Jp2LPGfg=
 		</data>
 		<key>Headers/ZDKRequestCommentTableCell.h</key>
 		<data>
@@ -929,7 +957,7 @@
 		</data>
 		<key>Headers/ZDKSupportViewController.h</key>
 		<data>
-		JfWKmoBn3LdAxDeszVVr5QgA1nk=
+		l95XGgpyMz+E4fa8G8eHsIxWVWg=
 		</data>
 		<key>Headers/ZDKToast.h</key>
 		<data>
@@ -981,19 +1009,31 @@
 		</data>
 		<key>Headers/ZDKUser.h</key>
 		<data>
-		wBw0ww5yoXlDxYeqrwAOHFsthRA=
+		bdqNGN79m391HVb0HMwS1rumPhE=
+		</data>
+		<key>Headers/ZDKUserField.h</key>
+		<data>
+		6CKB0CHjen8iEcQ3f84MHmPqoBk=
+		</data>
+		<key>Headers/ZDKUserProvider.h</key>
+		<data>
+		CFvPkZySWl0MyT+UMEqIR+bQtJI=
 		</data>
 		<key>Headers/ZendeskSDK.h</key>
 		<data>
-		5BgxeW7K6VpNl5hFf9gdDBgSc0s=
+		R/amq6Gg3sJEeSLP8e2O06dYBsg=
 		</data>
 		<key>Headers/ZendeskSDKConstants.h</key>
 		<data>
-		Tluqz0/PfzGRb/zolRvDI50Rg2I=
+		0EjRnJNj5sfWA3CXA/stYYBbzzA=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
 		3WkBW1eSXwpIb4TSrHeQ/UPBk7w=
+		</data>
+		<key>PrivateHeaders/ZDKValidator.h</key>
+		<data>
+		7w15FazeL5UhXSZrokuYm8Z7ZyM=
 		</data>
 	</dict>
 	<key>rules</key>

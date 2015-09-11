@@ -104,7 +104,6 @@ typedef void (^ZDKHelpCenterGenericCallback)(id response, NSError *error);
  */
 - (void) getArticlesByLabels:(NSArray *)labels withCallback: (ZDKHelpCenterCallback) callback;
 
-
 /**
  *  Fetch an article by ID.
  *
@@ -126,6 +125,34 @@ typedef void (^ZDKHelpCenterGenericCallback)(id response, NSError *error);
  */
 - (void) getSuggestedArticles:(ZDKHelpCenterDeflection*)search withCallback:(ZDKHelpCenterCallback)callback;
 
+/**
+ *  Fetch a list of FlatArticle objects for a given Help Center instance.
+ *
+ *  @since 1.4.0.1
+ *
+ *  @param callback The callback that is invoked when a request is either successful or has error.
+ */
+- (void) getFlatArticlesWithCallback:(ZDKHelpCenterCallback)callback;
+
+/**
+ *  Fetches a section object for a particluar sectionId.
+ *
+ *  @since 1.4.0.1
+ *
+ *  @param sectionId The id of the section to fetch.
+ *  @param callback The callback that is invoked when a request is either successful or has error.
+ */
+- (void) getSectionById:(NSString *)sectionId withCallback:(ZDKHelpCenterCallback)callback;
+
+/**
+ *  Fetches a category object for a particluar categoryId.
+ *
+ *  @since 1.4.0.1
+ *
+ *  @param categoryId The id of the section to fetch.
+ *  @param callback The callback that is invoked when a request is either successful or has error.
+ */
+- (void) getCategoryById:(NSString *)categoryId withCallback:(ZDKHelpCenterCallback)callback;
 
 /**
  *  Used for the purpose of reporting in Zendesk. This will record an article as being viewed by the client. 
@@ -170,5 +197,6 @@ typedef void (^ZDKHelpCenterGenericCallback)(id response, NSError *error);
  *  @param callback  The callback that is invoked when a request is either successful or has error. Returns a status code
  */
 - (void) deleteVoteWithId:(NSString*)voteId withCallback:(ZDKHelpCenterGenericCallback)callback;
+
 
 @end
