@@ -65,4 +65,11 @@
 - (instancetype) initWithSection:(ZDKHelpCenterSection *)section;
 
 
+/**
+ *  Dismiss modally presented controller.
+ *
+ *  @since 1.4.1.1
+ */
+- (void) dismiss;
+
 @end

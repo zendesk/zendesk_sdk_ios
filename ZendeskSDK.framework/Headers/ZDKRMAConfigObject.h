@@ -174,7 +174,7 @@ typedef void (^SendFeedbackError) (void);
  * minimumDays, and returns NO otherwise.
  *
  */
-@property (nonatomic, copy, readonly) ShouldShow shouldShowBlock;
+@property (nonatomic, copy) ShouldShow shouldShowBlock;
 
 /**
  * A block that is invoked when the "Send feedback" button is pressed. 
