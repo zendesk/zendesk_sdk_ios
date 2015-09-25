@@ -350,9 +350,9 @@ static CGFloat const PADDING = 15.f;
 {
     
     NSString *identifier = [self getDeviceId];
-    
-    [[ZDKConfig instance] enablePush:identifier callback:^(ZDKPushRegistrationResponse *registrationResponse, NSError *error) {
-        
+
+    [[ZDKConfig instance] enablePushWithDeviceID:identifier callback:^(ZDKPushRegistrationResponse *registrationResponse, NSError *error) {
+
         NSString *title;
 
         if (error) {

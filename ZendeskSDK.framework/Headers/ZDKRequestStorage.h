@@ -39,7 +39,7 @@
  *
  *  @return NSDate of the last time it was read, nil if no date found
  */
-- (NSDate *) lastReadDateUsingRequestId:(NSString *)requestId;
+- (NSDate *) lastReadDateUsingRequestId:(NSString *)requestId __deprecated_msg("As of version 1.4.1.1");
 
 /**
  *  Stores a time when this request was last read
@@ -47,7 +47,28 @@
  *  @param requestId The id of the request
  *  @param date      The timestamp that the request was last read
  */
-- (void) setLastReadDateUsingRequestId:(NSString *)requestId andDate:(NSDate *)date;
+- (void) setLastReadDateUsingRequestId:(NSString *)requestId andDate:(NSDate *)date __deprecated_msg("As of version 1.4.1.1");
+
+/**
+ *  Gets the last known comment count for a request.
+ *
+ *  @param requestId The id of the request.
+ *
+ *  @return The comment count for the request, nil if not known.
+ *
+ *  @since 1.4.1.1
+ */
+- (NSNumber *) clientCommentCountForRequest:(NSString *)requestId;
+
+/**
+ *  Set the comment count for a request.
+ *
+ *  @param requestId The id of the request.
+ *  @param count The count to store.
+ *
+ *  @since 1.4.1.1
+ */
+- (void) setClientCommentCountForRequest:(NSString *)requestId count:(NSNumber *)count;
 
 /**
  * Deletes ALL storage

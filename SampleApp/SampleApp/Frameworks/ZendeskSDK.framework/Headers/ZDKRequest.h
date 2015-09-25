@@ -63,7 +63,14 @@
 /**
  * The last time this request was view by this client.
  */
-@property (nonatomic, strong) NSDate *lastViewed;
+@property (nonatomic, strong) NSDate *lastViewed __deprecated_msg("Deprecated as of 1.4.1.1");
+
+/**
+ *  The number of comments on this ticket.
+ *
+ *  @since 1.4.1.1
+ */
+@property (nonatomic, strong) NSNumber *commentCount;
 
 
 /**

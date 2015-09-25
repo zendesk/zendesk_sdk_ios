@@ -57,6 +57,12 @@
  */
 @property (nonatomic, strong) NSArray *attachments;
 
+/**
+ *  The request the comment belongs to.
+ *
+ *  @since 1.4.1.1
+ */
+@property (nonatomic, strong) NSString *requestId;
 
 /**
  * Initialise the model object with the account details ands the dispatcher to be used for requests.
