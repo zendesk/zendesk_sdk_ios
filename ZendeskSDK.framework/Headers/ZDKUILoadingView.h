@@ -14,7 +14,7 @@
  *
  */
 
-#import <ZendeskSDK/ZendeskSDK.h>
+
 
 @interface ZDKUILoadingView : UIView
 
