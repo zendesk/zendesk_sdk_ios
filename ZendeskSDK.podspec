@@ -24,6 +24,7 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/zendesk/zendesk_sdk_ios.git", :tag => s.version }
   s.platform     = :ios, '6.0'
   s.requires_arc = true
+  s.frameworks = 'MobileCoreServices', 'SystemConfiguration', 'Security'
 
   # Using subspecs to support installation without Localization part
   s.default_subspecs = 'Core', 'Localization'
