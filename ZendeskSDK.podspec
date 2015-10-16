@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name         = "ZendeskSDK"
-  s.version      = "1.4.1.3"
-  s.summary      = "Zendesk SDK 1.4.1.3"
+  s.version      = "1.4.1.4"
+  s.summary      = "Zendesk SDK 1.4.1.4"
   s.homepage     = "https://github.com/zendesk/zendesk_sdk_ios"
   s.license      = {
     :type => 'Copyright',
