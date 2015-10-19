@@ -28,6 +28,10 @@ source 'https://github.com/zendesk/Specs.git'
 pod 'ZendeskSDK', '~> RELEASE_VERSION_TAG'
 ```
 
+## Release Notes 
+
+(https://developer.zendesk.com/embeddables/docs/ios/release_notes)
+
 ## Copyright and license
 
 Copyright 2014 Zendesk
