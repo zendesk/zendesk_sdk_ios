@@ -28,9 +28,9 @@ source 'https://github.com/zendesk/Specs.git'
 pod 'ZendeskSDK', '~> RELEASE_VERSION_TAG'
 ```
 
-## Release Notes 
+## Documentation
 
-(https://developer.zendesk.com/embeddables/docs/ios/release_notes)
+You can find [documentation](https://developer.zendesk.com/embeddables/docs/ios/overview) for the SDK and [release notes](https://developer.zendesk.com/embeddables/docs/ios/release_notes) on https://developer.zendesk.com.
 
 ## Copyright and license
 
