@@ -10,7 +10,7 @@
 #import <ZendeskSDK/ZendeskSDK.h>
 #import "ZDSampleAppScanViewController.h"
 
-@protocol ZDAppCondigurationDelegate <NSObject>
+@protocol ZDAppConfigurationDelegate <NSObject>
 
 - (void) configuration:(NSString *) url withAppId:(NSString *) appId andClientId:(NSString *) clientId;
 
@@ -18,6 +18,6 @@
 
 @interface ZDSampleAppConfigurationViewController : ZDKUIViewController <UITextFieldDelegate, ZDSampleAppScanViewControllerDelegate>
 
-@property (nonatomic, strong) id <ZDAppCondigurationDelegate> delegate;
+@property (nonatomic, strong) id <ZDAppConfigurationDelegate> delegate;
 
 @end

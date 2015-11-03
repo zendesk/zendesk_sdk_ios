@@ -14,7 +14,7 @@
 #define APPLE_PUSH_UUID @"ZDKPushUUIDKey"
 
 
-@interface ZDSampleViewController : ZDKUIViewController <ZDAppCondigurationDelegate>
+@interface ZDSampleViewController : ZDKUIViewController <ZDAppConfigurationDelegate>
 
 
 @property (nonatomic, strong) UIButton *requestCreationButton;
