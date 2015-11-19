@@ -8,7 +8,8 @@ Zendesk SDK for mobile is a quick, convenient way to get customer support into y
 
  * SampleApp - sample project for core request management
  * ZendeskSDK.bundle - the SDK resource bundle
- * ZendeskSDK.framework - the SDK framework
+ * ZendeskSDK.framework - UI components for SDK 
+ * ZendeskProviderSDK.framework - Provider only framework, no UI components
  * ZendeskSDKStrings.bundle - the SDK localization strings bundle
 
 You can also reference this repository as a cocoapod:
