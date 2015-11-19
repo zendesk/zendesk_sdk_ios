@@ -56,7 +56,7 @@ typedef NS_ENUM(NSUInteger, ZDKNavBarCreateRequestUIType) {
 
 
 /**
- *  To conform implementations should return an immage for the right nav bar button.
+ *  To conform implementations should return an image for the right nav bar button.
  *
  *  @since 0.9.3.1
  *

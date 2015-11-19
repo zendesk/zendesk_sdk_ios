@@ -16,7 +16,9 @@
 
 
 #import <Foundation/Foundation.h>
-#import "ZDKAPIDispatcher.h"
+#import <ZendeskProviderSDK/ZendeskProviderSDK.h>
+
+
 #import "ZDKCreateRequestUIDelegate.h"
 #import "ZDKUIViewController.h"
 
@@ -111,7 +113,7 @@ typedef void (^ZDSDKConfigBlock) (ZDKAccount *account, ZDKRequestCreationConfig 
  *  Displays a simple request creation modal. The modal is presented on top the view controller
  *  that is passed in.
  *
- *  @param navController The UINavigationController from which to pressent the request creation view.
+ *  @param navController The UINavigationController from which to present the request creation view.
  */
 + (void) showRequestCreationWithNavController:(UINavigationController*)navController;
 
@@ -120,8 +122,8 @@ typedef void (^ZDSDKConfigBlock) (ZDKAccount *account, ZDKRequestCreationConfig 
  *  Displays a simple request creation modal. The modal is presented on top the view controller
  *  that is passed in.
  *
- *  @param navController The UINavigationController from which to pressent the request creation view.
- *  @param success       A block that is executed on successfull submission of a request.
+ *  @param navController The UINavigationController from which to present the request creation view.
+ *  @param success       A block that is executed on successful submission of a request.
  *  @param error         A block that is executed when an error occurs during submission of a request.
  */
 + (void) showRequestCreationWithNavController:(UINavigationController*)navController
@@ -156,16 +158,6 @@ typedef void (^ZDSDKConfigBlock) (ZDKAccount *account, ZDKRequestCreationConfig 
  *                       ZDKLayoutRespectTop and ZDKLayoutRespectBottom.
  */
 + (void) showRequestListWithNavController:(UINavigationController *)navController layoutGuide:(ZDKLayoutGuide)aGuide;
-
-
-/**
- * Create a new request list component for use, initially the component will have a CGRectZero frame.
- *
- * @param observer event observer for receiving notification of table updates
- * @param selector the selector to be invoked on table update events
- * @return a new request list component
- */
-+ (ZDKRequestListTable*) newRequestListWith:(id)observer andSelector:(SEL)selector __deprecated_msg(" As of version 1.1.1.1");
 
 
 /**

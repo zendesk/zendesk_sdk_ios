@@ -15,13 +15,14 @@
  */
 
 #import <Foundation/Foundation.h>
+#import <ZendeskProviderSDK/ZendeskProviderSDK.h>
+
+
 #import "ZDKRMAConfigObject.h"
 #import "ZDKRMADataObject.h"
 #import "ZDKRMADialogViewController.h"
 #import "ZDKRMADialogView.h"
 #import "ZDKRMAFeedbackView.h"
-#import "ZendeskSDKConstants.h"
-#import "ZDKAccount.h"
 
 
 /**
@@ -45,7 +46,7 @@
 
 
 /**
- * To show the ZDKRMA dialog in a view, call this methed in either viewWillAppear or
+ * To show the ZDKRMA dialog in a view, call this method in either viewWillAppear or
  * viewDidAppear, or an equivalent method. This will use the shouldShowBlock in ZDKRMAConfigObject to
  * decide if the dialog should be shown.
  *
@@ -56,12 +57,12 @@
 
 
 /**
- * To show the ZDKRMA dialog in a view, call this methed in either viewWillAppear or
+ * To show the ZDKRMA dialog in a view, call this method in either viewWillAppear or
  * viewDidAppear, or an equivalent method. This method will always show a dialog irrespective of
  * the settings in ZDKRMAConfigObject.
  *
- * @discussion Any actions commited by the user from the RMA dialog shown by this method
- * will conflict with the behaviour of showInView. showInView will not display a RMA dialog if it has
+ * @discussion Any actions committed by the user from the RMA dialog shown by this method
+ * will conflict with the behavior of showInView. showInView will not display a RMA dialog if it has
  * been previously presented to the user.
  * @param view A view that RMA will be displayed over.
  */

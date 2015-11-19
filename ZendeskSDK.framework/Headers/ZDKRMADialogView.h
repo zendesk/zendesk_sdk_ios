@@ -15,7 +15,7 @@
  */
 
 #import <UIKit/UIKit.h>
-#import "ZendeskSDKConstants.h"
+#import <ZendeskProviderSDK/ZendeskProviderSDK.h>
 
 
 /**
@@ -100,7 +100,7 @@
 
 /**
  * A simple table view with limited rows for displaying the options associated with ZDKRMA.
- * The table height determins the height of the individual rows and table header. The header and row
+ * The table height determines the height of the individual rows and table header. The header and row
  * height is calculated dividing the number of rows plus the header
  */
 @interface ZDKRMADialogView : UITableView <UITableViewDataSource, UITableViewDelegate> {

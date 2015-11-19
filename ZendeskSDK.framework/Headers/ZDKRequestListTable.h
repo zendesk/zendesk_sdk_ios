@@ -31,7 +31,7 @@
 @interface ZDKRequestListTable : UITableView <UITableViewDataSource, UITableViewDelegate, ZDRequestListRetryDelegate>
 
 /**
- * The array of requests that is being used tpo render the table.
+ * The array of requests that is being used to render the table.
  */
 @property (nonatomic, strong) NSArray *requests;
 
@@ -41,7 +41,7 @@
 @property (nonatomic, assign) BOOL refreshError;
 
 /**
- * Localised error string for presentation to the user.
+ * Localized error string for presentation to the user.
  */
 @property (nonatomic, strong) NSString *errorString;
 

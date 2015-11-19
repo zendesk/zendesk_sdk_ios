@@ -45,12 +45,12 @@
 @property (nonatomic, strong) UIFont *articleParentsLabelFont UI_APPEARANCE_SELECTOR;
 
 /**
- * Article parents label colour.
+ * Article parents label color.
  */
 @property (nonatomic, strong) UIColor *articleParentsLabelColor UI_APPEARANCE_SELECTOR;
 
 /**
- * Article parents label background colour.
+ * Article parents label background color.
  */
 @property (nonatomic, strong) UIColor *articleParnetsLabelBackground UI_APPEARANCE_SELECTOR;
 
@@ -60,12 +60,12 @@
 @property (nonatomic, strong) UIFont *titleLabelFont UI_APPEARANCE_SELECTOR;
 
 /**
- * Title label colour.
+ * Title label color.
  */
 @property (nonatomic, strong) UIColor *titleLabelColor UI_APPEARANCE_SELECTOR;
 
 /**
- * Title label background colour.
+ * Title label background color.
  */
 @property (nonatomic, strong) UIColor *titleLabelBackground UI_APPEARANCE_SELECTOR;
 

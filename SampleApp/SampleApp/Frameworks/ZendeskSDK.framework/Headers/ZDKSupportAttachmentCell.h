@@ -39,17 +39,17 @@
 
 
 /**
- * Attatchment file size label font.
+ * Attachment file size label font.
  */
 @property (nonatomic, strong) UIFont *fileSizeLabelFont UI_APPEARANCE_SELECTOR;
 
 /**
- *  Attatchment file size label colour.
+ *  Attachment file size label color.
  */
 @property (nonatomic, strong) UIColor *fileSizeLabelColor UI_APPEARANCE_SELECTOR;
 
 /**
- * Attatchment file size label background colour.
+ * Attachment file size label background color.
  */
 @property (nonatomic, strong) UIColor *fileSizeLabelBackground UI_APPEARANCE_SELECTOR;
 
@@ -59,12 +59,12 @@
 @property (nonatomic, strong) UIFont *titleLabelFont UI_APPEARANCE_SELECTOR;
 
 /**
- * Title label colour.
+ * Title label color.
  */
 @property (nonatomic, strong) UIColor *titleLabelColor UI_APPEARANCE_SELECTOR;
 
 /**
- * Title label background colour.
+ * Title label background color.
  */
 @property (nonatomic, strong) UIColor *titleLabelBackground UI_APPEARANCE_SELECTOR;
 

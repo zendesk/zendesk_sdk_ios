@@ -17,17 +17,17 @@
 #import <UIKit/UIKit.h>
 
 #import "ZDKUIViewController.h"
+#import "ZDKArticleView.h"
+#import <MessageUI/MessageUI.h>
 
 @class ZDKArticleView, ZDKHelpCenterArticle;
-
 
 /**
  *  View controller for an article view.
  *
  *  @since 0.9.3.1
  */
-@interface ZDKArticleViewController : ZDKUIViewController
-
+@interface ZDKArticleViewController : ZDKUIViewController<MFMailComposeViewControllerDelegate, ZDKHelpCentreArticleViewProtocol>
 
 /**
  * The article view.

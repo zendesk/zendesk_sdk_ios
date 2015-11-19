@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name         = "ZendeskSDK"
-  s.version      = "1.4.1.4"
-  s.summary      = "Zendesk SDK 1.4.1.4"
+  s.version      = "1.5.0.1"
+  s.summary      = "Zendesk SDK 1.5.0.1"
   s.homepage     = "https://github.com/zendesk/zendesk_sdk_ios"
   s.license      = {
     :type => 'Copyright',
@@ -27,7 +27,7 @@ Pod::Spec.new do |s|
   s.frameworks = 'MobileCoreServices', 'SystemConfiguration', 'Security'
 
   # Using subspecs to support installation without Localization part
-  s.default_subspecs = 'Core', 'Localization'
+  s.default_subspecs = 'Core', 'Localization', 'Providers'
 
   s.subspec 'Core' do |ss|
     ss.public_header_files = 'ZendeskSDK.framework/Headers/*.h'
@@ -40,6 +40,14 @@ Pod::Spec.new do |s|
   s.subspec 'Localization' do |ss|
     ss.resources = ["ZendeskSDKStrings.bundle"]
     ss.dependency 'ZendeskSDK/Core'
+  end
+
+  s.subspec 'Providers' do |ss|
+    ss.public_header_files = 'ZendeskProviderSDK.framework/Headers/*.h'
+    ss.ios.vendored_frameworks = 'ZendeskProviderSDK.framework'
+    ss.preserve_paths = 'ZendeskProviderSDK.framework'
+    ss.xcconfig = { 'FRAMEWORK_SEARCH_PATHS' => '$(inherited)', 'CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES' => 'YES' }
+    ss.resources = ["ZendeskSDK.bundle", "ZendeskSDKStrings.bundle"]
   end
 
 end

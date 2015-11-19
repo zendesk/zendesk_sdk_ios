@@ -22,7 +22,7 @@
  * The dialog options are specified with a combination of these actions.
  *
  * Each action is mapped to localizable string key which is used for the
- * title of the coresponding option in the dialog view:
+ * title of the corresponding option in the dialog view:
  *
  * ios.RMA.dialog.rateApp.button
  *
@@ -41,7 +41,7 @@ typedef NS_ENUM(NSInteger, ZDKRMAAction) {
     ZDKRMARateApp        = 1,
 
     /**
-     * Enumeration for sending feedbcak.
+     * Enumeration for sending feedback.
      */
     ZDKRMASendFeedback   = 2,
 
@@ -86,7 +86,7 @@ typedef NS_ENUM(NSInteger, ZDKRMAAction) {
 
 
 /**
- * The date of the users intereaction with the ZDKRMA dialog.
+ * The date of the users interaction with the ZDKRMA dialog.
  */
 @property (nonatomic, retain) NSDate *dateOfActionChosen;
 
@@ -99,7 +99,7 @@ typedef NS_ENUM(NSInteger, ZDKRMAAction) {
 @property (nonatomic, retain) NSString *requestText;
 
 /**
- * The app version of at the time of intereaction.
+ * The app version of at the time of interaction.
  *
  */
 @property (nonatomic, retain) NSString *appVersion;

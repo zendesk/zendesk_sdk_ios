@@ -53,17 +53,17 @@ typedef NS_ENUM(NSUInteger, ZDKSupportViewState) {
 @property (nonatomic) ZDKSupportViewState viewState;
 
 /**
- * Lists categorys, sections and articles.
+ * Lists categories, sections and articles.
  */
 @property (nonatomic, strong, readonly) UITableView *table;
 
 /**
- * Seach field for searching help center content.
+ * Search field for searching help center content.
  */
 @property (nonatomic, strong, readonly) UISearchBar *searchField;
 
 /**
- * Label to be disaplyed instaed of table when search returns no results.
+ * Label to be displayed instead of table when search returns no results.
  */
 @property (nonatomic, strong, readonly) UILabel *noResultsFoundLabel;
 
@@ -96,7 +96,7 @@ typedef NS_ENUM(NSUInteger, ZDKSupportViewState) {
 @property (nonatomic, strong) NSNumber *searchBarStyle UI_APPEARANCE_SELECTOR;
 
 /**
- * Color of the table seperator.
+ * Color of the table separator.
  */
 @property (nonatomic, strong) UIColor *separatorColor UI_APPEARANCE_SELECTOR;
 
@@ -168,7 +168,7 @@ typedef NS_ENUM(NSUInteger, ZDKSupportViewState) {
 #pragma mark Nav bar appearance
 
 /**
- * Add @ anotation when setting, either @NO or @YES.
+ * Add @ annotation when setting, either @NO or @YES.
  */
 @property (nonatomic, strong) NSNumber *automaticallyHideNavBarOnLandscape  UI_APPEARANCE_SELECTOR;
 

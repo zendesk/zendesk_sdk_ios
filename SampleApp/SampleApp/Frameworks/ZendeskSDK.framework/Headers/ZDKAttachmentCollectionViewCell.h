@@ -34,13 +34,13 @@
 /**
  *  Helper method.
  *
- *  @return a reuse idenditifier.
+ *  @return a reuse identifier.
  */
 + (NSString *) reuseIdentifier;
 
 
 /**
- *  Returns the prefered size for the view.
+ *  Returns the preferred size for the view.
  */
 + (CGSize) preferedSize;
 

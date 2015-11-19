@@ -16,6 +16,7 @@
 		C38311C41A1A358500F7979A /* ZDSampleAppConfigurationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C38311C01A1A358500F7979A /* ZDSampleAppConfigurationViewController.m */; };
 		C38311C51A1A358500F7979A /* ZDSampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C38311C21A1A358500F7979A /* ZDSampleViewController.m */; };
 		C3A2C8A11ABAD575006EA3E7 /* NSData+ZDKSampleApp.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A2C8A01ABAD575006EA3E7 /* NSData+ZDKSampleApp.m */; };
+		C3C64A061BFE0D6E00E65980 /* ZendeskProviderSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3C64A051BFE0D6E00E65980 /* ZendeskProviderSDK.framework */; };
 		C3EF3EF61A1A1B1900168A69 /* ZDRateMyAppDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3EF3EF31A1A1B1900168A69 /* ZDRateMyAppDemoViewController.m */; };
 		C3EF3EFB1A1A1B3700168A69 /* ZendeskSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C3EF3EF91A1A1B3700168A69 /* ZendeskSDK.bundle */; };
 		C3EF3EFC1A1A1B3700168A69 /* ZendeskSDKStrings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C3EF3EFA1A1A1B3700168A69 /* ZendeskSDKStrings.bundle */; };
@@ -44,6 +45,7 @@
 		C38311C21A1A358500F7979A /* ZDSampleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZDSampleViewController.m; path = SampleApp/ZDSampleViewController.m; sourceTree = "<group>"; };
 		C3A2C89F1ABAD575006EA3E7 /* NSData+ZDKSampleApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+ZDKSampleApp.h"; path = "SampleApp/NSData+ZDKSampleApp.h"; sourceTree = "<group>"; };
 		C3A2C8A01ABAD575006EA3E7 /* NSData+ZDKSampleApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+ZDKSampleApp.m"; path = "SampleApp/NSData+ZDKSampleApp.m"; sourceTree = "<group>"; };
+		C3C64A051BFE0D6E00E65980 /* ZendeskProviderSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ZendeskProviderSDK.framework; path = SampleApp/Frameworks/ZendeskProviderSDK.framework; sourceTree = "<group>"; };
 		C3EF3EF21A1A1B1900168A69 /* ZDRateMyAppDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDRateMyAppDemoViewController.h; sourceTree = "<group>"; };
 		C3EF3EF31A1A1B1900168A69 /* ZDRateMyAppDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDRateMyAppDemoViewController.m; sourceTree = "<group>"; };
 		C3EF3EF91A1A1B3700168A69 /* ZendeskSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ZendeskSDK.bundle; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3C64A061BFE0D6E00E65980 /* ZendeskProviderSDK.framework in Frameworks */,
 				837AB70F1A8E511700B86214 /* MobileCoreServices.framework in Frameworks */,
 				C3EF3EFE1A1A1B5400168A69 /* ZendeskSDK.framework in Frameworks */,
 				C333A54319E29F1E0046B858 /* SystemConfiguration.framework in Frameworks */,
@@ -164,6 +167,7 @@
 		F160B6D01949E2D600AEF42D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C3C64A051BFE0D6E00E65980 /* ZendeskProviderSDK.framework */,
 				837AB70E1A8E511700B86214 /* MobileCoreServices.framework */,
 				C3EF3EFD1A1A1B5400168A69 /* ZendeskSDK.framework */,
 				C333A54119E29EC40046B858 /* SystemConfiguration.framework */,
@@ -201,7 +205,7 @@
 		F160B6C61949E2D600AEF42D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = Zendesk;
 				TargetAttributes = {
 					F160B6CD1949E2D600AEF42D = {
@@ -215,6 +219,9 @@
 							};
 							com.apple.InAppPurchase = {
 								enabled = 0;
+							};
+							com.apple.Push = {
+								enabled = 1;
 							};
 						};
 					};
@@ -287,6 +294,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -365,6 +373,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "$(inherited)";
 				PODS_ROOT = "${SRCROOT}/../Pods";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.zendesk.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "SDK-Sample";
 				PROVISIONING_PROFILE = "";
 				VALID_ARCHS = "armv7 armv7s i386 arm64 x86_64 ";
@@ -393,6 +402,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "$(inherited)";
 				PODS_ROOT = "${SRCROOT}/../Pods";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.zendesk.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "SDK-Sample";
 				PROVISIONING_PROFILE = "";
 				VALID_ARCHS = "armv7 armv7s i386 arm64 x86_64 ";

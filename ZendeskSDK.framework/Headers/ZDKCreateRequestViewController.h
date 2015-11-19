@@ -17,8 +17,8 @@
 
 #import <UIKit/UIKit.h>
 #import <MobileCoreServices/MobileCoreServices.h>
+#import <ZendeskProviderSDK/ZendeskProviderSDK.h>
 
-#import "ZDKAPIDispatcher.h"
 #import "ZDKUITextViewDelegate.h"
 #import "ZDKUIViewController.h"
 #import "ZDKUITextView.h"
@@ -40,7 +40,7 @@
 
 
 /**
- *  API success block, called after succesfull request creation.
+ *  API success block, called after successful request creation.
  *
  *  @since 0.9.3.1
  */

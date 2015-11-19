@@ -37,7 +37,7 @@
 /**
  * Tells the delegate that the cancel action has been selected in the
  * feedback dialog. The delegate should handle either returning to previous dialog
- * or dissmissing the dialog entirely.
+ * or dismissing the dialog entirely.
  */
 - (void) back;
 

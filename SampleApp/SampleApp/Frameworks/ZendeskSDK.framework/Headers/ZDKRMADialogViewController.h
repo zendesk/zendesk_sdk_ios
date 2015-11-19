@@ -38,7 +38,7 @@
 
 
 /**
- * A ZDKRMAFeedbackView to be presentetd.
+ * A ZDKRMAFeedbackView to be presented.
  */
 @property (retain, nonatomic) ZDKRMAFeedbackView *feedbackView;
 

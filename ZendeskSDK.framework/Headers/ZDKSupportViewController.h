@@ -42,7 +42,7 @@
 - (instancetype) init;
 
 /**
- * Initializes the support view controller with the list of articles specifed in labels argument
+ * Initializes the support view controller with the list of articles specified in labels argument
  *
  * @param labels An array of article label_names. The articles associated with these labels will be shown
  */

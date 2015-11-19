@@ -68,7 +68,7 @@
 /**
  *  Checks to see if the majorVersionNumber is less than the current device version
  *
- *  @param majorVersionNumber is a single integer, eg: 7
+ *  @param majorVersionNumber is a single integer, e.g.: 7
  *
  *  @return YES if the current device number is less than majorVersionNumber.
  */
@@ -77,22 +77,22 @@
 
 /**
  * isNewVersion checks to see if the majorVersionNumber is greater than the current device version
- * @param majorVersionNumber is a single integer, eg: 7
+ * @param majorVersionNumber is a single integer, e.g.: 7
  */
 + (BOOL) isNewerVersion:(NSNumber *) majorVersionNumber;
 
 
 /**
  * isSameVersion checks to see if the majorVersionNumber is the same as the current device version
- * @param majorVersionNumber is a single integer, eg: 7
+ * @param majorVersionNumber is a single integer, e.g.: 7
  */
 + (BOOL) isSameVersion:(NSNumber *) majorVersionNumber;
 
 
 /**
- * The height of a seporator for retina and none retina screens.
+ * The height of a separator for retina and none retina screens.
  *
- * @return Height of seporator.
+ * @return Height of separator.
  */
 + (CGFloat) separatorHeightForScreenScale;
 
