@@ -14,7 +14,7 @@
  *
  */
 #import <Foundation/Foundation.h>
-#import "ZDKHelpCenterProvider.h"
+#import <ZendeskProviderSDK/ZendeskProviderSDK.h>
 
 
 

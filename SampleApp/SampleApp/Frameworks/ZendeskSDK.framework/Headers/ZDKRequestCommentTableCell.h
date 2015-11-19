@@ -55,7 +55,7 @@
 - (void) prepareUsingCommentWithUser:(ZDKCommentWithUser *)commentWithUser;
 
 /**
- *  Convience method for cell reuse identifires.
+ *  Convenience method for cell reuse identifiers.
  *
  *  @return a cell reuse identifier derived from NSStringFromClass.
  */
@@ -84,7 +84,7 @@ static CGFloat const ZD_COMMENT_CELL_AGENT_AVATAR_SIZE = 40.f;
 @property (nonatomic, strong) NSMutableDictionary *avatarCache;
 
 /**
- * The avatar UIImageview.
+ * The avatar UIImageView.
  */
 @property (nonatomic, strong) UIImageView *avatar;
 

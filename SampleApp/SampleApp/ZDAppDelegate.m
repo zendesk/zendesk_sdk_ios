@@ -292,13 +292,13 @@
     [[ZDKRMAFeedbackView appearance] setPlaceHolderColor:[UIColor grayColor]];
     
     UIActivityIndicatorView *rmaSpinner = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
-    spinner.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
+    rmaSpinner.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
     [[ZDKRMAFeedbackView appearance] setSpinner:(id<ZDKSpinnerDelegate>)rmaSpinner];
     
     
     // style the help center
     UIActivityIndicatorView *hcSpinner = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
-    spinner.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhite;
+    hcSpinner.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhite;
     [[ZDKSupportView appearance] setSpinner:(id<ZDKSpinnerDelegate>)hcSpinner];
     
     [[ZDKSupportView appearance] setViewBackgroundColor:[UIColor blackColor]];
@@ -317,6 +317,11 @@
     [[ZDKSupportView appearance] setNoResultsContactButtonTitleColorNormal:[UIColor whiteColor]];
     [[ZDKSupportView appearance] setNoResultsContactButtonTitleColorHighlighted:[UIColor whiteColor]];
     [[ZDKSupportView appearance] setNoResultsContactButtonTitleColorDisabled:[UIColor whiteColor]];
+    
+    // HC deeplinking Article spinner
+    UIActivityIndicatorView *articleDeeplinkingSpinner = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
+    articleDeeplinkingSpinner.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhite;
+    [[ZDKArticleView appearance] setArticleLoadSpinner:(id<ZDKSpinnerDelegate>)articleDeeplinkingSpinner];
     
     //HC search cell
     [[ZDKSupportTableViewCell appearance] setViewBackgroundColor:[UIColor blackColor]];

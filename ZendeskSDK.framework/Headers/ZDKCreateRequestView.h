@@ -143,7 +143,7 @@
 
 
 /**
- * Add @ anotation when setting, either @NO or @YES.
+ * Add @ annotation when setting, either @NO or @YES.
  *
  *  @since 0.9.3.1
  */

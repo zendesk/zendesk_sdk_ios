@@ -15,11 +15,8 @@
  */
 
 #import "ZDFlatArticlesTableViewController.h"
-#import <ZendeskSDK/ZDKHelpCenterFlatArticle.h>
-#import <ZendeskSDK/ZDKSupportTableViewCell.h>
-#import <ZendeskSDK/ZDKHelpCenterDataSource.h>
-#import <ZendeskSDK/ZDKArticleViewController.h>
-#import <ZendeskSDK/ZDKHelpCenterArticle.h>
+#import <ZendeskSDK/ZendeskSDK.h>
+
 
 @interface ZDFlatArticlesTableViewController ()
 @property (nonatomic, strong)NSArray *flatArticles;

@@ -122,7 +122,7 @@ typedef void (^ZDKToastCompletion) (void);
 
 
 /**
- * Initialise and animate in a new toast.
+ * Initialize and animate in a new toast.
  * @param view the view in which the toast is to be presented
  * @param initialYPosisition the y for the start of the toast frame
  * @param message the text to be presented
@@ -146,7 +146,7 @@ typedef void (^ZDKToastCompletion) (void);
                   animateIn:(BOOL)animateIn;
 
 
-#pragma mark Presentation and Dissmissal
+#pragma mark Presentation and Dismissal
 
 
 /**

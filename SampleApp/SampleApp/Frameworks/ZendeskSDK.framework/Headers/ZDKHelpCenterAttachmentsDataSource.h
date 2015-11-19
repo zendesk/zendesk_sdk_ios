@@ -26,7 +26,7 @@
 
 
 /**
- *  Initializes a data source with a cell identifire, configuration block and a provider.
+ *  Initializes a data source with a cell identifier, configuration block and a provider.
  *
  *  @since 0.9.3.1
  *

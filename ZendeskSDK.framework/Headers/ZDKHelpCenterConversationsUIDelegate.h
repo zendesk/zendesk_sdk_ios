@@ -47,7 +47,7 @@ typedef NS_ENUM(NSUInteger, ZDKNavBarConversationsUIType) {
 
 
 /**
- *  To conform implementations should return an immage for the right nav bar button.
+ *  To conform implementations should return an image for the right nav bar button.
  *
  *  @return An image for the right nav bar button.
  */

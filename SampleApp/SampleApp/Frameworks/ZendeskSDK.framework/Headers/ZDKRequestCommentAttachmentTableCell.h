@@ -39,7 +39,7 @@
 
 
 /**
- *  Get the total amount of virticle padding for content in this cell.
+ *  Get the total amount of vertical padding for content in this cell.
  *
  *  @return a CGFloat value for the padding in this cell.
  */

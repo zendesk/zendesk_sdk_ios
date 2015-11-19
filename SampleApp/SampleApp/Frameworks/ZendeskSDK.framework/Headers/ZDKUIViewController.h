@@ -72,7 +72,7 @@ extern ZDKLayoutGuide const ZDKLayoutRespectBottom;
 
 
 /**
- * Used to determin network reachability.
+ * Used to determine network reachability.
  */
 @property (nonatomic, strong, readonly) ZDKReachability *reachable;
 
@@ -81,7 +81,7 @@ extern ZDKLayoutGuide const ZDKLayoutRespectBottom;
 
 
 /**
- * Register the view controler to be notified of keyboard show/hide events.
+ * Register the view controller to be notified of keyboard show/hide events.
  * Override keyboardWillBeShown: and keyboardWillBeHidden: to handle the events
  */
 - (void) registerForKeyboardNotifications;
@@ -98,7 +98,7 @@ extern ZDKLayoutGuide const ZDKLayoutRespectBottom;
 /**
  *  Called when the the keyboard has been shown.
  *
- *  @param aNotification the notifiction
+ *  @param aNotification the notification
  */
 - (void) keyboardDidShow:(NSNotification *)aNotification;
 
@@ -112,7 +112,7 @@ extern ZDKLayoutGuide const ZDKLayoutRespectBottom;
 
 
 /**
- *  Callked when the keyboard has hidden.
+ *  Called when the keyboard has hidden.
  *
  *  @param aNotification the notification
  */
@@ -130,7 +130,7 @@ extern ZDKLayoutGuide const ZDKLayoutRespectBottom;
 
 
 /**
- * Layout the the view with restpect to any ZDKToastView that may be showing. 
+ * Layout the the view with respect to any ZDKToastView that may be showing.
  */
 - (void) layoutContent;
 
@@ -164,7 +164,7 @@ extern ZDKLayoutGuide const ZDKLayoutRespectBottom;
 
 
 /**
- * Get the top view controller from thw app window.
+ * Get the top view controller from the app window.
  *
  * @return the top view controller for the app.
  */

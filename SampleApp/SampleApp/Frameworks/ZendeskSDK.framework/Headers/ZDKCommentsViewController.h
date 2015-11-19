@@ -25,7 +25,7 @@
 
 
 /**
- *  The orignional request for the comment stream.
+ *  The original request for the comment stream.
  */
 @property (nonatomic, readonly) ZDKRequest *request;
 

@@ -38,12 +38,12 @@
 @property (nonatomic, strong) UIFont *titleLabelFont UI_APPEARANCE_SELECTOR;
 
 /**
- * Title label colour.
+ * Title label color.
  */
 @property (nonatomic, strong) UIColor *titleLabelColor UI_APPEARANCE_SELECTOR;
 
 /**
- * Title label background colour.
+ * Title label background color.
  */
 @property (nonatomic, strong) UIColor *titleLabelBackground UI_APPEARANCE_SELECTOR;
 

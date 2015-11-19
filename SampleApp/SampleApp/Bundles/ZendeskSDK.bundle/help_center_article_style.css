@@ -29,10 +29,10 @@ a {
 
 a:link {-webkit-tap-highlight-color: #c5c5c5;}
 
-img { width: 100%; }
+img { max-width:100%; }
 
 
-iframe { width:100%; }
+iframe { max-width:100%; }
 
 strong{
 	font-weight:bold;

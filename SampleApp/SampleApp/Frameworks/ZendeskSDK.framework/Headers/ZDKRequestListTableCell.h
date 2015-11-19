@@ -30,7 +30,7 @@ static CGFloat const ZDSDK_REQUEST_CELL_DESCRIPTION_TS_MARGIN = 5.0f;
 static CGFloat const ZDSDK_REQUEST_CELL_LEFT_INSET = 25.0f;
 #define ZDSDK_REQUEST_CELL_BACKGROUND_COLOR [UIColor whiteColor]
 
-#define ZDSDK_REQUEST_CELL_EMPTY_FONT [UIFont systemFontOfSize:11.0f]
+#define ZDSDK_REQUEST_CELL_EMPTY_FONT [UIFont systemFontOfSize:15.0f]
 #define ZDSDK_REQUEST_CELL_EMPTY_COLOR [UIColor colorWithWhite:0.3f alpha:1.0f]
 
 #define ZDSDK_REQUEST_CELL_ERROR_FONT [UIFont systemFontOfSize:11.0f]
@@ -92,7 +92,7 @@ static CGFloat const ZDSDK_REQUEST_CELL_LEFT_INSET = 25.0f;
 @property (nonatomic, strong) NSNumber *verticalMargin UI_APPEARANCE_SELECTOR;
 
 /**
- * Vertrical margin between the description text and the timestamp/created at text
+ * Vertical margin between the description text and the timestamp/created at text
  */
 @property (nonatomic, strong) NSNumber *descriptionTimestampMargin UI_APPEARANCE_SELECTOR;
 
@@ -119,7 +119,7 @@ static CGFloat const ZDSDK_REQUEST_CELL_LEFT_INSET = 25.0f;
 
 
 /**
- * Empty state cell for the req uest list.
+ * Empty state cell for the request list.
  */
 @interface ZDRequestListEmptyTableCell : UITableViewCell
 

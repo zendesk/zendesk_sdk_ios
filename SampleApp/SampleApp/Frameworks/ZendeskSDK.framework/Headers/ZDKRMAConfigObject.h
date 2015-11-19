@@ -21,7 +21,7 @@
 /**
  * A block to decide whether to show the Rate My App dialog. Returning YES will show the Rate My App dialog.
  *
- * @param visitCount the number of times a user has visited the view which Rate My App will be dislayed on top of.
+ * @param visitCount the number of times a user has visited the view which Rate My App will be displayed on top of.
  * @param initialCheckDate the date which ShouldShow was first run.
  * @param lastDisplayDate the date Rate My App was last displayed.
  * @param lastOptionSelected the action chosen the last time Rate My App was shown.
@@ -33,7 +33,7 @@ typedef BOOL (^ShouldShow) (NSNumber *visitCount, NSDate *initialCheckDate, NSDa
 
 
 /**
- * A block for sending the description in ZDKRMAFeedbackView to some endpoint. The default behaviour creates a request
+ * A block for sending the description in ZDKRMAFeedbackView to some endpoint. The default behavior creates a request
  * using the zendesk subdomain in ZDKRMA.
  *
  * @param feedback The contents of the text view in ZDKRMAFeedbackView.
@@ -96,7 +96,7 @@ typedef void (^SendFeedbackError) (void);
 @property (nonatomic, strong, readonly) NSNumber *minimumDays;
 
 /**
- * Your itunes app id. This is used to link to the app store.
+ * Your iTunes app id. This is used to link to the app store.
  * You must set this in the configure method of ZDKRMA.
  *
  * Default value is nil.
@@ -115,7 +115,7 @@ typedef void (^SendFeedbackError) (void);
 /**
  * Tags to be set on the new request.
  *
- * Default value is set in the lotus config. These tags are concatinated with additionalTags.
+ * Default value is set in the lotus config. These tags are concatenated with additionalTags.
  */
 @property (nonatomic, strong, readonly) NSArray *serverConfigTags;
 
@@ -146,7 +146,7 @@ typedef void (^SendFeedbackError) (void);
 
 /**
  * The name of the image shown on successful feedback submission. The image will
- * be centred in the available area, which is 500 x 160. Images larger than this
+ * be centered in the available area, which is 500 x 160. Images larger than this
  * will be cropped.
  *
  * Default value is nil.
@@ -155,7 +155,7 @@ typedef void (^SendFeedbackError) (void);
 
 /**
  * The name of the image shown feedback submission fails. The image will
- * be centred in the available area, which is 500 x 160. Images larger than this
+ * be centered in the available area, which is 500 x 160. Images larger than this
  * will be cropped.
  *
  * Default value is nil.
@@ -167,7 +167,7 @@ typedef void (^SendFeedbackError) (void);
  * When a call to [ZDKRMA showInView:view] is made, this block is invoked.
  *
  * Returning YES results in Rate My App being shown. Returning NO will mean 
- * Rate My App is not shown. Can be overridden for custom behaviour.
+ * Rate My App is not shown. Can be overridden for custom behavior.
  * 
  * Default implementation returns YES if the visitCount is greater than 
  * minimumVisitCount and days since initialCheckDate is greater than 
@@ -191,12 +191,12 @@ typedef void (^SendFeedbackError) (void);
  * are displayed in the dialog view. The order in which they are specified in the list is 
  * the order that they will appear in the dialog.
  *
- * This is used during the initialisation of ZDKRMAConfigObject to set the default values 
+ * This is used during the initialization of ZDKRMAConfigObject to set the default values
  * of the dialogActions property.
  *
  * @see ZDKRMAAction, dialogActions.
  *
- * @param action A comma sepporated list of ZDKRMAAtion values with a nil terminator.
+ * @param action A comma separated list of ZDKRMAAction values with a nil terminator.
  * @return An array of ZDKRMAActions as NSNumbers.
  */
 + (NSArray*) arrayWithZDKRMAActions:(ZDKRMAAction) action, ...;

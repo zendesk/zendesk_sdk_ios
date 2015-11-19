@@ -15,8 +15,7 @@
  */
 
 #import <UIKit/UIKit.h>
-#import <ZendeskSDK/ZendeskSDK.h>
-
+#import "ZDKUIViewController.h"
 
 @interface ZDKImageViewerViewController : ZDKUIViewController<UIScrollViewDelegate>
 

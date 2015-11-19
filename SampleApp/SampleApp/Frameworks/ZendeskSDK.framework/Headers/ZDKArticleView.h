@@ -15,8 +15,43 @@
  */
 
 #import <UIKit/UIKit.h>
+#import "ZDKSpinnerDelegate.h"
 
 @class ZDKHelpCenterArticle;
+
+@protocol ZDKHelpCentreArticleViewProtocol <NSObject>
+
+@optional
+/**
+ *  This is delegate method called by the ZDKArticleViewController, it is
+ *  for linking within app to a mail composer view when an email prependded
+ *  with a "mailto:" tag within a help center article is tapped.
+ *  It sets the email as the receiver.  If the device, does not have
+ *  email set up, an actionSheet will be shown and the mail comnposer
+ *  will not be.
+ *
+ *  @param reciever The email that will be set as the receiver in mail composer view.
+ *
+ *  @since 1.5.0.1
+ */
+- (void)openMailWithReciever:(NSString *)reciever;
+
+/**
+ *  This is a delegate method for linking within app to another help center article.
+ *  It called when an article link is clicked within an ZDKArticleView.  It is called by
+ *  recognising the host-mapped URL of the account and other path components within
+ *  that URL to recognise it as a help center article.  This is done in a different method
+ *  within the ZDKArticleView.
+ *
+ *  @param articleId This articleId is the ID of the help center article, which the user 
+ *  wants to deeplink to within the SDK.
+ *
+ *  @since 1.5.0.1
+ */
+- (void)openLinkToNewArticle:(NSString *)articleId;
+
+@end
+
 
 
 /**
@@ -24,7 +59,14 @@
  *
  *  @since 0.9.3.1
  */
-@interface ZDKArticleView : UIView
+@interface ZDKArticleView : UIView <UIAppearanceContainer>
+
+/**
+ *  Delegate for ZDKHelpArticleViewProtocol.
+ *
+ *  @since 1.5.0.1
+ */
+@property (nonatomic, weak) id<ZDKHelpCentreArticleViewProtocol> delegate;
 
 
 /**
@@ -76,5 +118,18 @@
  */
 - (void) reloadArticleForRotation;
 
+/**
+ *  Loading spinner delegate for article deeplinking.
+ *
+ *  @since 1.5.0.1
+ */
+@property (nonatomic, strong) id<ZDKSpinnerDelegate> articleLoadSpinner UI_APPEARANCE_SELECTOR;
+
+/**
+ *  Loading spinner for article deeplinking.
+ *
+ *  @since 1.5.0.1
+ */
+@property (nonatomic, strong) UIActivityIndicatorView *deeplinkingSpinner;
 
 @end

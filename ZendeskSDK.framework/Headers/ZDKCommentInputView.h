@@ -68,7 +68,7 @@
 @property (nonatomic, readonly) UIButton *sendButton;
 
 /**
- *  Delegete for ZDKCommentInputView.
+ *  Delegate for ZDKCommentInputView.
  */
 @property (nonatomic, assign) id<ZDKCommentInputViewDelegate> delegate;
 
@@ -122,7 +122,7 @@
 
 
 /**
- *  Background color of attachment buttton.
+ *  Background color of attachment button.
  */
 @property (nonatomic, strong) UIColor *attachmentButtonBackgroundColor UI_APPEARANCE_SELECTOR;
 
