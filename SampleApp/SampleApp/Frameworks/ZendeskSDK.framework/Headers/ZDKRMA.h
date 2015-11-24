@@ -15,8 +15,6 @@
  */
 
 #import <Foundation/Foundation.h>
-#import <ZendeskProviderSDK/ZendeskProviderSDK.h>
-
 
 #import "ZDKRMAConfigObject.h"
 #import "ZDKRMADataObject.h"
@@ -24,6 +22,7 @@
 #import "ZDKRMADialogView.h"
 #import "ZDKRMAFeedbackView.h"
 
+@class ZDKAccount;
 
 /**
  * ZDKRMA contains interfaces for configuring and displaying a Rate My App dialog.

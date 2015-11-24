@@ -118,7 +118,7 @@
 /**
  *  Displays the Help Center sections view for a given category ID on top the navigation controller that is passed in.
  *
- *  @since 1.3.1.1
+ *  @since 1.4.0.1
  *
  *  @param navController The UINavigationController from which to present the help center view controller.
  *  @param categoryId    The ID of the parent Help Center category which the displayed sections belong to.
@@ -136,7 +136,7 @@
 /**
  *  Displays the Help Center articles view on top the navigation controller that is passed in.
  *
- *  @since 1.3.1.1
+ *  @since 1.4.0.1
  *
  *  @param navController The UINavigationController from which to present the help center view controller.
  *  @param sectionId     The ID of the parent Help Center section which the displayed articles belong to.
@@ -153,7 +153,7 @@
 /**
  *  Modally display the Help Center view on top of the navigation controller that is passed in for a given category ID.
  *
- *  @since 1.3.1.1
+ *  @since 1.4.0.1
  *
  *  @param navController The UINavigationController from which to present the help center view controller.
  *  @param categoryId    The ID of the parent Help Center category which the displayed sections belong to.
@@ -171,7 +171,7 @@
 /**
  *  Modally display the Help Center view on top of the navigation controller that is passed in for a given section ID.
  *
- *  @since 1.3.1.1
+ *  @since 1.4.0.1
  *
  *  @param navController The UINavigationController from which to present the help center view controller.
  *  @param sectionId     The ID of the parent Help Center section which the displayed articles belong to.

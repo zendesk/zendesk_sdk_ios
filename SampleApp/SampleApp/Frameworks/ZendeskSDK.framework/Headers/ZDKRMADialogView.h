@@ -15,7 +15,6 @@
  */
 
 #import <UIKit/UIKit.h>
-#import <ZendeskProviderSDK/ZendeskProviderSDK.h>
 
 
 /**

@@ -14,8 +14,8 @@
  *
  */
 #import <Foundation/Foundation.h>
-#import <ZendeskProviderSDK/ZendeskProviderSDK.h>
 
+@class ZDKHelpCenterProvider;
 
 
 /**
@@ -31,7 +31,6 @@ typedef void (^ZDKHelpCenterCellConfigureBlock)(id cell, id item);
     BOOL _hasItems;
     NSArray *_items;
     ZDKHelpCenterProvider *_provider;
-    ZDKHelpCenterCallback _callback;
 }
 
 
