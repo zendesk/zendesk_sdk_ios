@@ -15,8 +15,8 @@
  */
 
 
-#import <Foundation/Foundation.h>
-#import <ZendeskProviderSDK/ZendeskProviderSDK.h>
+@import Foundation;
+@import ZendeskProviderSDK;
 
 
 #import "ZDKCreateRequestUIDelegate.h"
