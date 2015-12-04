@@ -16,13 +16,20 @@
 
 
 #import <Foundation/Foundation.h>
-#import <ZendeskProviderSDK/ZendeskProviderSDK.h>
 
 
 #import "ZDKCreateRequestUIDelegate.h"
 #import "ZDKUIViewController.h"
 
+
+
 @class ZDKRequestListTable;
+@class ZDKAccount;
+
+
+typedef void (^ZDKRequestSuccess) (id result);
+typedef void (^ZDKRequestError) (NSError *error);
+
 
 #pragma mark Request creation config
 
@@ -127,8 +134,8 @@ typedef void (^ZDSDKConfigBlock) (ZDKAccount *account, ZDKRequestCreationConfig 
  *  @param error         A block that is executed when an error occurs during submission of a request.
  */
 + (void) showRequestCreationWithNavController:(UINavigationController*)navController
-                                  withSuccess:(ZDKAPISuccess)success
-                                     andError:(ZDKAPIError)error;
+                                  withSuccess:(ZDKRequestSuccess)success
+                                     andError:(ZDKRequestError)error;
 
 
 /**

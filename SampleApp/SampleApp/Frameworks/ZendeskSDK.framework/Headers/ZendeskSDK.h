@@ -77,5 +77,8 @@
 #import "ZDKUIUtil.h"
 #import "ZDKUIViewController.h"
 
+@import ZendeskProviderSDK;
+
+
 
 #endif
