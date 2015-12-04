@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name         = "ZendeskSDK"
-  s.version      = "1.5.2.1"
-  s.summary      = "Zendesk SDK 1.5.2.1"
+  s.version      = "1.5.3.1"
+  s.summary      = "Zendesk SDK 1.5.3.1"
   s.homepage     = "https://github.com/zendesk/zendesk_sdk_ios"
   s.license      = {
     :type => 'Copyright',
@@ -24,7 +24,7 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/zendesk/zendesk_sdk_ios.git", :tag => s.version }
   s.platform     = :ios, '6.0'
   s.requires_arc = true
-  s.frameworks = 'MobileCoreServices', 'SystemConfiguration', 'Security'
+  s.frameworks = 'MobileCoreServices', 'SystemConfiguration', 'Security', 'MessageUI'
 
   # Using subspecs to support installation without Localization part
   s.default_subspecs = 'Core', 'Localization', 'Providers'
