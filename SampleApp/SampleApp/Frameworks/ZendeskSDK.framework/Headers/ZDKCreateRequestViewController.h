@@ -20,7 +20,6 @@
 
 #import "ZDKUITextViewDelegate.h"
 #import "ZDKUIViewController.h"
-#import "ZDKUITextView.h"
 
 
 typedef void (^ZDKCreateRequestSuccess) (id result);
@@ -79,6 +78,8 @@ typedef void (^ZDKCreateRequestError) (NSError *error);
 - (instancetype) initWithSuccess:(ZDKCreateRequestSuccess)success
                         andError:(ZDKCreateRequestError)error;
 
+- (instancetype)init NS_UNAVAILABLE;
++ (instancetype)new NS_UNAVAILABLE;
 
 @end
 

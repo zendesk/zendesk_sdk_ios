@@ -18,9 +18,7 @@
 #import "ZDKUIViewController.h"
 #import "ZDKHelpCenterConversationsUIDelegate.h"
 
-@class ZDKSupportView, ZDKHelpCenterCategory, ZDKHelpCenterSection;
-
-
+@class ZDKSupportView, ZDKHelpCenterCategory, ZDKHelpCenterSection, ZDKHelpCenterSearch;
 
 @interface ZDKSupportViewController : ZDKUIViewController <UIScrollViewDelegate, UISearchBarDelegate>
 
@@ -29,6 +27,13 @@
  * The support view that displays help center content.
  */
 @property (nonatomic, strong) ZDKSupportView *supportView;
+
+/**
+ *  A search base which defines the scope of searches within the help center
+ *
+ *  @since 1.5.4.1
+ */
+@property (nonatomic, strong) ZDKHelpCenterSearch *search;
 
 /**
  *  Delegate for nav ban button UI. 

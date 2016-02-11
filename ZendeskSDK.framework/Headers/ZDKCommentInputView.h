@@ -128,6 +128,22 @@
 
 
 /**
+ Initializes a new comment input view
+ 
+ @param attachmentEnabled attachmentEnabled Is attachement enabled
+ 
+ @since 1.5.4.1
+ */
+- (instancetype)initWithAttachmentEnabled:(BOOL)attachmentEnabled;
+
+/*
+ Unavailable initializers
+ @since 1.5.4.1
+*/
+- (instancetype)initWithFrame:(CGRect)frame NS_UNAVAILABLE;
+- (instancetype)init NS_UNAVAILABLE;
+
+/**
  *  Returns the preferred height for the input view.
  *
  *  @return the preferred height. 

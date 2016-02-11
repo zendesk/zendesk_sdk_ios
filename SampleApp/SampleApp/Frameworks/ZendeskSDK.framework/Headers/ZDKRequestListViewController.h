@@ -38,4 +38,11 @@
 @property (nonatomic, weak) id<ZDKCreateRequestUIDelegate> delegate;
 
 
+/**
+ *  Dismiss modally presented controller.
+ *
+ *  @since 1.5.4.1
+ */
+- (void) dismiss;
+
 @end
