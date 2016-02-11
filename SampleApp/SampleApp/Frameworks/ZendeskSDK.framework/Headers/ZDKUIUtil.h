@@ -22,24 +22,24 @@
 /**
  *  Gets the UI_APPEARANCE_SELECTOR value for a class.
  *
- *  @param class    The appearance value will come from this class.
+ *  @param viewClass    The appearance value will come from this class.
  *  @param selector The appearance selector
  *
  *  @return An appearance value or nil if none have been set.
  */
-+ (id) appearanceForClass:(Class)class selector:(SEL)selector;
++ (id) appearanceForClass:(Class)viewClass selector:(SEL)selector;
 
 
 /**
  *  Gets the UI_APPEARANCE_SELECTOR value for a class returning a default value if none have been set.
  *
- *  @param class        The appearance value will come from this class.
+ *  @param viewClass        The appearance value will come from this class.
  *  @param selector     The appearance selector
  *  @param defaultValue The default value to use if no appearance value has been set.
  *
  *  @return An appearance value.
  */
-+ (id) appearanceForClass:(Class)class selector:(SEL)selector defaultValue:(id)defaultValue;
++ (id) appearanceForClass:(Class)viewClass selector:(SEL)selector defaultValue:(id)defaultValue;
 
 
 /**
@@ -150,6 +150,22 @@
  *  @return Correctly rotated image.
  */
 + (UIImage *)fixOrientationOfImage:(UIImage*)image;
+
+
+/**
+ *  Checks if the host app is a landscape only app and will enable or disable the attachments 
+ *  button accordingly.
+ *
+ *  @param viewController ViewController to check to enable attachments
+ *
+ *
+ *  @return Returns YES if attchments should be enabled. This is a combination of server config and if the app
+ *          supports portrait orientation, as UIImagePicker will crash if it cannot rotate into portrait
+ *
+ *  @since 1.5.4.1
+ */
++ (BOOL) shouldEnableAttachments:(UIViewController *)viewController;
+
 
 
 @end

@@ -123,11 +123,11 @@ typedef NS_ENUM(NSInteger, ZDKAlertControllerStyle){
  *
  *  @param viewController the view controller which will present the alert.
  *  @param view a view to show the action sheet from in older iOS versions.
- *  @param frame the frame from which an action sheet will be displayed from in older iOS versions.
+ *  @param fromView the view from which an action sheet will be displayed for newer iOS
  *
  *  @since 1.5.0.1
  */
-- (void)presentWithViewController:(UIViewController *)viewController inView:(UIView *)view fromRect:(CGRect)frame;
+- (void)presentWithViewController:(UIViewController *)viewController inView:(UIView *)view fromView:(UIView *)fromView;
 
 @end
 

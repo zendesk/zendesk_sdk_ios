@@ -49,7 +49,7 @@
 
 
 /**
- *  List of upload tokens.
+ *  List of ZDKUploadResponse objects.
  *
  *  @since 1.3.0.1
  */

@@ -71,17 +71,20 @@ static CGFloat const PADDING = 15.f;
     helpCenterLabelsInput = [ZDSampleViewController buildTextFieldWithFrame:CGRectZero andPlaceholder:@"label1,label2,label3 (optional)"];
     helpCenterLabelsInput.accessibilityIdentifier = @"hcLabelsField";
     helpCenterLabelsInput.backgroundColor = [UIColor whiteColor];
+    helpCenterLabelsInput.delegate = self;
     //helpCenterButton pulls these out
     [self.scrollViewContent addSubview:helpCenterLabelsInput];
     
     helpCenterCategoryIdInput = [ZDSampleViewController buildTextFieldWithFrame:CGRectZero andPlaceholder:@"Category ID"];
     helpCenterCategoryIdInput.accessibilityIdentifier = @"hcCategoryIdField";
     helpCenterCategoryIdInput.backgroundColor = [UIColor whiteColor];
+    helpCenterCategoryIdInput.delegate = self;
     [self.scrollViewContent addSubview:helpCenterCategoryIdInput];
     
     helpCenterSectionIdInput = [ZDSampleViewController buildTextFieldWithFrame:CGRectZero andPlaceholder:@"Section ID"];
     helpCenterSectionIdInput.accessibilityIdentifier = @"hcSectionIdField";
     helpCenterSectionIdInput.backgroundColor = [UIColor whiteColor];
+    helpCenterSectionIdInput.delegate = self;
     [self.scrollViewContent addSubview:helpCenterSectionIdInput];
     
     
@@ -113,6 +116,7 @@ static CGFloat const PADDING = 15.f;
     userTagsInput = [ZDSampleViewController buildTextFieldWithFrame:CGRectZero andPlaceholder:@"User Tags"];
     userTagsInput.accessibilityIdentifier = @"addTagsInput";
     userTagsInput.backgroundColor = [UIColor whiteColor];
+    userTagsInput.delegate = self;
     [self.scrollViewContent addSubview:userTagsInput];
     
     addTagsButton = [ZDSampleViewController buildButtonWithFrame:CGRectZero andTitle:@"Add Tags"];
@@ -311,8 +315,11 @@ static CGFloat const PADDING = 15.f;
         [flatArticlesViewController processFlatArticles];
         
         if([ZDKUIUtil isPad]) {
+            UINavigationController* navController = [[UINavigationController alloc] initWithRootViewController:flatArticlesViewController];
+            navController.modalTransitionStyle = self.navigationController.modalTransitionStyle;
+            navController.modalPresentationStyle = UIModalPresentationFormSheet;
             flatArticlesViewController.modalPresentationStyle = UIModalPresentationFormSheet;
-            [self.navigationController presentViewController:flatArticlesViewController animated:YES completion:nil];
+            [self.navigationController presentViewController:navController animated:YES completion:nil];
         } else {
             
             [self.navigationController pushViewController:flatArticlesViewController animated:YES];
@@ -546,6 +553,13 @@ static CGFloat const PADDING = 15.f;
 - (void) dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+#pragma mark - textfield delegate 
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return YES;
 }
 
 

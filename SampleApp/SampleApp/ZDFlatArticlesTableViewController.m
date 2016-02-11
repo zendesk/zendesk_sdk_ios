@@ -56,9 +56,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    if ( ! self.navigationItem.leftBarButtonItem) {
+        
+        UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(dismiss)];
+        self.navigationItem.leftBarButtonItem = cancelButton;
+    }
     self.title = @"Article List";
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
 
+}
+
+- (void) dismiss
+{
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - Table view data source

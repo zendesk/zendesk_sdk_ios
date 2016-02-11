@@ -29,7 +29,7 @@
 
 /* Begin PBXFileReference section */
 		837AB70E1A8E511700B86214 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
-		83C044241BC2CD7E00B04303 /* ZendeskProviderSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ZendeskProviderSDK.framework; path = "../ZendeskSDK/build/Debug-iphoneos/ZendeskProviderSDK.framework"; sourceTree = "<group>"; };
+		83C044241BC2CD7E00B04303 /* ZendeskProviderSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ZendeskProviderSDK.framework; path = SampleApp/Frameworks/ZendeskProviderSDK.framework; sourceTree = "<group>"; };
 		83D3E99E1AA9EF36006DB98C /* ZDSampleAppScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZDSampleAppScanViewController.h; path = SampleApp/ZDSampleAppScanViewController.h; sourceTree = "<group>"; };
 		83D3E99F1AA9EF36006DB98C /* ZDSampleAppScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZDSampleAppScanViewController.m; path = SampleApp/ZDSampleAppScanViewController.m; sourceTree = "<group>"; };
 		973AF0211BA1C40B00CF244C /* ZDFlatArticlesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZDFlatArticlesTableViewController.h; path = SampleApp/ZDFlatArticlesTableViewController.h; sourceTree = "<group>"; };

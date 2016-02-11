@@ -16,6 +16,8 @@
 
 #import "ZDKHelpCenterDataSource.h"
 
+@class ZDKHelpCenterSearch;
+
 @interface ZDKHelpCenterSearchDataSource : ZDKHelpCenterDataSource
 
 /**
@@ -35,5 +37,18 @@
  *  @return instance of data source
  */
 - (instancetype) initWithQuery:(NSString *)query andLabels:(NSArray *)labels;
+
+/**
+ *  init with a search base
+ *
+ *  @param search ZDKHelpCenterSearch which contains the query and confining category or section
+ *
+ *  @return instance of data source
+ *
+ *  @since 1.5.4.1
+ */
+
+- (instancetype) initWithSearch:(ZDKHelpCenterSearch *)search;
+
 
 @end
