@@ -24,7 +24,7 @@
     [identifier replaceOccurrencesOfString:@"<" withString:@"" options:0 range:NSMakeRange(0, identifier.length)];
     [identifier replaceOccurrencesOfString:@">" withString:@"" options:0 range:NSMakeRange(0, identifier.length)];
     [identifier replaceOccurrencesOfString:@" " withString:@"" options:0 range:NSMakeRange(0, identifier.length)];
-    return identifier;
+    return [identifier copy];
 }
 
 @end
