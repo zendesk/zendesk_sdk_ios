@@ -16,10 +16,7 @@
 
 
 #import <Foundation/Foundation.h>
-#import "ZDKDispatcherDelegate.h"
 #import "ZDKDispatcherResponse.h"
-
-
 
 /**
  *  API success block.
@@ -156,42 +153,3 @@ typedef NS_ENUM(NSInteger, ZDKAPILoginState) {
      */
     ZDKAPILoginStateLoggedIn
 };
-
-
-#pragma mark - Dispatcher
-
-
-
-/**
- *  The core communications controller.
- *
- *  @since 0.9.3.1
- */
-@interface ZDKDispatcher : NSObject
-
-
-@property (nonatomic, weak) id<ZDKDispatcherDelegate> delegate;
-
-
-
-/**
- *  Verifies the configuration, logs in if necessary and then executes the request on the request queue.
- *  This method handles putting the request process into the request queue and then ensuring that the final
- *  responses are sent on the main thread.
- *
- *  If the error block is invoked with a 'ZDKAPIErrorUnreachable' error then this is an immediate response on the same thread.
- *
- *  @since 0.9.3.1
- *
- *  @param requestBlock block which builds the NSMutableURLRequest
- *  @param successBlock block which will be invoked on the main thread if the request is successful
- *  @param errorBlock block which will be invoked on the main thread if the request fails
- *  @param requiresAuth boolean indicating if the request requires authentication
- */
-- (void) executeRequest:(NSMutableURLRequest* (^)(void))requestBlock
-              onSuccess:(ZDKAPISuccess)successBlock
-                onError:(ZDKAPIError)errorBlock
-           requiresAuth:(BOOL)requiresAuth;
-
-
-@end

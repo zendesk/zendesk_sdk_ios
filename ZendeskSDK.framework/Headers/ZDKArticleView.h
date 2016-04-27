@@ -123,7 +123,7 @@
  *
  *  @since 1.5.0.1
  */
-@property (nonatomic, strong) id<ZDKSpinnerDelegate> articleLoadSpinner UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) id<ZDKSpinnerDelegate> articleLoadSpinner __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
 
 /**
  *  Loading spinner for article deeplinking.

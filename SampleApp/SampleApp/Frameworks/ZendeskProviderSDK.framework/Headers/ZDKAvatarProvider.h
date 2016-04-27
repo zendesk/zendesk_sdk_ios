@@ -15,6 +15,8 @@
  */
 
 #import <Foundation/Foundation.h>
+#import "ZDKProvider.h"
+
 
 /**
  *  Block invoked to pass data back from API call
@@ -26,13 +28,12 @@
  */
 typedef void (^ZDKAvatarCallback)(UIImage *avatar, NSError *error);
 
-
 /**
  *  Provider for images/avatars.
  *
  *  @since 0.9.3.1
  */
-@interface ZDKAvatarProvider : NSObject
+@interface ZDKAvatarProvider : ZDKProvider
 
 /**
  *  Get the image/avatar data for a given URL
@@ -43,5 +44,6 @@ typedef void (^ZDKAvatarCallback)(UIImage *avatar, NSError *error);
  *  @param callback  block callback executed on error or success states
  */
 - (void) getAvatarForUrl:(NSString *)avatarUrl withCallback:(ZDKAvatarCallback)callback;
+
 
 @end

@@ -15,6 +15,7 @@
  */
 
 #import <Foundation/Foundation.h>
+#import "ZDKProvider.h"
 
 @class ZDKCommentsResponse, ZDKComment, ZDKRequest, ZDKCreateRequest;
 
@@ -61,7 +62,7 @@ typedef void (^ZDKRequestAddCommentCallback)(ZDKComment *comment, NSError *error
  */
 typedef void (^ZDKCreateRequestCallback)(id result, NSError *error);
 
-@interface ZDKRequestProvider : NSObject
+@interface ZDKRequestProvider : ZDKProvider
 
 
 /**

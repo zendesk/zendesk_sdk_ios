@@ -19,16 +19,16 @@
 #import "ZDKRequestListTableCell.h"
 
 
-#define ZDSDK_REQUEST_LIST_BACKGROUND_COLOR [UIColor clearColor]
-#define ZDSDK_REQUEST_CELL_SEPARATOR_COLOR [UIColor colorWithWhite:0.90f alpha:1.0f]
 
+
+@class ZDKRequestStorage;
 
 /**
  * UITableView containing the users request list. On init, the list will show a loading indicator 
  * and refresh the requests from the server, once loaded the list will reload itself and will notify 
  * that the table has been updated.
  */
-@interface ZDKRequestListTable : UITableView <UITableViewDataSource, UITableViewDelegate, ZDRequestListRetryDelegate>
+@interface ZDKRequestListTable : UITableView <UITableViewDataSource, UITableViewDelegate>
 
 /**
  * The array of requests that is being used to render the table.
@@ -53,18 +53,19 @@
 /**
  * Color for the cell separators in the table.
  */
-@property (nonatomic, strong) UIColor *cellSeparatorColor UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIColor *cellSeparatorColor __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
 
 /**
  * The background color of the request table.
  */
-@property (nonatomic, strong) UIColor *tableBackgroundColor UI_APPEARANCE_SELECTOR;
-
+@property (nonatomic, strong) UIColor *tableBackgroundColor __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
 
 /**
- * Refresh the requests list from the server.
+ *  create a request list table
+ *
+ *  @param requestStorage       request storage to use
  */
-- (void) refresh;
+- (instancetype) initWithRequestStorage:(ZDKRequestStorage*)requestStorage NS_DESIGNATED_INITIALIZER;
 
 
 /**
@@ -97,6 +98,9 @@
  */
 - (void) unregisterForEvents:(id)observer;
 
+
+- (instancetype)initWithFrame:(CGRect)frame style:(UITableViewStyle)style NS_UNAVAILABLE;
+- (instancetype)initWithCoder:(NSCoder *)aDecoder NS_UNAVAILABLE;
 
 @end
 

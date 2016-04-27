@@ -451,6 +451,15 @@ extern NSString * const ZD_HC_RequestError;
  */
 extern NSString * const ZD_ResignFirstResponder;
 
+#pragma mark - Agent Header Suffix format
+
+/**
+ *  Agent Header Suffix format.
+ */
+extern NSString * const ZDK_Header_Suffix_Format;
+
+extern NSInteger const ZDCharacterLimitForUserAgentHeader;
+
 
 #pragma mark - HTTP Header
 
