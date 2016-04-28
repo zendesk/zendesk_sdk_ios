@@ -16,7 +16,6 @@
 
 #import <Foundation/Foundation.h>
 #import "ZDKUploadResponse.h"
-#import "ZDKProvider.h"
 
 
 /**
@@ -44,7 +43,7 @@ typedef void (^ZDKDeleteUploadCallback)(NSString *responseCode, NSError *error);
  *
  *  @since 1.1.0.1
  */
-@interface ZDKUploadProvider : ZDKProvider
+@interface ZDKUploadProvider : NSObject
 
 /**
  *  Upload an image to Zendesk, returns a token in the response that can be used to attach the file to a request.

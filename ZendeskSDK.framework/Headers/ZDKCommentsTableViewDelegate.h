@@ -15,11 +15,9 @@
  */
 
 #import <Foundation/Foundation.h>
-#import "ZDKRotationForwarding.h"
+
+@interface ZDKCommentsTableViewDelegate : NSObject <UITableViewDelegate>
 
 
-@interface ZDKCommentsTableViewDelegate : NSObject <UITableViewDelegate, ZDKRotationForwarding>
-
-@property (nonatomic, assign) id<ZDKRotationForwarding> rotationEventDelegate;
 
 @end

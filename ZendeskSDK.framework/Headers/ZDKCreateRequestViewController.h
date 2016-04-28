@@ -1,11 +1,11 @@
 /*
  *
- *  ZDKCreateRequestViewController.h
+ *  ZDKCoreCreateRequestViewController.h
  *  ZendeskSDK
  *
- *  Created by Zendesk on  22/12/2015
+ *  Created by Zendesk on 25/04/2014.  
  *
- *  Copyright (c) 2015 Zendesk. All rights reserved.
+ *  Copyright (c) 2014 Zendesk. All rights reserved.
  *
  *  By downloading or using the Zendesk Mobile SDK, You agree to the Zendesk Terms
  *  of Service https://www.zendesk.com/company/terms and Application Developer and API License
@@ -14,72 +14,57 @@
  *
  */
 
+
 #import <UIKit/UIKit.h>
 #import <MobileCoreServices/MobileCoreServices.h>
+
+#import "ZDKUITextViewDelegate.h"
+#import "ZDKUIViewController.h"
 
 
 typedef void (^ZDKCreateRequestSuccess) (id result);
 typedef void (^ZDKCreateRequestError) (NSError *error);
 
-@class ZDKReachabilityWrapper, ZDKToastViewWrapper, ZDKCreateRequestViewController, ZDKUITextView;
 
-/**
- *  Request creation view controller delegate methods.
- *
- *  @since 1.6.0.1
- */
-@protocol ZDKCreateRequestViewControllerDelegate <NSObject>
-
-@optional
-
-/**
- *  Delegate method called when the create request view controller finishes
- *
- *  @since 1.6.0.1
- *
- *  @param viewController the create request view controller
- */
-- (void)createRequestViewControllerDidFinish:(ZDKCreateRequestViewController*)viewController;
-
-/**
- *  Delegate method called when a ticket is created successfully
- *
- *  @since 1.6.0.1
- *
- *  @param viewController the create request view controller
- *  @param result the created ticket
- */
-
-- (void)createRequestViewController:(ZDKCreateRequestViewController*)viewController didCreateTicketWithSuccess:(id)result;
-
-/**
- *  Delegate method called when a ticket creation fails
- *
- *  @since 1.6.0.1
- *
- *  @param viewController the create request view controller
- *  @param error the error
- */
-
-- (void)createRequestViewController:(ZDKCreateRequestViewController*)viewController didFailCreateTicketWithError:(NSError*)error;
-
-@end
-
+@class ZDKCreateRequestView;
 
 /**
  *  Request creation view controller.
  *
  *  @since 0.9.3.1
  */
-@interface ZDKCreateRequestViewController : UIViewController
+@interface ZDKCreateRequestViewController : ZDKUIViewController<ZDKUITextViewDelegate,
+                                                                UITextFieldDelegate,
+                                                                UIActionSheetDelegate,
+                                                                UIImagePickerControllerDelegate,
+                                                                UINavigationControllerDelegate,
+                                                                UITableViewDelegate,
+                                                                UITableViewDataSource>
 
 
 /**
- *  Create request view controller delegate
+ *  API success block, called after successful request creation.
  *
- *  @since 1.6.0.1
+ *  @since 0.9.3.1
  */
-@property (nonatomic, weak) id<ZDKCreateRequestViewControllerDelegate> delegate;
+@property (nonatomic, copy) ZDKCreateRequestSuccess onSuccess;
+
+
+/**
+ *  API error block, called after a request creation error.
+ *
+ *  @since 0.9.3.1
+ */
+@property (nonatomic, copy) ZDKCreateRequestError onError;
+
+
+/**
+ *  The request creation view.
+ *
+ *  @since 0.9.3.1
+ */
+@property (nonatomic, strong) ZDKCreateRequestView *createRequestView;
+
 
 /**
  *  Init with provided success and error blocks.
@@ -91,7 +76,10 @@ typedef void (^ZDKCreateRequestError) (NSError *error);
  *  @return the instance
  */
 - (instancetype) initWithSuccess:(ZDKCreateRequestSuccess)success
-                        andError:(ZDKCreateRequestError)error __deprecated_msg("As of version 1.6.0.1 use -init instead, for callbacks use ZDKCreateRequestViewControllerDelegate");
+                        andError:(ZDKCreateRequestError)error;
 
+- (instancetype)init NS_UNAVAILABLE;
++ (instancetype)new NS_UNAVAILABLE;
 
 @end
+

@@ -19,10 +19,8 @@
 #import <Foundation/Foundation.h>
 #import "ZDKUser.h"
 #import "ZDKCustomField.h"
-#import "ZDKProvider.h"
 
-
-@interface ZDKUserProvider : ZDKProvider
+@interface ZDKUserProvider : NSObject
 
 /**
  *  Callback for user tags request

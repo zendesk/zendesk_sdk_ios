@@ -12,7 +12,6 @@
 #import <ZendeskSDK/ZendeskSDK.h>
 #import "ZDFlatArticlesTableViewController.h"
 
-
 static CGFloat const PADDING = 15.f;
 
 @interface ZDSampleViewController ()
@@ -235,12 +234,12 @@ static CGFloat const PADDING = 15.f;
 {
     if([ZDKUIUtil isPad]) {
 
-        self.modalPresentationStyle = UIModalPresentationFormSheet;
-        [ZDKRequests presentRequestListWithViewController:self];
+        self.navigationController.modalPresentationStyle = UIModalPresentationFormSheet;
+        [ZDKRequests presentRequestListWithNavController:self.navigationController];
 
     } else {
         
-        [ZDKRequests pushRequestListWithNavigationController:self.navigationController];
+        [ZDKRequests showRequestListWithNavController:self.navigationController];
     }
 }
 
@@ -256,12 +255,12 @@ static CGFloat const PADDING = 15.f;
 
         if([ZDKUIUtil isPad]) {
 
-            self.modalPresentationStyle = UIModalPresentationFormSheet;
-            [ZDKHelpCenter presentHelpCenterWithViewController:self filterByArticleLabels:labels layoutGuide:ZDKLayoutRespectAll];
+            self.navigationController.modalPresentationStyle = UIModalPresentationFormSheet;
+            [ZDKHelpCenter presentHelpCenterWithNavController:self.navigationController filterByArticleLabels:labels];
 
         } else {
 
-            [ZDKHelpCenter pushHelpCenterWithNavigationController:self.navigationController filterByArticleLabels:labels];
+            [ZDKHelpCenter showHelpCenterWithNavController:self.navigationController filterByArticleLabels:labels];
         }
 
     } else if (helpCenterCategoryIdInput.hasText) {
@@ -269,13 +268,13 @@ static CGFloat const PADDING = 15.f;
         
         if ([ZDKUIUtil isPad]) {
             
-            self.modalPresentationStyle = UIModalPresentationFormSheet;
+            self.navigationController.modalPresentationStyle = UIModalPresentationFormSheet;
             // categoryName will default to "Supoort" if set to nil
-            [ZDKHelpCenter presentHelpCenterWithViewController:self filterByCategoryId:categoryIdString categoryName:@"Example name" layoutGuide:ZDKLayoutRespectAll];
+            [ZDKHelpCenter presentHelpCenterWithNavController:self.navigationController filterByCategoryId:categoryIdString categoryName:@"Example name" layoutGuide:ZDKLayoutRespectAll];
             
         } else {
             
-            [ZDKHelpCenter pushHelpCenterWithNavigationController:self.navigationController filterByCategoryId:categoryIdString categoryName:@"Example name" layoutGuide:ZDKLayoutRespectAll];
+            [ZDKHelpCenter showHelpCenterWithNavController:self.navigationController filterByCategoryId:categoryIdString categoryName:@"Example name" layoutGuide:ZDKLayoutRespectAll];
             
         }
         
@@ -284,30 +283,30 @@ static CGFloat const PADDING = 15.f;
         
         if ([ZDKUIUtil isPad]) {
             
-            self.modalPresentationStyle = UIModalPresentationFormSheet;
-            [ZDKHelpCenter presentHelpCenterWithViewController:self filterBySectionId:sectionIdString sectionName:@"Example name" layoutGuide:ZDKLayoutRespectAll];
+            self.navigationController.modalPresentationStyle = UIModalPresentationFormSheet;
+            [ZDKHelpCenter presentHelpCenterWithNavController:self.navigationController filterBySectionId:sectionIdString sectionName:@"Example name" layoutGuide:ZDKLayoutRespectAll];
         } else {
             
-            [ZDKHelpCenter pushHelpCenterWithNavigationController:self.navigationController filterBySectionId:sectionIdString sectionName:@"Example name" layoutGuide:ZDKLayoutRespectAll];
+            [ZDKHelpCenter showHelpCenterWithNavController:self.navigationController filterBySectionId:sectionIdString sectionName:@"Example name" layoutGuide:ZDKLayoutRespectAll];
         }
         
     } else {
 
         if([ZDKUIUtil isPad]) {
 
-            self.modalPresentationStyle = UIModalPresentationFormSheet;
-            [ZDKHelpCenter presentHelpCenterWithViewController:self];
+            self.navigationController.modalPresentationStyle = UIModalPresentationFormSheet;
+            [ZDKHelpCenter presentHelpCenterWithNavController:self.navigationController];
 
         } else {
 
-            [ZDKHelpCenter pushHelpCenterWithNavigationController:self.navigationController layoutGuide:ZDKLayoutRespectAll];
+            [ZDKHelpCenter showHelpCenterWithNavController:self.navigationController layoutGuide:ZDKLayoutRespectAll];
         }
     }
 }
 
 - (void) supportWithFlatArticlesList
 {
-  
+    
     ZDKHelpCenterProvider *provider = [ZDKHelpCenterProvider new];
     
     [provider getFlatArticlesWithCallback:^(NSArray *items, NSError *error) {
@@ -349,7 +348,7 @@ static CGFloat const PADDING = 15.f;
         self.navigationController.modalPresentationStyle = UIModalPresentationFormSheet;
     }
 
-    [ZDKRequests presentRequestCreationWithViewController:self.navigationController];
+    [ZDKRequests showRequestCreationWithNavController:self.navigationController];
 }
 
 #pragma mark Push notifications
@@ -420,8 +419,7 @@ static CGFloat const PADDING = 15.f;
     //No nil check as sending up no tags is effectivly a GET tags request.
     NSArray *tags = [tagsString componentsSeparatedByString:@","];
 
-    [[[ZDKUserProvider alloc] initWithAuthenticationSpace:[ZDKAuthenticationSpace defaultSpace]]
-     addTags:tags callback:^(NSArray *userTags, NSError *error) {
+    [[ZDKUserProvider new] addTags:tags callback:^(NSArray *userTags, NSError *error) {
         NSString *tagsResponse = [[userTags valueForKey:@"description"] componentsJoinedByString:@", "];
         [self showAlertWithTitle:@"User Tags" andText:tagsResponse];
     }];
@@ -436,8 +434,7 @@ static CGFloat const PADDING = 15.f;
     {
         NSArray *tags = [tagsString componentsSeparatedByString:@","];
 
-        [[[ZDKUserProvider alloc] initWithAuthenticationSpace:[ZDKAuthenticationSpace defaultSpace]]
-         deleteTags:tags callback:^(NSArray *userTags, NSError *error) {
+        [[ZDKUserProvider new] deleteTags:tags callback:^(NSArray *userTags, NSError *error) {
             NSString *tagsResponse = [[userTags valueForKey:@"description"] componentsJoinedByString:@", "];
             [self showAlertWithTitle:@"User Tags" andText:tagsResponse];
         }];
@@ -489,7 +486,11 @@ static CGFloat const PADDING = 15.f;
 - (void)configuration:(NSString *)url withAppId:(NSString *)appId andClientId:(NSString *)clientId
 {
     NSLog(@"configuration made, url: %@, appId: %@ and clientId: %@",url,appId,clientId);
-    [[ZDKConfig instance] initializeWithAppId:appId zendeskUrl:url clientId:clientId];
+    [[ZDKConfig instance] initializeWithAppId:appId zendeskUrl:url ClientId:clientId onSuccess:^() {
+        NSLog(@"Config found, SDK is ready");
+    } onError:^(NSError *error) {
+        NSLog(@"Config could not be fetched.");
+    }];    
 }
 
 

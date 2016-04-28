@@ -15,8 +15,6 @@
  */
 
 #import <Foundation/Foundation.h>
-#import "ZDKProvider.h"
-
 @class ZDKAppSettings, ZDKSettings;
 
 /**
@@ -27,7 +25,7 @@
  */
 typedef void (^ZDKSettingsCallback)(ZDKSettings *settings, NSError *error);
 
-@interface ZDKSettingsProvider : ZDKProvider
+@interface ZDKSettingsProvider : NSObject
 
 /**
  *  Get SDK Settings from Zendesk instance

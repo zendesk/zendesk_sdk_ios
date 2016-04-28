@@ -31,13 +31,20 @@
 /**
  * The placeholder text that is shown when there is no text in the text view.
  */
-@property (nonatomic, retain) IBInspectable NSString *placeholderText;
+@property (nonatomic, retain) NSString *placeholderText;
 
 
 /**
  * The color of the placeholder that is shown when there is no text in the text view.
  */
-@property (nonatomic, retain) IBInspectable UIColor *placeholderTextColor;
+@property (nonatomic, retain) UIColor *placeholderTextColor;
+
+
+/**
+ * Fix for iOS 7 text view bugs. Scrolls the text view to the caret.
+ * @param animated If YES, view animates caret to visible. If NO, view scrolls caret to visible with no animation.
+ */
+- (void) scrollToVisibleCaretAnimated:(BOOL)animated;
 
 
 /**

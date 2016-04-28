@@ -24,7 +24,7 @@
 
 @property (nonatomic) ZDKCommentInputView *commentInputView;
 
-- (instancetype)initWithRequest:(ZDKRequest *)request isAttachmentEnabled:(BOOL)isAttachmentEnabled;
+- (instancetype) initWithRequest:(ZDKRequest*)request;
 
 - (CGFloat) preferredHeight;
 

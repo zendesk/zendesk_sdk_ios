@@ -282,7 +282,9 @@ static NSString * const QR_ANON_EXTERNL_ID = @"anonymous_external_id";
 #pragma mark - Button Actions 
 
 
-- (void) clearButtonPressed {
+- (void) clearButtonPressed
+{
+    
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:ZDSDKSampleAppDefaultsKey];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
@@ -293,6 +295,9 @@ static NSString * const QR_ANON_EXTERNL_ID = @"anonymous_external_id";
     nameEntry.text = @"";
     emailEntry.text = @"";
     externalIdEntry.text = @"";
+    
+    [[ZDKSdkStorage instance] clearUserData];
+    [[ZDKSdkStorage instance].settingsStorage deleteStoredData];
 }
 
 
