@@ -15,6 +15,8 @@
  */
 
 #import <Foundation/Foundation.h>
+#import "ZDKProvider.h"
+
 
 @class ZDKPushRegistrationRequest, ZDKPushRegistrationResponse;
 
@@ -46,19 +48,7 @@ typedef void (^ZDKPushDeletionCallback)(NSNumber *responseCode, NSError *error);
  *
  *  @since 1.2.0.1
  */
-@interface ZDKPushRegistrationProvider : NSObject
-
-
-/**
- *  Calls a push registration end point to register the given device configuration.
- *  Deprecated as of version 1.4.0.1. please use registerForPushWithDeviceID or registerForPushWithUAChannelID
- *  @since 1.2.0.1
- *
- *  @param identifier The device identifier
- *  @param locale     The preferred device locale
- *  @param callback   Callback that will provide a newly created device ZDKPushRegistrationResponse.
- */
-- (void) registerDevice:(NSString *)identifier locale:(NSString *)locale callback:(ZDKPushRegistrationCallback)callback __deprecated_msg("As of version 1.4.0.1, please use registerForPushWithDeviceID or registerForPushWithUAChannelID");
+@interface ZDKPushRegistrationProvider : ZDKProvider
 
 
 /**

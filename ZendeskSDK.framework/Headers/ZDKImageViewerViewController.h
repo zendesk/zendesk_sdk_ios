@@ -16,8 +16,11 @@
 
 #import <UIKit/UIKit.h>
 #import "ZDKUIViewController.h"
+#import "ZDKRotationForwarding.h"
 
 @interface ZDKImageViewerViewController : ZDKUIViewController<UIScrollViewDelegate>
+
+@property (nonatomic, assign) id<ZDKRotationForwarding> rotationEventDelegate;
 
 - (instancetype) initWithImage:(UIImage*)image;
 

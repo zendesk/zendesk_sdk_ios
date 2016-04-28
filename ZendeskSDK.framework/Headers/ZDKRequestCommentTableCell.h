@@ -19,19 +19,6 @@
 #import "ZDKSpinnerDelegate.h"
 @class ZDKCommentWithUser;
 
-#define ZD_COMMENT_CELL_AGENT_BODY_FONT [UIFont systemFontOfSize:15.0f]
-#define ZD_COMMENT_CELL_AGENT_BODY_COLOR [UIColor colorWithWhite:0.38f alpha:1.0f]
-#define ZD_COMMENT_CELL_AGENT_BG_COLOR [UIColor whiteColor]
-#define ZD_COMMENT_CELL_AGENT_TIMESTAMP_FONT [UIFont systemFontOfSize:11.0f]
-#define ZD_COMMENT_CELL_AGENT_TIMESTAMP_COLOR [UIColor colorWithWhite:0.721f alpha:1.0f]
-
-#define ZDSDK_COMMENT_CELL_ERROR_FONT [UIFont systemFontOfSize:11.0f]
-#define ZDSDK_COMMENT_CELL_ERROR_COLOR [UIColor colorWithRed:0.8f green:0.0f blue:0.0f alpha:0.8f]
-#define ZDSDK_COMMENT_CELL_RETRY_BUTTON_FONT [UIFont systemFontOfSize:11.0f]
-#define ZDSDK_COMMENT_CELL_RETRY_BUTTON_FONT_COLOR [UIColor colorWithWhite:0.2627f alpha:1.0f]
-#define ZDSDK_COMMENT_CELL_RETRY_BUTTON_BG_COLOR [UIColor whiteColor]
-#define ZDSDK_COMMENT_CELL_RETRY_BUTTON_BORDER_COLOR [UIColor colorWithWhite:0.8470f alpha:1.0f]
-
 /**
  * Super class for request comment cells with shared functionality
  */
@@ -67,10 +54,6 @@
 #pragma mark - agent
 
 
-static CGFloat const ZD_COMMENT_CELL_AGENT_AVATAR_SIZE = 40.f;
-#define ZD_COMMENT_CELL_AGENT_NAME_FONT [UIFont systemFontOfSize:14.0f]
-#define ZD_COMMENT_CELL_AGENT_NAME_COLOR [UIColor colorWithWhite:0.25f alpha:1.0f]
-
 
 /**
  * Comment cell for rendering agent comments.
@@ -96,42 +79,42 @@ static CGFloat const ZD_COMMENT_CELL_AGENT_AVATAR_SIZE = 40.f;
 /**
  * Avatar diameter.
  */
-@property (nonatomic, strong) NSNumber *avatarSize UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) NSNumber *avatarSize __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
 
 /**
  * Agent name text font.
  */
-@property (nonatomic, strong) UIFont *agentNameFont UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIFont *agentNameFont __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
 
 /**
  * Agent name text color.
  */
-@property (nonatomic, strong) UIColor *agentNameColor UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIColor *agentNameColor __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
 
 /**
  * Font of the body text of the comment.
  */
-@property (nonatomic, strong) UIFont *bodyFont UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIFont *bodyFont __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
 
 /**
  * Color of the body text of the comment.
  */
-@property (nonatomic, strong) UIColor *bodyColor UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIColor *bodyColor __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
 
 /**
  * Timestamp label text font.
  */
-@property (nonatomic, strong) UIFont *timestampFont UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIFont *timestampFont __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
 
 /**
  * Timestamp label text color.
  */
-@property (nonatomic, strong) UIColor *timestampColor UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIColor *timestampColor __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
 
 /**
  * Background color of the comment cell.
  */
-@property (nonatomic, strong) UIColor *cellBackground UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIColor *cellBackground __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
 
 
 
@@ -150,11 +133,6 @@ static CGFloat const ZD_COMMENT_CELL_AGENT_AVATAR_SIZE = 40.f;
 
 #pragma mark - end user
 
-
-#define ZD_COMMENT_CELL_ENDUSER_BODY_FONT [UIFont systemFontOfSize:15.0f]
-#define ZD_COMMENT_CELL_ENDUSER_BODY_COLOR [UIColor colorWithWhite:0.38f alpha:1.0f]
-#define ZD_COMMENT_CELL_ENDUSER_BG_COLOR [UIColor colorWithWhite:0.976f alpha:1.0f]
-#define ZD_COMMENT_LOADING_CELL_BG_COLOR [UIColor colorWithWhite:0.976f alpha:1.0f]
 
 
 /**
@@ -176,27 +154,27 @@ static CGFloat const ZD_COMMENT_CELL_AGENT_AVATAR_SIZE = 40.f;
 /**
  * Font of the body text of the comment.
  */
-@property (nonatomic, strong) UIFont *bodyFont UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIFont *bodyFont __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
 
 /**
  * Color of the body text of the comment.
  */
-@property (nonatomic, strong) UIColor *bodyColor UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIColor *bodyColor __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
 
 /**
  * Timestamp label text font.
  */
-@property (nonatomic, strong) UIFont *timestampFont UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIFont *timestampFont __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
 
 /**
  * Timestamp label text color.
  */
-@property (nonatomic, strong) UIColor *timestampColor UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIColor *timestampColor __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
 
 /**
  * Background color of the comment cell.
  */
-@property (nonatomic, strong) UIColor *cellBackground UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIColor *cellBackground __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
 
 @end
 
@@ -228,17 +206,17 @@ static CGFloat const ZD_COMMENT_CELL_AGENT_AVATAR_SIZE = 40.f;
 /**
  * Left content inset.
  */
-@property (nonatomic, strong) NSNumber *leftInset UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) NSNumber *leftInset __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
 
 /**
  * Spinner to indicate the loading state.
  */
-@property (nonatomic, strong) id<ZDKSpinnerDelegate> spinner UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) id<ZDKSpinnerDelegate> spinner __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
 
 /**
  * Background color of the comment cell.
  */
-@property (nonatomic, strong) UIColor *cellBackground UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIColor *cellBackground __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
 
 
 @end

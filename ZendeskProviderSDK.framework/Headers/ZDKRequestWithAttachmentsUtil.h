@@ -23,6 +23,18 @@
 
 @interface ZDKRequestWithAttachmentsUtil : NSObject
 
+
+/**
+ *  Upload a file to Zendesk, provider wrapper.
+ *
+ *  @param data        Data to upload.
+ *  @param filename    The filename.
+ *  @param callback    Callback executed after request completes.
+ */
+- (void)uploadAttachment:(NSData *)data
+            withFilename:(NSString *)filename
+                callback:(ZDKUploadCallback)callback;
+
 /**
  *  Upload a file to Zendesk, provider wrapper.
  *
@@ -81,7 +93,7 @@
  *
  *  @return MIME type as string.
  */
-- (NSString *) MIMETypeForData:(NSData*)data;
++ (NSString *) MIMETypeForData:(NSData*)data;
 
 
 @end

@@ -15,6 +15,7 @@
  */
 
 #import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
 #import "ZDKSpinnerDelegate.h"
 
 @class ZDKRMAConfigObject, ZDKUITextView;
@@ -120,21 +121,21 @@ typedef NS_ENUM(NSInteger, ZDKRMAFeedbackDialogState) {
 @property (nonatomic, retain) UIImageView *submissionStatusImageView;
 
 
-@property (nonatomic, strong) UIColor *buttonColor UI_APPEARANCE_SELECTOR;
-@property (nonatomic, strong) UIColor *buttonSelectedColor UI_APPEARANCE_SELECTOR;
-@property (nonatomic, strong) UIColor *buttonBackgroundColor UI_APPEARANCE_SELECTOR;
-@property (nonatomic, strong) UIColor *separatorLineColor UI_APPEARANCE_SELECTOR;
-@property (nonatomic, strong) UIFont *headerFont UI_APPEARANCE_SELECTOR;
-@property (nonatomic, strong) UIFont *subheaderFont UI_APPEARANCE_SELECTOR;
-@property (nonatomic, strong) UIFont *textEntryFont UI_APPEARANCE_SELECTOR;
-@property (nonatomic, strong) UIFont *buttonFont UI_APPEARANCE_SELECTOR;
-@property (nonatomic, strong) id<ZDKSpinnerDelegate> spinner UI_APPEARANCE_SELECTOR;
-@property (nonatomic, strong) UIColor *viewBackgroundColor UI_APPEARANCE_SELECTOR;
-@property (nonatomic, strong) UIColor *headerColor UI_APPEARANCE_SELECTOR;
-@property (nonatomic, strong) UIColor *subHeaderColor UI_APPEARANCE_SELECTOR;
-@property (nonatomic, strong) UIColor *textEntryColor UI_APPEARANCE_SELECTOR;
-@property (nonatomic, strong) UIColor *textEntryBackgroundColor UI_APPEARANCE_SELECTOR;
-@property (nonatomic, strong) UIColor *placeHolderColor UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIColor *buttonColor __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIColor *buttonSelectedColor __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIColor *buttonBackgroundColor __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIColor *separatorLineColor __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIFont *headerFont __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIFont *subheaderFont __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIFont *textEntryFont __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIFont *buttonFont __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) id<ZDKSpinnerDelegate> spinner __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIColor *viewBackgroundColor __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIColor *headerColor __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIColor *subHeaderColor __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIColor *textEntryColor __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIColor *textEntryBackgroundColor __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIColor *placeHolderColor __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
 
 @property (nonatomic, strong) NSString *successImageName;
 @property (nonatomic, strong) NSString *errorImageName;

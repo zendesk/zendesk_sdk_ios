@@ -3,7 +3,7 @@
  *  ZDKAccount.h
  *  ZendeskSDK
  *
- *  Created by Zendesk on 06/06/2014.  
+ *  Created by Zendesk on 06/06/2014.
  *
  *  Copyright (c) 2014 Zendesk. All rights reserved.
  *
@@ -23,21 +23,21 @@
  *  @since 0.9.3.1
  */
 typedef NS_ENUM(NSInteger, ZDKAccountState) {
-
+    
     /**
      * Account details have not yet been loaded.
      *
      *  @since 0.9.3.1
      */
     ZDKAccountStateUnloaded,
-
+    
     /**
      * Account state is valid.
      *
      *  @since 0.9.3.1
      */
     ZDKAccountStateValid,
-
+    
     /**
      * A defining value has been changed and the account can not be guaranteed to point to the same Zendesk account.
      *
@@ -95,6 +95,21 @@ typedef NS_ENUM(NSInteger, ZDKAccountState) {
  */
 @property (assign) ZDKAccountState state;
 
+
+/**
+ *  create an account
+ *
+ *  @param zendeskUrl    The full URL of your Zendesk instance, https://{subdomain}.zendesk.com
+ *  @param applicationId The application id of your SDK app, as found in the web interface.
+ *  @param clientId      The oauth client id that was supplied when you set up oauth in web interface.
+ */
+- (instancetype)initWithUrl:(NSString *)zendeskUrl
+              applicationId:(NSString *)applicationId
+                   clientId:(NSString *)clientId NS_DESIGNATED_INITIALIZER;
+
+
+- (instancetype)init NS_UNAVAILABLE;
++ (instancetype)new NS_UNAVAILABLE;
 
 @end
 

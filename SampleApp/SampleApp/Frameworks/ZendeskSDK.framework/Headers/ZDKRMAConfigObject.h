@@ -68,59 +68,6 @@ typedef void (^SendFeedbackError) (void);
 
 
 /**
- *
- * Is RMA enabled.
- *
- */
-@property (nonatomic, readonly, getter = isEnabled) BOOL enabled;
-
-
-/**
- *
- * A threshold for visit count. By default minimumVisits in conjunction with
- * minimumDays are set to ensure that an app has been used enough for a rating
- * to be of value.
- *
- * The default value is 15.
- *
- */
-@property (nonatomic, strong, readonly) NSNumber *minimumVisits;
-
-/**
- * A threshold in days since the initial call to logVisit. By default minimumDays 
- * in conjunction with minimumVisits are set to ensure that an app has been used
- * enough for a rating to be of value.
- *
- * The default value is 7.
- */
-@property (nonatomic, strong, readonly) NSNumber *minimumDays;
-
-/**
- * Your iTunes app id. This is used to link to the app store.
- * You must set this in the configure method of ZDKRMA.
- *
- * Default value is nil.
- */
-@property (nonatomic, strong, readonly) NSString *itunesAppId;
-
-/**
- * The delay in seconds between a call to [ZDKRMA showInView:view] and ZDKRMA 
- * being displayed.
- *
- * The default value is 2.0.
- */
-@property (nonatomic, strong, readonly) NSNumber *displayDelay;
-
-
-/**
- * Tags to be set on the new request.
- *
- * Default value is set in the lotus config. These tags are concatenated with additionalTags.
- */
-@property (nonatomic, strong, readonly) NSArray *serverConfigTags;
-
-
-/**
  * Additional tags to be set on the new request.
  *
  * Default value is nil.

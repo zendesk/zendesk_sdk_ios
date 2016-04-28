@@ -4,13 +4,9 @@
 <dict>
 	<key>files</key>
 	<dict>
-		<key>Headers/ZDKAPIDispatcher.h</key>
-		<data>
-		pijtJagq9MiVVNKUEaP1fjTwopg=
-		</data>
 		<key>Headers/ZDKAccount.h</key>
 		<data>
-		TTqb23IWtyGMR28c1NnYTPUAAhI=
+		MAdeuwzdHcWhLLlW4rqUjSvfbME=
 		</data>
 		<key>Headers/ZDKAccountSettings.h</key>
 		<data>
@@ -36,13 +32,17 @@
 		<data>
 		+M8NqLSb1kNrMSHxLtC7liiKR3U=
 		</data>
+		<key>Headers/ZDKAuthenticationSpace.h</key>
+		<data>
+		jZPJwHs9J0crEhEoCS7ns+TGTMQ=
+		</data>
 		<key>Headers/ZDKAuthenticationURLProtocol.h</key>
 		<data>
 		RFgY/4G/u8jQ5crcE3Vm+R9DdLs=
 		</data>
 		<key>Headers/ZDKAvatarProvider.h</key>
 		<data>
-		Lx2ivGGlf+pKa473iBIvzj8w2yw=
+		+RcYce9Cyq/ZrFwvN4LpKDtAFgQ=
 		</data>
 		<key>Headers/ZDKBundleUtils.h</key>
 		<data>
@@ -66,7 +66,7 @@
 		</data>
 		<key>Headers/ZDKConfig.h</key>
 		<data>
-		dY/75kEXVgJYV/KSkVghQBsEFiE=
+		zLUYbkRBotYbqf32QNp1/x3NXSw=
 		</data>
 		<key>Headers/ZDKContactUsSettings.h</key>
 		<data>
@@ -78,7 +78,7 @@
 		</data>
 		<key>Headers/ZDKCreateRequest.h</key>
 		<data>
-		ZGXrjpI1lIY6+Fx2jbyEVydV7gs=
+		m5mXd/ZcJ23C52lIlhh37vT17LM=
 		</data>
 		<key>Headers/ZDKCustomField.h</key>
 		<data>
@@ -90,15 +90,11 @@
 		</data>
 		<key>Headers/ZDKDeviceInfo.h</key>
 		<data>
-		GEUnIWBpz4y/QrkxXaEEbB0jfSI=
+		r6lWD5bP+COuaeoVN+rXT0J/qVY=
 		</data>
 		<key>Headers/ZDKDispatcher.h</key>
 		<data>
-		cxMDH/k9KFaaPAx9cMPAfeQ8JAE=
-		</data>
-		<key>Headers/ZDKDispatcherDelegate.h</key>
-		<data>
-		0Z4KRmrFD/ttb1x8mNFAuee66bM=
+		Wu/oGfLsk3zISjPaHmZjq7hxmw8=
 		</data>
 		<key>Headers/ZDKDispatcherResponse.h</key>
 		<data>
@@ -110,7 +106,7 @@
 		</data>
 		<key>Headers/ZDKHelpCenterArticle.h</key>
 		<data>
-		lP7+d1MVHBqQWY66ROq+V5oB5hk=
+		4ukwoAVf6w79zW0PVH5xPn5ZKGs=
 		</data>
 		<key>Headers/ZDKHelpCenterArticleVote.h</key>
 		<data>
@@ -126,7 +122,7 @@
 		</data>
 		<key>Headers/ZDKHelpCenterDeflection.h</key>
 		<data>
-		RsnufpR1gMBUM5p+R/WFEY9I9G0=
+		YpypTHdlQkoT+1F9bTSNPeR2R70=
 		</data>
 		<key>Headers/ZDKHelpCenterFlatArticle.h</key>
 		<data>
@@ -142,11 +138,11 @@
 		</data>
 		<key>Headers/ZDKHelpCenterProvider.h</key>
 		<data>
-		4VNvJyyDzHt0opjzFdHS1ZQULRw=
+		urdkS9rXiF9DDhMMVZvPeA8IQOo=
 		</data>
 		<key>Headers/ZDKHelpCenterSearch.h</key>
 		<data>
-		OezUwcRkdKXQM4Ax4leZr1w5Weo=
+		s+C4xnmkcEgwO5DN/bXmTi6qtac=
 		</data>
 		<key>Headers/ZDKHelpCenterSection.h</key>
 		<data>
@@ -170,7 +166,7 @@
 		</data>
 		<key>Headers/ZDKIdentityStorage.h</key>
 		<data>
-		9HF+pMhPwS5hTW2ofCgoPQZddQk=
+		KCkj3yOM9H2qgM1/Qnkb7jB1faU=
 		</data>
 		<key>Headers/ZDKJsonUtil.h</key>
 		<data>
@@ -186,7 +182,7 @@
 		</data>
 		<key>Headers/ZDKLogger.h</key>
 		<data>
-		BpI6WLrdvXzgHXai8jQu91AbxVI=
+		kE4rtXbKZ2y2jwak7hLxLDsvtRA=
 		</data>
 		<key>Headers/ZDKMobileProvisionAnalyzer.h</key>
 		<data>
@@ -196,9 +192,13 @@
 		<data>
 		UaxYBPfCj4TE8cMDvZahUBqb0FY=
 		</data>
+		<key>Headers/ZDKProvider.h</key>
+		<data>
+		tjbUve6/cUIrBDSLAXZShQleung=
+		</data>
 		<key>Headers/ZDKPushRegistrationProvider.h</key>
 		<data>
-		Hfl3ilzFTKwu4TfGsDXjrHYMO6w=
+		CBGzhsffHUNc0HFU0QkJVV/9vaE=
 		</data>
 		<key>Headers/ZDKPushRegistrationRequest.h</key>
 		<data>
@@ -218,19 +218,19 @@
 		</data>
 		<key>Headers/ZDKRequest.h</key>
 		<data>
-		IpWS+ijd8zyMVsSt0ad3cS9T2MU=
+		nXKEAt4/bZa9xvTWDEb9Qw0joPk=
 		</data>
 		<key>Headers/ZDKRequestProvider.h</key>
 		<data>
-		HnXNWlgrGiNujeNK5gBsWuJ++TE=
+		a9c2pWquHaX8JRao3WVcIO1hPEQ=
 		</data>
 		<key>Headers/ZDKRequestStorage.h</key>
 		<data>
-		rR3dttDJ+vYCMvNH261/yo6NA9M=
+		FbPLj1rm6Cbe1+A+FLMvoxNuAfU=
 		</data>
 		<key>Headers/ZDKRequestWithAttachmentsUtil.h</key>
 		<data>
-		UbHnNN4LWcRldH0jI0Ks95uMc04=
+		iMSmndZTQZnfSS+xEO8sDUVbHw0=
 		</data>
 		<key>Headers/ZDKRequestsResponse.h</key>
 		<data>
@@ -238,7 +238,7 @@
 		</data>
 		<key>Headers/ZDKSdkStorage.h</key>
 		<data>
-		0ih43QrGuf4TRsQswZ5IQp0hFcM=
+		pnTg+suJw5za7QqoIwFZ2SBDVzg=
 		</data>
 		<key>Headers/ZDKSettings.h</key>
 		<data>
@@ -246,11 +246,11 @@
 		</data>
 		<key>Headers/ZDKSettingsProvider.h</key>
 		<data>
-		t3jR9E0Om0AQXiYqMHK7cZEu5ro=
+		4j+xyDr0+SVaNyyy6fWF9yrEl+0=
 		</data>
 		<key>Headers/ZDKSettingsStorage.h</key>
 		<data>
-		CNaHM1nDHaTv4l4XLRNgwo7wtlU=
+		6KAl9U5zw3O0gT+08/NswxNTErM=
 		</data>
 		<key>Headers/ZDKStringUtil.h</key>
 		<data>
@@ -258,7 +258,7 @@
 		</data>
 		<key>Headers/ZDKUploadProvider.h</key>
 		<data>
-		UAYYCG116RdBeHodUbuVuvsF/PU=
+		oQsBgZha41Z0eGRiinjc+3f6cP0=
 		</data>
 		<key>Headers/ZDKUploadResponse.h</key>
 		<data>
@@ -274,7 +274,7 @@
 		</data>
 		<key>Headers/ZDKUserProvider.h</key>
 		<data>
-		ALbsVSBqn7b4uuJq4leqsYWyJdw=
+		zRxbYy2uuDZkhd3xcByVOLH6T9Y=
 		</data>
 		<key>Headers/ZDKValidator.h</key>
 		<data>
@@ -282,311 +282,1010 @@
 		</data>
 		<key>Headers/ZendeskProviderSDK.h</key>
 		<data>
-		mm/mQwfpGBZQm8Lo3sNuUN2GXIg=
+		+sMG85eZL+0+HIb5LkiNoi72ibU=
 		</data>
 		<key>Headers/ZendeskSDKConstants.h</key>
 		<data>
-		Y05PNWdNp37xHdHI99XDxV9lUl4=
+		PnG7aez00nLd+64WYvNdDI75E3o=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		vwcKF/gMUsBvGLIlvP55gW4kOvM=
+		XLc8sdfgoX59aGroo+upkxsMu3o=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
 		U/S2mmfmvd9RTH2n/LJEUvaF7mA=
+		</data>
+		<key>PrivateHeaders/ZDKAccountAuthHelper.h</key>
+		<data>
+		miQn2/zY6AQ/F1nhbPqUCvQAq8w=
+		</data>
+		<key>PrivateHeaders/ZDKErrorParser.h</key>
+		<data>
+		hGFw2IISyU9eq5P5Q9ionr0jzX8=
+		</data>
+		<key>PrivateHeaders/ZDKLoginRequest.h</key>
+		<data>
+		wJJ69z276rV5P/Bod191kh1dFBI=
+		</data>
+		<key>PrivateHeaders/ZDKLoginRequestPartsFactory.h</key>
+		<data>
+		voAnIEnBD9lQGXFU+5JDPSCW+Js=
+		</data>
+		<key>PrivateHeaders/ZDKRequestExecutor.h</key>
+		<data>
+		jFM+777ERMxdwEQMx1lqEFSLdig=
+		</data>
+		<key>PrivateHeaders/ZDKRequestHelper.h</key>
+		<data>
+		AT0RFI0xpBM9j2MDUYEtJMx5Bi0=
+		</data>
+		<key>PrivateHeaders/ZDKRequestManager.h</key>
+		<data>
+		HvFXuF2/g0tUAy4JaofBqNaflCw=
+		</data>
+		<key>PrivateHeaders/ZDKRequestQueue.h</key>
+		<data>
+		9ugG2b/i1lqSRFR2nZOWcehlVbA=
+		</data>
+		<key>PrivateHeaders/ZDKRequestSession.h</key>
+		<data>
+		Ikey+JRtUrM0bptq0SdH8D3Jz5g=
+		</data>
+		<key>PrivateHeaders/ZDKRequestSessionFactory.h</key>
+		<data>
+		Y/Xz6Qhv1I7eLfhLajoSS3jG/KQ=
+		</data>
+		<key>PrivateHeaders/ZDKRequestSessionLoggedIn.h</key>
+		<data>
+		M2YeZ8mz6nY0d7gN4ieWcSs2uRI=
+		</data>
+		<key>PrivateHeaders/ZDKRequestSessionLoggingIn.h</key>
+		<data>
+		f+Y39SwMjxX71pSiRFhmGWh6Cb8=
+		</data>
+		<key>PrivateHeaders/ZDKRequestSessionNotLoggedIn.h</key>
+		<data>
+		WPu+n+cBK048wv3yd+CQE+YRVLU=
 		</data>
 	</dict>
 	<key>files2</key>
 	<dict>
-		<key>Headers/ZDKAPIDispatcher.h</key>
-		<data>
-		pijtJagq9MiVVNKUEaP1fjTwopg=
-		</data>
 		<key>Headers/ZDKAccount.h</key>
-		<data>
-		TTqb23IWtyGMR28c1NnYTPUAAhI=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			MAdeuwzdHcWhLLlW4rqUjSvfbME=
+			</data>
+			<key>hash2</key>
+			<data>
+			n2Isv7RFb5m/Cfwu8gWn43yB0vGYt7SU0+cdd5/Uj1U=
+			</data>
+		</dict>
 		<key>Headers/ZDKAccountSettings.h</key>
-		<data>
-		dPlXfexiZhFPWWj61mMhk5hMJ9c=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			dPlXfexiZhFPWWj61mMhk5hMJ9c=
+			</data>
+			<key>hash2</key>
+			<data>
+			anKYau7qHbVIQNIZRjb7PipsoHp1OCILNSC19JUk7gA=
+			</data>
+		</dict>
 		<key>Headers/ZDKAnonymousIdentity.h</key>
-		<data>
-		hBC/787e8UzrRmXzjYQZ+xiAtK4=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			hBC/787e8UzrRmXzjYQZ+xiAtK4=
+			</data>
+			<key>hash2</key>
+			<data>
+			hi6KxZF3JQqvMJT6sWv2P8Tme3TnvqMmCPE5R2/bgOw=
+			</data>
+		</dict>
 		<key>Headers/ZDKAppSettings.h</key>
-		<data>
-		mYXbjLjVfS2e7XkgsXjRXy6lqrg=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			mYXbjLjVfS2e7XkgsXjRXy6lqrg=
+			</data>
+			<key>hash2</key>
+			<data>
+			k1NfS9lYiwHZvIdT1TUsBLPeDqndQRLJ8vpybqy2wSo=
+			</data>
+		</dict>
 		<key>Headers/ZDKAttachment.h</key>
-		<data>
-		BH+xj1b5p5+tCbBgA9qrbfFGLYA=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			BH+xj1b5p5+tCbBgA9qrbfFGLYA=
+			</data>
+			<key>hash2</key>
+			<data>
+			ZniRWOlU1IqsvaoUjxS3eXiwW5lCrF7WbdwEHN4doro=
+			</data>
+		</dict>
 		<key>Headers/ZDKAttachmentCache.h</key>
-		<data>
-		xKPmVRp0creeywJN1g4MnzQxhvE=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			xKPmVRp0creeywJN1g4MnzQxhvE=
+			</data>
+			<key>hash2</key>
+			<data>
+			EztdBt+HQBsJagQXmJhHs8BqHi+pwVpcm5jcqVI9SVw=
+			</data>
+		</dict>
 		<key>Headers/ZDKAttachmentSettings.h</key>
-		<data>
-		+M8NqLSb1kNrMSHxLtC7liiKR3U=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			+M8NqLSb1kNrMSHxLtC7liiKR3U=
+			</data>
+			<key>hash2</key>
+			<data>
+			mmA2FqTYkHFGVb1B7kfVGVpxxYpbyh8OBw8U+fzDJmc=
+			</data>
+		</dict>
+		<key>Headers/ZDKAuthenticationSpace.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			jZPJwHs9J0crEhEoCS7ns+TGTMQ=
+			</data>
+			<key>hash2</key>
+			<data>
+			IJjobTW546ZhTyi3o7kzH3yL2Ry+dRkapOmo2AqBIlA=
+			</data>
+		</dict>
 		<key>Headers/ZDKAuthenticationURLProtocol.h</key>
-		<data>
-		RFgY/4G/u8jQ5crcE3Vm+R9DdLs=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			RFgY/4G/u8jQ5crcE3Vm+R9DdLs=
+			</data>
+			<key>hash2</key>
+			<data>
+			cH/Tx9RRZr2GR4rPI2w52Q/MvHHbmgXXC7q1NikeUGo=
+			</data>
+		</dict>
 		<key>Headers/ZDKAvatarProvider.h</key>
-		<data>
-		Lx2ivGGlf+pKa473iBIvzj8w2yw=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			+RcYce9Cyq/ZrFwvN4LpKDtAFgQ=
+			</data>
+			<key>hash2</key>
+			<data>
+			VUfQyp6vbddKRsKbfvUhaFsgXAdXedDunbTN5BufXwM=
+			</data>
+		</dict>
 		<key>Headers/ZDKBundleUtils.h</key>
-		<data>
-		DWx32oj1lqe7e1R3TsrNBenOIlE=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			DWx32oj1lqe7e1R3TsrNBenOIlE=
+			</data>
+			<key>hash2</key>
+			<data>
+			IBxVVNee0j/4WAtq5wg9xHfM3MJvR6DjlPFz9USUoa0=
+			</data>
+		</dict>
 		<key>Headers/ZDKCoding.h</key>
-		<data>
-		Ct4Nj9eaDynqwo+5FPaO0sITEAU=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			Ct4Nj9eaDynqwo+5FPaO0sITEAU=
+			</data>
+			<key>hash2</key>
+			<data>
+			//2kMRQDQpYWTfvin6OrNaAQncljsI1mLQ/5fUkjoL4=
+			</data>
+		</dict>
 		<key>Headers/ZDKComment.h</key>
-		<data>
-		xs+RIDIZCvQy4GD7Xe9VUsn5tlE=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			xs+RIDIZCvQy4GD7Xe9VUsn5tlE=
+			</data>
+			<key>hash2</key>
+			<data>
+			axRUFmMTFIHgJ2m97R+lAiafd0ldJOvm633ikvrvTCU=
+			</data>
+		</dict>
 		<key>Headers/ZDKCommentWithUser.h</key>
-		<data>
-		8NkdXhxU/pHSoHs0CLvohQevcPQ=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			8NkdXhxU/pHSoHs0CLvohQevcPQ=
+			</data>
+			<key>hash2</key>
+			<data>
+			/Hfbbr3uVs/01T8MGXau8l42TQudBARj+wogCzNCeCQ=
+			</data>
+		</dict>
 		<key>Headers/ZDKCommentsResponse.h</key>
-		<data>
-		/Uj1GA69bmzyfy4J5/IIt9DMNyI=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			/Uj1GA69bmzyfy4J5/IIt9DMNyI=
+			</data>
+			<key>hash2</key>
+			<data>
+			i3x+EuNnvneCX2KnRJ8orfPQqV92ZmNi4GyKdhB1eWk=
+			</data>
+		</dict>
 		<key>Headers/ZDKConfig.h</key>
-		<data>
-		dY/75kEXVgJYV/KSkVghQBsEFiE=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			zLUYbkRBotYbqf32QNp1/x3NXSw=
+			</data>
+			<key>hash2</key>
+			<data>
+			oqEmyxcNG3EXCEcFAhkizRFCAn6IawWw6mkNBH9as2g=
+			</data>
+		</dict>
 		<key>Headers/ZDKContactUsSettings.h</key>
-		<data>
-		6JVdXLnJwQ+UN4TlWYArhWpp3u8=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			6JVdXLnJwQ+UN4TlWYArhWpp3u8=
+			</data>
+			<key>hash2</key>
+			<data>
+			iDPgvTY/XcEHNA1oDPS1W8NKXN6vXYXCoaMSHLQWwwo=
+			</data>
+		</dict>
 		<key>Headers/ZDKConversationsSettings.h</key>
-		<data>
-		tzPKIDhGElbCqTWyRgf1GI8ihf8=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			tzPKIDhGElbCqTWyRgf1GI8ihf8=
+			</data>
+			<key>hash2</key>
+			<data>
+			kaKlrZD+TmbnAb3U1t+chxTMlyFB/OifaG6jCoSIh1I=
+			</data>
+		</dict>
 		<key>Headers/ZDKCreateRequest.h</key>
-		<data>
-		ZGXrjpI1lIY6+Fx2jbyEVydV7gs=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			m5mXd/ZcJ23C52lIlhh37vT17LM=
+			</data>
+			<key>hash2</key>
+			<data>
+			sJ3D7nmiLp4hFAvzo1c3O2Rjz7vk5Uj7ow/GLDjgdYw=
+			</data>
+		</dict>
 		<key>Headers/ZDKCustomField.h</key>
-		<data>
-		a9KUMNJJxMPRHdAwJVm8NJ/3c7c=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			a9KUMNJJxMPRHdAwJVm8NJ/3c7c=
+			</data>
+			<key>hash2</key>
+			<data>
+			BF088wkxZ56nGwFmyPuA3pSZfWvTFRK4FlOrKiISL10=
+			</data>
+		</dict>
 		<key>Headers/ZDKDateUtil.h</key>
-		<data>
-		Seuh3fQBtgRUy71tOXKJXKNYUck=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			Seuh3fQBtgRUy71tOXKJXKNYUck=
+			</data>
+			<key>hash2</key>
+			<data>
+			jEZ8fOdNEyddEArqnCdN/7aOPLByDqW4a7mxLibOMnc=
+			</data>
+		</dict>
 		<key>Headers/ZDKDeviceInfo.h</key>
-		<data>
-		GEUnIWBpz4y/QrkxXaEEbB0jfSI=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			r6lWD5bP+COuaeoVN+rXT0J/qVY=
+			</data>
+			<key>hash2</key>
+			<data>
+			bfuJeLieBO7bPi/h1OQ9cadxVszvkODV02Gn2wxz8SE=
+			</data>
+		</dict>
 		<key>Headers/ZDKDispatcher.h</key>
-		<data>
-		cxMDH/k9KFaaPAx9cMPAfeQ8JAE=
-		</data>
-		<key>Headers/ZDKDispatcherDelegate.h</key>
-		<data>
-		0Z4KRmrFD/ttb1x8mNFAuee66bM=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			Wu/oGfLsk3zISjPaHmZjq7hxmw8=
+			</data>
+			<key>hash2</key>
+			<data>
+			yB5wJAol/PO+FiMMboTowr05/lR+WB+qAu+IJIiixT4=
+			</data>
+		</dict>
 		<key>Headers/ZDKDispatcherResponse.h</key>
-		<data>
-		7Es8/l8/BbjNTxLOOdkxG4vmDKE=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			7Es8/l8/BbjNTxLOOdkxG4vmDKE=
+			</data>
+			<key>hash2</key>
+			<data>
+			rFcJ1dnx27HX053hmJPYF86VpEluhvvChkdA2kw0pwY=
+			</data>
+		</dict>
 		<key>Headers/ZDKETag.h</key>
-		<data>
-		+Ocs3eAOjCtYNHuNWyF+6hAwGyc=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			+Ocs3eAOjCtYNHuNWyF+6hAwGyc=
+			</data>
+			<key>hash2</key>
+			<data>
+			OMxuuxV7j6LlusWaulrZh8eZluanAWZW7bW6woUYu+4=
+			</data>
+		</dict>
 		<key>Headers/ZDKHelpCenterArticle.h</key>
-		<data>
-		lP7+d1MVHBqQWY66ROq+V5oB5hk=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			4ukwoAVf6w79zW0PVH5xPn5ZKGs=
+			</data>
+			<key>hash2</key>
+			<data>
+			IaJ0Daic1XUuT8QuT25NOXc6Tnnj0e6hAfTF5UZVu5U=
+			</data>
+		</dict>
 		<key>Headers/ZDKHelpCenterArticleVote.h</key>
-		<data>
-		xhjuFWtCDCNzt/G33PbhBRbmzco=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			xhjuFWtCDCNzt/G33PbhBRbmzco=
+			</data>
+			<key>hash2</key>
+			<data>
+			IfqId4FE15Lt5ngvIPH2wOEO1UTJ1TaB3YkiGlGwZlQ=
+			</data>
+		</dict>
 		<key>Headers/ZDKHelpCenterAttachment.h</key>
-		<data>
-		JHB+UHvZ5zI4MPAbMTHCXO6TGcs=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			JHB+UHvZ5zI4MPAbMTHCXO6TGcs=
+			</data>
+			<key>hash2</key>
+			<data>
+			R1ePX/quuL757sEkS0RoGDihb8trWpYss5J17kQunsg=
+			</data>
+		</dict>
 		<key>Headers/ZDKHelpCenterCategory.h</key>
-		<data>
-		YFjtg6z9E59QnH3xd6Hkl+lRHXA=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			YFjtg6z9E59QnH3xd6Hkl+lRHXA=
+			</data>
+			<key>hash2</key>
+			<data>
+			/mSDsu9kRVIb5Y/SLRj7lskn6CRT6wu7FMm+Inrppc4=
+			</data>
+		</dict>
 		<key>Headers/ZDKHelpCenterDeflection.h</key>
-		<data>
-		RsnufpR1gMBUM5p+R/WFEY9I9G0=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			YpypTHdlQkoT+1F9bTSNPeR2R70=
+			</data>
+			<key>hash2</key>
+			<data>
+			hUAqSRK15uvoMy44dk8duOREN3i+yo7RXe+UL5y5KTk=
+			</data>
+		</dict>
 		<key>Headers/ZDKHelpCenterFlatArticle.h</key>
-		<data>
-		YZmXcS9y/6BdrYgKNG6ugphW3Yk=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			YZmXcS9y/6BdrYgKNG6ugphW3Yk=
+			</data>
+			<key>hash2</key>
+			<data>
+			IAtW86RSDrpcRcsDkS26dCKhos/k1ZK0gU25s5QVfNo=
+			</data>
+		</dict>
 		<key>Headers/ZDKHelpCenterLastSearch.h</key>
-		<data>
-		Zb5n/QaRhtrAyAuM4ObhnDRh0nM=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			Zb5n/QaRhtrAyAuM4ObhnDRh0nM=
+			</data>
+			<key>hash2</key>
+			<data>
+			59QZPJaE0rCMdIxoSAz14yQTZKw/LrMlVUmDGXgMKGs=
+			</data>
+		</dict>
 		<key>Headers/ZDKHelpCenterParser.h</key>
-		<data>
-		6mmHi9QcDqdFeDpuku2ADwHK94E=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			6mmHi9QcDqdFeDpuku2ADwHK94E=
+			</data>
+			<key>hash2</key>
+			<data>
+			fR1k+sKzQ17AGEveb57oji+TUx2h1yTb1Km3XiGk5mc=
+			</data>
+		</dict>
 		<key>Headers/ZDKHelpCenterProvider.h</key>
-		<data>
-		4VNvJyyDzHt0opjzFdHS1ZQULRw=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			urdkS9rXiF9DDhMMVZvPeA8IQOo=
+			</data>
+			<key>hash2</key>
+			<data>
+			vCNc6QnQA+n/1RxtkwSgHEupYsbgOrKuOnSd0/VMXCQ=
+			</data>
+		</dict>
 		<key>Headers/ZDKHelpCenterSearch.h</key>
-		<data>
-		OezUwcRkdKXQM4Ax4leZr1w5Weo=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			s+C4xnmkcEgwO5DN/bXmTi6qtac=
+			</data>
+			<key>hash2</key>
+			<data>
+			AY047CQuBfWNhZ8xYeb/WDxRkkEFGpeAGH+qpyPi0Sw=
+			</data>
+		</dict>
 		<key>Headers/ZDKHelpCenterSection.h</key>
-		<data>
-		PS6tx0oWwacutuCOdrLvqotdP9o=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			PS6tx0oWwacutuCOdrLvqotdP9o=
+			</data>
+			<key>hash2</key>
+			<data>
+			PDTDMXxjMnWfbTfHPrFgEgTb4lM+eja7fg2z2Pzm1/k=
+			</data>
+		</dict>
 		<key>Headers/ZDKHelpCenterSessionCache.h</key>
-		<data>
-		sUbnfeFMsKFYsiR+FbErIgkisn8=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			sUbnfeFMsKFYsiR+FbErIgkisn8=
+			</data>
+			<key>hash2</key>
+			<data>
+			GosmbIHiLmuT6horz6lUPD3eYb9ekwy+H6FGXtRjfYc=
+			</data>
+		</dict>
 		<key>Headers/ZDKHelpCenterSettings.h</key>
-		<data>
-		JdvgB4rNcfEP7yxo5pjERezIRqI=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			JdvgB4rNcfEP7yxo5pjERezIRqI=
+			</data>
+			<key>hash2</key>
+			<data>
+			0T2Dw92s+JRV3GzV3aks7I2GdIl+rislP1bNYrp3It0=
+			</data>
+		</dict>
 		<key>Headers/ZDKHelpCenterSimpleArticle.h</key>
-		<data>
-		s2g7j4F6VndhML2ItR2chKbVCtY=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			s2g7j4F6VndhML2ItR2chKbVCtY=
+			</data>
+			<key>hash2</key>
+			<data>
+			pulrBbgkQCMvAUh/TT1qPFIbD/0pGE5FgYhxf570p2M=
+			</data>
+		</dict>
 		<key>Headers/ZDKIdentity.h</key>
-		<data>
-		hgEV8QBE1DopYyz5W4SkjP95Uxo=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			hgEV8QBE1DopYyz5W4SkjP95Uxo=
+			</data>
+			<key>hash2</key>
+			<data>
+			G7pSRRdsu9VzhbZYXxNe/tPjTLIlCkNrVYWoSCfEBDI=
+			</data>
+		</dict>
 		<key>Headers/ZDKIdentityStorage.h</key>
-		<data>
-		9HF+pMhPwS5hTW2ofCgoPQZddQk=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			KCkj3yOM9H2qgM1/Qnkb7jB1faU=
+			</data>
+			<key>hash2</key>
+			<data>
+			i8aXFAH9Ilo7NR6y76Hc2IiHMQAXj+wBRbb3ON69NNk=
+			</data>
+		</dict>
 		<key>Headers/ZDKJsonUtil.h</key>
-		<data>
-		VJt+DI5AJARFScKiJ8QSEfJcZvE=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			VJt+DI5AJARFScKiJ8QSEfJcZvE=
+			</data>
+			<key>hash2</key>
+			<data>
+			uhRhlsJcLgZQWEsY340LEMLQeKz7SSgrW6iwtk/oGYA=
+			</data>
+		</dict>
 		<key>Headers/ZDKJwtIdentity.h</key>
-		<data>
-		d2ZQaKNQLQoSNU0xSnsNPyP3lMA=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			d2ZQaKNQLQoSNU0xSnsNPyP3lMA=
+			</data>
+			<key>hash2</key>
+			<data>
+			inFLUwh0ectdJha+McXQy6H7/6XxlvzMkTGgKeDLx8g=
+			</data>
+		</dict>
 		<key>Headers/ZDKKeychainWrapper.h</key>
-		<data>
-		vtqZPCO0PI0VooiFDptlZh4ioBo=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			vtqZPCO0PI0VooiFDptlZh4ioBo=
+			</data>
+			<key>hash2</key>
+			<data>
+			il2q6Z5yiSMBe385yAmApkKExx0tfKNz1jdvH03ELSc=
+			</data>
+		</dict>
 		<key>Headers/ZDKLogger.h</key>
-		<data>
-		BpI6WLrdvXzgHXai8jQu91AbxVI=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			kE4rtXbKZ2y2jwak7hLxLDsvtRA=
+			</data>
+			<key>hash2</key>
+			<data>
+			FxGO+79DgrZz4pwFQnRuEPvzzCi9twId0TMLXIkbuqw=
+			</data>
+		</dict>
 		<key>Headers/ZDKMobileProvisionAnalyzer.h</key>
-		<data>
-		932bFaZsCqT2/IS/UMkTCDzOV+g=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			932bFaZsCqT2/IS/UMkTCDzOV+g=
+			</data>
+			<key>hash2</key>
+			<data>
+			oS2EhFuhUnwnjCF8U2q63gmYS+QSb1hEul+kUaC6wsQ=
+			</data>
+		</dict>
 		<key>Headers/ZDKNSCodingUtil.h</key>
-		<data>
-		UaxYBPfCj4TE8cMDvZahUBqb0FY=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			UaxYBPfCj4TE8cMDvZahUBqb0FY=
+			</data>
+			<key>hash2</key>
+			<data>
+			zv2ifZ4R7LSw9osGMVZ5DVglNIBZyfG+hc26YihUi+c=
+			</data>
+		</dict>
+		<key>Headers/ZDKProvider.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			tjbUve6/cUIrBDSLAXZShQleung=
+			</data>
+			<key>hash2</key>
+			<data>
+			jIkEEoA1aGhJVX8tPUjLs3o80Yim3tqmttOelroOU/w=
+			</data>
+		</dict>
 		<key>Headers/ZDKPushRegistrationProvider.h</key>
-		<data>
-		Hfl3ilzFTKwu4TfGsDXjrHYMO6w=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			CBGzhsffHUNc0HFU0QkJVV/9vaE=
+			</data>
+			<key>hash2</key>
+			<data>
+			5KpGWCXEY+XenXEkcQL99rIzswXWXLcphKS1xvpRQYs=
+			</data>
+		</dict>
 		<key>Headers/ZDKPushRegistrationRequest.h</key>
-		<data>
-		bP7aqk9hJJ7Vzz5j8e99T0XbleI=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			bP7aqk9hJJ7Vzz5j8e99T0XbleI=
+			</data>
+			<key>hash2</key>
+			<data>
+			2HEY0/hbSzBOKJDCZxuwf3b4Drv/tfvQNcEm2pJH6Sw=
+			</data>
+		</dict>
 		<key>Headers/ZDKPushRegistrationResponse.h</key>
-		<data>
-		BTNPLa9w2dEKk50riAlt4J52ctk=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			BTNPLa9w2dEKk50riAlt4J52ctk=
+			</data>
+			<key>hash2</key>
+			<data>
+			CG8VdYwNMIfC7+aD/+XqG69clcxs0hXlkNTwBIjvCFg=
+			</data>
+		</dict>
 		<key>Headers/ZDKRateMyAppSettings.h</key>
-		<data>
-		BdwC7pKz+YGBrSPJQD6sVZ4ohAA=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			BdwC7pKz+YGBrSPJQD6sVZ4ohAA=
+			</data>
+			<key>hash2</key>
+			<data>
+			qzhMtmCZw+Rh2fYzas2myCIOsfHInYbaKmpAkcz+ugo=
+			</data>
+		</dict>
 		<key>Headers/ZDKReachability.h</key>
-		<data>
-		XCW2wVlx3N0sjo8wQYBN1HI4kcc=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			XCW2wVlx3N0sjo8wQYBN1HI4kcc=
+			</data>
+			<key>hash2</key>
+			<data>
+			rzHf7fsgKUtvI+oolVFTK4Dl+BmCI4iggPgJeRGyViQ=
+			</data>
+		</dict>
 		<key>Headers/ZDKRequest.h</key>
-		<data>
-		IpWS+ijd8zyMVsSt0ad3cS9T2MU=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			nXKEAt4/bZa9xvTWDEb9Qw0joPk=
+			</data>
+			<key>hash2</key>
+			<data>
+			S1h+85swHUlkbVz6fmne+UmK51ZVmGTF92e5W+8cwAM=
+			</data>
+		</dict>
 		<key>Headers/ZDKRequestProvider.h</key>
-		<data>
-		HnXNWlgrGiNujeNK5gBsWuJ++TE=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			a9c2pWquHaX8JRao3WVcIO1hPEQ=
+			</data>
+			<key>hash2</key>
+			<data>
+			OYJVNgQi8vfd89kII9g/yI2ieg73IrwLvLYDlDpAkG0=
+			</data>
+		</dict>
 		<key>Headers/ZDKRequestStorage.h</key>
-		<data>
-		rR3dttDJ+vYCMvNH261/yo6NA9M=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			FbPLj1rm6Cbe1+A+FLMvoxNuAfU=
+			</data>
+			<key>hash2</key>
+			<data>
+			tmwWqCRpf5x/45OD4/QJNTtQ0rC2TZttEEEqNINiOOI=
+			</data>
+		</dict>
 		<key>Headers/ZDKRequestWithAttachmentsUtil.h</key>
-		<data>
-		UbHnNN4LWcRldH0jI0Ks95uMc04=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			iMSmndZTQZnfSS+xEO8sDUVbHw0=
+			</data>
+			<key>hash2</key>
+			<data>
+			7mKGCl2ia0jEiGsjTXnchapbWV3aONR5eryaeRpx7Fc=
+			</data>
+		</dict>
 		<key>Headers/ZDKRequestsResponse.h</key>
-		<data>
-		cpByGL7sXQW+/m5jIr9L/J7fqyA=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			cpByGL7sXQW+/m5jIr9L/J7fqyA=
+			</data>
+			<key>hash2</key>
+			<data>
+			0gHknJA8IGPvoQ7ac5HWVOPFsFUr2A9fcf083UbWpMg=
+			</data>
+		</dict>
 		<key>Headers/ZDKSdkStorage.h</key>
-		<data>
-		0ih43QrGuf4TRsQswZ5IQp0hFcM=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			pnTg+suJw5za7QqoIwFZ2SBDVzg=
+			</data>
+			<key>hash2</key>
+			<data>
+			movJ/q70ZjEvkOgECu78po3Ko4Gy7unb42xxJH9Swak=
+			</data>
+		</dict>
 		<key>Headers/ZDKSettings.h</key>
-		<data>
-		iyQ8hbO/6DIMQ7xSgXnPXgWIfyo=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			iyQ8hbO/6DIMQ7xSgXnPXgWIfyo=
+			</data>
+			<key>hash2</key>
+			<data>
+			3KiTw7nmP0iYY8rBpp9GchGZHRCQvyXJyGG+/ZyfWbM=
+			</data>
+		</dict>
 		<key>Headers/ZDKSettingsProvider.h</key>
-		<data>
-		t3jR9E0Om0AQXiYqMHK7cZEu5ro=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			4j+xyDr0+SVaNyyy6fWF9yrEl+0=
+			</data>
+			<key>hash2</key>
+			<data>
+			GLqv6bnAC34geDGL9JgvUPGfgrHHhQPa2+rBxluKaQQ=
+			</data>
+		</dict>
 		<key>Headers/ZDKSettingsStorage.h</key>
-		<data>
-		CNaHM1nDHaTv4l4XLRNgwo7wtlU=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			6KAl9U5zw3O0gT+08/NswxNTErM=
+			</data>
+			<key>hash2</key>
+			<data>
+			+tertQWHwDm/UDpVGu6zzB8r9Im5Z1wI8FmiQc7ROqg=
+			</data>
+		</dict>
 		<key>Headers/ZDKStringUtil.h</key>
-		<data>
-		PndOQrd2/C90uwMKEJazprdOA/U=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			PndOQrd2/C90uwMKEJazprdOA/U=
+			</data>
+			<key>hash2</key>
+			<data>
+			Nm9lvGUoaYXeoD+g+3ZZZcE7IHMEL0V+31l+HIWVQgM=
+			</data>
+		</dict>
 		<key>Headers/ZDKUploadProvider.h</key>
-		<data>
-		UAYYCG116RdBeHodUbuVuvsF/PU=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			oQsBgZha41Z0eGRiinjc+3f6cP0=
+			</data>
+			<key>hash2</key>
+			<data>
+			eGEKIbUXRE/ApsHL7YhyThR4wu3qdmA0y7yAY+9nvbw=
+			</data>
+		</dict>
 		<key>Headers/ZDKUploadResponse.h</key>
-		<data>
-		Vw/RbfDvAe6RcSzANvrj7sycf68=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			Vw/RbfDvAe6RcSzANvrj7sycf68=
+			</data>
+			<key>hash2</key>
+			<data>
+			dGa4ZmagpZpZtNDvxEaWFGHuiN/UZqgxh4XJYGu0LfI=
+			</data>
+		</dict>
 		<key>Headers/ZDKUser.h</key>
-		<data>
-		5q63wuh7I/Pp/kBSUDM3Of4p3AU=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			5q63wuh7I/Pp/kBSUDM3Of4p3AU=
+			</data>
+			<key>hash2</key>
+			<data>
+			gGcMSHqhulcji4zmt0Di2FWNfCn/lWegoIi0Reof/yo=
+			</data>
+		</dict>
 		<key>Headers/ZDKUserField.h</key>
-		<data>
-		6CKB0CHjen8iEcQ3f84MHmPqoBk=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			6CKB0CHjen8iEcQ3f84MHmPqoBk=
+			</data>
+			<key>hash2</key>
+			<data>
+			jb81WzoLqLqE6dKa8ADyVHTfAQ3OAKguyDwXkGzQPbM=
+			</data>
+		</dict>
 		<key>Headers/ZDKUserProvider.h</key>
-		<data>
-		ALbsVSBqn7b4uuJq4leqsYWyJdw=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			zRxbYy2uuDZkhd3xcByVOLH6T9Y=
+			</data>
+			<key>hash2</key>
+			<data>
+			yRXHpDeW9/0fQVE299s8jHIUEDIxCshB5CJv7CdHlzU=
+			</data>
+		</dict>
 		<key>Headers/ZDKValidator.h</key>
-		<data>
-		+d0M4uXNu7wsl8GMjEV8VOeBl1o=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			+d0M4uXNu7wsl8GMjEV8VOeBl1o=
+			</data>
+			<key>hash2</key>
+			<data>
+			iAiIqpmnMgeGptweQXU7muic29ER0S6fmAs9hoXsh7A=
+			</data>
+		</dict>
 		<key>Headers/ZendeskProviderSDK.h</key>
-		<data>
-		mm/mQwfpGBZQm8Lo3sNuUN2GXIg=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			+sMG85eZL+0+HIb5LkiNoi72ibU=
+			</data>
+			<key>hash2</key>
+			<data>
+			XoMJBrVXudpxEA84/Q/NBDPgZ2DRxOutIjCFi0CSMpo=
+			</data>
+		</dict>
 		<key>Headers/ZendeskSDKConstants.h</key>
-		<data>
-		Y05PNWdNp37xHdHI99XDxV9lUl4=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			PnG7aez00nLd+64WYvNdDI75E3o=
+			</data>
+			<key>hash2</key>
+			<data>
+			Do2RZnPpMNCNrg9IL5sJjD2TncgWq1LLk0ScwKXhtJ4=
+			</data>
+		</dict>
 		<key>Modules/module.modulemap</key>
-		<data>
-		U/S2mmfmvd9RTH2n/LJEUvaF7mA=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			U/S2mmfmvd9RTH2n/LJEUvaF7mA=
+			</data>
+			<key>hash2</key>
+			<data>
+			CyMn+cuwgq7eWK1dv6nl70PvYzkLt6mVDkC559aM1ek=
+			</data>
+		</dict>
+		<key>PrivateHeaders/ZDKAccountAuthHelper.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			miQn2/zY6AQ/F1nhbPqUCvQAq8w=
+			</data>
+			<key>hash2</key>
+			<data>
+			PLvCrXQOd23LunOOS+tgtkNELLo4GID2VALlWpJmn/E=
+			</data>
+		</dict>
+		<key>PrivateHeaders/ZDKErrorParser.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			hGFw2IISyU9eq5P5Q9ionr0jzX8=
+			</data>
+			<key>hash2</key>
+			<data>
+			+UqTqC3oR96r6/s0kXI5cujbtydT//ohuXgwGqLGRpc=
+			</data>
+		</dict>
+		<key>PrivateHeaders/ZDKLoginRequest.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			wJJ69z276rV5P/Bod191kh1dFBI=
+			</data>
+			<key>hash2</key>
+			<data>
+			woKb1IwXs0Ynwyg4Yqd6q4A1GA3YfHyMWsikAYMl2xk=
+			</data>
+		</dict>
+		<key>PrivateHeaders/ZDKLoginRequestPartsFactory.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			voAnIEnBD9lQGXFU+5JDPSCW+Js=
+			</data>
+			<key>hash2</key>
+			<data>
+			UPJU/KpE7WJsCGaJyb2WO07PvA2f23wuDE5z7bSUlkk=
+			</data>
+		</dict>
+		<key>PrivateHeaders/ZDKRequestExecutor.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			jFM+777ERMxdwEQMx1lqEFSLdig=
+			</data>
+			<key>hash2</key>
+			<data>
+			5yDrc3YvPwXfA/QgBfOIhM/KFU0ohvQMGvRUt60keys=
+			</data>
+		</dict>
+		<key>PrivateHeaders/ZDKRequestHelper.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			AT0RFI0xpBM9j2MDUYEtJMx5Bi0=
+			</data>
+			<key>hash2</key>
+			<data>
+			URZbItr6JroBBMmNo3/pU+gB1FEuURCkElgWF0tzBgk=
+			</data>
+		</dict>
+		<key>PrivateHeaders/ZDKRequestManager.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			HvFXuF2/g0tUAy4JaofBqNaflCw=
+			</data>
+			<key>hash2</key>
+			<data>
+			cVv2rfiSZmmOuiR1pNnrc6Krxija/r0CAzZf5Rbe9rM=
+			</data>
+		</dict>
+		<key>PrivateHeaders/ZDKRequestQueue.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			9ugG2b/i1lqSRFR2nZOWcehlVbA=
+			</data>
+			<key>hash2</key>
+			<data>
+			if0puA0DEuiyaxbYBl7QrDJcWXWDZMAKs9cLEpTDuBk=
+			</data>
+		</dict>
+		<key>PrivateHeaders/ZDKRequestSession.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			Ikey+JRtUrM0bptq0SdH8D3Jz5g=
+			</data>
+			<key>hash2</key>
+			<data>
+			SqW6ffz3GPCETTvc4QCU1USsUTwlAepo3SDNGmNrt4A=
+			</data>
+		</dict>
+		<key>PrivateHeaders/ZDKRequestSessionFactory.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			Y/Xz6Qhv1I7eLfhLajoSS3jG/KQ=
+			</data>
+			<key>hash2</key>
+			<data>
+			lL6G5Hp6OapyCZt5QSIGN9CkN2I0KvD7uzf01Z498Fw=
+			</data>
+		</dict>
+		<key>PrivateHeaders/ZDKRequestSessionLoggedIn.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			M2YeZ8mz6nY0d7gN4ieWcSs2uRI=
+			</data>
+			<key>hash2</key>
+			<data>
+			GikQda+DeI5f5zonGHFfknWIM0uFYvSYwhnCKFW5IpU=
+			</data>
+		</dict>
+		<key>PrivateHeaders/ZDKRequestSessionLoggingIn.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			f+Y39SwMjxX71pSiRFhmGWh6Cb8=
+			</data>
+			<key>hash2</key>
+			<data>
+			VWm7Bkrg5aXg0gfbg0m88i80RgSJZVD7ge/QWt2nKo8=
+			</data>
+		</dict>
+		<key>PrivateHeaders/ZDKRequestSessionNotLoggedIn.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			WPu+n+cBK048wv3yd+CQE+YRVLU=
+			</data>
+			<key>hash2</key>
+			<data>
+			9Ozt33xpMaqFzLwQVIP6nSdc+EXiVvesTmLTCVGKuoA=
+			</data>
+		</dict>
 	</dict>
 	<key>rules</key>
 	<dict>

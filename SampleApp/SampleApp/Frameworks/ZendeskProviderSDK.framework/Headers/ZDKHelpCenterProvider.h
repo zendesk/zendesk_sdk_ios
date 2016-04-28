@@ -17,6 +17,7 @@
 #import <Foundation/Foundation.h>
 #import "ZDKHelpCenterSearch.h"
 #import "ZDKHelpCenterDeflection.h"
+#import "ZDKProvider.h"
 
 
 /**
@@ -37,7 +38,7 @@ typedef void (^ZDKHelpCenterCallback)(NSArray *items, NSError *error);
 typedef void (^ZDKHelpCenterGenericCallback)(id response, NSError *error);
 
 
-@interface ZDKHelpCenterProvider : NSObject
+@interface ZDKHelpCenterProvider : ZDKProvider
 
 /**
  *  Fetch a list of categories from a Help Center instance.
@@ -183,7 +184,7 @@ typedef void (^ZDKHelpCenterGenericCallback)(id response, NSError *error);
  *
  *  @since 1.3.0.1
  *
- *  @param articleId The id of the article to upvote.
+ *  @param articleId The id of the article to downvote.
  *  @param callback  The callback that is invoked when a request is either successful or has error. Returns the vote object.
  */
 - (void) downvoteArticleWithId:(NSString *)articleId withCallback:(ZDKHelpCenterCallback)callback;

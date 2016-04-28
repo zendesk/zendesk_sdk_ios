@@ -27,19 +27,21 @@
  *
  *  @return An appearance value or nil if none have been set.
  */
-+ (id) appearanceForClass:(Class)viewClass selector:(SEL)selector;
++ (id)appearanceValueForClass:(Class)viewClass selector:(SEL)selector;
 
 
 /**
- *  Gets the UI_APPEARANCE_SELECTOR value for a class returning a default value if none have been set.
+ *  Get the UI_APPEARANCE_SELECTOR value for a class when contained in a given class
  *
- *  @param viewClass        The appearance value will come from this class.
- *  @param selector     The appearance selector
- *  @param defaultValue The default value to use if no appearance value has been set.
+ *  @param viewClass      The appearance value will come from this class.
+ *  @param containerClass The containing class.
+ *  @param selector       The appearance selector
  *
- *  @return An appearance value.
+ *  @return An appearance value or nil if none have been set.
+ *
+ *  @since 1.6.0.1
  */
-+ (id) appearanceForClass:(Class)viewClass selector:(SEL)selector defaultValue:(id)defaultValue;
++ (id)appearanceValueForClass:(Class)viewClass whenContainedIn:(Class <UIAppearanceContainer>)containerClass selector:(SEL)selector;
 
 
 /**
@@ -50,19 +52,7 @@
  *
  *  @return The appearance value or nil if none has been set.
  */
-+ (id) appearanceForView:(UIView*)view selector:(SEL)selector;
-
-
-/**
- *  Gets the UI_APPEARANCE_SELECTOR value for a view returning a default if none has been set.
- *
- *  @param view         The appearance value will come from this view.
- *  @param selector     The appearance selector.
- *  @param defaultValue A default value to use if no appearance value has been set.
- *
- *  @return An appearance value.
- */
-+ (id) appearanceForView:(UIView*)view selector:(SEL)selector defaultValue:(id)defaultValue;
++ (id)appearanceValueForView:(UIView *)view selector:(SEL)selector;
 
 
 /**
