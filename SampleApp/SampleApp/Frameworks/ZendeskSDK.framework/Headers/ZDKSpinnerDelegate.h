@@ -33,7 +33,7 @@
 /**
  *  Is the spinner hidden? YES or NO.
  */
-@property (nonatomic, getter=isHidden) BOOL hidden;
+@property (nonatomic) BOOL hidden;
 
 
 /**

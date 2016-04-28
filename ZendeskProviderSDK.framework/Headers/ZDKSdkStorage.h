@@ -15,15 +15,14 @@
  */
 
 #import <Foundation/Foundation.h>
-
 @class ZDKRequestStorage, ZDKIdentityStorage, ZDKSettingsStorage;
 
 @interface ZDKSdkStorage : NSObject
 
+
 @property (nonatomic, readonly) ZDKRequestStorage *requestStorage;
 @property (nonatomic, readonly) ZDKIdentityStorage *identityStorage;
-
-@property (nonatomic, readonly) ZDKSettingsStorage *settingsStorage __deprecated_msg("As of version 1.6.0.1");
+@property (nonatomic, readonly) ZDKSettingsStorage *settingsStorage;
 
 
 /**
@@ -41,6 +40,6 @@
  *
  *  @return instance of ZDKSdkStorage
  */
-+ (instancetype) instance;
++ (instancetype) instance ;
 
 @end

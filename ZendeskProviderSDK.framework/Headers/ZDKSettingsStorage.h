@@ -18,7 +18,6 @@
 
 @class ZDKSettings;
 
-__deprecated_msg("As of version 1.6.0.1")
 @interface ZDKSettingsStorage : NSObject
 
 /**
@@ -41,16 +40,6 @@ __deprecated_msg("As of version 1.6.0.1")
  *  @return NSTimeInterval of the time since last refresh
  */
 - (NSTimeInterval) getLastSettingsReloadInterval;
-
-
-/**
- *  Gets the last time interval of when the settings were refreshed
- *
- *  @return NSTimeInterval of the time since last refresh
- *
- *  @since 1.6.0.1
- */
-- (NSTimeInterval) lastSettingsReloadInterval;
 
 
 /**

@@ -56,7 +56,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    if ( ! self.navigationItem.leftBarButtonItem && [ZDKUIUtil isPad]) {
+    if ( ! self.navigationItem.leftBarButtonItem) {
         
         UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(dismiss)];
         self.navigationItem.leftBarButtonItem = cancelButton;

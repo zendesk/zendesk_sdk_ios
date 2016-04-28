@@ -61,12 +61,6 @@ typedef NS_ENUM(NSUInteger, ZDKLogLevel){
  */
 + (void) e:(NSString *)format, ...;
 
-/**
- *  Log an error message.
- *
- *  @param logMessage the string for log message.
- */
-+ (void) error:(NSString *)logMessage;
 
 /**
  *  Log a warning message.
@@ -75,12 +69,6 @@ typedef NS_ENUM(NSUInteger, ZDKLogLevel){
  */
 + (void) w:(NSString *)format, ...;
 
-/**
- *  Log a warning message.
- *
- *  @param logMessage the string for log message.
- */
-+ (void) warn:(NSString *)logMessage;
 
 /**
  *  Log an info message.
@@ -89,12 +77,6 @@ typedef NS_ENUM(NSUInteger, ZDKLogLevel){
  */
 + (void) i:(NSString *)format, ...;
 
-/**
- *  Log an info message.
- *
- *  @param logMessage the string for log message.
- */
-+ (void) info:(NSString *)logMessage;
 
 /**
  *  Log a debug message.
@@ -103,12 +85,6 @@ typedef NS_ENUM(NSUInteger, ZDKLogLevel){
  */
 + (void) d:(NSString *)format, ...;
 
-/**
- *  Log a debug message.
- *
- *  @param logMessage the string for log message.
- */
-+ (void) debug:(NSString *)logMessage;
 
 /**
  *  Log a verbose message.
@@ -116,13 +92,6 @@ typedef NS_ENUM(NSUInteger, ZDKLogLevel){
  *  @param format format string for log message.
  */
 + (void) v:(NSString *)format, ...;
-
-/**
- *  Log a verbose message.
- *
- *  @param logMessage the string for log message.
- */
-+ (void) verbose:(NSString *)logMessage;
 
 
 /**
@@ -139,6 +108,7 @@ typedef NS_ENUM(NSUInteger, ZDKLogLevel){
  *  @param level A ZDKLogLevel enum value.
  */
 + (void) setLogLevel:(ZDKLogLevel)level;
+
 
 /**
  *  Get the current log level.

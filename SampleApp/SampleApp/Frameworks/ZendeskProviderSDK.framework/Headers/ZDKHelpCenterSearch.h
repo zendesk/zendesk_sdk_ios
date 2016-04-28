@@ -68,5 +68,11 @@
  */
 @property (nonatomic) NSNumber *resultsPerPage;
 
+/**
+ *  This method will return a UTF-8 encoded query string based on the values of the properties of this class.
+ *
+ *  @return a UTF-8 encoded query string based on the values of the properties of this class.
+ */
+- (NSString *) asQueryString;
 
 @end

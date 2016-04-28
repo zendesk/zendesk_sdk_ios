@@ -3,7 +3,7 @@
  *  ZendeskProviderSDK.h
  *  ZendeskProviderSDK
  *
- *  Created by Zendesk on 04/27/2016
+ *  Created by Zendesk on 02/11/2016
  *
  *  Copyright (c) 2016 Zendesk. All rights reserved.
  *
@@ -20,6 +20,7 @@
 #define ZendeskProviderSDK_h
 
 
+#import "ZDKAPIDispatcher.h"
 #import "ZDKAccount.h"
 #import "ZDKAccountSettings.h"
 #import "ZDKAnonymousIdentity.h"
@@ -27,7 +28,6 @@
 #import "ZDKAttachment.h"
 #import "ZDKAttachmentCache.h"
 #import "ZDKAttachmentSettings.h"
-#import "ZDKAuthenticationSpace.h"
 #import "ZDKAuthenticationURLProtocol.h"
 #import "ZDKAvatarProvider.h"
 #import "ZDKBundleUtils.h"
@@ -43,6 +43,7 @@
 #import "ZDKDateUtil.h"
 #import "ZDKDeviceInfo.h"
 #import "ZDKDispatcher.h"
+#import "ZDKDispatcherDelegate.h"
 #import "ZDKDispatcherResponse.h"
 #import "ZDKETag.h"
 #import "ZDKHelpCenterArticle.h"
@@ -67,7 +68,6 @@
 #import "ZDKLogger.h"
 #import "ZDKMobileProvisionAnalyzer.h"
 #import "ZDKNSCodingUtil.h"
-#import "ZDKProvider.h"
 #import "ZDKPushRegistrationProvider.h"
 #import "ZDKPushRegistrationRequest.h"
 #import "ZDKPushRegistrationResponse.h"
