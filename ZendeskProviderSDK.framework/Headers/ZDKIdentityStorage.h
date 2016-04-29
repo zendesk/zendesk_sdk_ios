@@ -17,12 +17,13 @@
 #import <Foundation/Foundation.h>
 #import "ZDKIdentity.h"
 
+
 @interface ZDKIdentityStorage : NSObject
 
 /**
  *  Store and fetch object that implements ZDKIdentity protocol in local storage
  */
-@property (nonatomic, strong, getter=storedIdentity, setter=storeIdentity:) id<ZDKIdentity> identity;
+@property (nonatomic, strong, getter=storedIdentity, setter=storeIdentity:) id<ZDKIdentity> identity __deprecated_msg("As of version 1.6.0.1 use -storedIdentity and -storeIdentity: instead");
 
 
 /**
@@ -30,7 +31,8 @@
  *
  *  @return NSString of UUID that has been generated
  */
-- (NSString *) getUUID ;
+- (NSString *)getUUID;
+
 
 /**
  *  Store object that implements ZDKIdentity protocol in local storage
@@ -39,12 +41,14 @@
  */
 - (void) storeIdentity:(id <ZDKIdentity>) identity;
 
+
 /**
  *  Fetch stored Identity from local storage
  *
  *  @return instance that implements ZDKIdentity protocol
  */
 - (id <ZDKIdentity>) storedIdentity;
+
 
 /**
  *  Fetch stored OAuth token from local storage
@@ -66,6 +70,5 @@
  * Deletes ALL storage
  */
 - (void) deleteStoredData;
-
 
 @end

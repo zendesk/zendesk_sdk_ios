@@ -35,38 +35,38 @@
 /**
  * Background color for the view.
  */
-@property (nonatomic, strong) UIColor *viewBackgroundColor UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIColor *viewBackgroundColor __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
 
 
 /**
  * Attachment file size label font.
  */
-@property (nonatomic, strong) UIFont *fileSizeLabelFont UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIFont *fileSizeLabelFont __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
 
 /**
  *  Attachment file size label color.
  */
-@property (nonatomic, strong) UIColor *fileSizeLabelColor UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIColor *fileSizeLabelColor __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
 
 /**
  * Attachment file size label background color.
  */
-@property (nonatomic, strong) UIColor *fileSizeLabelBackground UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIColor *fileSizeLabelBackground __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
 
 /**
  * Title label font.
  */
-@property (nonatomic, strong) UIFont *titleLabelFont UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIFont *titleLabelFont __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
 
 /**
  * Title label color.
  */
-@property (nonatomic, strong) UIColor *titleLabelColor UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIColor *titleLabelColor __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
 
 /**
  * Title label background color.
  */
-@property (nonatomic, strong) UIColor *titleLabelBackground UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIColor *titleLabelBackground __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
 
 #pragma mark - Methods
 

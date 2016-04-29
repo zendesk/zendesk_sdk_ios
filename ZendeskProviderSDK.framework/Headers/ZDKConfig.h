@@ -21,7 +21,7 @@
 #import "ZendeskSDKConstants.h"
 
 
-@class ZDKAppSettings, ZDKAccount, ZDKSdkStorage;
+@class ZDKAppSettings, ZDKAccount, ZDKSdkStorage, ZDKTheme;
 
 /**
  *  SDK configuration file found and SDK initialized successfully.
@@ -49,42 +49,24 @@ typedef void (^ZDKInitializeSuccess)(void);
 
 
 /**
- *  The user identity for SDK.
- *
+ *  The userIdentity for the user is an instance of NSObject that implements the protocol ZDKIdentity
  *  @since 1.2.0.1
  */
-@property (nonatomic, setter=setUserIdentity:, getter=userIdentity) id<ZDKIdentity>userIdentity;
+@property (nonatomic, setter=setUserIdentity:, getter=userIdentity) id<ZDKIdentity> userIdentity;
 
 
 /**
- *  An array for custom fields.
+ *  The reload time interval is the maximum frequency with which a reload will be triggered.
  *
- *  @see <a href="https://developer.zendesk.com/embeddables/docs/ios/providers#using-custom-fields-and-custom-forms">Custom fields and forms documentation</a>
+ *  Set reload time interval. One hour is the minimum possible value for a reload interval.
+ *  the reload interval. An interval of less than one hour will result in
+ *  a minimum reload interval, e.g.. [ZendeskSDK setReloadInterval:0] results in a reload
+ *  interval of one hour.
  *
- *  @since 1.0.0.1
+ *  @since 1.6.0.1
  */
-@property (nonatomic, strong) NSArray *customTicketFields;
 
-
-/**
- *  Form id for ticket creation.
- *
- *  The ticket form id will be ignored if your Zendesk doesn't support it.  Currently
- *  Enterprise and higher plans support this.
- *
- *  @see <a href="https://developer.zendesk.com/embeddables/docs/ios/providers#using-custom-fields-and-custom-forms">Custom fields and forms documentation</a>
- *
- *  @since 1.0.0.1
- */
-@property (nonatomic, strong) NSNumber *ticketFormId;
-
-
-/**
- *  Returns YES if authentication type is Anonymous and NO if it authentication is JWT.
- *
- *  @since 1.1.0.1
- */
-@property (readonly) BOOL isAnonymousAuth __deprecated_msg("Deprecated as of 1.3.4.1. Use `[ZDKConfig instance].authenticationType` instead.");
+@property (nonatomic, setter=setReloadInterval:, getter=reloadInterval) NSTimeInterval reloadInterval;
 
 
 /**
@@ -138,7 +120,7 @@ typedef void (^ZDKInitializeSuccess)(void);
                   zendeskUrl:(NSString *)zendeskUrl
                     ClientId:(NSString *)oAuthClientId
                    onSuccess:(ZDKInitializeSuccess)successBlock
-                     onError:(ZDKAPIError)errorBlock;
+                     onError:(ZDKAPIError)errorBlock  __deprecated_msg("As of version 1.6.0.1 use -initializeWithAppId:zendeskUrl:clientId: instead");
 
 
 /**
@@ -152,7 +134,20 @@ typedef void (^ZDKInitializeSuccess)(void);
  */
 - (void) initializeWithAppId:(NSString *)applicationId
                   zendeskUrl:(NSString *)zendeskUrl
-                 andClientId:(NSString *)oAuthClientId;
+                 andClientId:(NSString *)oAuthClientId  __deprecated_msg("As of version 1.6.0.1 use -initializeWithAppId:zendeskUrl:clientId: instead");
+
+/**
+ *  Initialize the SDK.
+ *
+ *  @since 1.6.0.1
+ *
+ *  @param applicationId The application id of your SDK app, as found in the web interface.
+ *  @param zendeskUrl    The full URL of your Zendesk instance, https://{subdomain}.zendesk.com
+ *  @param oAuthClientId The oAuthClientId required as part of the authentication process
+ */
+- (void) initializeWithAppId:(NSString *)applicationId
+                  zendeskUrl:(NSString *)zendeskUrl
+                    clientId:(NSString *)oAuthClientId;
 
 /**
  *  Reload the config from the server, reload will be started if a reload
@@ -163,45 +158,6 @@ typedef void (^ZDKInitializeSuccess)(void);
  *  @since 0.9.3.1
  */
 - (void) reload;
-
-
-/**
- *  The reload time interval is the maximum frequency with which a reload will be triggered.
- *
- *  @since 0.9.3.1
- */
-- (NSTimeInterval) reloadInterval;
-
-
-/**
- *  Set reload time interval. One hour is the minimum possible value for a reload interval.
- *
- *  @since 0.9.3.1
- *
- *  @param interval the reload interval. An interval of less than one hour will result in
- *  a minimum reload interval, e.g.. [ZendeskSDK setReloadInterval:0] results in a reload
- *  interval of one hour.
- */
-- (void) setReloadInterval:(NSTimeInterval)interval;
-
-/**
- *  Set userIdentity for the user
- *
- *  @param aUserIdentity instance of NSObject that implements the protocol ZDKIdentity
- */
-- (void) setUserIdentity:(id<ZDKIdentity>) aUserIdentity;
-
-
-/**
- *  Register the device for push notifications.
- *  Deprecated as 1.4.0.1, please use enablePushWithDeviceID or enablePushWithUAChannelID.
- *
- *  @since 1.2.0.1
- *
- *  @param identifier The device identifier
- *  @param callback    Callback that will provide a newly created device ZDKPushRegistrationResponse.
- */
-- (void) enablePush:(NSString *)identifier callback:(ZDKPushRegistrationCallback)callback __deprecated_msg("As of version 1.4.0.1, please use enablePushWithDeviceID or enablePushWithUAChannelID");
 
 
 /**
@@ -235,6 +191,32 @@ typedef void (^ZDKInitializeSuccess)(void);
  *  @param callback    Callback that provides the HTTP status code for the deletion request.
  */
 - (void) disablePush:(NSString *)identifier callback:(ZDKPushDeletionCallback)callback;
+
+
+#pragma mark - Deprication
+
+
+/**
+ *  An array for custom fields.
+ *
+ *  @see <a href="https://developer.zendesk.com/embeddables/docs/ios/providers#using-custom-fields-and-custom-forms">Custom fields and forms documentation</a>
+ *
+ *  @since 1.0.0.1
+ */
+@property (nonatomic, strong) NSArray *customTicketFields;
+
+
+/**
+ *  Form id for ticket creation.
+ *
+ *  The ticket form id will be ignored if your Zendesk doesn't support it.  Currently
+ *  Enterprise and higher plans support this.
+ *
+ *  @see <a href="https://developer.zendesk.com/embeddables/docs/ios/providers#using-custom-fields-and-custom-forms">Custom fields and forms documentation</a>
+ *
+ *  @since 1.0.0.1
+ */
+@property (nonatomic, strong) NSNumber *ticketFormId;
 
 
 @end

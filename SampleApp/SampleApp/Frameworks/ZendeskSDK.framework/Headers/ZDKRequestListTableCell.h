@@ -20,25 +20,10 @@
 
 @class ZDKRequest;
 
-#define ZDSDK_REQUEST_CELL_DESCRIPTION_FONT [UIFont systemFontOfSize:15.0f]
-#define ZDSDK_REQUEST_CELL_CREATED_AT_FONT [UIFont systemFontOfSize:13.0f]
-#define ZDSDK_REQUEST_CELL_UNREAD_COLOR [UIColor colorWithRed:0.47059f green:0.6392f blue:0.0f alpha:1.0f]
-#define ZDSDK_REQUEST_CELL_DESCRIPTION_COLOR [UIColor colorWithWhite:0.26f alpha:1.0f]
-#define ZDSDK_REQUEST_CELL_CREATED_AT_COLOR [UIColor colorWithWhite:0.54f alpha:1.0f]
 static CGFloat const ZDSDK_REQUEST_CELL_VERTICAL_MARGIN = 20.0f;
 static CGFloat const ZDSDK_REQUEST_CELL_DESCRIPTION_TS_MARGIN = 5.0f;
 static CGFloat const ZDSDK_REQUEST_CELL_LEFT_INSET = 25.0f;
-#define ZDSDK_REQUEST_CELL_BACKGROUND_COLOR [UIColor whiteColor]
 
-#define ZDSDK_REQUEST_CELL_EMPTY_FONT [UIFont systemFontOfSize:15.0f]
-#define ZDSDK_REQUEST_CELL_EMPTY_COLOR [UIColor colorWithWhite:0.3f alpha:1.0f]
-
-#define ZDSDK_REQUEST_CELL_ERROR_FONT [UIFont systemFontOfSize:11.0f]
-#define ZDSDK_REQUEST_CELL_ERROR_COLOR [UIColor colorWithRed:0.8f green:0.0f blue:0.0f alpha:0.8f]
-#define ZDSDK_REQUEST_CELL_RETRY_BUTTON_FONT [UIFont systemFontOfSize:11.0f]
-#define ZDSDK_REQUEST_CELL_RETRY_BUTTON_FONT_COLOR [UIColor colorWithWhite:0.2627f alpha:1.0f]
-#define ZDSDK_REQUEST_CELL_RETRY_BUTTON_BG_COLOR [UIColor whiteColor]
-#define ZDSDK_REQUEST_CELL_RETRY_BUTTON_BORDER_COLOR [UIColor colorWithWhite:0.8470f alpha:1.0f]
 
 
 /**
@@ -59,17 +44,17 @@ static CGFloat const ZDSDK_REQUEST_CELL_LEFT_INSET = 25.0f;
 /**
  * 'The created at' label.
  */
-@property (nonatomic, strong) UILabel *createdAt;
+@property (nonatomic, strong) UILabel *updatedAt;
 
 /**
  * The font to be used by the description label.
  */
-@property (nonatomic, strong) UIFont *descriptionFont UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIFont *descriptionFont __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
 
 /**
  * The font to be used by the created at label.
  */
-@property (nonatomic, strong) UIFont *createdAtFont UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIFont *updatedAtFont __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
 
 /**
  * The color of the unread marker.
@@ -79,38 +64,38 @@ static CGFloat const ZDSDK_REQUEST_CELL_LEFT_INSET = 25.0f;
 /**
  * The color of the description text.
  */
-@property (nonatomic, strong) UIColor *descriptionColor UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIColor *descriptionColor __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
 
 /**
  * The color of the created at text.
  */
-@property (nonatomic, strong) UIColor *createdAtColor UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIColor *updatedAtColor __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
 
 /**
  * Vertical margin between the cell content and the cell edge.
  */
-@property (nonatomic, strong) NSNumber *verticalMargin UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) NSNumber *verticalMargin __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
 
 /**
  * Vertical margin between the description text and the timestamp/created at text
  */
-@property (nonatomic, strong) NSNumber *descriptionTimestampMargin UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) NSNumber *descriptionTimestampMargin __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
 
 /**
  * Left content inset.
  */
-@property (nonatomic, strong) NSNumber *leftInset UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) NSNumber *leftInset __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
 
 /**
  * Background color of the cell.
  */
-@property (nonatomic, strong) UIColor *cellBackgroundColor UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIColor *cellBackgroundColor __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
 
 
 /**
  * Setup the cell with the request info.
  */
-- (void) prepareWithRequest:(ZDKRequest*)request;
+- (void) prepareWithRequest:(ZDKRequest*)request isUnread:(BOOL)isUnread;
 
 @end
 
@@ -131,30 +116,13 @@ static CGFloat const ZDSDK_REQUEST_CELL_LEFT_INSET = 25.0f;
 /**
  * Empty cell text font.
  */
-@property (nonatomic, strong) UIFont *messageFont UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIFont *messageFont __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
 
 /**
  * Empty cell text color.
  */
-@property (nonatomic, strong) UIColor *messageColor UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIColor *messageColor __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
 
-
-@end
-
-
-#pragma mark -
-
-
-/**
- * Retry delegate for requesting a refresh.
- */
-@protocol ZDRequestListRetryDelegate <NSObject>
-
-
-/**
- * Refresh the request list.
- */
-- (void) refresh;
 
 @end
 
@@ -170,7 +138,7 @@ static CGFloat const ZDSDK_REQUEST_CELL_LEFT_INSET = 25.0f;
 /**
  * Spinner to indicate the loading state.
  */
-@property (nonatomic, strong) id<ZDKSpinnerDelegate> spinner UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) id<ZDKSpinnerDelegate> spinner __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
 
 
 @end
