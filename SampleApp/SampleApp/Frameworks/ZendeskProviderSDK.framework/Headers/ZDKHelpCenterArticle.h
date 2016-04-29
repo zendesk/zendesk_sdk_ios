@@ -122,6 +122,12 @@
  */
 @property (nonatomic, strong) NSString *locale;
 
+/**
+ *  An array of label names associated with the article.
+ *
+ *  @since 1.6.0.1
+ */
+@property (nonatomic, strong) NSArray *labelNames;
 
 
 /**
@@ -151,37 +157,6 @@
  *  @return A new ZDKHelpCenterArticle.
  */
 + (ZDKHelpCenterArticle *) parseArticle:(NSDictionary *)articleJson;
-
-
-/**
- *  Parses a collection of Help Center json article objects.
- *
- *  @since 0.9.3.1
- *
- *  @return An array of ZDKHelpCenterArticle objects.
- */
-+ (NSArray *) parseArticles:(NSDictionary *)json __deprecated_msg("As of version 1.4.0.1");
-
-
-/**
- *  Parses a collection of Help Center search results into an array of article objects.
- *
- *  @since 0.9.3.1
- *
- *  @return An array of ZDKHelpCenterArticle objects.
- */
-+ (NSArray *) parseArticleSearchResults:(NSDictionary *)json __deprecated_msg("As of version 1.4.0.1");
-
-
-/**
- *  Parse a collection of Help Center json article objects beginning at root
- *
- *  @since 0.9.3.1
- *
- *  @param root Root key in json
- *  @return An array of ZDKHelpCenter Article objects.
- */
-+ (NSArray *) parseArticlesWithRootKey:(NSDictionary *)json withRootKey:(NSString *)root __deprecated_msg("As of version 1.4.0.1");
 
 
 @end

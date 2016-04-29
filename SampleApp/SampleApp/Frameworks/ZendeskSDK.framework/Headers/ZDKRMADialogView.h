@@ -117,14 +117,14 @@
 @property (nonatomic, retain) NSArray *rows;
 
 
-@property (nonatomic, strong) UIColor *headerBackgroundColor UI_APPEARANCE_SELECTOR;
-@property (nonatomic, strong) UIColor *headerColor UI_APPEARANCE_SELECTOR;
-@property (nonatomic, strong) UIColor *separatorLineColor UI_APPEARANCE_SELECTOR;
-@property (nonatomic, strong) UIColor *buttonBackgroundColor UI_APPEARANCE_SELECTOR;
-@property (nonatomic, strong) UIColor *buttonSelectedBackgroundColor UI_APPEARANCE_SELECTOR;
-@property (nonatomic, strong) UIColor *buttonColor UI_APPEARANCE_SELECTOR;
-@property (nonatomic, strong) UIFont *headerFont UI_APPEARANCE_SELECTOR;
-@property (nonatomic, strong) UIFont *buttonFont UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIColor *headerBackgroundColor __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIColor *headerColor __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIColor *separatorLineColor __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIColor *buttonBackgroundColor __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIColor *buttonSelectedBackgroundColor __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIColor *buttonColor __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIFont *headerFont __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIFont *buttonFont __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
 
 
 /**

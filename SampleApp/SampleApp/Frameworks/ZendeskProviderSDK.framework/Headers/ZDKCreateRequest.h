@@ -56,6 +56,27 @@
 @property (nonatomic, strong) NSArray *attachments;
 
 
+/**
+ *  An array for custom fields.
+ *
+ *  @see <a href="https://developer.zendesk.com/embeddables/docs/ios/providers#using-custom-fields-and-custom-forms">Custom fields and forms documentation</a>
+ *
+ *  @since 1.6.0.1
+ */
+@property (nonatomic, strong) NSArray *customTicketFields;
+
+
+/**
+ *  Form id for ticket creation.
+ *
+ *  The ticket form id will be ignored if your Zendesk doesn't support it.  Currently
+ *  Enterprise and higher plans support this.
+ *
+ *  @see <a href="https://developer.zendesk.com/embeddables/docs/ios/providers#using-custom-fields-and-custom-forms">Custom fields and forms documentation</a>
+ *
+ *  @since 1.6.0.1
+ */
+@property (nonatomic, strong) NSNumber *ticketFormId;
 
 
 /**

@@ -53,77 +53,77 @@
  *
  *  @since 0.9.3.1
  */
-@property (nonatomic, strong) UIColor *placeholderTextColor UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIColor *placeholderTextColor __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
 
 /**
  * Color for the text entry text.
  *
  *  @since 0.9.3.1
  */
-@property (nonatomic, strong) UIColor *textEntryColor UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIColor *textEntryColor __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
 
 /**
  * Color for the background color of the text view.
  *
  *  @since 0.9.3.1
  */
-@property (nonatomic, strong) UIColor *textEntryBackgroundColor UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIColor *textEntryBackgroundColor __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
 
 /**
  * Background color for the view.
  *
  *  @since 0.9.3.1
  */
-@property (nonatomic, strong) UIColor *viewBackgroundColor UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIColor *viewBackgroundColor __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
 
 /**
  * Font for the text entry view.
  *
  *  @since 0.9.3.1
  */
-@property (nonatomic, strong) UIFont *textEntryFont UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIFont *textEntryFont __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
 
 /**
  *  For for the email filed
  *
  *  @since 1.4.0.1
  */
-@property (nonatomic, strong) UIFont *emailFieldFont UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIFont *emailFieldFont __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
 
 /**
  *  Attachment button image.
  *
  *  @since 1.1.0.1
  */
-@property (nonatomic, strong) UIImage *attachmentButtonImage UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIImage *attachmentButtonImage __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
 
 /**
  *  Attachment button border color.
  *
  *  @since 1.1.0.1
  */
-@property (nonatomic, strong) UIColor *attachmentButtonBorderColor UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIColor *attachmentButtonBorderColor __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
 
 /**
  *  Attachment button corner radius.
  *
  *  @since 1.1.0.1
  */
-@property (nonatomic, strong) NSNumber *attachmentButtonCornerRadius UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) NSNumber *attachmentButtonCornerRadius __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
 
 /**
  *  Attachment button border width.
  *
  *  @since 1.1.0.1
  */
-@property (nonatomic, strong) NSNumber *attachmentButtonBorderWidth UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) NSNumber *attachmentButtonBorderWidth __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
 
 /**
  *  Attachment button background color.
  *
  *  @since 1.1.0.1
  */
-@property (nonatomic, strong) UIColor *attachmentButtonBackground UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIColor *attachmentButtonBackground __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
 
 
 /**
@@ -131,7 +131,7 @@
  *
  *  @since 1.1.0.1
  */
-@property (nonatomic, strong) NSNumber *attachmentActionSheetStyle UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) NSNumber *attachmentActionSheetStyle __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
 
 
 /**
@@ -139,7 +139,7 @@
  *
  *  @since 0.9.3.1
  */
-@property (nonatomic, strong) id<ZDKSpinnerDelegate> spinner UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) id<ZDKSpinnerDelegate> spinner __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
 
 
 /**
@@ -147,7 +147,7 @@
  *
  *  @since 0.9.3.1
  */
-@property (nonatomic, strong) NSNumber *automaticallyHideNavBarOnLandscape  UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) NSNumber *automaticallyHideNavBarOnLandscape  __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
 
 
 /**

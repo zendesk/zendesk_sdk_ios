@@ -39,7 +39,7 @@
 		C38311B41A1A352B00F7979A /* SampleApp-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "SampleApp-Info.plist"; path = "SampleApp/SampleApp-Info.plist"; sourceTree = "<group>"; };
 		C38311B51A1A352B00F7979A /* SampleApp-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "SampleApp-Prefix.pch"; path = "SampleApp/SampleApp-Prefix.pch"; sourceTree = "<group>"; };
 		C38311BD1A1A358500F7979A /* ZDAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZDAppDelegate.h; path = SampleApp/ZDAppDelegate.h; sourceTree = "<group>"; };
-		C38311BE1A1A358500F7979A /* ZDAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZDAppDelegate.m; path = SampleApp/ZDAppDelegate.m; sourceTree = "<group>"; };
+		C38311BE1A1A358500F7979A /* ZDAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.c.objc; name = ZDAppDelegate.m; path = SampleApp/ZDAppDelegate.m; sourceTree = "<group>"; tabWidth = 4; };
 		C38311BF1A1A358500F7979A /* ZDSampleAppConfigurationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZDSampleAppConfigurationViewController.h; path = SampleApp/ZDSampleAppConfigurationViewController.h; sourceTree = "<group>"; };
 		C38311C01A1A358500F7979A /* ZDSampleAppConfigurationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZDSampleAppConfigurationViewController.m; path = SampleApp/ZDSampleAppConfigurationViewController.m; sourceTree = "<group>"; };
 		C38311C11A1A358500F7979A /* ZDSampleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZDSampleViewController.h; path = SampleApp/ZDSampleViewController.h; sourceTree = "<group>"; };
@@ -368,7 +368,7 @@
 				GCC_PREFIX_HEADER = "SampleApp/SampleApp-Prefix.pch";
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "SampleApp/SampleApp-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "$(inherited)";
@@ -397,7 +397,7 @@
 				GCC_PREFIX_HEADER = "SampleApp/SampleApp-Prefix.pch";
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "SampleApp/SampleApp-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "$(inherited)";

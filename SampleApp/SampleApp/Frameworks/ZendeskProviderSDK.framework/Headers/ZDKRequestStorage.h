@@ -18,12 +18,14 @@
 
 @interface ZDKRequestStorage : NSObject
 
+
 /**
  *  Add a requestIdentifier to be stored as a result of a request being created
  *
  *  @param requestIdentifier NSString of request id sourced from creating a new request
  */
 - (void) storeRequestIdentifier:(NSString *) requestIdentifier;
+
 
 /**
  *  Return an NSArray of Strings of request ids that have been stored on this device
@@ -32,22 +34,16 @@
  */
 - (NSArray *) getRequestIdentifiers;
 
-/**
- *  Gets timestamp of when the request was last read
- *
- *  @param requestId The request id
- *
- *  @return NSDate of the last time it was read, nil if no date found
- */
-- (NSDate *) lastReadDateUsingRequestId:(NSString *)requestId __deprecated_msg("As of version 1.4.1.1");
 
 /**
- *  Stores a time when this request was last read
+ *  Return an NSArray of Strings of request ids that have been stored on this device
  *
- *  @param requestId The id of the request
- *  @param date      The timestamp that the request was last read
+ *  @return NSArray of Strings
+ *
+ *  @since 1.6.0.1
  */
-- (void) setLastReadDateUsingRequestId:(NSString *)requestId andDate:(NSDate *)date __deprecated_msg("As of version 1.4.1.1");
+- (NSArray *) requestIdentifiers;
+
 
 /**
  *  Gets the last known comment count for a request.
@@ -60,6 +56,7 @@
  */
 - (NSNumber *) clientCommentCountForRequest:(NSString *)requestId;
 
+
 /**
  *  Set the comment count for a request.
  *
@@ -69,6 +66,7 @@
  *  @since 1.4.1.1
  */
 - (void) setClientCommentCountForRequest:(NSString *)requestId count:(NSNumber *)count;
+
 
 /**
  * Deletes ALL storage

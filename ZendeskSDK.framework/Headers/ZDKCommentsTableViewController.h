@@ -15,15 +15,19 @@
  */
 
 #import <UIKit/UIKit.h>
+#import "ZDKRotationForwarding.h"
 
 @class ZDKRequest, ZDKCommentsTableViewDataSource;
 
-@interface ZDKCommentsTableViewController : UIViewController
+@interface ZDKCommentsTableViewController : UIViewController <ZDKRotationForwarding>
 
 @property (nonatomic, readonly) ZDKCommentsTableViewDataSource *datasource;
 
 @property (nonatomic, readonly) UITableView *commentsView;
 
+@property (nonatomic, strong) UIColor *viewBackGroundColor __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
+
+@property (nonatomic, assign) id<ZDKRotationForwarding> rotationEventDelegate;
 
 /**
  * Init with provided request.
