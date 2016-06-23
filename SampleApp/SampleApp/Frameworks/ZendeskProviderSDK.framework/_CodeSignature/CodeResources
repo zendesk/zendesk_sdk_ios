@@ -286,7 +286,7 @@
 		</data>
 		<key>Headers/ZendeskProviderSDK.h</key>
 		<data>
-		/JJI5ctAuE96dwCFv6hUOwddh9s=
+		N1RYyK7fl9L5GZ2nLGv66rPM/os=
 		</data>
 		<key>Headers/ZendeskSDKConstants.h</key>
 		<data>
@@ -294,7 +294,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		VMv0o3HT6IOEWUzNfhOFPEXUZko=
+		Y1krW54RXs6sok3e8AcqF+mezLA=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -1129,11 +1129,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			/JJI5ctAuE96dwCFv6hUOwddh9s=
+			N1RYyK7fl9L5GZ2nLGv66rPM/os=
 			</data>
 			<key>hash2</key>
 			<data>
-			mmr144eXeaiRNLVq7YJbudgB85bjol9tfesNLsEW6e8=
+			euzx1uTPkfEr1JBEJ2mlNfgyrDtUolMTjuodXpTr02s=
 			</data>
 		</dict>
 		<key>Headers/ZendeskSDKConstants.h</key>
