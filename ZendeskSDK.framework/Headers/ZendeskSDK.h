@@ -3,7 +3,7 @@
  *  ZendeskSDK.h
  *  ZendeskSDK
  *
- *  Created by Zendesk on 05/16/2016
+ *  Created by Zendesk on 06/23/2016
  *
  *  Copyright (c) 2016 Zendesk. All rights reserved.
  *
