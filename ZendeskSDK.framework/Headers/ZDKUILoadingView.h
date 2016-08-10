@@ -20,7 +20,7 @@
 /**
  * Loading indicator.
  */
-@property (nonatomic, readonly) UIActivityIndicatorView *spinner;
+@property (nonatomic, strong, readonly) UIActivityIndicatorView *spinner;
 
 
 @end

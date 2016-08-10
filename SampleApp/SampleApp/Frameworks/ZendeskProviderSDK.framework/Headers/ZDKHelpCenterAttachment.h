@@ -28,56 +28,56 @@
  *
  *  @since 0.9.3.1
  */
-@property (strong, nonatomic) NSString *sid;
+@property (nonatomic, copy) NSString *sid;
 
 /**
  *  The url where the attachment can be found.
  *
  *  @since 0.9.3.1
  */
-@property (strong, nonatomic) NSString *url;
+@property (nonatomic, copy) NSString *url;
 
 /**
  *  The id of the article for which an attachment belongs.
  *
  *  @since 0.9.3.1
  */
-@property (strong, nonatomic) NSString *article_id;
+@property (nonatomic, copy) NSString *article_id;
 
 /**
  *  The file name of an attachment.
  *
  *  @since 0.9.3.1
  */
-@property (strong, nonatomic) NSString *file_name;
+@property (nonatomic, copy) NSString *file_name;
 
 /**
  *  Content url for an attachment.
  *
  *  @since 0.9.3.1
  */
-@property (strong, nonatomic) NSString *content_url;
+@property (nonatomic, copy) NSString *content_url;
 
 /**
  *  The MIME type for an attachment.
  *
  *  @since 0.9.3.1
  */
-@property (strong, nonatomic) NSString *content_type;
+@property (nonatomic, copy) NSString *content_type;
 
 /**
  *  Attachment file size.
  *
  *  @since 0.9.3.1
  */
-@property (assign, nonatomic) NSUInteger size;
+@property (nonatomic, assign) NSUInteger size;
 
 /**
  *  Is this an inline attachment?
  *
  *  @since 0.9.3.1
  */
-@property (assign, nonatomic) BOOL isInline;
+@property (nonatomic, assign) BOOL isInline;
 
 
 /**

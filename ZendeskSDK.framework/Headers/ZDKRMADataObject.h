@@ -76,19 +76,19 @@ typedef NS_ENUM(NSInteger, ZDKRMAAction) {
 /**
  * The number of times a user has visited the view in which ZDKRMA is to be displayed.
  */
-@property (nonatomic, retain) NSNumber *visitCount;
+@property (nonatomic, strong) NSNumber *visitCount;
 
 
 /**
  * The date of the first time ZDKRMA showInView was called.
  */
-@property (nonatomic, retain) NSDate *initialCheckDate;
+@property (nonatomic, strong) NSDate *initialCheckDate;
 
 
 /**
  * The date of the users interaction with the ZDKRMA dialog.
  */
-@property (nonatomic, retain) NSDate *dateOfActionChosen;
+@property (nonatomic, strong) NSDate *dateOfActionChosen;
 
 
 /**
@@ -96,13 +96,13 @@ typedef NS_ENUM(NSInteger, ZDKRMAAction) {
  * was an error sending the feedback.
  *
  */
-@property (nonatomic, retain) NSString *requestText;
+@property (nonatomic, copy) NSString *requestText;
 
 /**
  * The app version of at the time of interaction.
  *
  */
-@property (nonatomic, retain) NSString *appVersion;
+@property (nonatomic, copy) NSString *appVersion;
 
 
 /**

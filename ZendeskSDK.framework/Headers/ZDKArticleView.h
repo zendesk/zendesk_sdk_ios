@@ -109,6 +109,21 @@
  */
 - (instancetype) initWithArticle:(ZDKHelpCenterArticle *)article;
 
+/**
+ *  Returns an article View with a loading state
+ *
+ *  @since 1.7.0.1
+ */
++ (instancetype) loadingArticle;
+
+/**
+ *  Renders the article passed into it in the view.
+ *
+ *  @param article A help center article
+ *
+ *  @since 1.7.0.1
+ */
+- (void)renderArticle:(ZDKHelpCenterArticle *)article;
 
 /**
  * Reloads the help center article webview on rotation.
@@ -117,13 +132,6 @@
  *
  */
 - (void) reloadArticleForRotation;
-
-/**
- *  Loading spinner delegate for article deeplinking.
- *
- *  @since 1.5.0.1
- */
-@property (nonatomic, strong) id<ZDKSpinnerDelegate> articleLoadSpinner __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
 
 /**
  *  Loading spinner for article deeplinking.

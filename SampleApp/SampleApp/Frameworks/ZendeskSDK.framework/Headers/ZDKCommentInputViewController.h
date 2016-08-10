@@ -22,7 +22,7 @@
 
 @interface ZDKCommentInputViewController : UIViewController
 
-@property (nonatomic) ZDKCommentInputView *commentInputView;
+@property (nonatomic, strong) ZDKCommentInputView *commentInputView;
 
 - (instancetype)initWithRequest:(ZDKRequest *)request isAttachmentEnabled:(BOOL)isAttachmentEnabled;
 

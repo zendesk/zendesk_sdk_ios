@@ -3,7 +3,7 @@
  *  ZendeskProviderSDK.h
  *  ZendeskProviderSDK
  *
- *  Created by Zendesk on 06/23/2016
+ *  Created by Zendesk on 08/10/2016
  *
  *  Copyright (c) 2016 Zendesk. All rights reserved.
  *
@@ -82,7 +82,6 @@
 #import "ZDKSdkStorage.h"
 #import "ZDKSettings.h"
 #import "ZDKSettingsProvider.h"
-#import "ZDKSettingsStorage.h"
 #import "ZDKStringUtil.h"
 #import "ZDKUploadProvider.h"
 #import "ZDKUploadResponse.h"

@@ -30,7 +30,7 @@
 /**
  *  Gets the attachment settings for the Zendesk instance.
  */
-@property (nonatomic, readonly) ZDKAttachmentSettings *attachmentSettings;
+@property (nonatomic, strong, readonly) ZDKAttachmentSettings *attachmentSettings;
 
 
 /**

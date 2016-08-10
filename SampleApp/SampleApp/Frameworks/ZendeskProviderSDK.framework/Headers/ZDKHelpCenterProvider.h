@@ -19,12 +19,20 @@
 #import "ZDKHelpCenterDeflection.h"
 #import "ZDKProvider.h"
 
+@class ZDKHelpCenterCategoryViewModel, ZDKHelpCenterSectionViewModel, ZDKHelpCenterOverviewContentModel;
+
 
 /**
  * Callback block.
  *
  */
 typedef void (^ZDKHelpCenterCallback)(NSArray *items, NSError *error);
+
+/**
+ * Callback block for help center overview.
+ *
+ */
+typedef void (^ZDKHelpCenterCategoriesCallback)(NSArray <ZDKHelpCenterCategoryViewModel*>*categories, NSError *error);
 
 
 /**
@@ -39,6 +47,33 @@ typedef void (^ZDKHelpCenterGenericCallback)(id response, NSError *error);
 
 
 @interface ZDKHelpCenterProvider : ZDKProvider
+
+
+@property (nonatomic, copy, readonly) NSString *locale;
+
++ (instancetype) new NS_UNAVAILABLE;
+
+- (instancetype)init NS_UNAVAILABLE;
+
+- (instancetype)initWithAuthenticationSpace:(ZDKAuthenticationSpace*)authenticationSpace NS_UNAVAILABLE;
+
+/**
+ *  Creates a Help Center provider.
+ *
+ *  @param locale  The locale which all help center provider requests will contain.
+ *  @since 1.7.0.1
+ */
+- (instancetype)initWithLocale:(NSString *)locale;
+
+/**
+ *  Fetches the data required to model the overview UI in Help Center.
+ *
+ *  @param helpCenterModel content model to scope
+ *  @param callback        callback which provides an array of ZDKHelpCenterCategoryViewModel
+ *
+ *  @since 1.7.0.1
+ */
+- (void) getHelpCenterOverviewWithHelpCenterOverviewModel:(ZDKHelpCenterOverviewContentModel *)helpCenterModel callback:(ZDKHelpCenterCategoriesCallback)callback;
 
 /**
  *  Fetch a list of categories from a Help Center instance.
@@ -79,7 +114,7 @@ typedef void (^ZDKHelpCenterGenericCallback)(id response, NSError *error);
  *  @param labels   The array of labels used to filter the search results
  *  @param callback The callback which will be called upon a successful or an erroneous response.
  */
-- (void) searchForArticlesUsingQuery:(NSString *)query andLabels:(NSArray *)labels withCallback: (ZDKHelpCenterCallback) callback;
+- (void) searchForArticlesUsingQuery:(NSString *)query andLabels:(NSArray <NSString*> *)labels withCallback: (ZDKHelpCenterCallback) callback;
 
 /**
  *  This method will search articles in your Help Center filtered by the parameters in the given ZDKHelpCenterSearch model.
@@ -104,7 +139,7 @@ typedef void (^ZDKHelpCenterGenericCallback)(id response, NSError *error);
  *  @param labels   an array of labels used to filter articles by
  *  @param callback the callback that is invoked when a request is either successful or has errors
  */
-- (void) getArticlesByLabels:(NSArray *)labels withCallback: (ZDKHelpCenterCallback) callback;
+- (void) getArticlesByLabels:(NSArray <NSString*> *)labels withCallback: (ZDKHelpCenterCallback) callback;
 
 /**
  *  Fetch an article by ID.
@@ -157,15 +192,14 @@ typedef void (^ZDKHelpCenterGenericCallback)(id response, NSError *error);
 - (void) getCategoryById:(NSString *)categoryId withCallback:(ZDKHelpCenterCallback)callback;
 
 /**
- *  Used for the purpose of reporting in Zendesk. This will record an article as being viewed by the client. 
+ *  Used for the purpose of reporting in Zendesk. This will record an article as being viewed by the client.
  *
- *  @since 1.3.0.1
+ *  @since 1.7.0.1
  *
  *  @param articleId     The id of the article which has been viewed.
- *  @param articleLocale The locale of the article.
  *  @param callback      A completion callback. Can be nil.
  */
-- (void) submitRecordArticleView:(NSString*)articleId locale:(NSString*)articleLocale withCallback:(ZDKHelpCenterGenericCallback)callback;
+- (void) submitRecordArticleView:(NSString*)articleId withCallback:(ZDKHelpCenterGenericCallback)callback;
 
 
 /**
@@ -199,6 +233,18 @@ typedef void (^ZDKHelpCenterGenericCallback)(id response, NSError *error);
  *  @param callback  The callback that is invoked when a request is either successful or has error. Returns a status code
  */
 - (void) deleteVoteWithId:(NSString*)voteId withCallback:(ZDKHelpCenterGenericCallback)callback;
+
+/**
+ *  Fetches a section view model object with all of its articles contained within the object
+ *
+ *  @param sectionId The sectionId you want to fetch.
+ *  @param labels The array of labels used to filter the query
+ *  @param callback  The callback that is returned when is either successful or unsuccuessful. It returns a
+ *  array with one section view model in it or an NSError.
+ *
+ *  @since 1.7.0.1
+ */
+- (void) getSectionWithArticlesForSectionId:(NSString *)sectionId labels:(NSArray <NSString*> *)labels callback:(ZDKHelpCenterCallback)callback;
 
 
 @end

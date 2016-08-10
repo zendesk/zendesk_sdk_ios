@@ -31,7 +31,7 @@
  *
  *  @since 0.9.3.1
  */
-@property (nonatomic, readonly) BOOL enabled;
+@property (nonatomic, assign, readonly) BOOL enabled;
 
 
 /**

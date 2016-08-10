@@ -61,7 +61,7 @@ typedef NS_ENUM(NSInteger, ZDKAccountState) {
  *
  *  @since 0.9.3.1
  */
-@property (nonatomic, strong) NSString *zendeskUrl;
+@property (nonatomic, copy) NSString *zendeskUrl;
 
 
 /**
@@ -69,7 +69,7 @@ typedef NS_ENUM(NSInteger, ZDKAccountState) {
  *
  *  @since 0.9.3.1
  */
-@property (nonatomic, strong) NSString *applicationId;
+@property (nonatomic, copy) NSString *applicationId;
 
 
 /**
@@ -77,7 +77,7 @@ typedef NS_ENUM(NSInteger, ZDKAccountState) {
  *
  *  @since 0.9.3.1
  */
-@property (nonatomic, strong) NSString *oAuthClientId;
+@property (nonatomic, copy) NSString *oAuthClientId;
 
 
 /**
@@ -85,7 +85,7 @@ typedef NS_ENUM(NSInteger, ZDKAccountState) {
  *
  *  @since 0.9.3.1
  */
-@property (nonatomic, strong) NSString *oauthToken;
+@property (nonatomic, copy) NSString *oauthToken;
 
 
 /**

@@ -188,6 +188,7 @@
     ZDKTheme *theme = [ZDKTheme baseTheme];
     
     theme.primaryTextColor = [UIColor colorWithWhite:0.2627f alpha:1.0f];
+    theme.secondaryTextColor = [UIColor colorWithWhite:0.45f alpha:1.0f];
     theme.primaryBackgroundColor = [UIColor colorWithWhite:1.0f alpha:1.0f];
     theme.secondaryBackgroundColor = [UIColor colorWithWhite:0.976f alpha:1.0f];
     theme.emptyBackgroundColor = [UIColor colorWithWhite:0.945f alpha:1.0f];
@@ -218,6 +219,7 @@
     ZDKTheme *theme = [ZDKTheme baseTheme];
     
     theme.primaryTextColor = [UIColor colorWithRed:252.0f/255.0f green:204.0f/255.0f blue:1.0f/255.0f alpha:1.0f];
+    theme.secondaryTextColor = [UIColor colorWithRed:254.0f/255.0f green:254.0f/255.0f blue:254.0f/255.0f alpha:1.0f];
     theme.primaryBackgroundColor = [UIColor colorWithRed:30.0f/255.0f green:29.0f/255.0f blue:29.0f/255.0f alpha:1.0f];
     theme.secondaryBackgroundColor = [UIColor colorWithRed:22.0f/255.0f green:21.0f/255.0f blue:19.0f/255.0f alpha:1.0f];
     theme.emptyBackgroundColor = [UIColor colorWithRed:30.0f/255.0f green:29.0f/255.0f blue:29.0f/255.0f alpha:1.0f];
@@ -250,6 +252,7 @@
     ZDKTheme *theme = [ZDKTheme baseTheme];
     
     theme.primaryTextColor = [UIColor colorWithRed:34.0f/255.0f green:34.0f/255.0f blue:48.0f/255.0f alpha:1.0f];
+    theme.secondaryTextColor = [UIColor colorWithRed:47.0f/255.0f green:46.0f/255.0f blue:63.0f/255.0f alpha:1.0f];
     theme.primaryBackgroundColor = [UIColor colorWithRed:248.0f/255.0f green:248.0f/255.0f blue:249.0f/255.0f alpha:1.0f];
     theme.secondaryBackgroundColor = [UIColor colorWithRed:255.0f/255.0f green:255.0f/255.0f blue:255.0f/255.0f alpha:1.0f];
     theme.emptyBackgroundColor = [UIColor colorWithRed:248.0f/255.0f green:248.0f/255.0f blue:249.0f/255.0f alpha:1.0f];
@@ -265,6 +268,7 @@
 - (void) setDarkNeoStyle {
     //inVision
     NSString * fontName = @"AppleSDGothicNeo-Light";
+    NSString * secondaryFontName = @"AppleSDGothicNeo-Bold";
     
     if (SYSTEM_VERSION_GREATER_THAN_SEVEN) {
         
@@ -297,6 +301,7 @@
     ZDKTheme *theme = [ZDKTheme baseTheme];
     
     theme.primaryTextColor = [UIColor colorWithRed:255.0f/255.0f green:255.0f/255.0f blue:255.0f/255.0f alpha:1.0f];
+    theme.secondaryTextColor = [UIColor colorWithRed:126.0f/255.0f green:132.0f/255.0f blue:143.0f/255.0f alpha:1.0f];
     theme.primaryBackgroundColor = [UIColor colorWithRed:27.0f/255.0f green:29.0f/255.0f blue:35.0f/255.0f alpha:1.0f];
     theme.secondaryBackgroundColor = [UIColor colorWithRed:31.0f/255.0f green:34.0f/255.0f blue:39.0f/255.0f alpha:1.0f];
     theme.emptyBackgroundColor = [UIColor colorWithRed:27.0f/255.0f green:29.0f/255.0f blue:35.0f/255.0f alpha:1.0f];
@@ -306,6 +311,7 @@
     theme.inputFieldBackgroundColor = [UIColor colorWithRed:37.0f/255.0f green:43.0f/255.0f blue:51.0f/255.0f alpha:1.0f];
     
     theme.fontName = fontName;
+    theme.boldFontName = secondaryFontName;
     
     [theme apply];
 }

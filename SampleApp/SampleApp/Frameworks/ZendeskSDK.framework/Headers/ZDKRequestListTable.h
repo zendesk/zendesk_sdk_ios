@@ -16,7 +16,6 @@
 
 
 #import <UIKit/UIKit.h>
-#import "ZDKRequestListTableCell.h"
 
 
 
@@ -33,7 +32,7 @@
 /**
  * The array of requests that is being used to render the table.
  */
-@property (nonatomic, strong) NSArray *requests;
+@property (nonatomic, copy) NSArray *requests;
 
 /**
  * State tracking, if true then the current state is that the last refresh resulted in an error.
@@ -43,22 +42,12 @@
 /**
  * Localized error string for presentation to the user.
  */
-@property (nonatomic, strong) NSString *errorString;
+@property (nonatomic, copy) NSString *errorString;
 
 /**
  * State tracking, if true then a refresh if the request list is in progress.
  */
 @property (nonatomic, assign) BOOL loadingInProgress;
-
-/**
- * Color for the cell separators in the table.
- */
-@property (nonatomic, strong) UIColor *cellSeparatorColor __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
-
-/**
- * The background color of the request table.
- */
-@property (nonatomic, strong) UIColor *tableBackgroundColor __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
 
 /**
  *  create a request list table

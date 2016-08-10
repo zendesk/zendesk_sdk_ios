@@ -67,14 +67,14 @@ typedef void (^ZDKAlertActionHandler)(ZDKAlertAction *action);
  *
  *  @since 1.5.0.1
  */
-@property (nullable, nonatomic, readonly) NSString *title;
+@property (nullable, nonatomic, copy, readonly) NSString *title;
 
 /**
  *  The style for this action.
  *
  *  @since 1.5.0.1
  */
-@property (nonatomic, readonly) ZDKAlertActionStyle style;
+@property (nonatomic, assign, readonly) ZDKAlertActionStyle style;
 
 /**
  *  Handler which will be called when the action is chosen.

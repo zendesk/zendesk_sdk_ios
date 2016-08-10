@@ -31,21 +31,21 @@
  *
  *  @since 1.4.0.1
  */
-@property (strong, nonatomic) ZDKHelpCenterArticle *article;
+@property (nonatomic, strong) ZDKHelpCenterArticle *article;
 
 /**
  *  A Section object.
  *
  *  @since 1.4.0.1
  */
-@property (strong, nonatomic) ZDKHelpCenterSection *section;
+@property (nonatomic, strong) ZDKHelpCenterSection *section;
 
 /**
  *  A Category object.
  *
  *  @since 1.4.0.1
  */
-@property (strong, nonatomic) ZDKHelpCenterCategory *category;
+@property (nonatomic, strong) ZDKHelpCenterCategory *category;
 
 /**
  *  Get a string of an article's breadcrumb(i.e. it's relevant section and category).

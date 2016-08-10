@@ -98,17 +98,6 @@
 
 
 /**
- *  Returns a formatted strong of all device info.
- *
- *  Requires Zendesk SDK bundle to be present. If String bundle is not found, returns an empty string.
- *
- *  @since 0.9.3.1
- *
- *  @return all device info
- */
-+ (NSString*) deviceInfoString __deprecated_msg("Depricated as of version 1.6.0.1");
-
-/**
  *  Returns an NSDictionary of all device info.
  *
  *  @since 1.0.0.1

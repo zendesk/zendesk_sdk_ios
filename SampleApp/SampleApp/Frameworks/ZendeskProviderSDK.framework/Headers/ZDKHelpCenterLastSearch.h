@@ -29,7 +29,7 @@
  *
  *  @since 1.3.0.1
  */
-@property (nonatomic, strong, readonly) NSString *query;
+@property (nonatomic, copy, readonly) NSString *query;
 
 
 /**

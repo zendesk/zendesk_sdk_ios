@@ -29,14 +29,14 @@
  *
  *  @since 0.9.3.1
  */
-@property (nonatomic, readonly) ZDKComment *comment;
+@property (nonatomic, strong, readonly) ZDKComment *comment;
 
 /**
  *  The user associated with the comment model.
  *
  *  @since 0.9.3.1
  */
-@property (nonatomic, readonly) ZDKUser *user;
+@property (nonatomic, strong, readonly) ZDKUser *user;
 
 /**
  *  Build an instance with comment and a user.

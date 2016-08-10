@@ -20,10 +20,8 @@
 
 @interface ZDKSdkStorage : NSObject
 
-@property (nonatomic, readonly) ZDKRequestStorage *requestStorage;
-@property (nonatomic, readonly) ZDKIdentityStorage *identityStorage;
-
-@property (nonatomic, readonly) ZDKSettingsStorage *settingsStorage __deprecated_msg("As of version 1.6.0.1");
+@property (nonatomic, strong, readonly) ZDKRequestStorage *requestStorage;
+@property (nonatomic, strong, readonly) ZDKIdentityStorage *identityStorage;
 
 
 /**

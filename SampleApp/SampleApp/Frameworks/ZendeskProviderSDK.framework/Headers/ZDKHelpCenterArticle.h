@@ -28,28 +28,28 @@
  *
  *  @since 0.9.3.1
  */
-@property (strong, nonatomic) NSString *sid;
+@property (nonatomic, copy) NSString *sid;
 
 /**
  *  Section id.
  *
  *  @since 0.9.3.1
  */
-@property (strong, nonatomic) NSString *section_id;
+@property (nonatomic, copy) NSString *section_id;
 
 /**
  *  Article title.
  *
  *  @since 0.9.3.1
  */
-@property (strong, nonatomic) NSString *title;
+@property (nonatomic, copy) NSString *title;
 
 /**
  *  Content of the article.
  *
  *  @since 0.9.3.1
  */
-@property (strong, nonatomic) NSString *body;
+@property (nonatomic, copy) NSString *body;
 
 
 /**
@@ -57,49 +57,49 @@
  *
  *  @since 0.9.3.1
  */
-@property (strong, nonatomic) NSString *author_name;
+@property (nonatomic, copy) NSString *author_name;
 
 /**
  *  Id of the author.
  *
  *  @since 0.9.3.1
  */
-@property (strong, nonatomic) NSString *author_id;
+@property (nonatomic, copy) NSString *author_id;
 
 /**
  *  Appears at the end of an article, contains the author name and creation date.
  *
  *  @since 0.9.3.1
  */
-@property (strong, nonatomic) NSString *article_details;
+@property (nonatomic, copy) NSString *article_details;
 
 /**
  *  A string containing the category and section an article belongs to. This can be nil.
  *
  *  @since 0.9.3.1
  */
-@property (strong, nonatomic) NSString *articleParents;
+@property (nonatomic, copy) NSString *articleParents;
 
 /**
  *  Creation date for an article.
  *
  *  @since 0.9.3.1
  */
-@property (strong, nonatomic) NSDate *created_at;
+@property (nonatomic, strong) NSDate *created_at;
 
 /**
  *  The articles position in it's parent section.
  *
  *  @since 0.9.3.1
  */
-@property (assign, nonatomic) NSInteger position;
+@property (nonatomic, assign) NSInteger position;
 
 /**
  *  Is the article outdated?
  *
  *  @since 0.9.3.1
  */
-@property (assign, nonatomic) BOOL outdated;
+@property (nonatomic, assign) BOOL outdated;
 
 /**
  *  The total sum of votes on this article.
@@ -120,14 +120,14 @@
  * 
  *  @since 1.3.0.1
  */
-@property (nonatomic, strong) NSString *locale;
+@property (nonatomic, copy) NSString *locale;
 
 /**
  *  An array of label names associated with the article.
  *
  *  @since 1.6.0.1
  */
-@property (nonatomic, strong) NSArray *labelNames;
+@property (nonatomic, copy) NSArray *labelNames;
 
 
 /**

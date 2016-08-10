@@ -272,9 +272,16 @@ ZDKUIOriginInWindow(UIView *view)
         case UIInterfaceOrientationLandscapeRight: {
             return CGPointMake(point.y, screenBounds.size.width - point.x);
         }
+        case UIInterfaceOrientationPortrait: {
+            return point;
+        }
+        case UIInterfaceOrientationUnknown: {
+            return point;
+        }
         default: {
             return point;
         }
+            
     }
 }
 

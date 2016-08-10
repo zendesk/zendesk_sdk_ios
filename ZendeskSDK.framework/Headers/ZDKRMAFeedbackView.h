@@ -74,68 +74,51 @@ typedef NS_ENUM(NSInteger, ZDKRMAFeedbackDialogState) {
 }
 
 
-@property (nonatomic) ZDKRMAFeedbackDialogState feedbackState;
+@property (nonatomic, assign) ZDKRMAFeedbackDialogState feedbackState;
 
 
 /**
  * A ZDKRMATextView for text entry.
  */
-@property (nonatomic, retain) ZDKUITextView *textView;
+@property (nonatomic, strong) ZDKUITextView *textView;
 
 
 /**
  * A UIButton calls ZDKRMAFeedbackViewDelegate cancel method.
  */
-@property (nonatomic, retain) UIButton *backButton;
+@property (nonatomic, strong) UIButton *backButton;
 
 
 /**
  * A UIButton calls ZDKRMAFeedbackViewDelegate sendFeedback method.
  */
-@property (nonatomic, retain) UIButton *submitButton;
+@property (nonatomic, strong) UIButton *submitButton;
 
 
 /**
  * A UIButton dismisses the ZDKRMA dialog.
  */
-@property (nonatomic, retain) UIButton *closeButton;
+@property (nonatomic, strong) UIButton *closeButton;
 
 
 /**
  * A UILabel in the header of the feedback view. This label has only one
  * line and is the main title.
  */
-@property (nonatomic, retain) UILabel *titleLabel;
+@property (nonatomic, strong) UILabel *titleLabel;
 
 
 /**
  * A UILabel in the header of the feedback view. This label has three
  * lines and is for any extra details in the header.
  */
-@property (nonatomic, retain) UILabel *detailTitleLabel;
+@property (nonatomic, strong) UILabel *detailTitleLabel;
 
 
 /**
  * Displays an image if one has been specified by either successImageName
  */
-@property (nonatomic, retain) UIImageView *submissionStatusImageView;
-
-
-@property (nonatomic, strong) UIColor *buttonColor __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
-@property (nonatomic, strong) UIColor *buttonSelectedColor __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
-@property (nonatomic, strong) UIColor *buttonBackgroundColor __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
-@property (nonatomic, strong) UIColor *separatorLineColor __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
-@property (nonatomic, strong) UIFont *headerFont __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
-@property (nonatomic, strong) UIFont *subheaderFont __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
-@property (nonatomic, strong) UIFont *textEntryFont __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
-@property (nonatomic, strong) UIFont *buttonFont __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
-@property (nonatomic, strong) id<ZDKSpinnerDelegate> spinner __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
-@property (nonatomic, strong) UIColor *viewBackgroundColor __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
-@property (nonatomic, strong) UIColor *headerColor __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
-@property (nonatomic, strong) UIColor *subHeaderColor __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
-@property (nonatomic, strong) UIColor *textEntryColor __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
-@property (nonatomic, strong) UIColor *textEntryBackgroundColor __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
-@property (nonatomic, strong) UIColor *placeHolderColor __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIImageView *submissionStatusImageView;
 
 @property (nonatomic, strong) NSString *successImageName;
 @property (nonatomic, strong) NSString *errorImageName;

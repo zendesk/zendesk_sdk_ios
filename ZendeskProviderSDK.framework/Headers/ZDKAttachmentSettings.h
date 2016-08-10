@@ -23,12 +23,12 @@
 /**
  *  This setting corresponds to the "Customers can attach files" setting in the Zendesk admin interface.
  */
-@property (nonatomic, readonly) BOOL enabled;
+@property (nonatomic, assign, readonly) BOOL enabled;
 
 /**
  *  This setting controls the maximum attachment size that can be uploaded to your Zendesk.
  */
-@property (nonatomic, readonly) NSNumber *maxAttachmentSize;
+@property (nonatomic, strong, readonly) NSNumber *maxAttachmentSize;
 
 
 /**

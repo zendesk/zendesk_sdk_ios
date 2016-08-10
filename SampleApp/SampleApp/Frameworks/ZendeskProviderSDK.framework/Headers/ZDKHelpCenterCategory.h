@@ -23,77 +23,77 @@
  *
  *  @since 0.9.3.1
  */
-@property (strong, nonatomic) NSString *sid;
+@property (nonatomic, copy) NSString *sid;
 
 /**
  *  Category Name.
  *
  *  @since 0.9.3.1
  */
-@property (strong, nonatomic) NSString *name;
+@property (nonatomic, copy) NSString *name;
 
 /**
  *  Category Description.
  *
  *  @since 0.9.3.1
  */
-@property (strong, nonatomic) NSString *categoryDescription;
+@property (nonatomic, copy) NSString *categoryDescription;
 
 /**
  *  Position in Category list.
  *
  *  @since 0.9.3.1
  */
-@property (assign, nonatomic) NSInteger position;
+@property (nonatomic, assign) NSInteger position;
 
 /**
  *  Whether the category is outdated or not.
  *
  *  @since 1.4.0.1
  */
-@property (assign, nonatomic) BOOL outdated;
+@property (nonatomic, assign) BOOL outdated;
 
 /**
  *  Current Locale.
  *
  *  @since 1.4.0.1
  */
-@property (strong, nonatomic) NSString *locale;
+@property (nonatomic, copy) NSString *locale;
 
 /**
  *  Source locale of this category
  *
  *  @since 1.4.0.1
  */
-@property (strong, nonatomic) NSString *sourceLocale;
+@property (nonatomic, copy) NSString *sourceLocale;
 
 /**
  *  API url of the Category in the help center
  *
  *  @since 1.4.0.1
  */
-@property (strong, nonatomic) NSString *url;
+@property (nonatomic, copy) NSString *url;
 
 /**
  *  url of the Category in the help center
  *
  *  @since 1.4.0.1
  */
-@property (strong, nonatomic) NSString *html_url;
+@property (nonatomic, copy) NSString *html_url;
 
 /**
  *  Time at which the category was last updated at.
  *
  *  @since 1.4.0.1
  */
-@property (strong, nonatomic) NSString *updatedAt;
+@property (nonatomic, copy) NSString *updatedAt;
 
 /**
  *  Time at which the category was created at
  *
  *  @since 1.4.0.1
  */
-@property (strong, nonatomic) NSString *createdAt;
+@property (nonatomic, copy) NSString *createdAt;
 
 /**
  * Parses a single Help Center json category object.

@@ -20,11 +20,6 @@
 
 @interface ZDKIdentityStorage : NSObject
 
-/**
- *  Store and fetch object that implements ZDKIdentity protocol in local storage
- */
-@property (nonatomic, strong, getter=storedIdentity, setter=storeIdentity:) id<ZDKIdentity> identity __deprecated_msg("As of version 1.6.0.1 use -storedIdentity and -storeIdentity: instead");
-
 
 /**
  *  Get UUID from local storage or generate if required

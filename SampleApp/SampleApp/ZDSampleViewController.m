@@ -76,13 +76,13 @@ static CGFloat const PADDING = 15.f;
     //helpCenterButton pulls these out
     [self.scrollViewContent addSubview:helpCenterLabelsInput];
     
-    helpCenterCategoryIdInput = [ZDSampleViewController buildTextFieldWithFrame:CGRectZero andPlaceholder:@"Category ID"];
+    helpCenterCategoryIdInput = [ZDSampleViewController buildTextFieldWithFrame:CGRectZero andPlaceholder:@"CategoryID,CategoryID,CategoryID"];
     helpCenterCategoryIdInput.accessibilityIdentifier = @"hcCategoryIdField";
     helpCenterCategoryIdInput.backgroundColor = [UIColor whiteColor];
     helpCenterCategoryIdInput.delegate = self;
     [self.scrollViewContent addSubview:helpCenterCategoryIdInput];
     
-    helpCenterSectionIdInput = [ZDSampleViewController buildTextFieldWithFrame:CGRectZero andPlaceholder:@"Section ID"];
+    helpCenterSectionIdInput = [ZDSampleViewController buildTextFieldWithFrame:CGRectZero andPlaceholder:@"SectionID,SectionID,SectionID"];
     helpCenterSectionIdInput.accessibilityIdentifier = @"hcSectionIdField";
     helpCenterSectionIdInput.backgroundColor = [UIColor whiteColor];
     helpCenterSectionIdInput.delegate = self;
@@ -247,60 +247,54 @@ static CGFloat const PADDING = 15.f;
 
 - (void) support
 {
-    
-    if (helpCenterLabelsInput.hasText) {
-
-        NSString *labelString = helpCenterLabelsInput.text;
-        NSArray *labels = [labelString componentsSeparatedByString:@","];
-
-
-        if([ZDKUIUtil isPad]) {
-
-            self.modalPresentationStyle = UIModalPresentationFormSheet;
-            [ZDKHelpCenter presentHelpCenterWithViewController:self filterByArticleLabels:labels layoutGuide:ZDKLayoutRespectAll];
-
-        } else {
-
-            [ZDKHelpCenter pushHelpCenterWithNavigationController:self.navigationController filterByArticleLabels:labels];
-        }
-
-    } else if (helpCenterCategoryIdInput.hasText) {
-        NSString *categoryIdString = helpCenterCategoryIdInput.text;
-        
-        if ([ZDKUIUtil isPad]) {
-            
-            self.modalPresentationStyle = UIModalPresentationFormSheet;
-            // categoryName will default to "Supoort" if set to nil
-            [ZDKHelpCenter presentHelpCenterWithViewController:self filterByCategoryId:categoryIdString categoryName:@"Example name" layoutGuide:ZDKLayoutRespectAll];
-            
-        } else {
-            
-            [ZDKHelpCenter pushHelpCenterWithNavigationController:self.navigationController filterByCategoryId:categoryIdString categoryName:@"Example name" layoutGuide:ZDKLayoutRespectAll];
-            
-        }
-        
-    } else if (helpCenterSectionIdInput.hasText) {
-        NSString *sectionIdString = helpCenterSectionIdInput.text;
-        
-        if ([ZDKUIUtil isPad]) {
-            
-            self.modalPresentationStyle = UIModalPresentationFormSheet;
-            [ZDKHelpCenter presentHelpCenterWithViewController:self filterBySectionId:sectionIdString sectionName:@"Example name" layoutGuide:ZDKLayoutRespectAll];
-        } else {
-            
-            [ZDKHelpCenter pushHelpCenterWithNavigationController:self.navigationController filterBySectionId:sectionIdString sectionName:@"Example name" layoutGuide:ZDKLayoutRespectAll];
-        }
-        
+    if ([ZDKUIUtil isOlderVersion:@8]) {
+        [ZDKLogger error:@"ZDKHelpCenterOverview component is not compatible with iOS versions 7 and below. Please use the old Help Center UI."];
     } else {
-
-        if([ZDKUIUtil isPad]) {
-
+        ZDKHelpCenterOverviewContentModel *contentModel = [ZDKHelpCenterOverviewContentModel defaultContent];
+        
+        //Labels and section IDs or category IDs
+        if (helpCenterLabelsInput.hasText) {
+            NSString *labelString = helpCenterLabelsInput.text;
+            NSArray *labels = [labelString componentsSeparatedByString:@","];
+            contentModel.labels = labels;
+            
+            if (helpCenterCategoryIdInput.hasText) {
+                NSString *categoryIdString = helpCenterCategoryIdInput.text;
+                NSArray *categoryIdArray = [categoryIdString componentsSeparatedByString:@","];
+                contentModel.groupType = ZDKHelpCenterOverviewGroupTypeCategory;
+                contentModel.groupIds = categoryIdArray;
+            } else if (helpCenterSectionIdInput.hasText) {
+                NSString *sectionIdString = helpCenterSectionIdInput.text;
+                NSArray *sectionIdArray = [sectionIdString componentsSeparatedByString:@","];
+                contentModel.groupType = ZDKHelpCenterOverviewGroupTypeSection;
+                contentModel.groupIds = sectionIdArray;
+            }
+            
+            // category IDs
+        } else if (helpCenterCategoryIdInput.hasText) {
+            NSString *categoryIdString = helpCenterCategoryIdInput.text;
+            NSArray *categoryIdArray = [categoryIdString componentsSeparatedByString:@","];
+            contentModel.groupType = ZDKHelpCenterOverviewGroupTypeCategory;
+            contentModel.groupIds = categoryIdArray;
+            
+            // sections IDs
+        } else if (helpCenterSectionIdInput.hasText) {
+            NSString *sectionIdString = helpCenterSectionIdInput.text;
+            NSArray *sectionIdArray = [sectionIdString componentsSeparatedByString:@","];
+            contentModel.groupType = ZDKHelpCenterOverviewGroupTypeSection;
+            contentModel.groupIds = sectionIdArray;
+            
+        }
+        
+        if ([ZDKUIUtil isPad]) {
+            
             self.modalPresentationStyle = UIModalPresentationFormSheet;
-            [ZDKHelpCenter presentHelpCenterWithViewController:self];
-
+            [ZDKHelpCenter presentHelpCenterOverview:self withContentModel:contentModel];
+            
         } else {
-
-            [ZDKHelpCenter pushHelpCenterWithNavigationController:self.navigationController layoutGuide:ZDKLayoutRespectAll];
+            
+            [ZDKHelpCenter pushHelpCenterOverview:self.navigationController withContentModel:contentModel];
+            
         }
     }
 }
@@ -308,7 +302,7 @@ static CGFloat const PADDING = 15.f;
 - (void) supportWithFlatArticlesList
 {
   
-    ZDKHelpCenterProvider *provider = [ZDKHelpCenterProvider new];
+    ZDKHelpCenterProvider *provider = [[ZDKHelpCenterProvider alloc] initWithLocale:@"en-us"];
     
     [provider getFlatArticlesWithCallback:^(NSArray *items, NSError *error) {
         ZDFlatArticlesTableViewController *flatArticlesViewController = [[ZDFlatArticlesTableViewController alloc]init];

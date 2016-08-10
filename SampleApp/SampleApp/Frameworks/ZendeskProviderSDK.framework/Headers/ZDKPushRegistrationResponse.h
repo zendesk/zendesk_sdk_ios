@@ -29,7 +29,7 @@
  *
  *  @since 1.2.0.1
  */
-@property (nonatomic) NSString *identifier;
+@property (nonatomic, copy) NSString *identifier;
 
 
 /**

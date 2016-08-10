@@ -27,19 +27,19 @@
 /**
  *  Frame of spinner.
  */
-@property (nonatomic) CGRect frame;
+@property (nonatomic, assign) CGRect frame;
 
 
 /**
  *  Is the spinner hidden? YES or NO.
  */
-@property (nonatomic, getter=isHidden) BOOL hidden;
+@property (nonatomic, assign, getter=isHidden) BOOL hidden;
 
 
 /**
  *  The center of the view.
  */
-@property (nonatomic) CGPoint center;
+@property (nonatomic, assign) CGPoint center;
 
 
 /**

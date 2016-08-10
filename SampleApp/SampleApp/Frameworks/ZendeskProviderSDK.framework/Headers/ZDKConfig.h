@@ -45,14 +45,14 @@ typedef void (^ZDKInitializeSuccess)(void);
  *
  *  @since 0.9.3.1
  */
-@property (nonatomic, readonly) ZDKAccount *account;
+@property (nonatomic, strong, readonly) ZDKAccount *account;
 
 
 /**
  *  The userIdentity for the user is an instance of NSObject that implements the protocol ZDKIdentity
  *  @since 1.2.0.1
  */
-@property (nonatomic, setter=setUserIdentity:, getter=userIdentity) id<ZDKIdentity> userIdentity;
+@property (nonatomic, strong, setter=setUserIdentity:, getter=userIdentity) id<ZDKIdentity> userIdentity;
 
 
 /**
@@ -66,7 +66,7 @@ typedef void (^ZDKInitializeSuccess)(void);
  *  @since 1.6.0.1
  */
 
-@property (nonatomic, setter=setReloadInterval:, getter=reloadInterval) NSTimeInterval reloadInterval;
+@property (nonatomic, assign, setter=setReloadInterval:, getter=reloadInterval) NSTimeInterval reloadInterval;
 
 
 /**
@@ -105,36 +105,6 @@ typedef void (^ZDKInitializeSuccess)(void);
  */
 + (instancetype) instance;
 
-
-
-/**
- *  Initialize the SDK with callbacks.
- *
- *  @param applicationId The application id of your SDK app, as found in the web interface.
- *  @param zendeskUrl    The full URL of your Zendesk instance, https://{subdomain}.zendesk.com
- *  @param oAuthClientId The oAuthClientId required as part of the authentication process
- *  @param successBlock  Callback executed on successful initialization of the SDK. Can be nil.
- *  @param errorBlock    Callback executed if initialization fails. Can be nil.
- */
-- (void) initializeWithAppId:(NSString *)applicationId
-                  zendeskUrl:(NSString *)zendeskUrl
-                    ClientId:(NSString *)oAuthClientId
-                   onSuccess:(ZDKInitializeSuccess)successBlock
-                     onError:(ZDKAPIError)errorBlock  __deprecated_msg("As of version 1.6.0.1 use -initializeWithAppId:zendeskUrl:clientId: instead");
-
-
-/**
- *  Initialize the SDK.
- *
- *  @since 1.0.0.1
- *
- *  @param applicationId The application id of your SDK app, as found in the web interface.
- *  @param zendeskUrl    The full URL of your Zendesk instance, https://{subdomain}.zendesk.com
- *  @param oAuthClientId The oAuthClientId required as part of the authentication process
- */
-- (void) initializeWithAppId:(NSString *)applicationId
-                  zendeskUrl:(NSString *)zendeskUrl
-                 andClientId:(NSString *)oAuthClientId  __deprecated_msg("As of version 1.6.0.1 use -initializeWithAppId:zendeskUrl:clientId: instead");
 
 /**
  *  Initialize the SDK.
@@ -203,7 +173,7 @@ typedef void (^ZDKInitializeSuccess)(void);
  *
  *  @since 1.0.0.1
  */
-@property (nonatomic, strong) NSArray *customTicketFields;
+@property (nonatomic, copy) NSArray *customTicketFields;
 
 
 /**

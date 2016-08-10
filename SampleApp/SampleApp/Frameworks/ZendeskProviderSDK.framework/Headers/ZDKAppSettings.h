@@ -27,7 +27,7 @@
  *
  *  @since 0.9.3.1
  */
-@property (nonatomic, readonly) ZDKRateMyAppSettings *rateMyAappSettings;
+@property (nonatomic, strong, readonly) ZDKRateMyAppSettings *rateMyAappSettings;
 
 
 /**
@@ -35,7 +35,7 @@
  *
  *  @since 0.9.3.1
  */
-@property (nonatomic, readonly) ZDKConversationsSettings *conversationsSettings;
+@property (nonatomic, strong, readonly) ZDKConversationsSettings *conversationsSettings;
 
 
 /**
@@ -43,7 +43,7 @@
  *
  *  @since 0.9.3.1
  */
-@property (nonatomic, readonly) ZDKContactUsSettings *contactUsSettings;
+@property (nonatomic, strong, readonly) ZDKContactUsSettings *contactUsSettings;
 
 
 /**
@@ -51,7 +51,7 @@
  *
  *  @since 0.9.3.1
  */
-@property (nonatomic, readonly) ZDKHelpCenterSettings *helpCenterSettings;
+@property (nonatomic, strong, readonly) ZDKHelpCenterSettings *helpCenterSettings;
 
 
 /**
@@ -59,7 +59,7 @@
  *
  *  @since 0.9.3.1
  */
-@property (nonatomic, readonly) NSString *authentication;
+@property (nonatomic, copy, readonly) NSString *authentication;
 
 
 /**

@@ -20,9 +20,9 @@
 
 @interface ZDKAnonymousIdentity : ZDKCoding <ZDKIdentity>
 
-@property (nonatomic, strong) NSString *name;
-@property (nonatomic, strong) NSString *email;
-@property (nonatomic, strong) NSString *externalId;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSString *email;
+@property (nonatomic, copy) NSString *externalId;
 
 
 @end

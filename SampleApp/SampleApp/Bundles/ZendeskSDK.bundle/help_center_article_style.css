@@ -67,3 +67,5 @@ li{
 ul ul, ol ol{
 	margin-left: 20px;
 }
+
+em{font-style: italic;}

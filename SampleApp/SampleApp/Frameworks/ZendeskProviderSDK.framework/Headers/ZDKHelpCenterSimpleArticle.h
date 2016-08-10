@@ -27,13 +27,13 @@
  *  The article ID.
  *  @since 1.2.0.1
  */
-@property (nonatomic, strong) NSString *id;
+@property (nonatomic, copy) NSString *id;
 
 /**
  *  The article title.
  *  @since 1.2.0.1
  */
-@property (nonatomic, strong) NSString *title;
+@property (nonatomic, copy) NSString *title;
 
 /**
  *  Parse a collection of simple articles returned by the suggested articles provider.

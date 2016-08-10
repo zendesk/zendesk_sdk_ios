@@ -29,42 +29,42 @@
  *
  *  @since 1.3.0.1
  */
-@property (nonatomic, strong) NSString *identifier;
+@property (nonatomic, copy) NSString *identifier;
 
 /**
  *  The API url of this vote
  *
  *  @since 1.3.0.1
  */
-@property (nonatomic, strong) NSString *url;
+@property (nonatomic, copy) NSString *url;
 
 /**
  *  The id of the user who casts the vote
  *
  *  @since 1.3.0.1
  */
-@property (nonatomic, strong) NSString *userId;
+@property (nonatomic, copy) NSString *userId;
 
 /**
  *  The value of the vote
  *
  *  @since 1.3.0.1
  */
-@property (nonatomic, strong) NSString *value;
+@property (nonatomic, copy) NSString *value;
 
 /**
  *  The id of the item for which this vote was cast
  *
  *  @since 1.3.0.1
  */
-@property (nonatomic, strong) NSString *itemId;
+@property (nonatomic, copy) NSString *itemId;
 
 /**
  *  The type of the item. Can be "Article"
  *
  *  @since 1.3.0.1
  */
-@property (nonatomic, strong) NSString *itemType;
+@property (nonatomic, copy) NSString *itemType;
 
 /**
  *  The time at which the vote was created

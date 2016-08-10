@@ -23,37 +23,37 @@
 /**
  * enabled determines if Rate My App component should be shown
  */
-@property (nonatomic, readonly) BOOL enabled;
+@property (nonatomic, assign, readonly) BOOL enabled;
 
 
 /**
  * numberOfVisits is the number of visits/app launches the app will need to be completed before showing the dialog
  */
-@property (nonatomic, readonly) NSNumber *visits;
+@property (nonatomic, strong, readonly) NSNumber *visits;
 
 
 /**
  * duration is the time that is required to expire before showing the dialog
  */
-@property (nonatomic, readonly) NSNumber *duration;
+@property (nonatomic, strong, readonly) NSNumber *duration;
 
 
 /**
  * delay is the length of delay that should pass before the dialog is shown
  */
-@property (nonatomic, readonly) NSNumber *delay;
+@property (nonatomic, strong, readonly) NSNumber *delay;
 
 
 /**
  * tags is a list of tags that should be included as part of the ticket creation
  */
-@property (nonatomic, readonly) NSArray *tags;
+@property (nonatomic, copy, readonly) NSArray *tags;
 
 
 /**
  * appStoreUrl, is the url provided by the server to be invoked when "Yes, rate my app" is selected
  */
-@property (nonatomic, readonly) NSString *appStoreUrl;
+@property (nonatomic, copy, readonly) NSString *appStoreUrl;
 
 
 /**
