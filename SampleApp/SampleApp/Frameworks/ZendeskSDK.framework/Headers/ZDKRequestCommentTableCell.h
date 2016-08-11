@@ -64,7 +64,7 @@
 /**
  * A cache of the avatar image being presented in this cell.
  */
-@property (nonatomic, strong) NSMutableDictionary *avatarCache;
+@property (nonatomic, copy) NSMutableDictionary *avatarCache;
 
 /**
  * The avatar UIImageView.
@@ -75,47 +75,6 @@
  * The author label.
  */
 @property (nonatomic, strong) UILabel *author;
-
-/**
- * Avatar diameter.
- */
-@property (nonatomic, strong) NSNumber *avatarSize __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
-
-/**
- * Agent name text font.
- */
-@property (nonatomic, strong) UIFont *agentNameFont __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
-
-/**
- * Agent name text color.
- */
-@property (nonatomic, strong) UIColor *agentNameColor __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
-
-/**
- * Font of the body text of the comment.
- */
-@property (nonatomic, strong) UIFont *bodyFont __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
-
-/**
- * Color of the body text of the comment.
- */
-@property (nonatomic, strong) UIColor *bodyColor __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
-
-/**
- * Timestamp label text font.
- */
-@property (nonatomic, strong) UIFont *timestampFont __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
-
-/**
- * Timestamp label text color.
- */
-@property (nonatomic, strong) UIColor *timestampColor __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
-
-/**
- * Background color of the comment cell.
- */
-@property (nonatomic, strong) UIColor *cellBackground __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
-
 
 
 /**
@@ -150,32 +109,6 @@
  */
 + (CGFloat) cellHeightForCommentWithUser:(ZDKCommentWithUser*)commentWithUser inWidth:(CGFloat)width;
 
-
-/**
- * Font of the body text of the comment.
- */
-@property (nonatomic, strong) UIFont *bodyFont __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
-
-/**
- * Color of the body text of the comment.
- */
-@property (nonatomic, strong) UIColor *bodyColor __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
-
-/**
- * Timestamp label text font.
- */
-@property (nonatomic, strong) UIFont *timestampFont __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
-
-/**
- * Timestamp label text color.
- */
-@property (nonatomic, strong) UIColor *timestampColor __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
-
-/**
- * Background color of the comment cell.
- */
-@property (nonatomic, strong) UIColor *cellBackground __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
-
 @end
 
 #pragma mark -
@@ -202,22 +135,6 @@
  * Loading state cell for the request list.
  */
 @interface ZDKCommentsListLoadingTableCell : UITableViewCell
-
-/**
- * Left content inset.
- */
-@property (nonatomic, strong) NSNumber *leftInset __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
-
-/**
- * Spinner to indicate the loading state.
- */
-@property (nonatomic, strong) id<ZDKSpinnerDelegate> spinner __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
-
-/**
- * Background color of the comment cell.
- */
-@property (nonatomic, strong) UIColor *cellBackground __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
-
 
 @end
 

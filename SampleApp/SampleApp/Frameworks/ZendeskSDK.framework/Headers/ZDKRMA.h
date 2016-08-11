@@ -31,8 +31,8 @@
 @interface ZDKRMA : NSObject
 
 
-@property (nonatomic, retain, readonly) ZDKRMAConfigObject *zdkrmaConfigObject;
-@property (nonatomic, retain, readonly) ZDKRMADataObject *zdkrmaDataObject;
+@property (nonatomic, strong, readonly) ZDKRMAConfigObject *zdkrmaConfigObject;
+@property (nonatomic, strong, readonly) ZDKRMADataObject *zdkrmaDataObject;
 
 
 /**

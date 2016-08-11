@@ -66,14 +66,14 @@ typedef NS_ENUM(NSInteger, ZDKAlertControllerStyle){
  *
  *  @since 1.5.0.1
  */
-@property (nonatomic, readonly) ZDKAlertControllerStyle preferredStyle;
+@property (nonatomic, assign, readonly) ZDKAlertControllerStyle preferredStyle;
 
 /**
  *  Array of actions for the alert.
  *
  *  @since 1.5.0.1
  */
-@property (nonatomic, readonly) NSArray *actions;
+@property (nonatomic, copy, readonly) NSArray *actions;
 
 /**
  *  Creates an alert controller with the parameters provided.

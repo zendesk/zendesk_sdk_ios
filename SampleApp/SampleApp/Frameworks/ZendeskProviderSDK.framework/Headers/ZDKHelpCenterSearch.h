@@ -26,47 +26,47 @@
 /**
  *  This models the free-form text query
  */
-@property (nonatomic) NSString *query;
+@property (nonatomic, copy) NSString *query;
 
 /**
  *  This models the "label_names" parameter. This will be a comma-separated list of label names to restrict the search to.
  */
-@property (nonatomic) NSMutableArray *labelNames;
+@property (nonatomic, copy) NSMutableArray *labelNames;
 
 /**
  *  This models the "locale" parameter. This specifies that the search will be restricted to content with this locale.  The locale
  *  is in the format of "ll-cc", e.g. "en-us".  Locales in the form of "ll" are also permitted, e.g. "en".
  */
-@property (nonatomic) NSString *locale;
+@property (nonatomic, copy) NSString *locale;
 
 /**
  *  This models the "include" parameter.  This specifies the elements to side-load and include in the results.
  */
-@property (nonatomic) NSMutableArray *sideLoads;
+@property (nonatomic, copy) NSMutableArray *sideLoads;
 
 /**
  *  This models the "category" parameter.  This specifies that the search will be restricted to content that is in the given
- *  category.
+ *  array of categories.
  */
-@property (nonatomic) NSNumber *categoryId;
+@property (nonatomic, copy) NSArray<NSString *> *categoryIds;
 
 /**
- *  This models the "section" parameter.  This specifies that the search will be restricted to content that is in the given 
- *  section.
+ *  This models the "section" parameter.  This specifies that the search will be restricted to content that is in the given
+ *  array of sections.
  */
-@property (nonatomic) NSNumber *sectionId;
+@property (nonatomic, copy) NSArray<NSString *> *sectionIds;
 
 /**
  *  This models the "page" parameter. This specifies what page of results to return.  This is closely tied to the resultsPerPage
  *  property.
  */
-@property (nonatomic) NSNumber *page;
+@property (nonatomic, strong) NSNumber *page;
 
 /**
  *  This models the "per_page" parameter.  This specifies how many results to return for the current page.  The current page is
  *  specified by the page property.
  */
-@property (nonatomic) NSNumber *resultsPerPage;
+@property (nonatomic, strong) NSNumber *resultsPerPage;
 
 
 @end

@@ -34,13 +34,13 @@
 /**
  * A ZDKRMADialogView to be presented.
  */
-@property (retain, nonatomic) ZDKRMADialogView *dialog;
+@property (nonatomic, strong) ZDKRMADialogView *dialog;
 
 
 /**
  * A ZDKRMAFeedbackView to be presented.
  */
-@property (retain, nonatomic) ZDKRMAFeedbackView *feedbackView;
+@property (nonatomic, strong) ZDKRMAFeedbackView *feedbackView;
 
 
 /**

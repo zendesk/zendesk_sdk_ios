@@ -70,75 +70,10 @@
 - (instancetype)initWithAttachemntEnabled:(BOOL)attachmentEnabled;
 
 
-@property (nonatomic, readonly) ZDKUITextView *textView;
+@property (nonatomic, strong, readonly) ZDKUITextView *textView;
 
 
-@property (nonatomic, readonly) UIButton *sendButton;
-
-/**
- *  Delegate for ZDKCommentInputView.
- */
-@property (nonatomic, assign) id<ZDKCommentInputViewDelegate> delegate;
-
-
-/**
- * Color of border line at top of text entry area.
- */
-@property (nonatomic, strong) UIColor *topBorderColor __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
-
-
-/**
- * Font for the text entry view and it's placeholder.
- */
-@property (nonatomic, strong) UIFont *textEntryFont __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
-
-
-/**
- * Color of the text entry text.
- */
-@property (nonatomic, strong) UIColor *textEntryColor __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
-
-/**
- *  Color of the placeholder text.
- */
-@property (nonatomic, strong) UIColor *textEntryPlaceHolderColor __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
-
-
-/**
- * Text entry box background color.
- */
-@property (nonatomic, strong) UIColor *textEntryBackgroundColor __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
-
-
-/**
- * Text entry box border color.
- */
-@property (nonatomic, strong) UIColor *textEntryBorderColor __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
-
-
-/**
- * Send button font.
- */
-@property (nonatomic, strong) UIFont *sendButtonFont __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
-
-
-/**
- * Send button text color.
- */
-@property (nonatomic, strong) UIColor *sendButtonColor __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
-
-
-/**
- * Comment entry area background color.
- */
-@property (nonatomic, strong) UIColor *areaBackgroundColor __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
-
-
-/**
- *  Background color of attachment button.
- */
-@property (nonatomic, strong) UIColor *attachmentButtonBackgroundColor __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
-
+@property (nonatomic, strong, readonly) UIButton *sendButton;
 
 /**
  *  Returns the preferred height for the input view.

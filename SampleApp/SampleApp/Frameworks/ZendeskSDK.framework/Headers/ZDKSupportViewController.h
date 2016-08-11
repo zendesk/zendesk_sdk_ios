@@ -18,8 +18,12 @@
 #import "ZDKUIViewController.h"
 #import "ZDKHelpCenterConversationsUIDelegate.h"
 
-@class ZDKSupportView, ZDKHelpCenterCategory, ZDKHelpCenterSection, ZDKHelpCenterSearch;
+@class ZDKSupportView, ZDKHelpCenterCategory, ZDKHelpCenterSection, ZDKHelpCenterSearch, ZDKSupportViewController;
 
+__deprecated_msg("Deprecated as of 1.7.0.1, use ZDKHelpCenterOverviewController instead.")
+/**
+ *  Displays Help Center Categories, Sections, or Articles.
+ */
 @interface ZDKSupportViewController : ZDKUIViewController <UIScrollViewDelegate, UISearchBarDelegate>
 
 

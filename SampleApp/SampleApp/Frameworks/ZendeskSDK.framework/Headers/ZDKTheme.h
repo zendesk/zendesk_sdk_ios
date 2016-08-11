@@ -29,6 +29,13 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UIColor *primaryTextColor;
 
 /**
+ *  Secondary text Color
+ *
+ *  @since 1.7.0.1
+ */
+@property (nonatomic, strong) UIColor *secondaryTextColor;
+
+/**
  *  Primary background color.
  *
  *  @since 1.6.0.1
@@ -83,6 +90,13 @@ NS_ASSUME_NONNULL_BEGIN
  *  @since 1.6.0.1
  */
 @property (nonatomic, copy) NSString *fontName;
+
+/**
+ *  Bold font to use in the SDK.
+ *
+ *  @since 1.7.0.1
+ */
+@property (nonatomic, copy) NSString *boldFontName;
 
 /**
  *  Apply the theme to the SDK

@@ -22,7 +22,7 @@
  *
  *  @since 1.1.0.1
  */
-@interface ZDKUploadResponse : NSObject
+@interface ZDKUploadResponse : NSObject <NSCopying>
 
 
 /**
@@ -30,7 +30,7 @@
  *
  *  @since 1.1.0.1
  */
-@property (nonatomic, strong) NSString *uploadToken;
+@property (nonatomic, copy) NSString *uploadToken;
 
 
 /**

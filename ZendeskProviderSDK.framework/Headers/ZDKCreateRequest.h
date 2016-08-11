@@ -30,21 +30,21 @@
  *
  *  @since 1.3.0.1
  */
-@property (nonatomic, strong) NSArray *tags;
+@property (nonatomic, copy) NSArray *tags;
 
 /**
  *  The subject of the request, if subject is enabled in the account.
  *
  *  @since 1.3.0.1
  */
-@property (nonatomic, strong) NSString *subject;
+@property (nonatomic, copy) NSString *subject;
 
 /**
  *  The body of the request
  *
  *  @since 1.3.0.1
  */
-@property (nonatomic, strong) NSString *requestDescription;
+@property (nonatomic, copy) NSString *requestDescription;
 
 
 
@@ -53,7 +53,7 @@
  *
  *  @since 1.3.0.1
  */
-@property (nonatomic, strong) NSArray *attachments;
+@property (nonatomic, copy) NSArray *attachments;
 
 
 /**
@@ -63,7 +63,7 @@
  *
  *  @since 1.6.0.1
  */
-@property (nonatomic, strong) NSArray *customTicketFields;
+@property (nonatomic, copy) NSArray *customTicketFields;
 
 
 /**

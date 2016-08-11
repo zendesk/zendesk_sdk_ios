@@ -24,91 +24,91 @@
  *
  *  @since 0.9.3.1
  */
-@property (strong, nonatomic) NSString *sid;
+@property (nonatomic, copy) NSString *sid;
 
 /**
  *  Category id for section.
  *
  *  @since 0.9.3.1
  */
-@property (strong, nonatomic) NSString *category_id;
+@property (nonatomic, copy) NSString *category_id;
 
 /**
  *  section name.
  *
  *  @since 0.9.3.1
  */
-@property (strong, nonatomic) NSString *name;
+@property (nonatomic, copy) NSString *name;
 
 /**
  *  Section Description.
  *
  *  @since 0.9.3.1
  */
-@property (strong, nonatomic) NSString *sectionDescription;
+@property (nonatomic, copy) NSString *sectionDescription;
 
 /**
  *  Position in section list.
  *
  *  @since 0.9.3.1
  */
-@property (assign, nonatomic) NSInteger position;
+@property (nonatomic, assign) NSInteger position;
 
 /**
  *  Current Locale.
  *
  *  @since 1.4.0.1
  */
-@property (strong, nonatomic) NSString *locale;
+@property (nonatomic, copy) NSString *locale;
 
 /**
  *  Source Locale of the section
  *
  *  @since 1.4.0.1
  */
-@property (strong, nonatomic) NSString *sourceLocale;
+@property (nonatomic, copy) NSString *sourceLocale;
 
 /**
  *  API url of the Section
  *
  *  @since 1.4.0.1
  */
-@property (strong, nonatomic) NSString *url;
+@property (nonatomic, copy) NSString *url;
 
 /**
  *  url of the Section in the help center
  *
  *  @since 1.4.0.1
  */
-@property (strong, nonatomic) NSString *html_url;
+@property (nonatomic, copy) NSString *html_url;
 
 /**
  *  Sorting type.
  *
  *  @since 1.4.0.1
  */
-@property (strong, nonatomic) NSString *sorting;
+@property (nonatomic, copy) NSString *sorting;
 
 /**
  *  Time at which the section was created at
  *
  *  @since 1.4.0.1
  */
-@property (strong, nonatomic) NSString *createdAt;
+@property (nonatomic, copy) NSString *createdAt;
 
 /**
  *  Time at which the section was last updated at.
  *
  *  @since 1.4.0.1
  */
-@property (strong, nonatomic) NSString *updatedAt;
+@property (nonatomic, copy) NSString *updatedAt;
 
 /**
  *  Whether the section is outdated or not.
  *
  *  @since 1.4.0.1
  */
-@property (assign, nonatomic) BOOL outdated;
+@property (nonatomic, assign) BOOL outdated;
 
 
 /**

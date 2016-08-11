@@ -26,17 +26,17 @@
 /**
  *  Title of User Field.
  */
-@property (nonatomic, strong) NSString *title;
+@property (nonatomic, copy) NSString *title;
 
 /**
  *  The type of the user field e.g. "checkbox", "text" or "date".
  */
-@property (nonatomic, strong) NSString *typeOfField;
+@property (nonatomic, copy) NSString *typeOfField;
 
 /**
  *  Description of the user field's purpose.
  */
-@property (nonatomic, strong) NSString *fieldDescription;
+@property (nonatomic, copy) NSString *fieldDescription;
 
 /**
  *  Options for the custom userfield. An array of ZDKCustomField objects(only for "dropdown" type userfields).

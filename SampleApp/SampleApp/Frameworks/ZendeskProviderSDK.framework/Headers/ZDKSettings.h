@@ -24,12 +24,12 @@
 /**
  *  Gets the app settings.
  */
-@property (nonatomic, readonly) ZDKAppSettings *appSettings;
+@property (nonatomic, strong, readonly) ZDKAppSettings *appSettings;
 
 /**
  *  Gets the Zendesk account settings.
  */
-@property (nonatomic, readonly) ZDKAccountSettings *accountSettings;
+@property (nonatomic, strong, readonly) ZDKAccountSettings *accountSettings;
 
 
 /**

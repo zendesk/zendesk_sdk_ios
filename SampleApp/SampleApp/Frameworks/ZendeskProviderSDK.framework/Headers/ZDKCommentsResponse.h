@@ -29,7 +29,7 @@
  *
  *  @since 0.9.3.1
  */
-@property (nonatomic, readonly) NSArray *commmentsWithUsers;
+@property (nonatomic, copy, readonly) NSArray *commmentsWithUsers;
 
 
 /**

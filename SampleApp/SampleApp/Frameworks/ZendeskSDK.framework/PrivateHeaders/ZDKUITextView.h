@@ -31,13 +31,13 @@
 /**
  * The placeholder text that is shown when there is no text in the text view.
  */
-@property (nonatomic, retain) IBInspectable NSString *placeholderText;
+@property (nonatomic, strong) IBInspectable NSString *placeholderText;
 
 
 /**
  * The color of the placeholder that is shown when there is no text in the text view.
  */
-@property (nonatomic, retain) IBInspectable UIColor *placeholderTextColor;
+@property (nonatomic, strong) IBInspectable UIColor *placeholderTextColor;
 
 
 /**

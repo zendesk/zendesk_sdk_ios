@@ -16,6 +16,8 @@
 
 #import <Foundation/Foundation.h>
 
+@class ZDKHelpCenterCategoryViewModel;
+
 /**
  *  A Help Center Parser class containing static and instance methods to parse json to objects.
  *
@@ -28,21 +30,21 @@
  *
  *  @since 1.4.0.1
  */
-@property (readonly, nonatomic) NSDictionary *sectionLookup;
+@property (nonatomic, copy, readonly) NSDictionary *sectionLookup;
 
 /**
  *  An NSDictionary of Users with the key value userId.
  *
  *  @since 1.4.0.1
  */
-@property (readonly, nonatomic) NSDictionary *userLookup;
+@property (nonatomic, copy, readonly) NSDictionary *userLookup;
 
 /**
  *  An NSDictionary of Categories with the key value categoryId.
  *
  *  @since 1.4.0.1
  */
-@property (readonly, nonatomic) NSDictionary *categoryLookup;
+@property (nonatomic, copy, readonly) NSDictionary *categoryLookup;
 
 /**
  *  Creates an ZDKHelpCentreParser object and parses json dictionary into
@@ -120,5 +122,29 @@
  *  @return An array of ZDKHelpCenterArticle objects.
  */
 - (NSArray *) parseArticleSearchResults:(NSDictionary *)json;
+
+
+/**
+ *  Parses a collection of Help Center json categories, sections and articles into
+ *  their hierarchy. i.e. Relevant articles in their sections and relevant sections in their
+ *  categories.
+ *
+ *  @param json Help Center json categories, sections and articles
+ *
+ *  @return An array of category view model objects with their relevant sections and articles
+ *  @since 1.7.0.1
+ */
++ (NSArray <ZDKHelpCenterCategoryViewModel*>*) parseHelpCenterOverview:(NSDictionary *)json;
+
+/**
+ *  Parses a json payload of articles and sections into an array of section view models.
+ *
+ *  @param json Help Center Articles and Sections json.
+ *
+ *  @return An array Help Center Section View Models
+ *
+ *  @since 1.7.0.1
+ */
++ (NSArray *) parseArticlesIntoSection:(NSDictionary *)json;
 
 @end

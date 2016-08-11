@@ -23,7 +23,7 @@
 /**
  * The id of this request in Zendesk.
  */
-@property (nonatomic, strong) NSString *requestId;
+@property (nonatomic, copy) NSString *requestId;
 
 /**
  * The id of the requester in Zendesk.
@@ -33,17 +33,22 @@
 /**
  * Request status.
  */
-@property (nonatomic, strong) NSString *status;
+@property (nonatomic, copy) NSString *status;
 
 /**
  * The subject of the request, if subject is enabled in the account and if a subject was entered.
  */
-@property (nonatomic, strong) NSString *subject;
+@property (nonatomic, copy) NSString *subject;
 
 /**
  * The original request.
  */
-@property (nonatomic, strong) NSString *requestDescription;
+@property (nonatomic, copy) NSString *requestDescription;
+
+/**
+ *  The request type
+ */
+@property (nonatomic, copy) NSString *type;
 
 /**
  * The timestamp of the request creation.

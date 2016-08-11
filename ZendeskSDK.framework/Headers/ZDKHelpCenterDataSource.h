@@ -37,7 +37,7 @@ typedef void (^ZDKHelpCenterCellConfigureBlock)(id cell, id item);
 /**
  * Read only property, indicating if the DataSource has any items
  */
-@property (nonatomic, readonly) BOOL hasItems;
+@property (nonatomic, assign, readonly) BOOL hasItems;
 
 
 /**
@@ -49,7 +49,7 @@ typedef void (^ZDKHelpCenterCellConfigureBlock)(id cell, id item);
 /**
  * Help Center provider.
  */
-@property (nonatomic, readonly) ZDKHelpCenterProvider *provider;
+@property (nonatomic, strong, readonly) ZDKHelpCenterProvider *provider;
 
 
 /**

@@ -224,7 +224,6 @@ static NSString * const QR_ANON_EXTERNL_ID = @"anonymous_external_id";
         [urlEntry becomeFirstResponder];
     }
     
-    
     [self registerForKeyboardNotifications];
 }
 

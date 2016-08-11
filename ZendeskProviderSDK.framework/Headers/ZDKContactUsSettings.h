@@ -29,7 +29,7 @@
  *
  *  @since 0.9.3.1
  */
-@property (nonatomic, readonly) NSArray *tags;
+@property (nonatomic, copy, readonly) NSArray *tags;
 
 /**
  * initWithDictionary, passing the NSDictionary of Contact Us settings received from the server.

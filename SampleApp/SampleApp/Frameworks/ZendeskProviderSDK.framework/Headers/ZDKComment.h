@@ -27,14 +27,14 @@
  *
  *  @since 0.9.3.1
  */
-@property (nonatomic, readonly) NSNumber *commentId;
+@property (nonatomic, strong, readonly) NSNumber *commentId;
 
 /**
  * The comment body/text.
  *
  *  @since 0.9.3.1
  */
-@property (nonatomic, strong) NSString *body;
+@property (nonatomic, copy) NSString *body;
 
 /**
  * The Zendesk user id of the author.
@@ -55,14 +55,14 @@
  *
  *  @since 0.9.3.1
  */
-@property (nonatomic, strong) NSArray *attachments;
+@property (nonatomic, copy) NSArray *attachments;
 
 /**
  *  The request the comment belongs to.
  *
  *  @since 1.4.1.1
  */
-@property (nonatomic, strong) NSString *requestId;
+@property (nonatomic, copy) NSString *requestId;
 
 /**
  * Initialise the model object with the account details ands the dispatcher to be used for requests.

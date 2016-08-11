@@ -72,7 +72,7 @@ typedef void (^SendFeedbackError) (void);
  *
  * Default value is nil.
  */
-@property (nonatomic, strong) NSArray *additionalTags;
+@property (nonatomic, copy) NSArray *additionalTags;
 
 /**
  * Additional info to be included in the new request, this will be added 
@@ -80,7 +80,7 @@ typedef void (^SendFeedbackError) (void);
  *
  * Default value is nil.
  */
-@property (nonatomic, strong) NSString *additionalRequestInfo;
+@property (nonatomic, copy) NSString *additionalRequestInfo;
 
 /**
  * An array that specifies the options in the dialog view.
@@ -89,7 +89,7 @@ typedef void (^SendFeedbackError) (void);
  *
  * Default value is @[ZDKRMARateApp, ZDKRMASendFeedback, ZDKRMADontAskAgain]
  */
-@property (nonatomic, strong) NSArray *dialogActions;
+@property (nonatomic, copy) NSArray *dialogActions;
 
 /**
  * The name of the image shown on successful feedback submission. The image will
@@ -98,7 +98,7 @@ typedef void (^SendFeedbackError) (void);
  *
  * Default value is nil.
  */
-@property (nonatomic, strong) NSString *successImageName;
+@property (nonatomic, copy) NSString *successImageName;
 
 /**
  * The name of the image shown feedback submission fails. The image will
@@ -107,7 +107,7 @@ typedef void (^SendFeedbackError) (void);
  *
  * Default value is nil.
  */
-@property (nonatomic, strong) NSString *errorImageName;
+@property (nonatomic, copy) NSString *errorImageName;
 
 /**
  * A block that is responsible for deciding whether Rate My App is shown or not.

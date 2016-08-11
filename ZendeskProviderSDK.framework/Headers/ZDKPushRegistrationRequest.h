@@ -29,7 +29,7 @@
  *
  *  @since 1.2.0.1
  */
-@property (nonatomic) NSString *identifier;
+@property (nonatomic, copy) NSString *identifier;
 
 
 /**
@@ -37,7 +37,7 @@
  *
  *  @since 1.2.0.1
  */
-@property (nonatomic) NSString *locale;
+@property (nonatomic, copy) NSString *locale;
 
 
 /**
@@ -45,14 +45,14 @@
  *
  *  @since 1.2.0.1
  */
-@property (nonatomic, readonly) NSString *device_type;
+@property (nonatomic, copy, readonly) NSString *device_type;
 
 /**
  *  Token type, only used to identify Urban Airship channels, nil otherwise.
  *
  *  @since 1.4.0.1
  */
-@property (nonatomic) NSString *token_type;
+@property (nonatomic, copy) NSString *token_type;
 
 
 /**

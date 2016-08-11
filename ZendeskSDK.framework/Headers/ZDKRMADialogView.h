@@ -114,17 +114,7 @@
  * ZDKRMA. The actions in the array will be displayed in the dialog form top to bottom in the
  * order they were supplied to arrayWithZDKRMAActions:.
  */
-@property (nonatomic, retain) NSArray *rows;
-
-
-@property (nonatomic, strong) UIColor *headerBackgroundColor __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
-@property (nonatomic, strong) UIColor *headerColor __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
-@property (nonatomic, strong) UIColor *separatorLineColor __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
-@property (nonatomic, strong) UIColor *buttonBackgroundColor __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
-@property (nonatomic, strong) UIColor *buttonSelectedBackgroundColor __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
-@property (nonatomic, strong) UIColor *buttonColor __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
-@property (nonatomic, strong) UIFont *headerFont __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
-@property (nonatomic, strong) UIFont *buttonFont __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
+@property (nonatomic, copy) NSArray *rows;
 
 
 /**

@@ -23,12 +23,12 @@
 /**
  * enabled defines if the conversations component is enabled or not
  */
-@property (nonatomic, readonly) BOOL enabled;
+@property (nonatomic, assign, readonly) BOOL enabled;
 
 /**
  * String definition of the locale to be used by the help center component
  */
-@property (nonatomic, readonly) NSString *locale;
+@property (nonatomic, copy, readonly) NSString *locale;
 
 
 /**

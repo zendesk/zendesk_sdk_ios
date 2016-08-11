@@ -23,15 +23,11 @@
  */
 @interface ZDKAttachmentView : UIView
 
-@property (nonatomic, strong) UIColor *backgroundColor __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
-
-@property (nonatomic, strong) UIColor *closeButtonBackgroundColor __deprecated_msg("As of version 1.6.0.1, please use ZDKTheme for UI customization") UI_APPEARANCE_SELECTOR;
-
 
 /**
  *  Collection view for attachments.
  */
-@property (nonatomic, readonly) UICollectionView *attachmentsCollectionView;
+@property (nonatomic, strong, readonly) UICollectionView *attachmentsCollectionView;
 
 
 /**

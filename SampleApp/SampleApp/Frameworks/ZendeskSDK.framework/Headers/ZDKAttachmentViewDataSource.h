@@ -23,6 +23,6 @@
 @interface ZDKAttachmentViewDataSource : NSObject <UICollectionViewDataSource>
 
 
-@property (nonatomic, strong) NSMutableArray *data;
+@property (nonatomic, copy) NSMutableArray *data;
 
 @end

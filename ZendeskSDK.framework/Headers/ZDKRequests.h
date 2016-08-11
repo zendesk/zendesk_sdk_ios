@@ -49,20 +49,20 @@ typedef void (^ZDKRequestError) (NSError *error);
 /**
  * Tags to be included when creating a request.
  */
-@property (strong) NSArray *tags;
+@property (copy) NSArray *tags;
 
 
 /**
  * Additional free text to be appended to the request description.
  */
-@property (strong) NSString *additionalRequestInfo;
+@property (copy) NSString *additionalRequestInfo;
 
 /**
  *  Request subject.
  *
  *  @since 1.3.0.1
  */
-@property (strong) NSString *subject;
+@property (copy) NSString *subject;
 
 
 /**
@@ -169,53 +169,5 @@ typedef void (^ZDSDKConfigBlock) (ZDKAccount *account, ZDKRequestCreationConfig 
  *  @param uiType A ZDKNavBarCreateRequestUIType.
  */
 + (void) setNavBarCreateRequestUIType:(ZDKNavBarCreateRequestUIType)uiType;
-
-// Deprecated Methods
-
-/**
- *  Displays a simple request creation modal. The modal is presented on top the view controller
- *  that is passed in.
- *
- *  @param navController The UINavigationController from which to present the request creation view.
- *  @param success       A block that is executed on successful submission of a request.
- *  @param error         A block that is executed when an error occurs during submission of a request.
- */
-+ (void) showRequestCreationWithNavController:(UINavigationController*)navController
-                                  withSuccess:(ZDKRequestSuccess)success
-                                     andError:(ZDKRequestError)error __deprecated_msg("As of version 1.6.0.1 use +presentRequestCreationWithViewController: instead");
-
-/**
- *  Displays a simple request creation modal.
- *
- *  @param navController The UINavigationController from which the controller is pushed.
- */
-+ (void) showRequestCreationWithNavController:(UINavigationController*)navController  __deprecated_msg("As of version 1.6.0.1 use +presentRequestCreationWithViewController: instead");
-
-/**
- *  Displays a request list view controller.
- *
- *  @since 1.2.0.1
- *
- *  @param navController A navigation controller from which to push the request list view.
- *  @param aGuide        Should the request list respect top and bottom layout guide? Pass in
- *                       one of the const values, ZDKLayoutRespectAll, ZDKLayoutRespectNone,
- *                       ZDKLayoutRespectTop and ZDKLayoutRespectBottom.
- */
-+ (void) showRequestListWithNavController:(UINavigationController *)navController layoutGuide:(ZDKLayoutGuide)aGuide  __deprecated_msg("As of version 1.6.0.1 use +pushRequestListWithNavigationController: instead");
-
-/**
- *  Displays a request list view controller modally.
- *
- *  @param navController A navigation controller from which to push the request list view.
- */
-+ (void) presentRequestListWithNavController:(UINavigationController *)navController  __deprecated_msg("As of version 1.6.0.1 use +presentRequestListWithViewController: instead");
-
-/**
- *  Displays a request list view controller.
- *
- *  @param navController A navigation controller from which to push the request list view.
- */
-+ (void) showRequestListWithNavController:(UINavigationController *)navController  __deprecated_msg("As of version 1.6.0.1 use +pushRequestListWithNavigationController: instead");
-
 
 @end

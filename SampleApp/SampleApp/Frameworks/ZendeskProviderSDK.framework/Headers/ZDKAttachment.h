@@ -31,21 +31,21 @@
  *
  *  @since 1.1.0.1
  */
-@property (nonatomic, strong) NSString *filename;
+@property (nonatomic, copy) NSString *filename;
 
 /**
  *  The full url where the attachment can be downloaded.
  *
  *  @since 1.1.0.1
  */
-@property (nonatomic, strong) NSString *contentURLString;
+@property (nonatomic, copy) NSString *contentURLString;
 
 /**
  *  The content type of the attachment, i.e. image/png
  *
  *  @since 1.1.0.1
  */
-@property (nonatomic, strong) NSString *contentType;
+@property (nonatomic, copy) NSString *contentType;
 
 /**
  *  The size of the attachment in bytes.
@@ -59,7 +59,7 @@
  *
  *  @since 1.1.0.1
  */
-@property (nonatomic, strong) NSArray *thumbnails;
+@property (nonatomic, copy) NSArray *thumbnails;
 
 
 /**

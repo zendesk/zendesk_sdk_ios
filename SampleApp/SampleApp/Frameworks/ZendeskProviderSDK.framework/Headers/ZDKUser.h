@@ -31,12 +31,12 @@
 /**
  * The users name.
  */
-@property (nonatomic, strong) NSString *name;
+@property (nonatomic, copy) NSString *name;
 
 /**
  * URL of the users avatar.
  */
-@property (nonatomic, strong) NSString *avatarURL;
+@property (nonatomic, copy) NSString *avatarURL;
 
 /**
  * YES if the user is an agent.
@@ -48,7 +48,7 @@
  *
  *  @since 1.4.0.1
  */
-@property (nonatomic, strong) NSArray *tags;
+@property (nonatomic, copy) NSArray *tags;
 
 /**
  *  User fields for this user as a dictionary with the key being the name of the user field
@@ -56,7 +56,7 @@
  *
  *  @since 1.4.0.1
  */
-@property (nonatomic, strong) NSDictionary *userFields;
+@property (nonatomic, copy) NSDictionary *userFields;
 
 
 /**

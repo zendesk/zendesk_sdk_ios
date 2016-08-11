@@ -17,8 +17,8 @@
 
 @interface ZDKCustomField : NSObject
 
-@property (nonatomic, readonly) NSNumber *fieldId;
-@property (nonatomic, readonly) NSString *value;
+@property (nonatomic, strong, readonly) NSNumber *fieldId;
+@property (nonatomic, copy, readonly) NSString *value;
 
 /**
  *  init the object
