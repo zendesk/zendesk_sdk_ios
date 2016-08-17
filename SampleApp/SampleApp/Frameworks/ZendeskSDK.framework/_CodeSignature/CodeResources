@@ -230,7 +230,7 @@
 		</data>
 		<key>Headers/ZDKUIUtil.h</key>
 		<data>
-		TDt253ctsOQC3wrw04Xz8M03nR8=
+		/XWzrWeGcaYzwQbWxbEnLHZH7sQ=
 		</data>
 		<key>Headers/ZDKUIViewController.h</key>
 		<data>
@@ -238,11 +238,11 @@
 		</data>
 		<key>Headers/ZendeskSDK.h</key>
 		<data>
-		enp58WhNV1a/KgJ86cVkrPU7q3c=
+		VzU4ZIqafzJujRgYdCf0XaSmPFs=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		XEgcYhz95vRR2ZFObL9PAbakObI=
+		bg+0vS7mGt84EF+csR7xXZRUI/0=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -883,11 +883,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			TDt253ctsOQC3wrw04Xz8M03nR8=
+			/XWzrWeGcaYzwQbWxbEnLHZH7sQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			h38WjO74lN0ugyYiIs9I3s/AGLUpuqN/Hb+Xam7f4Z0=
+			ANUQUWkAsxfaWmX+I8QYHOzQPDJGUNQomrrr43dvkdg=
 			</data>
 		</dict>
 		<key>Headers/ZDKUIViewController.h</key>
@@ -905,11 +905,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			enp58WhNV1a/KgJ86cVkrPU7q3c=
+			VzU4ZIqafzJujRgYdCf0XaSmPFs=
 			</data>
 			<key>hash2</key>
 			<data>
-			PfGMLqlguYdJUIogc/8+qjjCBNzPcv3mWU3BJMROh7U=
+			FJghjmcYsLHqkXkOOp7+MOYIdWy6gdyMxhOrL6RMWU0=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

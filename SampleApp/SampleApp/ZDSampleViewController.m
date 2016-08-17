@@ -247,7 +247,7 @@ static CGFloat const PADDING = 15.f;
 
 - (void) support
 {
-    if ([ZDKUIUtil isOlderVersion:@8]) {
+    if ([ZDKUIUtil isOlderVersion:@"8.0"]) {
         [ZDKLogger error:@"ZDKHelpCenterOverview component is not compatible with iOS versions 7 and below. Please use the old Help Center UI."];
     } else {
         ZDKHelpCenterOverviewContentModel *contentModel = [ZDKHelpCenterOverviewContentModel defaultContent];
