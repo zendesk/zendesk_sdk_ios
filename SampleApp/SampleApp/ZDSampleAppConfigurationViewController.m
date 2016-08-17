@@ -192,13 +192,6 @@ static NSString * const QR_ANON_EXTERNL_ID = @"anonymous_external_id";
     [qrCodeButton addTarget:self action:@selector(qrButtonAction) forControlEvents:UIControlEventTouchUpInside];
     
     [self.scrollViewContent addSubview:qrCodeButton];
-    
-    //AVFoundation AVMetadataMachineReadableCodeObject (QR code reader) was only introduced in iOS7
-    //So if we are on iOS6 don't show the QR code scanner button. It is left on the view
-    //so layout will work correctly.
-    if ( ! [ZDKUIUtil isNewerVersion:@(6)]) {
-        qrCodeButton.hidden = YES;
-    }
   
     [self setupConstraints];
     

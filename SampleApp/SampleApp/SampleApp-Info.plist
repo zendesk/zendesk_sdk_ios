@@ -17,13 +17,17 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.7.0.1</string>
+	<string>1.7.1.1</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>We need camera access in order to allow you to capture images and attach them</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>We need to access your photos in order to attach them</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>fetch</string>

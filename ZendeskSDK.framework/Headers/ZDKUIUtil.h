@@ -62,14 +62,14 @@
  *
  *  @return YES if the current device number is less than majorVersionNumber.
  */
-+ (BOOL) isOlderVersion:(NSNumber *) majorVersionNumber;
++ (BOOL) isOlderVersion:(NSString *) majorVersionNumber;
 
 
 /**
  * isNewVersion checks to see if the majorVersionNumber is greater than the current device version
  * @param majorVersionNumber is a single integer, e.g.: 7
  */
-+ (BOOL) isNewerVersion:(NSNumber *) majorVersionNumber;
++ (BOOL) isNewerVersion:(NSString *) majorVersionNumber;
 
 
 /**
@@ -171,7 +171,7 @@ CGRectMakeCenteredInScreen(CGFloat width, CGFloat height)
     
     if (orientation == UIInterfaceOrientationLandscapeLeft ||
         orientation == UIInterfaceOrientationLandscapeRight) {
-        if([ZDKUIUtil isOlderVersion:@8])
+        if([ZDKUIUtil isOlderVersion:@"8.0"])
         {
             rect = CGRectMake(CGRectGetMidY(screen) - (width * 0.5f),
                               CGRectGetMidX(screen) - (height * 0.5f), width, height);
@@ -257,31 +257,8 @@ ZDKUIOriginInWindow(UIView *view)
     do {
         superView = superView.superview;
     } while (superView.superview);
+    
     CGPoint point = [view convertPoint:view.bounds.origin toView:superView];
-    if ([ZDKUIUtil isNewerVersion:@(7)]) {
-        return point;
-    }
-    CGRect screenBounds = [UIScreen mainScreen].bounds;
-    switch ([[UIApplication sharedApplication] statusBarOrientation]) {
-        case UIInterfaceOrientationPortraitUpsideDown: {
-            return CGPointMake(screenBounds.size.width - point.x, screenBounds.size.height - point.y);
-        }
-        case UIInterfaceOrientationLandscapeLeft: {
-            return CGPointMake(screenBounds.size.height - point.y, point.x);
-        }
-        case UIInterfaceOrientationLandscapeRight: {
-            return CGPointMake(point.y, screenBounds.size.width - point.x);
-        }
-        case UIInterfaceOrientationPortrait: {
-            return point;
-        }
-        case UIInterfaceOrientationUnknown: {
-            return point;
-        }
-        default: {
-            return point;
-        }
-            
-    }
+    return point;
 }
 
