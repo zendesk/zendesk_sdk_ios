@@ -33,10 +33,6 @@ pod 'ZendeskSDK', '~> RELEASE_VERSION_TAG'
 
 You can find [documentation](https://developer.zendesk.com/embeddables/docs/ios/overview) for the SDK and [release notes](https://developer.zendesk.com/embeddables/docs/ios/release_notes) on https://developer.zendesk.com.
 
-## A note regarding iOS 10
-
-We are aware that there are issues with the SDK when testing on iOS 10. We are currently working on a release of the SDK that addresses these issues, in line with our policy of supporting the current and previous two versions of iOS. If you find any iOS 10 specific issues, please feel free to submit them.
-
 ## Copyright and license
 
 Copyright 2014 Zendesk
