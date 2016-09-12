@@ -343,7 +343,7 @@ static CGFloat const PADDING = 15.f;
         self.navigationController.modalPresentationStyle = UIModalPresentationFormSheet;
     }
 
-    [ZDKRequests presentRequestCreationWithViewController:self.navigationController];
+    [ZDKRequests presentRequestCreationWithViewController:self];
 }
 
 #pragma mark Push notifications

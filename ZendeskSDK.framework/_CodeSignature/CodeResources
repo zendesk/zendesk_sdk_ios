@@ -58,11 +58,11 @@
 		</data>
 		<key>Headers/ZDKCreateRequestViewController.h</key>
 		<data>
-		zFSjXUwlZH3mRVYMKHZPPq3j+fk=
+		2Z3GMwj4wl7kcJ+FyMV3PdmJh9s=
 		</data>
 		<key>Headers/ZDKHelpCenter.h</key>
 		<data>
-		X68FsJ1lZ4SYFuAstI7EzOIMn1Q=
+		dWgeUZVwAOjR/JN9roObVGazZb8=
 		</data>
 		<key>Headers/ZDKHelpCenterArticlesByLabelDataSource.h</key>
 		<data>
@@ -226,7 +226,7 @@
 		</data>
 		<key>Headers/ZDKUITextViewDelegate.h</key>
 		<data>
-		koyakq0uWxpr75oiARx5Mlk20ig=
+		t9vUyE+1RWS0pAboAqIuwzhu/PM=
 		</data>
 		<key>Headers/ZDKUIUtil.h</key>
 		<data>
@@ -238,11 +238,11 @@
 		</data>
 		<key>Headers/ZendeskSDK.h</key>
 		<data>
-		VzU4ZIqafzJujRgYdCf0XaSmPFs=
+		D5fGvj7Uq2CKYfxAYdQOGUm79vc=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		bg+0vS7mGt84EF+csR7xXZRUI/0=
+		HlaOY7yOlv2l+gfSQ+4yecVGdR0=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -410,22 +410,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			zFSjXUwlZH3mRVYMKHZPPq3j+fk=
+			2Z3GMwj4wl7kcJ+FyMV3PdmJh9s=
 			</data>
 			<key>hash2</key>
 			<data>
-			59RBLpI7QV16EmFYHTow/tU70AbYHrYaX0+I3wb/VDE=
+			r53sgofHPtPim06ziPnH3e+hrd3VuB+YkeuKb/P+OO4=
 			</data>
 		</dict>
 		<key>Headers/ZDKHelpCenter.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			X68FsJ1lZ4SYFuAstI7EzOIMn1Q=
+			dWgeUZVwAOjR/JN9roObVGazZb8=
 			</data>
 			<key>hash2</key>
 			<data>
-			alpneUlg8VdgN9/U7hi1WrwsNGdDI7k1Bx0Bp+23a7I=
+			vLuM1OjEe9bS6nE+F6YMFYtXqnkSKDGeTcHwuFs7TC8=
 			</data>
 		</dict>
 		<key>Headers/ZDKHelpCenterArticlesByLabelDataSource.h</key>
@@ -872,11 +872,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			koyakq0uWxpr75oiARx5Mlk20ig=
+			t9vUyE+1RWS0pAboAqIuwzhu/PM=
 			</data>
 			<key>hash2</key>
 			<data>
-			NhNtg+VW0zkazlNZBt8okiGZicgaHF5nPrwfWvq0/ao=
+			vQg2Q3hhmfmNce9Z4mW34Hn6oq56flqeiooCWl1RsbM=
 			</data>
 		</dict>
 		<key>Headers/ZDKUIUtil.h</key>
@@ -905,11 +905,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			VzU4ZIqafzJujRgYdCf0XaSmPFs=
+			D5fGvj7Uq2CKYfxAYdQOGUm79vc=
 			</data>
 			<key>hash2</key>
 			<data>
-			FJghjmcYsLHqkXkOOp7+MOYIdWy6gdyMxhOrL6RMWU0=
+			rWN1n9wAh8hPVc+pnlVN1GHwusIrtIcx4fz++KjRVSE=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
