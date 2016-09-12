@@ -22,6 +22,6 @@
 - (void) caretPosition:(CGRect)caret;
 
 @optional
-- (void) updateLayout:(ZDKUITextView*)textView;
+- (void) updateTextViewLayout:(ZDKUITextView*)textView;
 
 @end

@@ -36,7 +36,7 @@
  *  @since 1.7.0.1
  */
 + (void) pushHelpCenterOverview:(UINavigationController *)navController
-               withContentModel:(ZDKHelpCenterOverviewContentModel *)helpCenterContentModel;
+               withContentModel:(ZDKHelpCenterOverviewContentModel *)helpCenterContentModel NS_AVAILABLE_IOS(8_0);
 
 /**
  *  Presents a Help Center Overview Screen modally with content defined by the ZDKHelpCenterOverviewContentModel.
@@ -47,7 +47,7 @@
  *  @since 1.7.0.1
  */
 + (void) presentHelpCenterOverview:(UIViewController *)viewController
-                  withContentModel:(ZDKHelpCenterOverviewContentModel *)helpCenterContentModel;
+                  withContentModel:(ZDKHelpCenterOverviewContentModel *)helpCenterContentModel NS_AVAILABLE_IOS(8_0);
 
 
 /**
@@ -57,7 +57,7 @@
  *
  *  @since 1.6.0.1
  */
-+ (void) presentHelpCenterWithViewController:(UIViewController *)viewController;
++ (void) presentHelpCenterWithViewController:(UIViewController *)viewController __deprecated_msg("Deprecated as of 1.7.2.1.");
 
 /**
  *  Pushes the Help Center view on top the navigation controller that is passed in.
@@ -66,7 +66,7 @@
  *
  *  @since 1.6.0.1
  */
-+ (void) pushHelpCenterWithNavigationController:(UINavigationController*)navController;
++ (void) pushHelpCenterWithNavigationController:(UINavigationController*)navController __deprecated_msg("Deprecated as of 1.7.2.1.");
 
 /**
  *  Presents the help center view on top of the view controller passed in, modally.
@@ -78,7 +78,7 @@
  *
  *  @since 1.6.0.1
  */
-+ (void) presentHelpCenterWithViewController:(UIViewController *)viewController layoutGuide:(ZDKLayoutGuide)aGuide;
++ (void) presentHelpCenterWithViewController:(UIViewController *)viewController layoutGuide:(ZDKLayoutGuide)aGuide __deprecated_msg("Deprecated as of 1.7.2.1.");
 
 /**
  *  Pushes the Help Center view on top the navigation controller that is passed in.
@@ -89,7 +89,7 @@
  *                        ZDKLayoutRespectTop and ZDKLayoutRespectBottom.
  *  @since 1.6.0.1
  */
-+ (void) pushHelpCenterWithNavigationController:(UINavigationController*)navController layoutGuide:(ZDKLayoutGuide)aGuide;
++ (void) pushHelpCenterWithNavigationController:(UINavigationController*)navController layoutGuide:(ZDKLayoutGuide)aGuide __deprecated_msg("Deprecated as of 1.7.2.1.");
 
 /**
  *  Presents the Help Center view on top of the view controller that is passed in, modally.
@@ -104,7 +104,7 @@
  */
 + (void) presentHelpCenterWithViewController:(UIViewController *)viewController
                        filterByArticleLabels:(NSArray *)labels
-                                 layoutGuide:(ZDKLayoutGuide)aGuide;
+                                 layoutGuide:(ZDKLayoutGuide)aGuide __deprecated_msg("Deprecated as of 1.7.2.1.");
 
 /**
  *  Pushes the Help Center view on top of the navigation controller that is passed in.
@@ -114,7 +114,7 @@
  *
  *  @since 1.6.0.1
  */
-+ (void) pushHelpCenterWithNavigationController:(UINavigationController *)navController filterByArticleLabels:(NSArray *)labels;
++ (void) pushHelpCenterWithNavigationController:(UINavigationController *)navController filterByArticleLabels:(NSArray *)labels __deprecated_msg("Deprecated as of 1.7.2.1.");
 
 /**
  *  Pushes the Help Center view on top of the view controller that is passed in.
@@ -129,7 +129,7 @@
  */
 + (void) pushHelpCenterWithNavigationController:(UINavigationController *)navController
                           filterByArticleLabels:(NSArray *)labels
-                                    layoutGuide:(ZDKLayoutGuide)aGuide;
+                                    layoutGuide:(ZDKLayoutGuide)aGuide __deprecated_msg("Deprecated as of 1.7.2.1.");
 
 /**
  *  Presents the Help Center articles view presented on top the view controller that is passed in, modally.
@@ -146,7 +146,7 @@
 + (void) presentHelpCenterWithViewController:(UIViewController *)viewController
                            filterBySectionId:(NSString *)sectionId
                                  sectionName:(NSString *)sectionName
-                                 layoutGuide:(ZDKLayoutGuide)aGuide;
+                                 layoutGuide:(ZDKLayoutGuide)aGuide __deprecated_msg("Deprecated as of 1.7.2.1.");
 
 /**
  *  Pushes the Help Center on top of the navigation controller passed in.
@@ -162,7 +162,7 @@
 + (void) pushHelpCenterWithNavigationController:(UINavigationController *)navController
                               filterBySectionId:(NSString *)sectionId
                                     sectionName:(NSString *)sectionName
-                                    layoutGuide:(ZDKLayoutGuide)aGuide;
+                                    layoutGuide:(ZDKLayoutGuide)aGuide __deprecated_msg("Deprecated as of 1.7.2.1.");
 
 /**
  *  Presents the Help Center articles view presented on top the view controller that is passed in, modally.
@@ -179,7 +179,7 @@
 + (void) presentHelpCenterWithViewController:(UIViewController *)viewController
                           filterByCategoryId:(NSString *)categoryId
                                 categoryName:(NSString *)categoryName
-                                 layoutGuide:(ZDKLayoutGuide)aGuide;
+                                 layoutGuide:(ZDKLayoutGuide)aGuide __deprecated_msg("Deprecated as of 1.7.2.1.");
 
 /**
  *  Pushes the Help Center view on top of the navigation controller passed in
@@ -195,7 +195,7 @@
 + (void) pushHelpCenterWithNavigationController:(UINavigationController *)navController
                              filterByCategoryId:(NSString *)categoryId
                                    categoryName:(NSString *)categoryName
-                                    layoutGuide:(ZDKLayoutGuide)aGuide;
+                                    layoutGuide:(ZDKLayoutGuide)aGuide  __deprecated_msg("Deprecated as of 1.7.2.1.");
 
 /**
  *  Specify an icon that will be placed in the right nav bar button.

@@ -63,6 +63,14 @@ typedef void (^ZDKCreateRequestError) (NSError *error);
 
 - (void)createRequestViewController:(ZDKCreateRequestViewController*)viewController didFailCreateTicketWithError:(NSError*)error;
 
+
+/**
+ *  Dismisses the create request screen.
+ *
+ *  @since 1.7.2.1
+ */
+- (void)dismiss;
+
 @end
 
 
