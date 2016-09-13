@@ -37,10 +37,6 @@ You can find [documentation](https://developer.zendesk.com/embeddables/docs/ios/
 
 All enhancement, improvement, and feature request suggestions are welcomed. Please submit them to our [SDK community](https://support.zendesk.com/hc/en-us/community/topics/200488257-Zendesk-SDKs). We will normally close feature requests posted to this repository.
 
-## A note regarding iOS 10
-
-We are aware that there are issues with the SDK when testing on iOS 10. We are currently working on a release of the SDK that addresses these issues, in line with our policy of supporting the current and previous two versions of iOS. If you find any iOS 10 specific issues, please feel free to submit them.
-
 ## Copyright and license
 
 Copyright 2014 Zendesk
