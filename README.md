@@ -31,7 +31,7 @@ pod 'ZendeskSDK', '~> RELEASE_VERSION_TAG'
 
 ## Documentation
 
-You can find [documentation](https://developer.zendesk.com/embeddables/docs/ios/overview) for the SDK and [release notes](https://developer.zendesk.com/embeddables/docs/ios/release_notes) on https://developer.zendesk.com.
+You can find [documentation](https://developer.zendesk.com/embeddables/docs/ios/welcome) for the SDK and [release notes](https://developer.zendesk.com/embeddables/docs/ios/version_information) on https://developer.zendesk.com.
 
 ## Feature request
 
