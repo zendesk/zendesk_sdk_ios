@@ -56,7 +56,7 @@ typedef NS_ENUM(NSUInteger, ZDKHelpCenterOverviewGroupType) {
 @property (nonatomic, assign) ZDKNavBarConversationsUIType navBarConversationsUIType;
 
 /**
- *  Hide the right bar button.
+ *  Hide the `Contact Support` button that is displayed upon an empty search in Help Center
  */
 @property (nonatomic, assign) BOOL hideContactSupport;
 
