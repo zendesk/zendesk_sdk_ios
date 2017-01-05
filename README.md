@@ -39,10 +39,11 @@ All enhancement, improvement, and feature request suggestions are welcomed. Plea
 
 ## Copyright and license
 
-Copyright 2014 Zendesk
+Copyright 2017 Zendesk
 
-By dowloading or using the Zendesk Mobile SDK, You agree to the Zendesk Terms of Service 
-(https://www.zendesk.com/company/terms) and Application Developer and API License Agreement (https://www.zendesk.com/company/application-developer-and-api-license-agreement) and 
+By downloading or using the Zendesk Mobile SDK, You agree to the Zendesk Master
+Subscription Agreement https://www.zendesk.com/company/customers-partners/#master-subscription-agreement and Application Developer and API License
+Agreement https://www.zendesk.com/company/customers-partners/#application-developer-api-license-agreement and
 acknowledge that such terms govern Your use of and access to the Mobile SDK.
 
 If You make any Contributions (defined below) to the Zendesk Mobile SDK, 
