@@ -7,11 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		837AB70F1A8E511700B86214 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 837AB70E1A8E511700B86214 /* MobileCoreServices.framework */; };
+		486D39281DD4CE3900401073 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 837AB70E1A8E511700B86214 /* MobileCoreServices.framework */; };
+		486D39291DD4CE4600401073 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F160B6D31949E2D600AEF42D /* CoreGraphics.framework */; };
+		486D392A1DD4CE5300401073 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C333A54119E29EC40046B858 /* SystemConfiguration.framework */; };
 		83C044251BC2CD7E00B04303 /* ZendeskProviderSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83C044241BC2CD7E00B04303 /* ZendeskProviderSDK.framework */; };
 		83D3E9A01AA9EF36006DB98C /* ZDSampleAppScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83D3E99F1AA9EF36006DB98C /* ZDSampleAppScanViewController.m */; };
 		973AF0231BA1C40B00CF244C /* ZDFlatArticlesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 973AF0221BA1C40B00CF244C /* ZDFlatArticlesTableViewController.m */; };
-		C333A54319E29F1E0046B858 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C333A54119E29EC40046B858 /* SystemConfiguration.framework */; };
 		C38311B61A1A352B00F7979A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C38311B31A1A352B00F7979A /* main.m */; };
 		C38311C31A1A358500F7979A /* ZDAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C38311BE1A1A358500F7979A /* ZDAppDelegate.m */; };
 		C38311C41A1A358500F7979A /* ZDSampleAppConfigurationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C38311C01A1A358500F7979A /* ZDSampleAppConfigurationViewController.m */; };
@@ -23,7 +24,6 @@
 		C3EF3EFE1A1A1B5400168A69 /* ZendeskSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3EF3EFD1A1A1B5400168A69 /* ZendeskSDK.framework */; };
 		C3EF3F011A1A1B7C00168A69 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3EF3F001A1A1B7C00168A69 /* Images.xcassets */; };
 		F160B6D21949E2D600AEF42D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F160B6D11949E2D600AEF42D /* Foundation.framework */; };
-		F160B6D41949E2D600AEF42D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F160B6D31949E2D600AEF42D /* CoreGraphics.framework */; };
 		F160B6D61949E2D600AEF42D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F160B6D51949E2D600AEF42D /* UIKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -64,11 +64,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				486D392A1DD4CE5300401073 /* SystemConfiguration.framework in Frameworks */,
+				486D39291DD4CE4600401073 /* CoreGraphics.framework in Frameworks */,
+				486D39281DD4CE3900401073 /* MobileCoreServices.framework in Frameworks */,
 				83C044251BC2CD7E00B04303 /* ZendeskProviderSDK.framework in Frameworks */,
-				837AB70F1A8E511700B86214 /* MobileCoreServices.framework in Frameworks */,
 				C3EF3EFE1A1A1B5400168A69 /* ZendeskSDK.framework in Frameworks */,
-				C333A54319E29F1E0046B858 /* SystemConfiguration.framework in Frameworks */,
-				F160B6D41949E2D600AEF42D /* CoreGraphics.framework in Frameworks */,
 				F160B6D61949E2D600AEF42D /* UIKit.framework in Frameworks */,
 				F160B6D21949E2D600AEF42D /* Foundation.framework in Frameworks */,
 			);
@@ -205,7 +205,7 @@
 		F160B6C61949E2D600AEF42D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = Zendesk;
 				TargetAttributes = {
 					F160B6CD1949E2D600AEF42D = {
@@ -290,14 +290,19 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -332,13 +337,18 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -362,6 +372,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_RESOURCE_RULES_PATH = "$(SDKROOT)/ResourceRules.plist";
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SampleApp/Frameworks",
@@ -378,6 +389,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.zendesk.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "SDK-Sample";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				VALID_ARCHS = "armv7 armv7s i386 arm64 x86_64 ";
 				WRAPPER_EXTENSION = app;
 			};
@@ -391,6 +403,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_RESOURCE_RULES_PATH = "$(SDKROOT)/ResourceRules.plist";
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SampleApp/Frameworks",
@@ -407,6 +420,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.zendesk.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "SDK-Sample";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				VALID_ARCHS = "armv7 armv7s i386 arm64 x86_64 ";
 				WRAPPER_EXTENSION = app;
 			};

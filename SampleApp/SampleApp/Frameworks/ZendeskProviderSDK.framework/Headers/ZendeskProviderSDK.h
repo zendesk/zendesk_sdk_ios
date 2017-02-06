@@ -3,9 +3,9 @@
  *  ZendeskProviderSDK.h
  *  ZendeskProviderSDK
  *
- *  Created by Zendesk on 11/10/2016
+ *  Created by Zendesk on 02/06/2017
  *
- *  Copyright (c) 2016 Zendesk. All rights reserved.
+ *  Copyright (c) 2017 Zendesk. All rights reserved.
  *
  *  By downloading or using the Zendesk Mobile SDK, You agree to the Zendesk Master
  *  Subscription Agreement https://www.zendesk.com/company/customers-partners/#master-subscription-agreement and Application Developer and API License
@@ -46,9 +46,11 @@
 #import "ZDKDispatcherResponse.h"
 #import "ZDKETag.h"
 #import "ZDKHelpCenterArticle.h"
+#import "ZDKHelpCenterArticleViewModel.h"
 #import "ZDKHelpCenterArticleVote.h"
 #import "ZDKHelpCenterAttachment.h"
 #import "ZDKHelpCenterCategory.h"
+#import "ZDKHelpCenterCategoryViewModel.h"
 #import "ZDKHelpCenterDeflection.h"
 #import "ZDKHelpCenterFlatArticle.h"
 #import "ZDKHelpCenterLastSearch.h"
@@ -56,9 +58,11 @@
 #import "ZDKHelpCenterProvider.h"
 #import "ZDKHelpCenterSearch.h"
 #import "ZDKHelpCenterSection.h"
+#import "ZDKHelpCenterSectionViewModel.h"
 #import "ZDKHelpCenterSessionCache.h"
 #import "ZDKHelpCenterSettings.h"
 #import "ZDKHelpCenterSimpleArticle.h"
+#import "ZDKHelpCenterViewModel.h"
 #import "ZDKIdentity.h"
 #import "ZDKIdentityStorage.h"
 #import "ZDKJsonUtil.h"

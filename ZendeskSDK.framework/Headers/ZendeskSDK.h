@@ -3,9 +3,9 @@
  *  ZendeskSDK.h
  *  ZendeskSDK
  *
- *  Created by Zendesk on 11/10/2016
+ *  Created by Zendesk on 02/06/2017
  *
- *  Copyright (c) 2016 Zendesk. All rights reserved.
+ *  Copyright (c) 2017 Zendesk. All rights reserved.
  *
  *  By downloading or using the Zendesk Mobile SDK, You agree to the Zendesk Master
  *  Subscription Agreement https://www.zendesk.com/company/customers-partners/#master-subscription-agreement and Application Developer and API License
@@ -78,6 +78,7 @@
 #import "ZDKUITextViewDelegate.h"
 #import "ZDKUIUtil.h"
 #import "ZDKUIViewController.h"
+#import "Zendesk.h"
 
 #if MODULES_DISABLED
 #import <ZendeskProviderSDK/ZendeskProviderSDK.h>
