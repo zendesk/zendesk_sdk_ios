@@ -16,7 +16,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class ZDKRequestStorage, ZDKIdentityStorage, ZDKSettingsStorage;
+@class ZDKRequestStorage, ZDKIdentityStorage, ZDKSettingsStorage, ZDKTicketForm;
 
 @interface ZDKSdkStorage : NSObject
 

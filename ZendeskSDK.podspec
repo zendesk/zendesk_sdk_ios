@@ -1,16 +1,14 @@
 Pod::Spec.new do |s|
   s.name         = "ZendeskSDK"
-  s.version      = "1.7.6.1"
-  s.summary      = "Zendesk SDK 1.7.6.1"
+  s.version      = "1.8.0.1"
+  s.summary      = "Zendesk SDK 1.8.0.1"
   s.homepage     = "https://github.com/zendesk/zendesk_sdk_ios"
   s.license      = {
     :type => 'Copyright',
     :text => <<-LICENSE
 
     ZendeskSDK
-
-    Created by Zendesk on 25/02/2014.
-
+    Created by Zendesk on  22/12/201
     Copyright (c) 2017 Zendesk. All rights reserved.
 
     By downloading or using the Zendesk Mobile SDK, You agree to the Zendesk Master
@@ -31,7 +29,6 @@ Pod::Spec.new do |s|
 
   s.subspec 'UI' do |ss|
     ss.platform     = :ios, '7.0'
-    ss.public_header_files = 'ZendeskSDK.framework/Headers/*.h'
     ss.ios.vendored_frameworks = 'ZendeskSDK.framework'
     ss.preserve_paths = 'ZendeskSDK.framework'
     ss.xcconfig = { 'FRAMEWORK_SEARCH_PATHS' => '$(inherited)', 'CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES' => 'YES' }
@@ -41,7 +38,6 @@ Pod::Spec.new do |s|
 
   s.subspec 'Providers' do |ss|
     ss.platform     = :ios, '6.0'
-    ss.public_header_files = 'ZendeskProviderSDK.framework/Headers/*.h'
     ss.ios.vendored_frameworks = 'ZendeskProviderSDK.framework'
     ss.preserve_paths = 'ZendeskProviderSDK.framework'
     ss.xcconfig = { 'FRAMEWORK_SEARCH_PATHS' => '$(inherited)', 'CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES' => 'YES' }
