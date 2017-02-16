@@ -32,6 +32,16 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSDictionary *)sharedHeadersWithAuthenticationSpace:(ZDKAuthenticationSpace*)authenticationSpace;
 
 /**
+ * Returns a dictionary that has the Accept-Language header set in it
+ *
+ * @param headers    the request headers to update
+ * @param userLocale the user locale to set
+ *
+ * @return the updated request header
+ */
++ (NSDictionary *)requestHeaders:(NSDictionary*)headers byAddingLocale:(NSString*)userLocale;
+
+/**
  *  Returns a String of User Agent Headers appendded together
  */
 + (NSString *)userAgentHeader;

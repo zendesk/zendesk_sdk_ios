@@ -3,7 +3,7 @@
  *  ZendeskProviderSDK.h
  *  ZendeskProviderSDK
  *
- *  Created by Zendesk on 02/06/2017
+ *  Created by Zendesk on 02/17/2017
  *
  *  Copyright (c) 2017 Zendesk. All rights reserved.
  *
@@ -42,6 +42,7 @@
 #import "ZDKCustomField.h"
 #import "ZDKDateUtil.h"
 #import "ZDKDeviceInfo.h"
+#import "ZDKDictionaryCreatable.h"
 #import "ZDKDispatcher.h"
 #import "ZDKDispatcherResponse.h"
 #import "ZDKETag.h"
@@ -87,6 +88,10 @@
 #import "ZDKSettings.h"
 #import "ZDKSettingsProvider.h"
 #import "ZDKStringUtil.h"
+#import "ZDKTicketField.h"
+#import "ZDKTicketFieldOption.h"
+#import "ZDKTicketForm.h"
+#import "ZDKTicketFormsSettings.h"
 #import "ZDKUploadProvider.h"
 #import "ZDKUploadResponse.h"
 #import "ZDKUser.h"
