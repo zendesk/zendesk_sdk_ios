@@ -17,7 +17,7 @@
 #import <Foundation/Foundation.h>
 #import "ZDKProvider.h"
 
-@class ZDKCommentsResponse, ZDKComment, ZDKRequest, ZDKCreateRequest;
+@class ZDKCommentsResponse, ZDKComment, ZDKRequest, ZDKCreateRequest, ZDKTicketForm;
 
 
 /**
@@ -61,6 +61,17 @@ typedef void (^ZDKRequestAddCommentCallback)(ZDKComment *comment, NSError *error
  *  @param error  NSError returned as a result of any errors taking place when the request is executed, can be nil on success
  */
 typedef void (^ZDKCreateRequestCallback)(id result, NSError *error);
+
+/**
+ *  Callback for ticket form request
+ *
+ *  @param ticketForms The updated user tags
+ *  @param error    An error object. Nil if no error occurred.
+ *
+ *  @since 1.9.0.1
+ */
+typedef void (^ZDKTicketFormCallback)(NSArray<ZDKTicketForm*> *ticketForms, NSError *error);
+
 
 @interface ZDKRequestProvider : ZDKProvider
 
@@ -127,6 +138,16 @@ typedef void (^ZDKCreateRequestCallback)(id result, NSError *error);
  */
 - (void) addComment:(NSString *) comment forRequestId:(NSString *) requestId withCallback:(ZDKRequestAddCommentCallback) callback;
 
+
+/**
+ * Gets the ticket froms
+ * Only the first 5 ticket form Ids will be fetched.
+ *
+ *  @param callback The callback that is invoked when a request is either successful or has error.
+ *
+ *  @since 1.9.0.1
+ */
+- (void)getTicketFormWithIds:(NSArray<NSNumber*>*)ticketFormIds callback:(ZDKTicketFormCallback)callback;
 
 /**
  * Add a comment message to a request with attachments on behalf of the end-user.

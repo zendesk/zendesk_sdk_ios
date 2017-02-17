@@ -17,7 +17,7 @@
 #import <Foundation/Foundation.h>
 #import "ZDKCoding.h"
 
-@class ZDKRateMyAppSettings, ZDKContactUsSettings, ZDKConversationsSettings, ZDKHelpCenterSettings;
+@class ZDKRateMyAppSettings, ZDKContactUsSettings, ZDKConversationsSettings, ZDKHelpCenterSettings, ZDKTicketFormsSettings;
 
 @interface ZDKAppSettings : ZDKCoding
 
@@ -52,6 +52,14 @@
  *  @since 0.9.3.1
  */
 @property (nonatomic, strong, readonly) ZDKHelpCenterSettings *helpCenterSettings;
+
+
+/**
+ * Settings model object associated with the remote configuration of Ticket Forms component within your Zendesk instance.
+ *
+ *  @since 1.9.0.1
+ */
+@property (nonatomic, strong, readonly) ZDKTicketFormsSettings *ticketFormsSettings;
 
 
 /**
