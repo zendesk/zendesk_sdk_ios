@@ -102,10 +102,16 @@ typedef NS_ENUM(NSUInteger, ZDKTicketFieldType) {
 @property (nonatomic, copy) NSNumber *fieldId;
 
 /**
- * Ticket field english title
+ * Ticket field title
  *  @since 1.9.0.1
  */
 @property (nonatomic, copy) NSString *title;
+
+/**
+ * Ticket field title in portal
+ *  @since 1.9.1.1
+ */
+@property (nonatomic, copy) NSString *titleInPortal;
 
 /**
  * Ticket field english description

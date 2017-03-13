@@ -33,10 +33,16 @@
 @property (nonatomic, copy) NSNumber *formId;
 
 /**
- * Ticket form name
+ * Ticket form name for agents
  *  @since 1.9.0.1
  */
 @property (nonatomic, copy) NSString *name;
+
+/**
+ * Ticket form name for end users
+ *  @since 1.9.1.1
+ */
+@property (nonatomic, copy) NSString *displayName;
 
 /**
  * List of ticket field ids
