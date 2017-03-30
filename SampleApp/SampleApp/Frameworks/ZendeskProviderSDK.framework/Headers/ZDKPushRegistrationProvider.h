@@ -51,8 +51,15 @@ typedef void (^ZDKPushDeletionCallback)(NSNumber *responseCode, NSError *error);
 @interface ZDKPushRegistrationProvider : ZDKProvider
 
 
+
 /**
  *  Calls a push registration end point to register the given APNS device id.
+ *
+ *  This method stores the `ZDKPushRegistrationResponse` on successful registration. 
+ *  Subsequent calls to this method with the same `identifier` bypass calls to the
+ *  network and return the stored `ZDKPushRegistrationResponse` in the `callback`.
+ *  Calling this method with a different `identifier` will remove any stored
+ *  `ZDKPushRegistrationResponse` from storage.
  *
  *  @param identifier The device identifier
  *  @param locale     The preferred device locale
@@ -66,6 +73,12 @@ typedef void (^ZDKPushDeletionCallback)(NSNumber *responseCode, NSError *error);
 /**
  *  Calls a push registration end point to register the given Urban Airship channel id.
  *
+ *  This method stores the `ZDKPushRegistrationResponse` on successful registration.
+ *  Subsequent calls to this method with the same `identifier` bypass calls to the
+ *  network and return the stored `ZDKPushRegistrationResponse` in the `callback`.
+ *  Calling this method with a different `identifier` will remove any stored
+ *  `ZDKPushRegistrationResponse` from storage.
+ *
  *  @param identifier The channel identifier
  *  @param locale     The preferred device locale
  *  @param callback   Callback that will provide a newly created device ZDKPushRegistrationResponse
@@ -77,6 +90,8 @@ typedef void (^ZDKPushDeletionCallback)(NSNumber *responseCode, NSError *error);
 
 /**
  *  Calls a push registration end point to unregister a device to receive push notifications.
+ *
+ *  Successful calls to this method will remove any stored `ZDKPushRegistrationResponse`. 
  *
  *  @since 1.2.0.1
  *
