@@ -1,14 +1,14 @@
 Pod::Spec.new do |s|
   s.name         = "ZendeskSDK"
-  s.version      = "1.9.1.1"
-  s.summary      = "Zendesk SDK 1.9.1.1"
+  s.version      = "1.9.2.1"
+  s.summary      = "Zendesk SDK 1.9.2.1"
   s.homepage     = "https://github.com/zendesk/zendesk_sdk_ios"
   s.license      = {
     :type => 'Copyright',
     :text => <<-LICENSE
 
     ZendeskSDK
-    Created by Zendesk on  22/12/201
+    Created by Zendesk on  3/30/2017
     Copyright (c) 2017 Zendesk. All rights reserved.
 
     By downloading or using the Zendesk Mobile SDK, You agree to the Zendesk Master
