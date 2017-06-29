@@ -35,6 +35,20 @@ typedef NS_ENUM(NSUInteger, ZDKNavBarConversationsUIType) {
     ZDKNavBarConversationsUITypeNone,
 };
 
+
+/**
+ Used to select where conversations nav bar button will be active.
+
+ - ZDKContactUsVisibilityArticleListAndArticle: The contact us nav bar button is visible in the article list and the article view.
+ - ZDKContactUsVisibilityArticleListOnly: The contact us nav bar button is only visible in the article list.
+ - ZDKContactUsVisibilityOff: The contact us nav bar button is not visible anywhere.
+ */
+typedef NS_ENUM(NSUInteger, ZDKContactUsVisibility) {
+    ZDKContactUsVisibilityArticleListAndArticle,
+    ZDKContactUsVisibilityArticleListOnly,
+    ZDKContactUsVisibilityOff,
+};
+
 @protocol ZDKHelpCenterConversationsUIDelegate <NSObject>
 
 
@@ -55,11 +69,21 @@ typedef NS_ENUM(NSUInteger, ZDKNavBarConversationsUIType) {
 
 
 /**
+ *  Determines where the coversations nav bar button will be displayed.
+ *
+ *  @return a ZDKContactUsVisibility value.
+ */
+- (ZDKContactUsVisibility) active;
+
+@optional
+
+/**
  *  To conform implementations should return a localized string for the right nav bar button title.
  *
  *  @return A localized string for the right nav bar button.
  */
 - (NSString *) conversationsBarButtonLocalizedLabel;
+
 
 
 @end

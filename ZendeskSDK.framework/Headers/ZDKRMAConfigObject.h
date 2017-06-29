@@ -53,6 +53,8 @@ typedef void (^SendFeedbackSuccess) (void);
 typedef void (^SendFeedbackError) (void);
 
 
+__deprecated_msg("Deprecated as of 1.10.0.1, this will be removed.")
+
 /**
  *
  * ZDKRMAConfigObject encapsulates the configurable properties of ZDKRMA. A 

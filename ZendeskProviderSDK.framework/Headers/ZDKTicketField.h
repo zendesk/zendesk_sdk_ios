@@ -79,6 +79,26 @@ typedef NS_ENUM(NSUInteger, ZDKTicketFieldType) {
      */
     ZDKTicketFieldTypeCreditCard,
     /**
+     * Ticket field priority system type
+     *  @since 1.10.0.1
+     */
+    ZDKTicketFieldTypePriority,
+    /**
+     * Ticket field status system type
+     *  @since 1.10.0.1
+     */
+    ZDKTicketFieldTypeStatus,
+    /**
+     * Ticket field ticket system type
+     *  @since 1.10.0.1
+     */
+    ZDKTicketFieldTypeTicketType,
+    /**
+     * Ticket field ticket system type
+     *  @since 1.10.0.1
+     */
+    ZDKTicketFieldTypeMultiSelect,
+    /**
      * Ticket field unknown
      *  @since 1.9.0.1
      */
@@ -86,7 +106,9 @@ typedef NS_ENUM(NSUInteger, ZDKTicketFieldType) {
 };
 
 
-@class ZDKTicketFieldOption;
+
+
+@class ZDKTicketFieldOption, ZDKTicketFieldSystemOption;
 
 
 /**
@@ -138,10 +160,16 @@ typedef NS_ENUM(NSUInteger, ZDKTicketFieldType) {
 @property (nonatomic, assign) BOOL required;
 
 /**
- * Ticket field options, this field will only be populated for `ZDKTicketFieldTypeTagger` field types
+ * Ticket field options, this field will only be populated for `ZDKTicketFieldTypeComboBox` field types
  *  @since 1.9.0.1
  */
 @property (nonatomic, copy) NSArray<ZDKTicketFieldOption*> *options;
+
+/**
+ * Ticket field system options, this field will only be populated for `ZDKTicketFieldTypeStatus`, `ZDKTicketFieldTypePriority` and `ZDKTicketFieldTypeTicketType` field types
+ *  @since 1.9.0.1
+ */
+@property (nonatomic, copy) NSArray<ZDKTicketFieldSystemOption*> *systemOptions;
 
 /**
  * Initialize a ticket field with a dictionary

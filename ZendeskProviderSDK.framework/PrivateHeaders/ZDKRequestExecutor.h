@@ -53,6 +53,12 @@ typedef void (^ZDKAPIRequestBlock)(NSHTTPURLResponse * _Nullable urlResponse, NS
         isAuthRequired:(BOOL)isAuthRequired
      completionHandler:(ZDKAPIRequestBlock)completionHandler;
 
++ (void)handleResponse:(NSURLResponse *)response
+                  date:(NSData *)data
+                 error:(NSError *)connectionError
+               request:(NSURLRequest*)request
+     completionHandler:(ZDKAPIRequestBlock)completionHandler;
+
 
 - (instancetype)init NS_UNAVAILABLE;
 

@@ -87,7 +87,6 @@ typedef NS_ENUM(NSInteger, ZDKAccountState) {
  */
 @property (nonatomic, copy) NSString *oauthToken;
 
-
 /**
  * Indicates account state and whether the account state has been invalidated by a credential change.
  *

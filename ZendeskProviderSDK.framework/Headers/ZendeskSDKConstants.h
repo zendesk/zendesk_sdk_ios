@@ -563,6 +563,14 @@ extern NSString * const ZDKRMANotificationFeedbackError;
 extern NSString * const ZDK_AUTHENTICATION_JWT;
 extern NSString * const ZDK_AUTHENTICATION_ANONYMOUS;
 
+/* Article Voting Constants */
+extern NSInteger const ZDK_Article_Down_Vote_Number;
+extern NSInteger const ZDK_Article_Up_Vote_Number;
+extern NSInteger const ZDK_Article_Even_Vote_Number;
+
+/* Button Indexes in ZDKHelpCenterArticleView */
+extern NSUInteger const ZDK_Article_Down_Vote_Button_Index;
+extern NSUInteger const ZDK_Article_Up_Vote_Button_Index;
 
 /**
  *  Represents the types of authentication SDK supports.

@@ -89,17 +89,4 @@ typedef void (^ZDKCreateRequestError) (NSError *error);
  */
 @property (nonatomic, weak) id<ZDKCreateRequestViewControllerDelegate> delegate;
 
-/**
- *  Init with provided success and error blocks.
- *
- *  @since 0.9.3.1
- *
- *  @param success the success
- *  @param error the request object this comment is for
- *  @return the instance
- */
-- (instancetype) initWithSuccess:(ZDKCreateRequestSuccess)success
-                        andError:(ZDKCreateRequestError)error __deprecated_msg("As of version 1.6.0.1 use -init instead, for callbacks use ZDKCreateRequestViewControllerDelegate");
-
-
 @end

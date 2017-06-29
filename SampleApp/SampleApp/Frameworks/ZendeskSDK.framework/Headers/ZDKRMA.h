@@ -24,6 +24,9 @@
 
 @class ZDKAccount;
 
+
+__deprecated_msg("Deprecated as of 1.10.0.1, this will be removed.")
+
 /**
  * ZDKRMA contains interfaces for configuring and displaying a Rate My App dialog.
  * 

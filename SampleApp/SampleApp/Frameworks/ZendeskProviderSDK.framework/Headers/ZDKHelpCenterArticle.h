@@ -129,6 +129,12 @@
  */
 @property (nonatomic, copy) NSArray *labelNames;
 
+/**
+ *  This is the URL that can be used to open the article in a browser.
+ *
+ *  @since 1.10.0.1
+ */
+@property (nonatomic, copy) NSString *htmlUrl;
 
 /**
  *  Gets the number of upvotes for this article.

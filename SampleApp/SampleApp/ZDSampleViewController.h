@@ -21,7 +21,6 @@
 @property (nonatomic, strong) UIButton *requestListButton;
 @property (nonatomic, strong) UITextField *helpCenterLabelsInput;
 @property (nonatomic, strong) UIButton *helpCenterButton;
-@property (nonatomic, strong) UIButton *helpCenterWithFlatArticlesButton;
 @property (nonatomic, strong) UIButton *rmaButton;
 @property (nonatomic, strong) UINavigationController *modalNavController;
 @property (nonatomic, strong) UIButton *registerPush;

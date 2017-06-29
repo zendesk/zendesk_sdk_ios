@@ -53,7 +53,7 @@ typedef NS_ENUM(NSUInteger, ZDKHelpCenterOverviewGroupType) {
 /**
  *  Use text or an icon in the right nav bar button.
  */
-@property (nonatomic, assign) ZDKNavBarConversationsUIType navBarConversationsUIType;
+@property (nonatomic, assign) ZDKNavBarConversationsUIType navBarConversationsUIType __deprecated_msg("Deprecated as of 1.10.0.1, use ZDKHelpCenterConversationsUIDelegate instead.");
 
 /**
  *  Hide the `Contact Support` button that is displayed upon an empty search in Help Center
