@@ -16,6 +16,7 @@
 
 #import <UIKit/UIKit.h>
 
+__deprecated_msg("Deprecated as of 1.10.0.1, this will be removed.")
 
 /**
  * Table header view for ZDKRMADialogView.
@@ -34,6 +35,7 @@
 
 #pragma mark -
 
+__deprecated_msg("Deprecated as of 1.10.0.1, this will be removed.")
 
 /**
  * Table cell for ZDKRMADialogView. Plain UITableViewCell styled

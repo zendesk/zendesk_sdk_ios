@@ -19,7 +19,7 @@
 #import "ZDKHelpCenterDeflection.h"
 #import "ZDKProvider.h"
 
-@class ZDKHelpCenterCategoryViewModel, ZDKHelpCenterSectionViewModel, ZDKHelpCenterOverviewContentModel;
+@class ZDKHelpCenterCategoryViewModel, ZDKHelpCenterSectionViewModel, ZDKHelpCenterOverviewContentModel, ZDKHelpCenterArticle;
 
 
 /**
@@ -196,10 +196,10 @@ typedef void (^ZDKHelpCenterGenericCallback)(id response, NSError *error);
  *
  *  @since 1.7.0.1
  *
- *  @param articleId     The id of the article which has been viewed.
+ *  @param article       The article which has been viewed.
  *  @param callback      A completion callback. Can be nil.
  */
-- (void) submitRecordArticleView:(NSString*)articleId withCallback:(ZDKHelpCenterGenericCallback)callback;
+- (void) submitRecordArticleView:(ZDKHelpCenterArticle*)article withCallback:(ZDKHelpCenterGenericCallback)callback;
 
 
 /**

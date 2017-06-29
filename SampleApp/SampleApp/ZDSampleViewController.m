@@ -10,7 +10,6 @@
 #import "ZDSampleViewController.h"
 #import "ZDRateMyAppDemoViewController.h"
 #import <ZendeskSDK/ZendeskSDK.h>
-#import "ZDFlatArticlesTableViewController.h"
 
 
 static CGFloat const PADDING = 15.f;
@@ -31,7 +30,7 @@ static CGFloat const PADDING = 15.f;
 @implementation ZDSampleViewController
 
 
-@synthesize rmaButton, requestCreationButton, requestListButton, helpCenterButton, helpCenterWithFlatArticlesButton, helpCenterLabelsInput, helpCenterCategoryIdInput, helpCenterSectionIdInput;
+@synthesize rmaButton, requestCreationButton, requestListButton, helpCenterButton, helpCenterLabelsInput, helpCenterCategoryIdInput, helpCenterSectionIdInput;
 @synthesize registerPush, unregisterPush;
 @synthesize userTagsInput, addTagsButton, removeTagsButton;
 @synthesize scrollView, scrollViewContent;
@@ -94,13 +93,6 @@ static CGFloat const PADDING = 15.f;
     helpCenterButton.backgroundColor = [UIColor whiteColor];
     [helpCenterButton addTarget:self action:@selector(support) forControlEvents:UIControlEventTouchUpInside];
     [self.scrollViewContent addSubview:helpCenterButton];
-    
-    helpCenterWithFlatArticlesButton = [ZDSampleViewController buildButtonWithFrame:CGRectZero andTitle:@"Help Center Articles"];
-    helpCenterWithFlatArticlesButton.accessibilityIdentifier = @"supportWithFlatArticlesListButton";
-    helpCenterWithFlatArticlesButton.backgroundColor = [UIColor whiteColor];
-    [helpCenterWithFlatArticlesButton addTarget:self action:@selector(supportWithFlatArticlesList) forControlEvents:UIControlEventTouchUpInside];
-    [self.scrollViewContent addSubview:helpCenterWithFlatArticlesButton];
-    
 
     registerPush = [ZDSampleViewController buildButtonWithFrame:CGRectZero andTitle:@"Register Push"];
     registerPush.accessibilityIdentifier = @"registerButton";
@@ -180,7 +172,6 @@ static CGFloat const PADDING = 15.f;
                                                          helpCenterCategoryIdInput,
                                                          helpCenterSectionIdInput,
                                                          helpCenterButton,
-                                                         helpCenterWithFlatArticlesButton,
                                                          registerPush,
                                                          unregisterPush,
                                                          userTagsInput,
@@ -202,7 +193,7 @@ static CGFloat const PADDING = 15.f;
     
 
 
-    NSArray *contentHeight = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-[rmaButton(height)]-padding-[requestCreationButton(height)]-padding-[requestListButton(height)]-padding-[helpCenterLabelsInput(height)]-padding-[helpCenterCategoryIdInput(height)]-padding-[helpCenterSectionIdInput(height)]-padding-[helpCenterButton(height)]-padding-[helpCenterWithFlatArticlesButton(height)]-padding-[registerPush(height)]-padding-[unregisterPush(height)]-padding-[userTagsInput(height)]-padding-[addTagsButton(height)]-padding-[removeTagsButton(height)]"
+    NSArray *contentHeight = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-[rmaButton(height)]-padding-[requestCreationButton(height)]-padding-[requestListButton(height)]-padding-[helpCenterLabelsInput(height)]-padding-[helpCenterCategoryIdInput(height)]-padding-[helpCenterSectionIdInput(height)]-padding-[helpCenterButton(height)]-padding-[registerPush(height)]-padding-[unregisterPush(height)]-padding-[userTagsInput(height)]-padding-[addTagsButton(height)]-padding-[removeTagsButton(height)]"
 
                                                                                options:NSLayoutFormatAlignAllLeft | NSLayoutFormatAlignAllRight
                                                                                metrics:metrics
@@ -297,29 +288,6 @@ static CGFloat const PADDING = 15.f;
             
         }
     }
-}
-
-- (void) supportWithFlatArticlesList
-{
-  
-    ZDKHelpCenterProvider *provider = [[ZDKHelpCenterProvider alloc] initWithLocale:@"en-us"];
-    
-    [provider getFlatArticlesWithCallback:^(NSArray *items, NSError *error) {
-        ZDFlatArticlesTableViewController *flatArticlesViewController = [[ZDFlatArticlesTableViewController alloc]init];
-        flatArticlesViewController.items = items;
-        [flatArticlesViewController processFlatArticles];
-        
-        if([ZDKUIUtil isPad]) {
-            UINavigationController* navController = [[UINavigationController alloc] initWithRootViewController:flatArticlesViewController];
-            navController.modalTransitionStyle = self.navigationController.modalTransitionStyle;
-            navController.modalPresentationStyle = UIModalPresentationFormSheet;
-            flatArticlesViewController.modalPresentationStyle = UIModalPresentationFormSheet;
-            [self.navigationController presentViewController:navController animated:YES completion:nil];
-        } else {
-            
-            [self.navigationController pushViewController:flatArticlesViewController animated:YES];
-        }
-    }];
 }
 
 - (void) rateMyApp

@@ -22,7 +22,6 @@
 
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *email;
-@property (nonatomic, copy) NSString *externalId __deprecated_msg("Deprecated as of 1.8.0.1. This will be removed in the next release, please use JWT authentication if you want external IDs.");
 
 
 @end

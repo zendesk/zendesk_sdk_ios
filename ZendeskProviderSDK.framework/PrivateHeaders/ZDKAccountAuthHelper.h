@@ -45,7 +45,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  stores the auth token into the passed account
  */
-+ (void)storeAuthToken:(NSString*)authToken toAccount:(ZDKAccount*)account;
++ (void)storeAuthToken:(NSString*)authToken andUserId:(NSNumber*)userId toAccount:(ZDKAccount*)account;
 
 
 /**
@@ -58,6 +58,15 @@ NS_ASSUME_NONNULL_BEGIN
 + (BOOL)checkResponseContainsAuthToken:(NSData*)data;
 
 /**
+ *  check if the data returned from a response contains the user id
+ *
+ *  @param data data returned from a login request
+ *
+ *  @return YES if the data contains user id, otherwise return no
+ */
++ (BOOL)checkResponseContainsUserId:(NSData*)data;
+
+/**
  *  returns the auth token from the data passed
  *
  *  @param data data returned from a login request
@@ -65,6 +74,15 @@ NS_ASSUME_NONNULL_BEGIN
  *  @return the auth token if the data contains it, otherwise return nil
  */
 + (NSString *__nullable)authTokenWithResponseData:(NSData*)data;
+
+/**
+ *  returns the user id from the data passed
+ *
+ *  @param data data returned from a login request
+ *
+ *  @return the user id if the data contains it, otherwise return nil
+ */
++ (NSNumber *__nullable)userIdWithResponseData:(NSData*)data;
 
 
 /**

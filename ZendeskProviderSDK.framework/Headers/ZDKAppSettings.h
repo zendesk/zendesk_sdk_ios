@@ -17,7 +17,8 @@
 #import <Foundation/Foundation.h>
 #import "ZDKCoding.h"
 
-@class ZDKRateMyAppSettings, ZDKContactUsSettings, ZDKConversationsSettings, ZDKHelpCenterSettings, ZDKTicketFormsSettings;
+@class ZDKRateMyAppSettings,ZDKContactUsSettings, ZDKConversationsSettings, ZDKHelpCenterSettings, ZDKTicketFormsSettings;
+
 
 @interface ZDKAppSettings : ZDKCoding
 

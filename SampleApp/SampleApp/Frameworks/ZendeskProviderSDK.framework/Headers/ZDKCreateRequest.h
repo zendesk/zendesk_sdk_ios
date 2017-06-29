@@ -63,7 +63,7 @@
  *
  *  @since 1.6.0.1
  */
-@property (nonatomic, copy) NSArray *customTicketFields;
+@property (nonatomic, copy) NSArray<ZDKCustomField*> *customTicketFields;
 
 
 /**

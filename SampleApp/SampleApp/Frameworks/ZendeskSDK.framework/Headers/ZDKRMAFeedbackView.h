@@ -20,6 +20,7 @@
 
 @class ZDKRMAConfigObject, ZDKUITextView;
 
+__deprecated_msg("Deprecated as of 1.10.0.1, this will be removed.")
 
 /**
  * Delegate of ZDKRMAFeedbackView. The delegate of a ZDKRMAFeedbackView object
@@ -65,6 +66,7 @@ typedef NS_ENUM(NSInteger, ZDKRMAFeedbackDialogState) {
     ZDKRMAFeedbackDialogStateError = 4
 };
 
+__deprecated_msg("Deprecated as of 1.10.0.1, this will be removed.")
 
 /**
  * A ZDKRMAFeedbackView contains a header, a text view and a set of buttons.

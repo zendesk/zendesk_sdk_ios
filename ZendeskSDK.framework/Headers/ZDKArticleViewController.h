@@ -18,6 +18,7 @@
 
 #import "ZDKUIViewController.h"
 #import "ZDKArticleView.h"
+#import "ZDKHelpCenterConversationsUIDelegate.h"
 #import <MessageUI/MessageUI.h>
 
 
@@ -29,6 +30,14 @@
  *  @since 0.9.3.1
  */
 @interface ZDKArticleViewController : ZDKUIViewController<MFMailComposeViewControllerDelegate, ZDKHelpCentreArticleViewProtocol>
+
+
+/**
+ *  Delegate for right nav bar button.   
+ *
+ *  @since 1.10.0.1
+ */
+@property (nonatomic, weak) id<ZDKHelpCenterConversationsUIDelegate> uiDelegate;
 
 /**
  * The article view.

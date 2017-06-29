@@ -21,7 +21,7 @@
 #import "ZendeskSDKConstants.h"
 
 
-@class ZDKAppSettings, ZDKAccount, ZDKSdkStorage, ZDKTheme;
+@class ZDKAppSettings, ZDKAccount, ZDKSdkStorage, ZDKTheme, ZDKCustomField;
 
 /**
  *  SDK configuration file found and SDK initialized successfully.
@@ -94,6 +94,14 @@ typedef void (^ZDKInitializeSuccess)(void);
  *  @since 1.1.0.1
  */
 @property (nonatomic, assign) BOOL coppaEnabled;
+
+/**
+ *  Enable Help Center article up and down voting in Article UI.
+ *  Default value is true.
+ *
+ *  @since 1.10.0.1
+ */
+@property (nonatomic, assign) BOOL articleVotingEnabled;
 
 
 /**
@@ -173,7 +181,7 @@ typedef void (^ZDKInitializeSuccess)(void);
  *
  *  @since 1.0.0.1
  */
-@property (nonatomic, copy) NSArray *customTicketFields;
+@property (nonatomic, copy) NSArray<ZDKCustomField*> *customTicketFields;
 
 
 /**

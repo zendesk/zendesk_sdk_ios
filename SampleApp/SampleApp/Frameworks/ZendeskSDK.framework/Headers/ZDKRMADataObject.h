@@ -57,7 +57,7 @@ typedef NS_ENUM(NSInteger, ZDKRMAAction) {
 };
 
 
-
+__deprecated_msg("Deprecated as of 1.10.0.1, this will be removed.")
 
 /**
  * ZDKRMADataObject holds the persisted data used in ZDKRMA. Setting a value

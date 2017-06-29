@@ -23,7 +23,7 @@
 @class ZDKRMA;
 
 
-
+__deprecated_msg("Deprecated as of 1.10.0.1, this will be removed.")
 
 /**
  * The ZDKRMADialogViewController manages the two views that make up ZDKRMA.

@@ -40,7 +40,6 @@ static NSString * const QR_ANON_EXTERNL_ID = @"anonymous_external_id";
 @property (nonatomic, strong) UITextField *userIdentifierEntry;
 @property (nonatomic, strong) UITextField *nameEntry;
 @property (nonatomic, strong) UITextField *emailEntry;
-@property (nonatomic, strong) UITextField *externalIdEntry;
 
 @property (nonatomic, strong) UIButton *qrCodeButton;
 
@@ -58,7 +57,7 @@ static NSString * const QR_ANON_EXTERNL_ID = @"anonymous_external_id";
 @synthesize delegate;
 @synthesize authenticationType;
 @synthesize urlDescription, authenticationOption;
-@synthesize urlEntry, appIdEntry, clientIdEntry, userIdentifierEntry, nameEntry, emailEntry, externalIdEntry;
+@synthesize urlEntry, appIdEntry, clientIdEntry, userIdentifierEntry, nameEntry, emailEntry;
 @synthesize scrollView, qrCodeButton;
 
 
@@ -174,16 +173,6 @@ static NSString * const QR_ANON_EXTERNL_ID = @"anonymous_external_id";
     emailEntry.hidden = NO;
 
     [self.scrollViewContent addSubview:emailEntry];
-
-    // Anonymous authentication external ID
-    externalIdEntry = [self buildTextFieldWithPlaceholder:@"External identifier (optional)"
-                                             keyboardType:UIKeyboardTypeAlphabet
-                                                returnKey:UIReturnKeyDone
-                                                   andTag:6];
-    [externalIdEntry setAccessibilityIdentifier:@"anonymousExternalIdField"];
-    externalIdEntry.hidden = NO;
-
-    [self.scrollViewContent addSubview:externalIdEntry];
     
     qrCodeButton = [ZDSampleViewController buildButtonWithFrame:CGRectZero andTitle:@"QR Code"];
     [qrCodeButton setAccessibilityIdentifier:@"QRCodeButton"];
@@ -209,7 +198,6 @@ static NSString * const QR_ANON_EXTERNL_ID = @"anonymous_external_id";
             userIdentifierEntry.text = (NSString *)config[@"userId"];
             nameEntry.text = (NSString *)config[@"name"];
             emailEntry.text = (NSString *)config[@"email"];
-            externalIdEntry.text = (NSString *)config[@"externalId"];
             authenticationType.selectedSegmentIndex = [config[@"authType"] integerValue];
             [self authTypeChanged:authenticationType];
         }
@@ -242,8 +230,7 @@ static NSString * const QR_ANON_EXTERNL_ID = @"anonymous_external_id";
                                             authenticationType,
                                             userIdentifierEntry,
                                             nameEntry,
-                                            emailEntry,
-                                            externalIdEntry, qrCodeButton);
+                                            emailEntry, qrCodeButton);
 
     NSDictionary *metrics = @{@"padding":@(ZDSDKPadding), @"height":@(ZDSDKPadding * 2)};
 
@@ -264,7 +251,7 @@ static NSString * const QR_ANON_EXTERNL_ID = @"anonymous_external_id";
                                                                              metrics:metrics
                                                                                views:views]];
 
-    [self.scrollViewContent addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[authenticationType(height)]-padding-[nameEntry(height)]-padding-[emailEntry(height)]-padding-[externalIdEntry(height)]"
+    [self.scrollViewContent addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[authenticationType(height)]-padding-[nameEntry(height)]-padding-[emailEntry(height)]"
                                                                              options:NSLayoutFormatAlignAllLeft | NSLayoutFormatAlignAllRight
                                                                              metrics:metrics
                                                                                views:views]];
@@ -284,7 +271,6 @@ static NSString * const QR_ANON_EXTERNL_ID = @"anonymous_external_id";
     userIdentifierEntry.text = @"";
     nameEntry.text = @"";
     emailEntry.text = @"";
-    externalIdEntry.text = @"";
 }
 
 
@@ -298,7 +284,6 @@ static NSString * const QR_ANON_EXTERNL_ID = @"anonymous_external_id";
     [valuesToSave setObject:userIdentifierEntry.text ? userIdentifierEntry.text : @"" forKey:@"userId"];
     [valuesToSave setObject:nameEntry.text ? nameEntry.text : @"" forKey:@"name"];
     [valuesToSave setObject:emailEntry.text ? emailEntry.text : @"" forKey:@"email"];
-    [valuesToSave setObject:externalIdEntry.text ? externalIdEntry.text : @"" forKey:@"externalId"];
     [valuesToSave setObject:@(authenticationType.selectedSegmentIndex) forKey:@"authType"];
 
 
@@ -316,7 +301,6 @@ static NSString * const QR_ANON_EXTERNL_ID = @"anonymous_external_id";
 
             identity.name = nameEntry.text;
             identity.email = emailEntry.text;
-            identity.externalId = externalIdEntry.text;
 
             [ZDKConfig instance].userIdentity = identity;
 
@@ -354,14 +338,12 @@ static NSString * const QR_ANON_EXTERNL_ID = @"anonymous_external_id";
         nameEntry.hidden = YES;
         nameEntry.tag = INT16_MAX;
         emailEntry.hidden = YES;
-        externalIdEntry.hidden = YES;
 
     } else {
 
         nameEntry.hidden = NO;
         nameEntry.tag = 4;
         emailEntry.hidden = NO;
-        externalIdEntry.hidden = NO;
         userIdentifierEntry.hidden = YES;
         userIdentifierEntry.tag = INT16_MAX;
     }
@@ -401,8 +383,7 @@ static NSString * const QR_ANON_EXTERNL_ID = @"anonymous_external_id";
     
     CGFloat margin = ZDSDKPadding + authenticationType.frame.size.height +
                      ZDSDKPadding + nameEntry.frame.size.height +
-                     ZDSDKPadding + emailEntry.frame.size.height +
-                     ZDSDKPadding + externalIdEntry.frame.size.height + ZDSDKPadding;
+                     ZDSDKPadding + emailEntry.frame.size.height + ZDSDKPadding;
     
     [self.scrollView setContentSize:CGSizeMake(self.view.frame.size.width, self.view.frame.size.height + margin)];
 }
@@ -512,7 +493,6 @@ static NSString * const QR_ANON_EXTERNL_ID = @"anonymous_external_id";
     } else {
         nameEntry.text = [urlDictionary objectForKey:QR_ANON_NAME];
         emailEntry.text = [urlDictionary objectForKey:QR_ANON_EMAIL];
-        externalIdEntry.text = [urlDictionary objectForKey:QR_ANON_EXTERNL_ID];
         
         if( authenticationType.selectedSegmentIndex == ZDSDKAuthJwt ) {
             authenticationType.selectedSegmentIndex = 1;

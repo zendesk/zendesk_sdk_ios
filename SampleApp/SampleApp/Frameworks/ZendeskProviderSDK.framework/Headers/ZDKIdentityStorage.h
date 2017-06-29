@@ -28,7 +28,6 @@
  */
 - (NSString *)getUUID;
 
-
 /**
  *  Store object that implements ZDKIdentity protocol in local storage
  *
@@ -59,7 +58,6 @@
  *  @param oAuthToken NSString of the OAuth to be stored
  */
 - (void) storeOAuthToken:(NSString *)oAuthToken;
-
 
 /**
  * Deletes ALL storage

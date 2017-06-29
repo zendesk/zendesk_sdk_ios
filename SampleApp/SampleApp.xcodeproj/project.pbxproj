@@ -12,7 +12,6 @@
 		486D392A1DD4CE5300401073 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C333A54119E29EC40046B858 /* SystemConfiguration.framework */; };
 		83C044251BC2CD7E00B04303 /* ZendeskProviderSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83C044241BC2CD7E00B04303 /* ZendeskProviderSDK.framework */; };
 		83D3E9A01AA9EF36006DB98C /* ZDSampleAppScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83D3E99F1AA9EF36006DB98C /* ZDSampleAppScanViewController.m */; };
-		973AF0231BA1C40B00CF244C /* ZDFlatArticlesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 973AF0221BA1C40B00CF244C /* ZDFlatArticlesTableViewController.m */; };
 		C38311B61A1A352B00F7979A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C38311B31A1A352B00F7979A /* main.m */; };
 		C38311C31A1A358500F7979A /* ZDAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C38311BE1A1A358500F7979A /* ZDAppDelegate.m */; };
 		C38311C41A1A358500F7979A /* ZDSampleAppConfigurationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C38311C01A1A358500F7979A /* ZDSampleAppConfigurationViewController.m */; };
@@ -32,8 +31,6 @@
 		83C044241BC2CD7E00B04303 /* ZendeskProviderSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ZendeskProviderSDK.framework; path = SampleApp/Frameworks/ZendeskProviderSDK.framework; sourceTree = "<group>"; };
 		83D3E99E1AA9EF36006DB98C /* ZDSampleAppScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZDSampleAppScanViewController.h; path = SampleApp/ZDSampleAppScanViewController.h; sourceTree = "<group>"; };
 		83D3E99F1AA9EF36006DB98C /* ZDSampleAppScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZDSampleAppScanViewController.m; path = SampleApp/ZDSampleAppScanViewController.m; sourceTree = "<group>"; };
-		973AF0211BA1C40B00CF244C /* ZDFlatArticlesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZDFlatArticlesTableViewController.h; path = SampleApp/ZDFlatArticlesTableViewController.h; sourceTree = "<group>"; };
-		973AF0221BA1C40B00CF244C /* ZDFlatArticlesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZDFlatArticlesTableViewController.m; path = SampleApp/ZDFlatArticlesTableViewController.m; sourceTree = "<group>"; };
 		C333A54119E29EC40046B858 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		C38311B31A1A352B00F7979A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = SampleApp/main.m; sourceTree = "<group>"; };
 		C38311B41A1A352B00F7979A /* SampleApp-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "SampleApp-Info.plist"; path = "SampleApp/SampleApp-Info.plist"; sourceTree = "<group>"; };
@@ -102,8 +99,6 @@
 				C38311C21A1A358500F7979A /* ZDSampleViewController.m */,
 				83D3E99E1AA9EF36006DB98C /* ZDSampleAppScanViewController.h */,
 				83D3E99F1AA9EF36006DB98C /* ZDSampleAppScanViewController.m */,
-				973AF0211BA1C40B00CF244C /* ZDFlatArticlesTableViewController.h */,
-				973AF0221BA1C40B00CF244C /* ZDFlatArticlesTableViewController.m */,
 			);
 			name = SampleApp;
 			sourceTree = "<group>";
@@ -205,7 +200,7 @@
 		F160B6C61949E2D600AEF42D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = Zendesk;
 				TargetAttributes = {
 					F160B6CD1949E2D600AEF42D = {
@@ -264,7 +259,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C38311C51A1A358500F7979A /* ZDSampleViewController.m in Sources */,
-				973AF0231BA1C40B00CF244C /* ZDFlatArticlesTableViewController.m in Sources */,
 				83D3E9A01AA9EF36006DB98C /* ZDSampleAppScanViewController.m in Sources */,
 				C38311C31A1A358500F7979A /* ZDAppDelegate.m in Sources */,
 				C3A2C8A11ABAD575006EA3E7 /* NSData+ZDKSampleApp.m in Sources */,
@@ -315,7 +309,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "$(inherited)";
 				SDKROOT = iphoneos;
@@ -355,7 +349,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "$(inherited)";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -378,7 +372,7 @@
 				GCC_PREFIX_HEADER = "SampleApp/SampleApp-Prefix.pch";
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "SampleApp/SampleApp-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "$(inherited)";
@@ -406,7 +400,7 @@
 				GCC_PREFIX_HEADER = "SampleApp/SampleApp-Prefix.pch";
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "SampleApp/SampleApp-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "$(inherited)";
