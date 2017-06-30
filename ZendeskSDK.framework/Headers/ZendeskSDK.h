@@ -3,7 +3,7 @@
  *  ZendeskSDK.h
  *  ZendeskSDK
  *
- *  Created by Zendesk on 06/29/2017
+ *  Created by Zendesk on 06/30/2017
  *
  *  Copyright (c) 2017 Zendesk. All rights reserved.
  *
@@ -59,7 +59,6 @@
 #import "ZDKSpinnerDelegate.h"
 #import "ZDKSupportAttachmentCell.h"
 #import "ZDKTheme.h"
-#import "ZDKTicketFieldSystemOption.h"
 #import "ZDKToast.h"
 #import "ZDKToastStyle.h"
 #import "ZDKToastView.h"
