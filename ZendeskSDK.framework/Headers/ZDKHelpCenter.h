@@ -15,7 +15,7 @@
  */
 
 #import <Foundation/Foundation.h>
-#import "ZDKHelpCenterConversationsUIDelegate.h"
+#import <ZendeskProviderSDK/ZDKHelpCenterConversationsUIDelegate.h>
 #import "ZDKUIViewController.h"
 
 @class ZDKHelpCenterOverviewContentModel;

@@ -107,7 +107,10 @@ __deprecated_msg("Deprecated as of 1.10.0.1, this will be removed.")
 @interface ZDKRMADialogView : UITableView <UITableViewDataSource, UITableViewDelegate> {
 
     __weak id<ZDKRMADialogViewDelegate> delegate;
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
     ZDKRMATableHeaderView *header;
+#pragma clang diagnostic pop
 }
 
 
