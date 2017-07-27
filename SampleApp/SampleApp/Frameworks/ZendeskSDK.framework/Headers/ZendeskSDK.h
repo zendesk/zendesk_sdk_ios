@@ -3,7 +3,7 @@
  *  ZendeskSDK.h
  *  ZendeskSDK
  *
- *  Created by Zendesk on 06/30/2017
+ *  Created by Zendesk on 07/26/2017
  *
  *  Copyright (c) 2017 Zendesk. All rights reserved.
  *
@@ -36,10 +36,8 @@
 #import "ZDKCreateRequestViewController.h"
 #import "ZDKHelpCenter.h"
 #import "ZDKHelpCenterAttachmentsDataSource.h"
-#import "ZDKHelpCenterConversationsUIDelegate.h"
 #import "ZDKHelpCenterDataSource.h"
 #import "ZDKHelpCenterErrorCodes.h"
-#import "ZDKHelpCenterOverviewContentModel.h"
 #import "ZDKHelpCenterOverviewController.h"
 #import "ZDKImageViewerViewController.h"
 #import "ZDKPushUtil.h"

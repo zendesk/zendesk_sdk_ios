@@ -18,7 +18,7 @@
 
 #import "ZDKUIViewController.h"
 #import "ZDKArticleView.h"
-#import "ZDKHelpCenterConversationsUIDelegate.h"
+#import <ZendeskProviderSDK/ZDKHelpCenterConversationsUIDelegate.h>
 #import <MessageUI/MessageUI.h>
 
 

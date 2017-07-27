@@ -15,8 +15,9 @@
  */
 
 #import <UIKit/UIKit.h>
-#import "ZDKHelpCenterConversationsUIDelegate.h"
-#import "ZDKHelpCenterOverviewContentModel.h"
+#import <ZendeskProviderSDK/ZDKHelpCenterConversationsUIDelegate.h>
+
+@class ZDKHelpCenterOverviewContentModel;
 
 NS_ASSUME_NONNULL_BEGIN
 NS_AVAILABLE_IOS(8_0)
