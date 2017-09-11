@@ -499,66 +499,6 @@ extern NSString * const ZDD_ERROR_Key;
 
 extern NSString * const ZDD_Validator_Error_Key;
 
-#pragma mark - ZDKRMA
-
-
-// itunes link formats
-extern NSString * const iOS7AppStoreURLFormat;
-extern NSString * const iOSAppStoreURLFormat;
-
-
-// zendesk request submission strings
-extern NSString * const ZDKRMARequestFeedbackTag;
-extern NSString * const ZDKRMARequestIOSTag;
-extern NSString * const ZDKRMARequestBuildVariantTag;
-
-
-// persistence keys
-extern NSString * const ZDKRMAChosenAction;
-extern NSString * const ZDKRMADateOfActionChosen;
-extern NSString * const ZDKRMAAppVersion;
-extern NSString * const ZDKRMAVisitCount;
-extern NSString * const ZDKRMAInitialCheckDate;
-extern NSString * const ZDKRMARequestText;
-
-extern NSString * const ZDSDKUserDefaultsKey;
-
-// default accessibility id
-extern NSString * const ZDKRMAAccessibilityID;
-
-
-// notifications
-
-/** Posted immediately prior to the display of RMA dialog. */
-extern NSString * const ZDKRMANotificationTriggered;
-
-/** User tapped 'Yes rate'. */
-extern NSString * const ZDKRMANotificationYes;
-
-/** User tapped 'No, send feedback'. */
-extern NSString * const ZDKRMANotificationNo;
-
-/** User tapped 'Don't ask again' */
-extern NSString * const ZDKRMANotificationDontAsk;
-
-/** User tapped 'back' on send feedback modal. */
-extern NSString * const ZDKRMANotificationBack;
-
-/** User has tapped to send feedback. */
-extern NSString * const ZDKRMANotificationSend;
-
-/** Posted immediately prior to the dismissal of RMA dialog. User info is a dictionary with a reference to the Dialog */
-extern NSString * const ZDKRMANotificationWillHideDialog;
-
-/** Used internally to trigger state persistence. */
-extern NSString * const ZDKRMANotificationShouldStore;
-
-/** Posted immediately after a successful submission of RMA feedback. */
-extern NSString * const ZDKRMANotificationFeedbackSuccess;
-
-/** Posted immediately after an unsuccessful submission of RMA feedback. */
-extern NSString * const ZDKRMANotificationFeedbackError;
-
 #pragma mark - Authentication types
 extern NSString * const ZDK_AUTHENTICATION_JWT;
 extern NSString * const ZDK_AUTHENTICATION_ANONYMOUS;

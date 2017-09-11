@@ -8,7 +8,6 @@
 
 
 #import "ZDSampleViewController.h"
-#import "ZDRateMyAppDemoViewController.h"
 #import <ZendeskSDK/ZendeskSDK.h>
 
 
@@ -30,7 +29,7 @@ static CGFloat const PADDING = 15.f;
 @implementation ZDSampleViewController
 
 
-@synthesize rmaButton, requestCreationButton, requestListButton, helpCenterButton, helpCenterLabelsInput, helpCenterCategoryIdInput, helpCenterSectionIdInput;
+@synthesize requestCreationButton, requestListButton, helpCenterButton, helpCenterLabelsInput, helpCenterCategoryIdInput, helpCenterSectionIdInput;
 @synthesize registerPush, unregisterPush;
 @synthesize userTagsInput, addTagsButton, removeTagsButton;
 @synthesize scrollView, scrollViewContent;
@@ -48,12 +47,6 @@ static CGFloat const PADDING = 15.f;
     [self.contentView addSubview:scrollView];
     [self.scrollView addSubview:scrollViewContent];
     self.scrollView.translatesAutoresizingMaskIntoConstraints = NO;
-    
-    rmaButton = [ZDSampleViewController buildButtonWithFrame:CGRectZero andTitle:@"Show Rate My App"];
-    rmaButton.accessibilityIdentifier = @"rmaButton";
-    rmaButton.backgroundColor = [UIColor whiteColor];
-    [rmaButton addTarget:self action:@selector(rateMyApp) forControlEvents:UIControlEventTouchUpInside];
-    [self.scrollViewContent addSubview:rmaButton];
 
     requestCreationButton = [ZDSampleViewController buildButtonWithFrame:CGRectZero andTitle:@"Contact Zendesk"];
     requestCreationButton.accessibilityIdentifier = @"contactZendeskButton";
@@ -165,8 +158,7 @@ static CGFloat const PADDING = 15.f;
 {
     NSDictionary *metrics = @{@"padding":@(20), @"height":@(30)};
 
-    NSDictionary *views = NSDictionaryOfVariableBindings(rmaButton,
-                                                         requestCreationButton,
+    NSDictionary *views = NSDictionaryOfVariableBindings(requestCreationButton,
                                                          requestListButton,
                                                          helpCenterLabelsInput,
                                                          helpCenterCategoryIdInput,
@@ -186,14 +178,14 @@ static CGFloat const PADDING = 15.f;
     [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[scrollView]|" options:0 metrics:0 views:views]];
 
 
-    [self.scrollViewContent addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-padding-[rmaButton]-padding-|"
+    [self.scrollViewContent addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-padding-[requestCreationButton]-padding-|"
                                                                              options:NSLayoutFormatAlignmentMask
                                                                              metrics:metrics
                                                                                views:views]];
     
 
 
-    NSArray *contentHeight = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-[rmaButton(height)]-padding-[requestCreationButton(height)]-padding-[requestListButton(height)]-padding-[helpCenterLabelsInput(height)]-padding-[helpCenterCategoryIdInput(height)]-padding-[helpCenterSectionIdInput(height)]-padding-[helpCenterButton(height)]-padding-[registerPush(height)]-padding-[unregisterPush(height)]-padding-[userTagsInput(height)]-padding-[addTagsButton(height)]-padding-[removeTagsButton(height)]"
+    NSArray *contentHeight = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-padding-[requestCreationButton(height)]-padding-[requestListButton(height)]-padding-[helpCenterLabelsInput(height)]-padding-[helpCenterCategoryIdInput(height)]-padding-[helpCenterSectionIdInput(height)]-padding-[helpCenterButton(height)]-padding-[registerPush(height)]-padding-[unregisterPush(height)]-padding-[userTagsInput(height)]-padding-[addTagsButton(height)]-padding-[removeTagsButton(height)]"
 
                                                                                options:NSLayoutFormatAlignAllLeft | NSLayoutFormatAlignAllRight
                                                                                metrics:metrics
@@ -288,12 +280,6 @@ static CGFloat const PADDING = 15.f;
             
         }
     }
-}
-
-- (void) rateMyApp
-{
-    ZDRateMyAppDemoViewController *vc = [[ZDRateMyAppDemoViewController alloc] initWithNibName:nil bundle:nil];
-    [self.navigationController pushViewController:vc animated:YES];
 }
 
 

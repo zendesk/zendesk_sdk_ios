@@ -17,19 +17,10 @@
 #import <Foundation/Foundation.h>
 #import "ZDKCoding.h"
 
-@class ZDKRateMyAppSettings,ZDKContactUsSettings, ZDKConversationsSettings, ZDKHelpCenterSettings, ZDKTicketFormsSettings;
+@class ZDKContactUsSettings, ZDKConversationsSettings, ZDKHelpCenterSettings, ZDKTicketFormsSettings;
 
 
 @interface ZDKAppSettings : ZDKCoding
-
-
-/**
- * Settings model object associated with the remote configuration of Rate My App component within your Zendesk instance.
- *
- *  @since 0.9.3.1
- */
-@property (nonatomic, strong, readonly) ZDKRateMyAppSettings *rateMyAappSettings;
-
 
 /**
  * Settings model object associated with the remote configuration of Conversations component within your Zendesk instance.

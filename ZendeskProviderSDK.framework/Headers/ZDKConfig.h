@@ -89,11 +89,14 @@ typedef void (^ZDKInitializeSuccess)(void);
 
 
 /**
- *  Enable COPPA for SDK.
+ * Sets whether we should enable COPPA mode. If the set ZDKAnonymousIdentity doesn't contain a
+ * name or email, this method will do nothing. If the set ZDKAnonymousIdentity does contain
+ * a name or email, this method will clear user storage (such as requests, article votes, identity
+ * information) and set a new, empty ZDKAnonymousIdentity.
  *
  *  @since 1.1.0.1
  */
-@property (nonatomic, assign) BOOL coppaEnabled;
+@property (nonatomic, assign) BOOL coppaEnabled __deprecated_msg("as of 1.11.0.1. Consider using an empty ZDKAnonymousIdentity instead.");
 
 /**
  *  Enable Help Center article up and down voting in Article UI.

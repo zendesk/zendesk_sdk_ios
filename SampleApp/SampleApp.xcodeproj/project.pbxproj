@@ -17,7 +17,6 @@
 		C38311C41A1A358500F7979A /* ZDSampleAppConfigurationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C38311C01A1A358500F7979A /* ZDSampleAppConfigurationViewController.m */; };
 		C38311C51A1A358500F7979A /* ZDSampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C38311C21A1A358500F7979A /* ZDSampleViewController.m */; };
 		C3A2C8A11ABAD575006EA3E7 /* NSData+ZDKSampleApp.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A2C8A01ABAD575006EA3E7 /* NSData+ZDKSampleApp.m */; };
-		C3EF3EF61A1A1B1900168A69 /* ZDRateMyAppDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3EF3EF31A1A1B1900168A69 /* ZDRateMyAppDemoViewController.m */; };
 		C3EF3EFB1A1A1B3700168A69 /* ZendeskSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C3EF3EF91A1A1B3700168A69 /* ZendeskSDK.bundle */; };
 		C3EF3EFC1A1A1B3700168A69 /* ZendeskSDKStrings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C3EF3EFA1A1A1B3700168A69 /* ZendeskSDKStrings.bundle */; };
 		C3EF3EFE1A1A1B5400168A69 /* ZendeskSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3EF3EFD1A1A1B5400168A69 /* ZendeskSDK.framework */; };
@@ -43,8 +42,6 @@
 		C38311C21A1A358500F7979A /* ZDSampleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZDSampleViewController.m; path = SampleApp/ZDSampleViewController.m; sourceTree = "<group>"; };
 		C3A2C89F1ABAD575006EA3E7 /* NSData+ZDKSampleApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+ZDKSampleApp.h"; path = "SampleApp/NSData+ZDKSampleApp.h"; sourceTree = "<group>"; };
 		C3A2C8A01ABAD575006EA3E7 /* NSData+ZDKSampleApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+ZDKSampleApp.m"; path = "SampleApp/NSData+ZDKSampleApp.m"; sourceTree = "<group>"; };
-		C3EF3EF21A1A1B1900168A69 /* ZDRateMyAppDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDRateMyAppDemoViewController.h; sourceTree = "<group>"; };
-		C3EF3EF31A1A1B1900168A69 /* ZDRateMyAppDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDRateMyAppDemoViewController.m; sourceTree = "<group>"; };
 		C3EF3EF91A1A1B3700168A69 /* ZendeskSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ZendeskSDK.bundle; sourceTree = "<group>"; };
 		C3EF3EFA1A1A1B3700168A69 /* ZendeskSDKStrings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ZendeskSDKStrings.bundle; sourceTree = "<group>"; };
 		C3EF3EFD1A1A1B5400168A69 /* ZendeskSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ZendeskSDK.framework; path = SampleApp/Frameworks/ZendeskSDK.framework; sourceTree = "<group>"; };
@@ -87,7 +84,6 @@
 		C38311BC1A1A356400F7979A /* SampleApp */ = {
 			isa = PBXGroup;
 			children = (
-				C3EF3EF11A1A1B1900168A69 /* RateMyApp */,
 				C3EF3EFF1A1A1B7C00168A69 /* Resources */,
 				C38311BB1A1A353200F7979A /* Supporting Files */,
 				C3A2C8A51ABAD58E006EA3E7 /* Categories */,
@@ -110,16 +106,6 @@
 				C3A2C8A01ABAD575006EA3E7 /* NSData+ZDKSampleApp.m */,
 			);
 			name = Categories;
-			sourceTree = "<group>";
-		};
-		C3EF3EF11A1A1B1900168A69 /* RateMyApp */ = {
-			isa = PBXGroup;
-			children = (
-				C3EF3EF21A1A1B1900168A69 /* ZDRateMyAppDemoViewController.h */,
-				C3EF3EF31A1A1B1900168A69 /* ZDRateMyAppDemoViewController.m */,
-			);
-			name = RateMyApp;
-			path = SampleApp/RateMyApp;
 			sourceTree = "<group>";
 		};
 		C3EF3EF81A1A1B3700168A69 /* Bundles */ = {
@@ -264,7 +250,6 @@
 				C3A2C8A11ABAD575006EA3E7 /* NSData+ZDKSampleApp.m in Sources */,
 				C38311C41A1A358500F7979A /* ZDSampleAppConfigurationViewController.m in Sources */,
 				C38311B61A1A352B00F7979A /* main.m in Sources */,
-				C3EF3EF61A1A1B1900168A69 /* ZDRateMyAppDemoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
