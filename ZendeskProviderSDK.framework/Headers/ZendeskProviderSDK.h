@@ -3,7 +3,7 @@
  *  ZendeskProviderSDK.h
  *  ZendeskProviderSDK
  *
- *  Created by Zendesk on 07/26/2017
+ *  Created by Zendesk on 09/11/2017
  *
  *  Copyright (c) 2017 Zendesk. All rights reserved.
  *
@@ -79,7 +79,6 @@
 #import "ZDKPushRegistrationProvider.h"
 #import "ZDKPushRegistrationRequest.h"
 #import "ZDKPushRegistrationResponse.h"
-#import "ZDKRateMyAppSettings.h"
 #import "ZDKReachability.h"
 #import "ZDKRequest.h"
 #import "ZDKRequestProvider.h"

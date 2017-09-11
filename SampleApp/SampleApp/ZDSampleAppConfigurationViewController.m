@@ -71,6 +71,12 @@ static NSString * const QR_ANON_EXTERNL_ID = @"anonymous_external_id";
     [self.contentView addSubview:self.scrollView];
     [self.scrollView addSubview:self.scrollViewContent];
     self.scrollView.translatesAutoresizingMaskIntoConstraints = NO;
+
+#ifdef __IPHONE_11_0
+    if (@available(iOS 11.0, *)) { // only available in Xcode 9
+        self.scrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentAlways;
+    }
+#endif
     
     [self.scrollView setContentSize:CGSizeMake(self.view.frame.size.width, self.view.frame.size.height)];
     

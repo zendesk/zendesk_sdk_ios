@@ -97,23 +97,6 @@
         //Set the subject of requests created by the user.
         requestCreationConfig.subject = @"App Ticket";
     }];
-    
-    
-    [ZDKRMA configure:^(ZDKAccount *account, ZDKRMAConfigObject *config) {  
-        
-        //account.email = @"example@example.com";
-
-        
-        // configgure additional info
-        NSString *versionString = [NSString stringWithFormat:@"%@ (%@)",
-                                   [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"],
-                                   [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]];
-        
-        NSString *appVersion = [NSString stringWithFormat:@"App version: %@", versionString];
-        
-        config.additionalRequestInfo = [NSString stringWithFormat:@"Additional info here.\n%@", appVersion];
-    }];
-
 
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////
