@@ -230,56 +230,53 @@ static CGFloat const PADDING = 15.f;
 
 - (void) support
 {
-    if ([ZDKUIUtil isOlderVersion:@"8.0"]) {
-        [ZDKLogger error:@"ZDKHelpCenterOverview component is not compatible with iOS versions 7 and below. Please use the old Help Center UI."];
-    } else {
-        ZDKHelpCenterOverviewContentModel *contentModel = [ZDKHelpCenterOverviewContentModel defaultContent];
+    ZDKHelpCenterOverviewContentModel *contentModel = [ZDKHelpCenterOverviewContentModel defaultContent];
+    
+    //Labels and section IDs or category IDs
+    if (helpCenterLabelsInput.hasText) {
+        NSString *labelString = helpCenterLabelsInput.text;
+        NSArray *labels = [labelString componentsSeparatedByString:@","];
+        contentModel.labels = labels;
         
-        //Labels and section IDs or category IDs
-        if (helpCenterLabelsInput.hasText) {
-            NSString *labelString = helpCenterLabelsInput.text;
-            NSArray *labels = [labelString componentsSeparatedByString:@","];
-            contentModel.labels = labels;
-            
-            if (helpCenterCategoryIdInput.hasText) {
-                NSString *categoryIdString = helpCenterCategoryIdInput.text;
-                NSArray *categoryIdArray = [categoryIdString componentsSeparatedByString:@","];
-                contentModel.groupType = ZDKHelpCenterOverviewGroupTypeCategory;
-                contentModel.groupIds = categoryIdArray;
-            } else if (helpCenterSectionIdInput.hasText) {
-                NSString *sectionIdString = helpCenterSectionIdInput.text;
-                NSArray *sectionIdArray = [sectionIdString componentsSeparatedByString:@","];
-                contentModel.groupType = ZDKHelpCenterOverviewGroupTypeSection;
-                contentModel.groupIds = sectionIdArray;
-            }
-            
-            // category IDs
-        } else if (helpCenterCategoryIdInput.hasText) {
+        if (helpCenterCategoryIdInput.hasText) {
             NSString *categoryIdString = helpCenterCategoryIdInput.text;
             NSArray *categoryIdArray = [categoryIdString componentsSeparatedByString:@","];
             contentModel.groupType = ZDKHelpCenterOverviewGroupTypeCategory;
             contentModel.groupIds = categoryIdArray;
-            
-            // sections IDs
         } else if (helpCenterSectionIdInput.hasText) {
             NSString *sectionIdString = helpCenterSectionIdInput.text;
             NSArray *sectionIdArray = [sectionIdString componentsSeparatedByString:@","];
             contentModel.groupType = ZDKHelpCenterOverviewGroupTypeSection;
             contentModel.groupIds = sectionIdArray;
-            
         }
         
-        if ([ZDKUIUtil isPad]) {
-            
-            self.modalPresentationStyle = UIModalPresentationFormSheet;
-            [ZDKHelpCenter presentHelpCenterOverview:self withContentModel:contentModel];
-            
-        } else {
-            
-            [ZDKHelpCenter pushHelpCenterOverview:self.navigationController withContentModel:contentModel];
-            
-        }
+        // category IDs
+    } else if (helpCenterCategoryIdInput.hasText) {
+        NSString *categoryIdString = helpCenterCategoryIdInput.text;
+        NSArray *categoryIdArray = [categoryIdString componentsSeparatedByString:@","];
+        contentModel.groupType = ZDKHelpCenterOverviewGroupTypeCategory;
+        contentModel.groupIds = categoryIdArray;
+        
+        // sections IDs
+    } else if (helpCenterSectionIdInput.hasText) {
+        NSString *sectionIdString = helpCenterSectionIdInput.text;
+        NSArray *sectionIdArray = [sectionIdString componentsSeparatedByString:@","];
+        contentModel.groupType = ZDKHelpCenterOverviewGroupTypeSection;
+        contentModel.groupIds = sectionIdArray;
+        
     }
+    
+    if ([ZDKUIUtil isPad]) {
+        
+        self.modalPresentationStyle = UIModalPresentationFormSheet;
+        [ZDKHelpCenter presentHelpCenterOverview:self withContentModel:contentModel];
+        
+    } else {
+        
+        [ZDKHelpCenter pushHelpCenterOverview:self.navigationController withContentModel:contentModel];
+        
+    }
+    
 }
 
 
