@@ -59,8 +59,14 @@
  *
  *  @since 1.1.0.1
  */
-@property (nonatomic, copy) NSArray *thumbnails;
+@property (nonatomic, copy) NSArray <ZDKAttachment *>* thumbnails;
 
+/**
+ *  The dimension of the attachment.
+ *
+ *  @since 2.0.0.1
+ */
+@property (nonatomic, assign) CGSize imageDimension;
 
 /**
  * Init with dictionary from API response.

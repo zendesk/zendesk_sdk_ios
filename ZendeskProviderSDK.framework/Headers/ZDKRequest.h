@@ -15,6 +15,10 @@
  */
 
 
+@class ZDKComment, ZDKSupportUser;
+
+
+NS_ASSUME_NONNULL_BEGIN
 /**
  * Object representing a Zendesk end user request returned by the server.
  */
@@ -23,7 +27,7 @@
 /**
  * The id of this request in Zendesk.
  */
-@property (nonatomic, copy) NSString *requestId;
+@property (nonatomic, copy) NSString * requestId;
 
 /**
  * The id of the requester in Zendesk.
@@ -38,7 +42,7 @@
 /**
  * The subject of the request, if subject is enabled in the account and if a subject was entered.
  */
-@property (nonatomic, copy) NSString *subject;
+@property (nonatomic, copy, nullable) NSString *subject;
 
 /**
  * The original request.
@@ -48,7 +52,7 @@
 /**
  *  The request type
  */
-@property (nonatomic, copy) NSString *type;
+@property (nonatomic, copy, nullable) NSString *type;
 
 /**
  * The timestamp of the request creation.
@@ -63,7 +67,7 @@
 /**
  * The timestamp of the last public update event.
  */
-@property (nonatomic, strong) NSDate *publicUpdatedAt;
+@property (nonatomic, strong, nullable) NSDate *publicUpdatedAt;
 
 /**
  *  The number of comments on this ticket.
@@ -72,14 +76,47 @@
  */
 @property (nonatomic, strong) NSNumber *commentCount;
 
+/**
+ *  Last public comment on the request
+ *
+ *  since 2.0.0.1
+ */
+@property (nonatomic, strong, nullable) ZDKComment *lastComment;
+
+/**
+ *  First public comment on request
+ *
+ *  @since 2.0.0.1
+ */
+@property (nonatomic, strong, nullable) ZDKComment *firstComment;
+
+/**
+ *  Array of agent ids of whom are currently CC'ed on the ticket
+ *
+ *  @since 2.0.0.1
+ */
+@property (nonatomic, strong, nonnull) NSArray<NSNumber *> *collaboratingIds;
+
+/**
+ *  Array of agentd who publically commented on the request
+ *
+ *  @since 2.0.0.1
+ */
+@property (nonatomic, strong, nonnull) NSArray<NSNumber *> *commentingAgentsIds;
 
 /**
  * Init with dictionary from API response.
  *
  * @param dict the dictionary generated from the JSON API response
  */
-- (instancetype) initWithDict:(NSDictionary*)dict;
+- (instancetype _Nullable ) initWithDict:(NSDictionary* _Nullable)dict;
 
+/**
+ *  Returns a dictionary containing Request details. Used for storage
+ *
+ *  @since 2.0.0.1
+ */
+- (NSDictionary *)toJson;
 
 @end
-
+NS_ASSUME_NONNULL_END

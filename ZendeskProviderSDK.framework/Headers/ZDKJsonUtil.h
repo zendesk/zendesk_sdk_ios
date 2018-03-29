@@ -36,6 +36,14 @@
  */
 + (id) cleanJSONVal:(id)val;
 
+/**
+ * Checks the return value for NSNull and converts to an empty array if found.
+ *
+ * @param json the JSON dictionary from which to get the array
+ * @param key the key of the object to be retrieved
+ * @return the value if found and not NSNull, otherwise empty array
+ */
++ (id) cleanJSONArrayVal:(NSDictionary*)json key:(NSString*)key;
 
 /**
  *  Convert JSON based dictionary to an object of type Class

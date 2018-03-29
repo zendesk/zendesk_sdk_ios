@@ -16,7 +16,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class ZDKAuthenticationSpace;
+@class ZDKZendesk;
 
 /**
  *  ZDKProvider class
@@ -25,21 +25,9 @@
  */
 @interface ZDKProvider : NSObject
 
-/**
- *  Authentication space to use
- *
- *  @since 1.6.0.1
- */
-@property (nonatomic, strong, readonly) ZDKAuthenticationSpace *authenticationSpace;
+@property (nonatomic, strong, readonly) ZDKZendesk *zendesk;
 
-/**
- *  Creates a provider with an authentication space
- *
- *  @since 1.6.0.1
- *
- *  @param authenticationSpace authentication space to use with requests
- */
-- (instancetype)initWithAuthenticationSpace:(ZDKAuthenticationSpace*)authenticationSpace;
+- (instancetype)initWithZendesk:(ZDKZendesk*)zendesk;
 
 
 @end

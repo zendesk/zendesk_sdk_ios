@@ -20,7 +20,7 @@
 
 @required
 
-@property (copy, readonly) NSString *title;
+@property (copy, readonly) NSString *name;
 
 @optional
 

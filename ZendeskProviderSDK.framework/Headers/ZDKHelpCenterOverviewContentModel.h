@@ -15,7 +15,7 @@
  */
 
 #import <Foundation/Foundation.h>
-#import "ZDKHelpCenterConversationsUIDelegate.h"
+#import "ZDKNavBarConversationsUIType.h"
 
 /**
  *  Used to specify what type of ids will be supplied.
@@ -63,7 +63,7 @@ typedef NS_ENUM(NSUInteger, ZDKHelpCenterOverviewGroupType) {
 /**
  *  A list of ids. Only show articles contained in the categorys/sections.
  */
-@property (nonatomic, copy) NSArray<NSString *> *groupIds;
+@property (nonatomic, copy) NSArray<NSNumber *> *groupIds;
 
 
 /**

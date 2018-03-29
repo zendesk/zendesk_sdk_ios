@@ -48,13 +48,13 @@
  *  This models the "category" parameter.  This specifies that the search will be restricted to content that is in the given
  *  array of categories.
  */
-@property (nonatomic, copy) NSArray<NSString *> *categoryIds;
+@property (nonatomic, copy) NSArray<NSNumber *> *categoryIds;
 
 /**
  *  This models the "section" parameter.  This specifies that the search will be restricted to content that is in the given
  *  array of sections.
  */
-@property (nonatomic, copy) NSArray<NSString *> *sectionIds;
+@property (nonatomic, copy) NSArray<NSNumber *> *sectionIds;
 
 /**
  *  This models the "page" parameter. This specifies what page of results to return.  This is closely tied to the resultsPerPage

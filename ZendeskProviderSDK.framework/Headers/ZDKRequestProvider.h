@@ -16,9 +16,9 @@
 
 #import <Foundation/Foundation.h>
 #import "ZDKProvider.h"
-#import "ZDKRequestUpdatesProtocol.h"
 
-@class ZDKCommentsResponse, ZDKComment, ZDKRequest, ZDKCreateRequest, ZDKTicketForm, ZDKRequestUpdates;
+
+@class ZDKCommentsResponse, ZDKComment, ZDKRequest, ZDKCreateRequest, ZDKTicketForm, ZDKCommentWithUser, ZDKRequestsWithCommentingAgents;
 
 
 /**
@@ -32,12 +32,13 @@
 typedef void (^ZDKRequestCallback)(ZDKRequest *request, NSError *error);
 
 /**
- *  Block defined for callback to be used for handling async server responses for fetching a list of requests
+ *  Block defined for callback to be used for handling async server responses for fetching a list of requests and agents that have publically
+ *  commented on them
  *
- *  @param items array of items returned as a result of the API request sent to a Zendesk instance
+ *  @param requestsWithCommentingAgnets an object containing an array of requests and users, can be nil on error.
  *  @param error NSError returned as a result of any errors taking place when the request is executed, can be nil on success
  */
-typedef void (^ZDKRequestListCallback)(NSArray *items, NSError *error);
+typedef void (^ZDKRequestListCallback)(ZDKRequestsWithCommentingAgents *requestsWithCommentingAgents ,NSError *error);
 
 /**
  *  Block defined for callback to be used for handling async server responses for fetching a list of comments
@@ -45,7 +46,7 @@ typedef void (^ZDKRequestListCallback)(NSArray *items, NSError *error);
  *  @param commentsWithUsers array of ZDKCommentWithUser objects as a result of the API request sent to a Zendesk instance, can be nil on error
  *  @param error NSError returned as a result of any errors taking place when the request is executed, can be nil on success
  */
-typedef void (^ZDKRequestCommentListCallback)(NSArray *commentsWithUsers, NSError *error);
+typedef void (^ZDKRequestCommentListCallback)(NSArray <ZDKCommentWithUser *>* commentsWithUsers, NSError *error);
 
 /**
  *  Block defined for callback to be used for handling async server responses for adding a comment to a request
@@ -62,15 +63,6 @@ typedef void (^ZDKRequestAddCommentCallback)(ZDKComment *comment, NSError *error
  *  @param error  NSError returned as a result of any errors taking place when the request is executed, can be nil on success
  */
 typedef void (^ZDKCreateRequestCallback)(id result, NSError *error);
-
-/**
- *  Callback for request updates provider method.
- *
- *  @param requestUpdates model containing any updates.
- *  @param error NSError returned as a result of any errors taking place when the request is executed, can be nil on success.
- *  @since 1.10.0.1
- */
-typedef void (^ZDKRequestUpdatesCallback)(ZDKRequestUpdates *requestUpdates, NSError *error);
 
 /**
  *  Callback for ticket form request
@@ -139,6 +131,14 @@ typedef void (^ZDKTicketFormCallback)(NSArray<ZDKTicketForm*> *ticketForms, NSEr
 - (void) getCommentsWithRequestId: (NSString *) requestId withCallback:(ZDKRequestCommentListCallback) callback;
 
 /**
+ *  @since x.x.x.x
+ */
+- (void) getCommentsWithRequestId: (NSString *) requestId
+                        sinceDate: (NSDate *) sinceDate
+                        onlyAgent: (BOOL) onlyAgent
+                     withCallback: (ZDKRequestCommentListCallback) callback;
+
+/**
  * Add a comment message to a request.
  * It will also get an access token if one has not been previously stored.
  *
@@ -173,34 +173,5 @@ typedef void (^ZDKTicketFormCallback)(NSArray<ZDKTicketForm*> *ticketForms, NSEr
         attachments:(NSArray *) attachments
        withCallback:(ZDKRequestAddCommentCallback) callback;
 
-
-/**
- *  Gets details of any updates to requests for this device.
- *
- *  `ZDKRequestUpdates` are cached for up to one hour. Subsequent calls to this method within
- *  the hour will return the same object without querying the network. Calling this method once
- *  the hour has expired will query the network again, and cache the new results for the next
- *  hour.
- *
- *  If using the Zendesk UI, viewing a request will update the cached `ZDKRequestUpdates`
- *  to remove the viewed request. If using the providers only, a request can be removed from
- *  the cached `ZDKRequestUpdates` by calling `markRequestAsRead:` on the returned 
- *  `ZDKRequestUpdatesProtocol` with the request ID.
- *
- *  It is important to note the difference in behaviour of this method users using
- *  `ZDKAnonymousIdentity` versus users using `ZDKJwtIdentity`. For an
- *  `ZDKAnonymousIdentity`, this method will only fetch updates
- *  for requests which were created from this device (since those are all an Anonymous user
- *  has access to). However, a `ZDKJwtIdentity` will fetch all of
- *  the user's open requests, regardless of where they were created. Any request created on another
- *  channel is unknown to this instance of the Support SDK, and as such it will show in the
- *  resulting `ZDKRequestUpdates` with all of its comments counting as updates.
- *
- *  @since 1.10.0.1
- *
- *  @param callback supplies a ZDKRequestUpdates object if successful, otherwise an NSError is provided.
- *  @return An object which should be retained and used to signal when a user has viewed a request with updates.
- */
-- (id<ZDKRequestUpdatesProtocol>) getUpdatesForDevice:(ZDKRequestUpdatesCallback)callback;
 
 @end

@@ -149,12 +149,12 @@
  *  @param viewController ViewController to check to enable attachments
  *
  *
- *  @return Returns YES if attchments should be enabled. The app must
+ *  @return Returns YES if attchments should be enabled. This is a combination of server config and if the app
  *          supports portrait orientation, as UIImagePicker will crash if it cannot rotate into portrait
  *
  *  @since 1.5.4.1
  */
-+ (BOOL) appSupportsPortrait:(UIViewController *)viewController;
++ (BOOL) shouldEnableAttachments:(UIViewController *)viewController;
 
 
 

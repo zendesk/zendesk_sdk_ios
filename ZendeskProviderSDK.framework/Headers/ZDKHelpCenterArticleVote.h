@@ -29,7 +29,7 @@
  *
  *  @since 1.3.0.1
  */
-@property (nonatomic, copy) NSString *identifier;
+@property (nonatomic, copy) NSNumber *identifier;
 
 /**
  *  The API url of this vote
@@ -43,7 +43,7 @@
  *
  *  @since 1.3.0.1
  */
-@property (nonatomic, copy) NSString *userId;
+@property (nonatomic, copy) NSNumber *userId;
 
 /**
  *  The value of the vote
@@ -57,7 +57,7 @@
  *
  *  @since 1.3.0.1
  */
-@property (nonatomic, copy) NSString *itemId;
+@property (nonatomic, copy) NSNumber *itemId;
 
 /**
  *  The type of the item. Can be "Article"

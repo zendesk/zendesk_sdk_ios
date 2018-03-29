@@ -28,13 +28,13 @@
 /**
  *  Initializes a data source with a cell identifier, configuration block and a provider.
  *
- *  @since 0.9.3.1
+ *  @since 2.0.0
  *
  *  @param articleId The articleId passed as a String, the article to which attachments will be fetched.
  *
  *  @return A new instance.
  */
-- (instancetype) initWithArticleId:(NSString *)articleId ;
+- (instancetype) initWithArticleId:(NSNumber *)articleId ;
 
 
 @end

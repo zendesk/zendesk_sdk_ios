@@ -26,16 +26,16 @@
 /**
  *  Article id.
  *
- *  @since 0.9.3.1
+ *  @since 2.0.0
  */
-@property (nonatomic, copy) NSString *sid;
+@property (nonatomic, copy) NSNumber *identifier;
 
 /**
  *  Section id.
  *
- *  @since 0.9.3.1
+ *  @since 2.0.0
  */
-@property (nonatomic, copy) NSString *section_id;
+@property (nonatomic, copy) NSNumber *section_id;
 
 /**
  *  Article title.
@@ -62,9 +62,9 @@
 /**
  *  Id of the author.
  *
- *  @since 0.9.3.1
+ *  @since 2.0.0
  */
-@property (nonatomic, copy) NSString *author_id;
+@property (nonatomic, copy) NSNumber *author_id;
 
 /**
  *  Appears at the end of an article, contains the author name and creation date.

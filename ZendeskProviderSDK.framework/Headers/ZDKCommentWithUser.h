@@ -15,7 +15,7 @@
  */
 
 #import <Foundation/Foundation.h>
-@class ZDKComment, ZDKUser;
+@class ZDKComment, ZDKSupportUser;
 
 /**
  *  Aggregate model for comments with users.
@@ -36,7 +36,7 @@
  *
  *  @since 0.9.3.1
  */
-@property (nonatomic, strong, readonly) ZDKUser *user;
+@property (nonatomic, strong, readonly) ZDKSupportUser *user;
 
 /**
  *  Build an instance with comment and a user.

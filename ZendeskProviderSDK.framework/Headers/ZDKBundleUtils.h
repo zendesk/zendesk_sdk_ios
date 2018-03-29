@@ -77,16 +77,6 @@
  */
 + (NSString *) userDefinedHelpCenterCss;
 
-/**
- *  Get a dictionary of iOS devices. Keys are model identifiers e.g. @"iPhone3,1" 
- *  @see ModelIdentifier.plist in ZendeskSDK.bundle
- *
- *  @since 0.9.3.1
- *
- *  @return A device model string e.g. iPhone 4s
- */
-+ (NSDictionary *) deviceModelIdentifier;
-
 
 /**
  *  The name of the frameworks strings table
@@ -96,35 +86,6 @@
  *  @return The string table name.
  */
 + (NSString *) stringsTableName;
-
-
-/**
- *  Returns the conversations image from ZendeskSDK bundle.
- *
- *  @since 0.9.3.1
- *
- *  @return An image, or nil if the image was not found.
- */
-+ (UIImage *) conversationsImage;
-
-
-/**
- *  Returns the create request image from ZendeskSDK bundle.
- *
- *  @since 0.9.3.1
- *
- *  @return An image, or nil if the image was not found.
- */
-+ (UIImage *) createRequestImage;
-
-/**
- *  Returns the attachment image from ZendeskSDK bundle.
- *
- *  @since 1.1.0.1
- *
- *  @return An image, or nil if the image was not found.
- */
-+ (UIImage *) attachmentImage;
 
 
 /**

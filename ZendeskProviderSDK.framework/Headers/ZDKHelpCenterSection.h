@@ -22,16 +22,16 @@
 /**
  *  Section id.
  *
- *  @since 0.9.3.1
+ *  @since 2.0.0
  */
-@property (nonatomic, copy) NSString *sid;
+@property (nonatomic, copy) NSNumber *identifier;
 
 /**
  *  Category id for section.
  *
- *  @since 0.9.3.1
+ *  @since 2.0.0
  */
-@property (nonatomic, copy) NSString *category_id;
+@property (nonatomic, copy) NSNumber *category_id;
 
 /**
  *  section name.

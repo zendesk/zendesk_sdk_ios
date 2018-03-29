@@ -19,7 +19,7 @@
 #import "ZDKHelpCenterDeflection.h"
 #import "ZDKProvider.h"
 
-@class ZDKHelpCenterCategoryViewModel, ZDKHelpCenterSectionViewModel, ZDKHelpCenterOverviewContentModel, ZDKHelpCenterArticle;
+@class ZDKHelpCenterCategoryViewModel, ZDKHelpCenterSectionViewModel, ZDKHelpCenterOverviewContentModel, ZDKHelpCenterArticle, Zendesk;
 
 
 /**
@@ -55,7 +55,7 @@ typedef void (^ZDKHelpCenterGenericCallback)(id response, NSError *error);
 
 - (instancetype)init NS_UNAVAILABLE;
 
-- (instancetype)initWithAuthenticationSpace:(ZDKAuthenticationSpace*)authenticationSpace NS_UNAVAILABLE;
+- (instancetype)initWithZendesk:(Zendesk *)zendesk NS_UNAVAILABLE;
 
 /**
  *  Creates a Help Center provider.
@@ -85,18 +85,31 @@ typedef void (^ZDKHelpCenterGenericCallback)(id response, NSError *error);
 /**
  *  Fetch a list of sections for a given categoryId from a Help Center instance
  *
- *  @param categoryId NSString to specify what sections should be returned, only sections belonging to the category will be returned
+ *  @param categoryId NSInteger to specify what sections should be returned, only sections belonging to the category will be returned
  *  @param callback   Callback that will deliver a list of sections available on the instance of the Help Center for the provided locale and categoryId
  */
-- (void) getSectionsForCategoryId: (NSString *) categoryId withCallback:(ZDKHelpCenterCallback) callback;
+- (void) getSectionsForCategoryId:(NSInteger) categoryId withCallback:(ZDKHelpCenterCallback)callback;
 
 /**
  *  Fetch a list of articles for a given sectionId from a Help Center instance
  *
- *  @param sectionId NSString to specify what articles should be returned, only articles belonging to the section will be returned
+ *  @param sectionId NSInteger to specify what articles should be returned, only articles belonging to the section will be returned
  *  @param callback  Callback that will deliver a list of articles available on the instance of the Help Center for the provided locale and sectionId
+ *
+ *  @since 2.0.0
  */
-- (void) getArticlesForSectionId:(NSString *) sectionId withCallback: (ZDKHelpCenterCallback) callback;
+- (void) getArticlesForSectionId:(NSInteger)sectionId withCallback:(ZDKHelpCenterCallback)callback;
+
+/**
+ *  Fetch a list of articles for a given sectionId from a Help Center instance
+ *
+ *  @param sectionId NSInteger to specify what articles should be returned, only articles belonging to the section will be returned
+ *  @param labels   an array of labels used to filter articles by
+ *  @param callback  Callback that will deliver a list of articles available on the instance of the Help Center for the provided locale and sectionId
+ *
+ *  @since 2.0.0
+ */
+- (void) getArticlesForSectionId:(NSInteger)sectionId labels:(NSArray *)labels withCallback:(ZDKHelpCenterCallback)callback;
 
 /**
  *  This method will search articles in your Help Center.
@@ -105,7 +118,7 @@ typedef void (^ZDKHelpCenterGenericCallback)(id response, NSError *error);
  *  @param query    The query text used to perform the search
  *  @param callback The callback which will be called upon a successful or an erroneous response.
  */
-- (void) searchForArticlesUsingQuery:(NSString *)query withCallback: (ZDKHelpCenterCallback) callback;
+- (void) searchForArticlesUsingQuery:(NSString *)query withCallback:(ZDKHelpCenterCallback)callback;
 
 /**
  *  This method will search articles in your Help Center filtered by an array of labels
@@ -114,7 +127,7 @@ typedef void (^ZDKHelpCenterGenericCallback)(id response, NSError *error);
  *  @param labels   The array of labels used to filter the search results
  *  @param callback The callback which will be called upon a successful or an erroneous response.
  */
-- (void) searchForArticlesUsingQuery:(NSString *)query andLabels:(NSArray <NSString*> *)labels withCallback: (ZDKHelpCenterCallback) callback;
+- (void) searchForArticlesUsingQuery:(NSString *)query andLabels:(NSArray <NSString*> *)labels withCallback:(ZDKHelpCenterCallback)callback;
 
 /**
  *  This method will search articles in your Help Center filtered by the parameters in the given ZDKHelpCenterSearch model.
@@ -123,15 +136,17 @@ typedef void (^ZDKHelpCenterGenericCallback)(id response, NSError *error);
  *  @param callback The callback which will be called upon a successful or an erroneous response.
  *  @see <a href="https://developer.zendesk.com/rest_api/docs/help_center/search">Searching Help Center.</a>
  */
-- (void) searchArticles:(ZDKHelpCenterSearch*) search withCallback: (ZDKHelpCenterCallback) callback;
+- (void) searchArticles:(ZDKHelpCenterSearch*) search withCallback:(ZDKHelpCenterCallback)callback;
 
 /**
  *  This method returns a list of attachments for a single article.
  *
  *  @param articleId the identifier to be used to retrieve an article from a Help Center instance
  *  @param callback  the callback that is invoked when a request is either successful or has errors
+ *
+ *  @since 2.0.0
  */
-- (void) getAttachmentForArticleId:(NSString *)articleId withCallback: (ZDKHelpCenterCallback) callback;
+- (void) getAttachmentForArticleId:(NSInteger)articleId withCallback:(ZDKHelpCenterCallback)callback;
 
 /**
  *  Fetch a list of articles for a given array of labels from a Help Center instance
@@ -139,7 +154,7 @@ typedef void (^ZDKHelpCenterGenericCallback)(id response, NSError *error);
  *  @param labels   an array of labels used to filter articles by
  *  @param callback the callback that is invoked when a request is either successful or has errors
  */
-- (void) getArticlesByLabels:(NSArray <NSString*> *)labels withCallback: (ZDKHelpCenterCallback) callback;
+- (void) getArticlesByLabels:(NSArray <NSString*> *)labels withCallback:(ZDKHelpCenterCallback)callback;
 
 /**
  *  Fetch an article by ID.
@@ -147,9 +162,9 @@ typedef void (^ZDKHelpCenterGenericCallback)(id response, NSError *error);
  *  @param articleId The ID of the article to fetch.
  *  @param callback  The callback that is invoked when a request is either successful or has error.
  *
- *  @since 1.3.1.1
+ *  @since 2.0.0
  */
-- (void) getArticleById:(NSString *)articleId withCallback:(ZDKHelpCenterCallback) callback;
+- (void) getArticleById:(NSInteger)articleId withCallback:(ZDKHelpCenterCallback)callback;
 
 
 /**
@@ -174,22 +189,22 @@ typedef void (^ZDKHelpCenterGenericCallback)(id response, NSError *error);
 /**
  *  Fetches a section object for a particular sectionId.
  *
- *  @since 1.4.0.1
+ *  @since 2.0.0
  *
  *  @param sectionId The id of the section to fetch.
  *  @param callback The callback that is invoked when a request is either successful or has error.
  */
-- (void) getSectionById:(NSString *)sectionId withCallback:(ZDKHelpCenterCallback)callback;
+- (void) getSectionById:(NSInteger)sectionId withCallback:(ZDKHelpCenterCallback)callback;
 
 /**
  *  Fetches a category object for a particular categoryId.
  *
- *  @since 1.4.0.1
+ *  @since 2.0.0
  *
  *  @param categoryId The id of the section to fetch.
  *  @param callback The callback that is invoked when a request is either successful or has error.
  */
-- (void) getCategoryById:(NSString *)categoryId withCallback:(ZDKHelpCenterCallback)callback;
+- (void) getCategoryById:(NSInteger)categoryId withCallback:(ZDKHelpCenterCallback)callback;
 
 /**
  *  Used for the purpose of reporting in Zendesk. This will record an article as being viewed by the client.
@@ -205,46 +220,33 @@ typedef void (^ZDKHelpCenterGenericCallback)(id response, NSError *error);
 /**
  *  Post an upvote for a given article. If a vote already exists for the source object it is updated.
  *
- *  @since 1.3.0.1
+ *  @since 2.0.0
  *
  *  @param articleId The id of the article to upvote.
  *  @param callback  The callback that is invoked when a request is either successful or has error. Returns the vote object.
  */
-- (void) upvoteArticleWithId:(NSString *)articleId withCallback:(ZDKHelpCenterCallback)callback;
+- (void) upvoteArticleWithId:(NSInteger)articleId withCallback:(ZDKHelpCenterCallback)callback;
 
 
 /**
  *  Post a downvote for a given article. If a vote already exists for the source object it is updated.
  *
- *  @since 1.3.0.1
+ *  @since 2.0.0
  *
  *  @param articleId The id of the article to downvote.
  *  @param callback  The callback that is invoked when a request is either successful or has error. Returns the vote object.
  */
-- (void) downvoteArticleWithId:(NSString *)articleId withCallback:(ZDKHelpCenterCallback)callback;
+- (void) downvoteArticleWithId:(NSInteger)articleId withCallback:(ZDKHelpCenterCallback)callback;
 
 
 /**
  *  Deletes a vote for a given id
  *
- *  @since 1.3.0.1
+ *  @since 2.0.0
  *
  *  @param voteId The id of the vote to delete
  *  @param callback  The callback that is invoked when a request is either successful or has error. Returns a status code
  */
-- (void) deleteVoteWithId:(NSString*)voteId withCallback:(ZDKHelpCenterGenericCallback)callback;
-
-/**
- *  Fetches a section view model object with all of its articles contained within the object
- *
- *  @param sectionId The sectionId you want to fetch.
- *  @param labels The array of labels used to filter the query
- *  @param callback  The callback that is returned when is either successful or unsuccuessful. It returns a
- *  array with one section view model in it or an NSError.
- *
- *  @since 1.7.0.1
- */
-- (void) getSectionWithArticlesForSectionId:(NSString *)sectionId labels:(NSArray <NSString*> *)labels callback:(ZDKHelpCenterCallback)callback;
-
+- (void) deleteVoteWithId:(NSInteger)voteId withCallback:(ZDKHelpCenterGenericCallback)callback;
 
 @end

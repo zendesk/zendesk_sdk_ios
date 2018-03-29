@@ -4,3 +4,8 @@ framework module ZendeskProviderSDK {
   export *
   module * { export * }
 }
+
+module ZendeskProviderSDK.Swift {
+    header "ZendeskProviderSDK-Swift.h"
+    requires objc
+}

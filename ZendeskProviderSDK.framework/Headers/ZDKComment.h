@@ -20,6 +20,7 @@
  *
  *  @since 0.9.3.1
  */
+@class ZDKAttachment;
 @interface ZDKComment : NSObject
 
 /**
@@ -27,7 +28,7 @@
  *
  *  @since 0.9.3.1
  */
-@property (nonatomic, strong, readonly) NSNumber *commentId;
+@property (nonatomic, strong, readonly) NSNumber * commentId;
 
 /**
  * The comment body/text.
@@ -35,6 +36,18 @@
  *  @since 0.9.3.1
  */
 @property (nonatomic, copy) NSString *body;
+
+/**
+ * The HTML comment body/text.
+ * Scrubbed for self-closing and unclosed tags, currently:
+ * <br>
+ * <br/>
+ * <hr/>
+ * <img>
+ *
+ * @since 2.0.0.0
+ */
+@property (nonatomic, copy) NSString *htmlBody;
 
 /**
  * The Zendesk user id of the author.
@@ -55,7 +68,7 @@
  *
  *  @since 0.9.3.1
  */
-@property (nonatomic, copy) NSArray *attachments;
+@property (nonatomic, copy) NSArray <ZDKAttachment *>* attachments;
 
 /**
  *  The request the comment belongs to.
@@ -73,6 +86,14 @@
  */
 - (instancetype) initWithDictionary:(NSDictionary*)dictionary;
 
+/**
+ * Returns a dictionary with comment details. Used for storing a comment.
+ *
+ *  @since 2.0.0.1
+ *
+ * @param dictionary the dictionary generated from the API json
+ */
+- (NSDictionary *)toJson;
 
 @end
 

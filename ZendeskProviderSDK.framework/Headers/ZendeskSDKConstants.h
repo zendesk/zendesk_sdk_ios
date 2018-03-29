@@ -499,6 +499,16 @@ extern NSString * const ZDD_ERROR_Key;
 
 extern NSString * const ZDD_Validator_Error_Key;
 
+
+// itunes link formats
+extern NSString * const iOS7AppStoreURLFormat;
+extern NSString * const iOSAppStoreURLFormat;
+
+extern NSString * const ZDSDKUserDefaultsKey;
+
+
+// notifications
+
 #pragma mark - Authentication types
 extern NSString * const ZDK_AUTHENTICATION_JWT;
 extern NSString * const ZDK_AUTHENTICATION_ANONYMOUS;

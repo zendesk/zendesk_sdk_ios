@@ -84,6 +84,10 @@
  */
 + (NSString*) stringFromDate:(NSDate*)date usingFormat:(NSString*)format;
 
+/**
+ *  @since x.x.x.x
+ */
++ (NSString*) stringFromDate:(NSDate*)date;
 
 /**
  *  Get a cached thread local formatter for the requested date format.

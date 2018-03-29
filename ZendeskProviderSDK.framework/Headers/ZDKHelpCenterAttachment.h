@@ -26,9 +26,9 @@
 /**
  *  The id of an attachment.
  *
- *  @since 0.9.3.1
+ *  @since 2.0.0
  */
-@property (nonatomic, copy) NSString *sid;
+@property (nonatomic, copy) NSNumber *identifier;
 
 /**
  *  The url where the attachment can be found.
@@ -40,9 +40,9 @@
 /**
  *  The id of the article for which an attachment belongs.
  *
- *  @since 0.9.3.1
+ *  @since 2.0.0
  */
-@property (nonatomic, copy) NSString *article_id;
+@property (nonatomic, copy) NSNumber *article_id;
 
 /**
  *  The file name of an attachment.
