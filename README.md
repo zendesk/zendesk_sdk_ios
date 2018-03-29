@@ -4,6 +4,10 @@
 
 Zendesk SDK for mobile is a quick, convenient way to get customer support into your mobile apps. With just a few lines of code, you can provide your end users with an easy way to get in touch from any mobile app.
 
+## Demo Applications 
+
+There are a number of simple demo applicaitons [here](https://github.com/zendesk/ios_sdk_demo_apps). 
+
 ## Documentation
 
 You can find [documentation](https://developer.zendesk.com/embeddables/docs/ios/welcome) for the SDK and [release notes](https://developer.zendesk.com/embeddables/docs/ios/version_information) on https://developer.zendesk.com.
