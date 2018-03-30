@@ -10,7 +10,7 @@ There are a number of simple demo applicaitons [here](https://github.com/zendesk
 
 ## Documentation
 
-You can find [documentation](https://developer.zendesk.com/embeddables/docs/ios/welcome) for the SDK and [release notes](https://developer.zendesk.com/embeddables/docs/ios/version_information) on https://developer.zendesk.com.
+You can find [documentation](https://developer.zendesk.com/embeddables/docs/ios_support_sdk/nutshell) for the SDK and [release notes](https://developer.zendesk.com/embeddables/docs/ios_support_sdk/release_notes) on https://developer.zendesk.com.
 
 ## Feature request
 
