@@ -40,6 +40,7 @@ Pod::Spec.new do |s|
     ss.platform     = :ios, '9.0'
     ss.ios.vendored_frameworks = 'ZendeskSDK/4.1/ZendeskProviderSDK.framework'
     ss.preserve_paths = 'ZendeskSDK/4.1/ZendeskProviderSDK.framework'
+    ss.dependency 'ZendeskSDK/Core'
   end
 
   s.subspec 'Core' do |ss|
