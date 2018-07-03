@@ -3,7 +3,7 @@
  *  ZendeskSDK.h
  *  ZendeskSDK
  *
- *  Created by Zendesk on 03/25/2018
+ *  Created by Zendesk on 06/12/2018
  *
  *  Copyright (c) 2018 Zendesk. All rights reserved.
  *
@@ -32,6 +32,7 @@
 #import "ZDKSupportAttachmentCell.h"
 #import "ZDKToastViewWrapper.h"
 #import "ZDKUIUtil.h"
+#import "ZDKUiConfiguration.h"
 #import "ZendeskFabric.h"
 
 #if MODULES_DISABLED

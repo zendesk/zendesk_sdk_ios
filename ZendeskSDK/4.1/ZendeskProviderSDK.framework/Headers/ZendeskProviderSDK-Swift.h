@@ -362,6 +362,8 @@ SWIFT_CLASS_NAMED("RequestUpdates")
 /// the SDK and manages the backend configuration.
 SWIFT_CLASS_NAMED("Support")
 @interface ZDKSupport : NSObject
+/// Locale override for help center
+@property (nonatomic, copy) NSString * _Nullable helpCenterLocaleOverride;
 /// Initialize the Support singleton with the Zendesk singleton
 /// from ZendeskCoreSDK
 + (void)initializeWithZendesk:(ZDKZendesk * _Nullable)zendesk;
