@@ -223,6 +223,13 @@ SWIFT_CLASS("_TtC10ZendeskSDK30HelpCenterArticleVotingHandler")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 @end
 
+
+/// Configuration for a screen of the SDK
+SWIFT_PROTOCOL_NAMED("UiConfiguration")
+@protocol ZDKUiConfiguration <NSObject>
+- (nonnull instancetype)init;
+@end
+
 @class NSNumber;
 @class ZDKHelpCenterOverviewContentModel;
 
@@ -413,6 +420,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) ZDKTheme * _
 @property (nonatomic, strong) UIColor * _Nonnull primaryColor;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 @end
+
 
 
 

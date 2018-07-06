@@ -106,7 +106,7 @@
 		</data>
 		<key>Headers/ZDKHelpCenterProvider.h</key>
 		<data>
-		5UDDFKPap3W08hR9qMSLBS2pujg=
+		2nMiM2Y3ehESeZjd9782jHgE4lo=
 		</data>
 		<key>Headers/ZDKHelpCenterSearch.h</key>
 		<data>
@@ -214,7 +214,7 @@
 		</data>
 		<key>Headers/ZendeskProviderSDK-Swift.h</key>
 		<data>
-		Z2zaFX4f+NQ3D0JeY8kyBzFk2LU=
+		K1iGmxkwKJM3uryNaq+IbX2hYAQ=
 		</data>
 		<key>Headers/ZendeskProviderSDK.h</key>
 		<data>
@@ -226,23 +226,23 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		AB6vxhkQy01pzc8WREXEYg8ukLI=
+		tRgvABsejPF3xraNuPXv3sBWIzA=
 		</data>
 		<key>Modules/ZendeskProviderSDK.swiftmodule/i386.swiftdoc</key>
 		<data>
-		fQ0wDwi48h3lz/r82fU7i8O3TsY=
+		k2T6YEww5//a1kZGoO/nxteISLo=
 		</data>
 		<key>Modules/ZendeskProviderSDK.swiftmodule/i386.swiftmodule</key>
 		<data>
-		Ka/QfBu+rD3GkoAFVQ1Jayx5g5s=
+		8Cf3Ik/qyrRwbop6xn8f+ELiq30=
 		</data>
 		<key>Modules/ZendeskProviderSDK.swiftmodule/x86_64.swiftdoc</key>
 		<data>
-		jW231pTuNdYAN/bxb56d+aUW2Ac=
+		sz9W08Zftx7QbQx02dIUTBc5SG8=
 		</data>
 		<key>Modules/ZendeskProviderSDK.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		7GdjFUkYQrd7JPCj07BNZl1y7fI=
+		mO6fBBOV4CZ2BzvWVUz2KcbVz1g=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -254,11 +254,11 @@
 		</data>
 		<key>ZendeskSDKStrings.bundle/Info.plist</key>
 		<data>
-		CiqAKGLjVpZZGUGLTowvSdfklkY=
+		BcCKCkgmHhjHfkcEn0Ou26LqmGw=
 		</data>
 		<key>ZendeskSDKStrings.bundle/_CodeSignature/CodeDirectory</key>
 		<data>
-		gddCIi4XzBcPm1K1tQqjjOTKZZ0=
+		D0pvQo4TEZDxSgaU3VltXgDDI3E=
 		</data>
 		<key>ZendeskSDKStrings.bundle/_CodeSignature/CodeRequirements</key>
 		<data>
@@ -266,11 +266,11 @@
 		</data>
 		<key>ZendeskSDKStrings.bundle/_CodeSignature/CodeRequirements-1</key>
 		<data>
-		+dfHnRTxc8/syQbuBkgmtsKl2WQ=
+		MzRkuB1USbqhdrKK/Xi3r0NDWU0=
 		</data>
 		<key>ZendeskSDKStrings.bundle/_CodeSignature/CodeResources</key>
 		<data>
-		VAtZLll6TFuum4ZUFstYTOg4hqQ=
+		n7Y0hriB4mHYDoail3l+h+pIAVQ=
 		</data>
 		<key>ZendeskSDKStrings.bundle/_CodeSignature/CodeSignature</key>
 		<data>
@@ -289,7 +289,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			a1YBoBoorWR7Oxxa6MTNljyeSwg=
+			TT+1vu5gZxU2T4UTCHOwra1gEpQ=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -307,7 +307,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			2/8xCfYVY9OE0k9QLhqsRdjMAHM=
+			D3dWJbPRs2JTfXLhstgCf9Ki1D0=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -406,7 +406,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			h990jGN1F+B/mfRWl7WHh4YZcAg=
+			zyNhb2W6vNCWkqmyBNUfwXhxHQo=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -541,7 +541,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			9BvJDUEK63zP3Rs9kSE+iAXLbVo=
+			dnzolSydPVNijQp5J2yzEzsiSac=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -855,11 +855,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			5UDDFKPap3W08hR9qMSLBS2pujg=
+			2nMiM2Y3ehESeZjd9782jHgE4lo=
 			</data>
 			<key>hash2</key>
 			<data>
-			XIYzmpHtYfIvnXOm0srS7yxZyVYVWVEHCIDOBtCfJKA=
+			suOERsHklB0s702lT5KK3FBmwgkJzub8SK/MU4Bmj+c=
 			</data>
 		</dict>
 		<key>Headers/ZDKHelpCenterSearch.h</key>
@@ -1152,11 +1152,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Z2zaFX4f+NQ3D0JeY8kyBzFk2LU=
+			K1iGmxkwKJM3uryNaq+IbX2hYAQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			noO2KpQjzZSJOW1r/amSnLXibcmQLcmYy4QquDUZF7k=
+			C7A14YAZHEgJqvlMbcLdn3udZNpZakuGWsy8ZnfR/BQ=
 			</data>
 		</dict>
 		<key>Headers/ZendeskProviderSDK.h</key>
@@ -1185,44 +1185,44 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			fQ0wDwi48h3lz/r82fU7i8O3TsY=
+			k2T6YEww5//a1kZGoO/nxteISLo=
 			</data>
 			<key>hash2</key>
 			<data>
-			QVo4VXDANpAQu9WsEFW9GavEtxtAJtsH833AG3CkKJ8=
+			lS0yShsfrX6Ii/t244Nj/JuvTzXw0z3xWE481k2e4kk=
 			</data>
 		</dict>
 		<key>Modules/ZendeskProviderSDK.swiftmodule/i386.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Ka/QfBu+rD3GkoAFVQ1Jayx5g5s=
+			8Cf3Ik/qyrRwbop6xn8f+ELiq30=
 			</data>
 			<key>hash2</key>
 			<data>
-			psvfYPiJzPvEyaCpbFonyO3UwOIvGwPAr6N0iuJfqX8=
+			jnYTIix5QuFR1iE/WSJS6Ftqhe1mBxN3CfIV4I/hbjU=
 			</data>
 		</dict>
 		<key>Modules/ZendeskProviderSDK.swiftmodule/x86_64.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			jW231pTuNdYAN/bxb56d+aUW2Ac=
+			sz9W08Zftx7QbQx02dIUTBc5SG8=
 			</data>
 			<key>hash2</key>
 			<data>
-			AlfH8YAuwbnWLP+b7tGyoFnCmJ18nCCQWKFUrWa9j1Q=
+			hAH/14WTuBeo02wpkXpdgnrBEjrGz4kTta3jqonmLYU=
 			</data>
 		</dict>
 		<key>Modules/ZendeskProviderSDK.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			7GdjFUkYQrd7JPCj07BNZl1y7fI=
+			mO6fBBOV4CZ2BzvWVUz2KcbVz1g=
 			</data>
 			<key>hash2</key>
 			<data>
-			9VRG3QIK6Oi3IWiVL1wPrVbZ0qXmcazkHtIiB8SYil4=
+			O6zU6bPELLQrtjvHHinJr10LDv89dzfRaSOP0ikdMUY=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -1251,22 +1251,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			CiqAKGLjVpZZGUGLTowvSdfklkY=
+			BcCKCkgmHhjHfkcEn0Ou26LqmGw=
 			</data>
 			<key>hash2</key>
 			<data>
-			qL/m64jvTf9OnZc98qSmEjvLHrvwKYaAaCfxKfK7LqE=
+			UX/jESb/JXovEg6ZBCELTXHyBTJWR+Zj2AFMlRMDr6w=
 			</data>
 		</dict>
 		<key>ZendeskSDKStrings.bundle/_CodeSignature/CodeDirectory</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			gddCIi4XzBcPm1K1tQqjjOTKZZ0=
+			D0pvQo4TEZDxSgaU3VltXgDDI3E=
 			</data>
 			<key>hash2</key>
 			<data>
-			/DE8oqvCp5G9yWSL7NFsN5rEMkvcDpWea/d/51O9Br0=
+			d3eiB3TJXTniPKcnHgSrZBcsAKiZIhdopjlsUedaE6g=
 			</data>
 		</dict>
 		<key>ZendeskSDKStrings.bundle/_CodeSignature/CodeRequirements</key>
@@ -1284,22 +1284,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			+dfHnRTxc8/syQbuBkgmtsKl2WQ=
+			MzRkuB1USbqhdrKK/Xi3r0NDWU0=
 			</data>
 			<key>hash2</key>
 			<data>
-			TQG9niGdGjd4jO09bagoAG0JQGxqg8RywLdah8Em14c=
+			zmEF28d2LRGSpFx+swCW4P1Wj4NPWiY4RQXRwmgcLEU=
 			</data>
 		</dict>
 		<key>ZendeskSDKStrings.bundle/_CodeSignature/CodeResources</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			VAtZLll6TFuum4ZUFstYTOg4hqQ=
+			n7Y0hriB4mHYDoail3l+h+pIAVQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			hMz3Ao+9EpTS7F1CCIX63BOkw3O99p8COo3DWOr4IJs=
+			jBVbPWpyzw0q33d0U0wleSxo9OjJc8hbkvUiDHbxcVI=
 			</data>
 		</dict>
 		<key>ZendeskSDKStrings.bundle/_CodeSignature/CodeSignature</key>
@@ -1330,11 +1330,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			a1YBoBoorWR7Oxxa6MTNljyeSwg=
+			TT+1vu5gZxU2T4UTCHOwra1gEpQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			9wreZTJJiMyw3gCxx8TEBOYw+3lZuD2tabhK/O2bdk0=
+			iutUD3Hvb8uOchja6MEyBMBSDF/PgJFvyIQjsUgKSkQ=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -1356,11 +1356,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			2/8xCfYVY9OE0k9QLhqsRdjMAHM=
+			D3dWJbPRs2JTfXLhstgCf9Ki1D0=
 			</data>
 			<key>hash2</key>
 			<data>
-			twowW/1Reptxg9E/zrdF4qZU8kIqjn5yyBIozEpZ1yI=
+			Avn0LQIOtO+bcd3mDovYP5nK6lPZDfSom14+MaEcwLQ=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -1499,11 +1499,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			h990jGN1F+B/mfRWl7WHh4YZcAg=
+			zyNhb2W6vNCWkqmyBNUfwXhxHQo=
 			</data>
 			<key>hash2</key>
 			<data>
-			immQNiUhDnAXSk5PjR3dfBr9CBEwZ/79JJqYYd3ndvY=
+			75OwC1zDAfGxIejNk8mfDLk+WOLcB4ozFRMtw6pEUio=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -1694,11 +1694,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			9BvJDUEK63zP3Rs9kSE+iAXLbVo=
+			dnzolSydPVNijQp5J2yzEzsiSac=
 			</data>
 			<key>hash2</key>
 			<data>
-			PnZL5UI8eBASO9zE34o4OGqngXwz2WARskI1CL+I+zI=
+			nCgc4I25gMuMQ/uJ7u3actVIHzQkm1N7WT84gy43Xz0=
 			</data>
 			<key>optional</key>
 			<true/>
