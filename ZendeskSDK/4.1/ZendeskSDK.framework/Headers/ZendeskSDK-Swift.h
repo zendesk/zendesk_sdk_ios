@@ -221,13 +221,6 @@ SWIFT_CLASS("_TtC10ZendeskSDK30HelpCenterArticleVotingHandler")
 + (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
 @end
 
-
-/// Configuration for a screen of the SDK
-SWIFT_PROTOCOL_NAMED("UiConfiguration")
-@protocol ZDKUiConfiguration <NSObject>
-- (nonnull instancetype)init;
-@end
-
 @class NSNumber;
 @class ZDKHelpCenterOverviewContentModel;
 
@@ -420,7 +413,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) ZDKTheme * _
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
 @end
-
 
 
 
