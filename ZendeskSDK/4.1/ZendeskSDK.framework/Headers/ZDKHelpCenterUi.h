@@ -18,9 +18,9 @@
 @import UIKit;
 
 #import "ZDKHelpCenterConversationsUIDelegate.h"
+#import "ZDKUiConfiguration.h"
 
 @class ZDKHelpCenterArticle;
-@protocol ZDKUiConfiguration;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -41,7 +41,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  @since 2.0.0
  */
-+ (UIViewController <ZDKHelpCenterDelegate>*) buildHelpCenterOverviewWithConfigs:(NSArray<ZDKUiConfiguration> *)configs;
++ (UIViewController <ZDKHelpCenterDelegate>*) buildHelpCenterOverviewWithConfigs:(NSArray<id <ZDKUiConfiguration>> *)configs;
 
 
 /**
@@ -62,7 +62,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  @since 2.0.0
  */
 + (UIViewController<ZDKHelpCenterDelegate>*) buildHelpCenterArticle:(ZDKHelpCenterArticle *)article
-                                                         andConfigs:(NSArray<ZDKUiConfiguration> *)configs;
+                                                         andConfigs:(NSArray<id <ZDKUiConfiguration>> *)configs;
 /**
  * Build the Help Center Article view controller. Displays a single article.
  *
@@ -81,7 +81,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  @since 2.0.0
  */
 + (UIViewController<ZDKHelpCenterDelegate>*) buildHelpCenterArticleWithArticleId:(NSString *)articleId
-                                                                      andConfigs:(NSArray<ZDKUiConfiguration> *)configs;
+                                                                      andConfigs:(NSArray<id <ZDKUiConfiguration>> *)configs;
 
 
 @end

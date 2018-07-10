@@ -39,14 +39,6 @@ typedef NS_ENUM(NSUInteger, ZDKContactUsVisibility) {
  */
 - (ZDKNavBarConversationsUIType) navBarConversationsUIType;
 
-
-/**
- *  To conform implementations should return an image for the right nav bar button.
- *
- *  @return An image for the right nav bar button.
- */
-- (UIImage *) conversationsBarButtonImage;
-
 /**
  *  Determines where the coversations nav bar button will be displayed.
  *
@@ -62,6 +54,13 @@ typedef NS_ENUM(NSUInteger, ZDKContactUsVisibility) {
  *  @return A localized string for the right nav bar button.
  */
 - (NSString *) conversationsBarButtonLocalizedLabel;
+
+/**
+ *  To conform implementations should return an image for the right nav bar button.
+ *
+ *  @return An image for the right nav bar button.
+ */
+- (UIImage *) conversationsBarButtonImage;
 
 @end
 
