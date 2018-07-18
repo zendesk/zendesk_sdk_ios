@@ -48,8 +48,6 @@ typedef void (^ZDKHelpCenterGenericCallback)(id response, NSError *error);
 
 @interface ZDKHelpCenterProvider : ZDKProvider
 
-+ (instancetype) new NS_UNAVAILABLE;
-
 - (instancetype)initWithZendesk:(Zendesk *)zendesk NS_UNAVAILABLE;
 
 /**
