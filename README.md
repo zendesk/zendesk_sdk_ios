@@ -1,6 +1,8 @@
 :warning: *Use of this software is subject to important terms and conditions as set forth in the License file* :warning:
 
 # Zendesk Mobile SDK for iOS
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fzendesk%2Fzendesk_sdk_ios.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fzendesk%2Fzendesk_sdk_ios?ref=badge_shield)
+
 
 Zendesk SDK for mobile is a quick, convenient way to get customer support into your mobile apps. With just a few lines of code, you can provide your end users with an easy way to get in touch from any mobile app.
 
@@ -31,3 +33,6 @@ irrevocable and perpetual license to incorporate into the Service or the Zendesk
 or otherwise use and commercially exploit any Contributions. “Contribution” shall mean 
 any work of authorship, including any modifications or additions to the Mobile SDK 
 or derivative works thereof, that is submitted to Zendesk by You.
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fzendesk%2Fzendesk_sdk_ios.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fzendesk%2Fzendesk_sdk_ios?ref=badge_large)
