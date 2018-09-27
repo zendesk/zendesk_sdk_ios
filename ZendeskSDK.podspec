@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name         = "ZendeskSDK"
-  s.version      = "2.1.1"
-  s.summary      = "Zendesk SDK 2.1.1"
+  s.version      = "2.2.0"
+  s.summary      = "Zendesk SDK 2.2.0"
   s.homepage     = "https://github.com/zendesk/zendesk_sdk_ios"
   s.license      = {
     :type => 'Copyright',
@@ -29,24 +29,24 @@ Pod::Spec.new do |s|
 
   s.subspec 'UI' do |ss|
     ss.platform     = :ios, '9.0'
-    ss.ios.vendored_frameworks = 'ZendeskSDK/4.2/ZendeskSDK.framework'
-    ss.preserve_paths = 'ZendeskSDK/4.2/ZendeskSDK.framework'
-    ss.resources = ["ZendeskSDK/4.2/ZendeskSDKStrings.bundle"]
+    ss.ios.vendored_frameworks = 'ZendeskSDK/s.swift_version.to_s/ZendeskSDK.framework'
+    ss.preserve_paths = 'ZendeskSDK/s.swift_version.to_s/ZendeskSDK.framework'
+    ss.resources = ["ZendeskSDK/s.swift_version.to_s/ZendeskSDKStrings.bundle"]
     ss.dependency 'ZendeskSDK/Providers'
     ss.dependency 'ZendeskSDK/Core'
   end
 
   s.subspec 'Providers' do |ss|
     ss.platform     = :ios, '9.0'
-    ss.ios.vendored_frameworks = 'ZendeskSDK/4.2/ZendeskProviderSDK.framework'
-    ss.preserve_paths = 'ZendeskSDK/4.2/ZendeskProviderSDK.framework'
+    ss.ios.vendored_frameworks = 'ZendeskSDK/s.swift_version.to_s/ZendeskProviderSDK.framework'
+    ss.preserve_paths = 'ZendeskSDK/s.swift_version.to_s/ZendeskProviderSDK.framework'
     ss.dependency 'ZendeskSDK/Core'
   end
 
   s.subspec 'Core' do |ss|
     ss.platform     = :ios, '9.0'
-    ss.ios.vendored_frameworks = 'ZendeskSDK/4.2/ZendeskCoreSDK.framework'
-    ss.preserve_paths = 'ZendeskSDK/4.2/ZendeskCoreSDK.framework'
+    ss.ios.vendored_frameworks = 'ZendeskSDK/s.swift_version.to_s/ZendeskCoreSDK.framework'
+    ss.preserve_paths = 'ZendeskSDK/s.swift_version.to_s/ZendeskCoreSDK.framework'
   end  
 
 end
