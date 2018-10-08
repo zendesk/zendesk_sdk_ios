@@ -6,7 +6,7 @@ Zendesk SDK for mobile is a quick, convenient way to get customer support into y
 
 ## Demo Applications 
 
-There are a number of simple demo applicaitons [here](https://github.com/zendesk/ios_sdk_demo_apps). 
+There are a number of simple demo applications [here](https://github.com/zendesk/ios_sdk_demo_apps). 
 
 ## Documentation
 
