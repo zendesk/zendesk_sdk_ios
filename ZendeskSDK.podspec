@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios, '9.0'
   s.requires_arc = true
   s.frameworks = 'MobileCoreServices', 'SystemConfiguration', 'Security', 'MessageUI'
-  s.swift_version = '4.2'
+  s.swift_version = '4.1'
   s.xcconfig = { 'FRAMEWORK_SEARCH_PATHS' => '$(inherited)', 'CLANG_ENABLE_MODULES' => 'YES', 'ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES' => 'YES' }
     
 
@@ -29,24 +29,24 @@ Pod::Spec.new do |s|
 
   s.subspec 'UI' do |ss|
     ss.platform     = :ios, '9.0'
-    ss.ios.vendored_frameworks = 'ZendeskSDK/4.2/ZendeskSDK.framework'
-    ss.preserve_paths = 'ZendeskSDK/4.2/ZendeskSDK.framework'
-    ss.resources = ["ZendeskSDK/4.2/ZendeskSDKStrings.bundle"]
+    ss.ios.vendored_frameworks = 'ZendeskSDK/4.1/ZendeskSDK.framework'
+    ss.preserve_paths = 'ZendeskSDK/4.1/ZendeskSDK.framework'
+    ss.resources = ["ZendeskSDK/4.1/ZendeskSDKStrings.bundle"]
     ss.dependency 'ZendeskSDK/Providers'
     ss.dependency 'ZendeskSDK/Core'
   end
 
   s.subspec 'Providers' do |ss|
     ss.platform     = :ios, '9.0'
-    ss.ios.vendored_frameworks = 'ZendeskSDK/4.2/ZendeskProviderSDK.framework'
-    ss.preserve_paths = 'ZendeskSDK/4.2/ZendeskProviderSDK.framework'
+    ss.ios.vendored_frameworks = 'ZendeskSDK/4.1/ZendeskProviderSDK.framework'
+    ss.preserve_paths = 'ZendeskSDK/4.1/ZendeskProviderSDK.framework'
     ss.dependency 'ZendeskSDK/Core'
   end
 
   s.subspec 'Core' do |ss|
     ss.platform     = :ios, '9.0'
-    ss.ios.vendored_frameworks = 'ZendeskSDK/4.2/ZendeskCoreSDK.framework'
-    ss.preserve_paths = 'ZendeskSDK/4.2/ZendeskCoreSDK.framework'
+    ss.ios.vendored_frameworks = 'ZendeskSDK/4.1/ZendeskCoreSDK.framework'
+    ss.preserve_paths = 'ZendeskSDK/4.1/ZendeskCoreSDK.framework'
   end  
 
 end
