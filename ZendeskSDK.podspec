@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name         = "ZendeskSDK"
-  s.version      = "2.2.0"
-  s.summary      = "Zendesk SDK 2.2.0"
+  s.version      = "2.3.0"
+  s.summary      = "Zendesk SDK 2.3.0"
   s.homepage     = "https://github.com/zendesk/zendesk_sdk_ios"
   s.license      = {
     :type => 'Copyright',
@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios, '9.0'
   s.requires_arc = true
   s.frameworks = 'MobileCoreServices', 'SystemConfiguration', 'Security', 'MessageUI'
-  s.swift_version = '4.2'
+  s.swift_version = "4.2.1"
   s.xcconfig = { 'FRAMEWORK_SEARCH_PATHS' => '$(inherited)', 'CLANG_ENABLE_MODULES' => 'YES', 'ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES' => 'YES' }
     
 
@@ -28,25 +28,25 @@ Pod::Spec.new do |s|
   s.default_subspecs = 'UI', 'Providers'
 
   s.subspec 'UI' do |ss|
-    ss.platform     = :ios, '9.0'
-    ss.ios.vendored_frameworks = 'ZendeskSDK/4.2/ZendeskSDK.framework'
-    ss.preserve_paths = 'ZendeskSDK/4.2/ZendeskSDK.framework'
-    ss.resources = ["ZendeskSDK/4.2/ZendeskSDKStrings.bundle"]
+    ss.platform     = s.platform
+    ss.ios.vendored_frameworks = 'ZendeskSDK/s.swift_version.to_s/ZendeskSDK.framework'
+    ss.preserve_paths = 'ZendeskSDK/s.swift_version.to_s/ZendeskSDK.framework'
+    ss.resources = ["ZendeskSDK/s.swift_version.to_s/ZendeskSDKStrings.bundle"]
     ss.dependency 'ZendeskSDK/Providers'
     ss.dependency 'ZendeskSDK/Core'
   end
 
   s.subspec 'Providers' do |ss|
-    ss.platform     = :ios, '9.0'
-    ss.ios.vendored_frameworks = 'ZendeskSDK/4.2/ZendeskProviderSDK.framework'
-    ss.preserve_paths = 'ZendeskSDK/4.2/ZendeskProviderSDK.framework'
+    ss.platform     = s.platform
+    ss.ios.vendored_frameworks = 'ZendeskSDK/s.swift_version.to_s/ZendeskProviderSDK.framework'
+    ss.preserve_paths = 'ZendeskSDK/s.swift_version.to_s/ZendeskProviderSDK.framework'
     ss.dependency 'ZendeskSDK/Core'
   end
 
   s.subspec 'Core' do |ss|
-    ss.platform     = :ios, '9.0'
-    ss.ios.vendored_frameworks = 'ZendeskSDK/4.2/ZendeskCoreSDK.framework'
-    ss.preserve_paths = 'ZendeskSDK/4.2/ZendeskCoreSDK.framework'
+    ss.platform     = s.platform
+    ss.ios.vendored_frameworks = 'ZendeskSDK/s.swift_version.to_s/ZendeskCoreSDK.framework'
+    ss.preserve_paths = 'ZendeskSDK/s.swift_version.to_s/ZendeskCoreSDK.framework'
   end  
 
 end
