@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name         = "ZendeskSDK"
-  s.version      = "2.3.0"
-  s.summary      = "Zendesk SDK 2.3.0"
+  s.version      = "2.3.1"
+  s.summary      = "Zendesk SDK 2.3.1"
   s.homepage     = "https://github.com/zendesk/zendesk_sdk_ios"
   s.license      = {
     :type => 'Copyright',
@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios, '9.0'
   s.requires_arc = true
   s.frameworks = 'MobileCoreServices', 'SystemConfiguration', 'Security', 'MessageUI'
-  s.swift_version = "4.2.1"
+  s.swift_version = "5"
   s.xcconfig = { 'FRAMEWORK_SEARCH_PATHS' => '$(inherited)', 'CLANG_ENABLE_MODULES' => 'YES', 'ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES' => 'YES' }
     
 
