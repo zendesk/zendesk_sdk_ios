@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios, '9.0'
   s.requires_arc = true
   s.frameworks = 'MobileCoreServices', 'SystemConfiguration', 'Security', 'MessageUI'
-  s.swift_version = "5"
+  s.swift_version = "5.0"
   s.xcconfig = { 'FRAMEWORK_SEARCH_PATHS' => '$(inherited)', 'CLANG_ENABLE_MODULES' => 'YES', 'ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES' => 'YES' }
     
 
