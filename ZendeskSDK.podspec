@@ -29,24 +29,24 @@ Pod::Spec.new do |s|
 
   s.subspec 'UI' do |ss|
     ss.platform     = :ios, '9.0'
-    ss.ios.vendored_frameworks = "ZendeskSDK/#{s.swift_version.to_s}/ZendeskSDK.framework"
-    ss.preserve_paths = "ZendeskSDK/#{s.swift_version.to_s}/ZendeskSDK.framework"
-    ss.resources = ["ZendeskSDK/#{s.swift_version.to_s}/ZendeskSDKStrings.bundle"]
+    ss.ios.vendored_frameworks = "ZendeskSDK/5.0/ZendeskSDK.framework"
+    ss.preserve_paths = "ZendeskSDK/5.0/ZendeskSDK.framework"
+    ss.resources = ["ZendeskSDK/5.0/ZendeskSDKStrings.bundle"]
     ss.dependency 'ZendeskSDK/Providers'
     ss.dependency 'ZendeskSDK/Core'
   end
 
   s.subspec 'Providers' do |ss|
     ss.platform     = :ios, '9.0'
-    ss.ios.vendored_frameworks = "ZendeskSDK/#{s.swift_version.to_s}/ZendeskProviderSDK.framework"
-    ss.preserve_paths = "ZendeskSDK/#{s.swift_version.to_s}/ZendeskProviderSDK.framework"
+    ss.ios.vendored_frameworks = "ZendeskSDK/5.0/ZendeskProviderSDK.framework"
+    ss.preserve_paths = "ZendeskSDK/5.0/ZendeskProviderSDK.framework"
     ss.dependency 'ZendeskSDK/Core'
   end
 
   s.subspec 'Core' do |ss|
     ss.platform     = :ios, '9.0'
-    ss.ios.vendored_frameworks = "ZendeskSDK/#{s.swift_version.to_s}/ZendeskCoreSDK.framework"
-    ss.preserve_paths = "ZendeskSDK/#{s.swift_version.to_s}/ZendeskCoreSDK.framework"
+    ss.ios.vendored_frameworks = "ZendeskSDK/5.0/ZendeskCoreSDK.framework"
+    ss.preserve_paths = "ZendeskSDK/5.0/ZendeskCoreSDK.framework"
   end  
 
 end
