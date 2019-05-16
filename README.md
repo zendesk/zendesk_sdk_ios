@@ -12,9 +12,9 @@ There is examples on how to use the SDK and its providers [here](https://github.
 
 You can find [documentation](https://developer.zendesk.com/embeddables/docs/ios_support_sdk/nutshell) for the SDK and [release notes](https://developer.zendesk.com/embeddables/docs/ios_support_sdk/release_notes) on https://developer.zendesk.com.
 
-## Feature request
+## Feature requests and issues
 
-All enhancement, improvement, and feature request suggestions are welcomed. Please submit them to our [SDK community](https://support.zendesk.com/hc/en-us/community/topics/200488257-Zendesk-SDKs). We will normally close feature requests posted to this repository.
+All feature requests and issues are welcomed. Please see our [contributing guidelines](./CONTRIBUTING.md) to find out how to contact us.
 
 ## Copyright and license
 
