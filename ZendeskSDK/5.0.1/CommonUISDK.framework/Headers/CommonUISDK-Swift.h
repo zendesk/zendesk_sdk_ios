@@ -251,13 +251,6 @@ SWIFT_CLASS("_TtC11CommonUISDK27ContactOptionsTableViewCell")
 
 
 
-SWIFT_CLASS("_TtC11CommonUISDK21ConversationTitleView")
-@interface ConversationTitleView : UIView
-- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
-@end
-
-
 
 
 SWIFT_CLASS("_TtC11CommonUISDK10InputField")
@@ -585,13 +578,6 @@ SWIFT_CLASS("_TtC11CommonUISDK27ContactOptionsTableViewCell")
 
 
 
-
-
-SWIFT_CLASS("_TtC11CommonUISDK21ConversationTitleView")
-@interface ConversationTitleView : UIView
-- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
-@end
 
 
 
@@ -927,13 +913,6 @@ SWIFT_CLASS("_TtC11CommonUISDK27ContactOptionsTableViewCell")
 
 
 
-SWIFT_CLASS("_TtC11CommonUISDK21ConversationTitleView")
-@interface ConversationTitleView : UIView
-- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
-@end
-
-
 
 
 SWIFT_CLASS("_TtC11CommonUISDK10InputField")
@@ -1261,13 +1240,6 @@ SWIFT_CLASS("_TtC11CommonUISDK27ContactOptionsTableViewCell")
 
 
 
-
-
-SWIFT_CLASS("_TtC11CommonUISDK21ConversationTitleView")
-@interface ConversationTitleView : UIView
-- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
-@end
 
 
 
