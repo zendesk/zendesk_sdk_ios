@@ -29,7 +29,7 @@ Pod::Spec.new do |s|
 
   s.subspec 'UI' do |ss|
     ss.platform     = :ios, '9.3'
-    ss.ios.vendored_frameworks = "ZendeskSDK/5.1.0/ZendeskSDK.framework", "ZendeskSDK/5.0.1/CommonUISDK.framework"
+    ss.ios.vendored_frameworks = "ZendeskSDK/5.1.0/ZendeskSDK.framework", "ZendeskSDK/5.1.0/CommonUISDK.framework"
     ss.preserve_paths = "ZendeskSDK/5.1.0/*.framework"
     ss.dependency 'ZendeskSDK/Providers'
     ss.dependency 'ZendeskSDK/Core'
