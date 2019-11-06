@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name         = "ZendeskSDK"
-  s.version      = "3.0.2"
-  s.summary      = "Zendesk SDK 3.0.2"
+  s.version      = "3.0.3"
+  s.summary      = "Zendesk SDK 3.0.3"
   s.homepage     = "https://github.com/zendesk/zendesk_sdk_ios"
   s.license      = {
     :type => 'Copyright',
@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios, '9.3'
   s.requires_arc = true
   s.frameworks = 'MobileCoreServices', 'SystemConfiguration', 'Security', 'MessageUI'
-  s.swift_version = '5.1'
+  s.swift_version = '5.1.2'
   s.xcconfig = { 'FRAMEWORK_SEARCH_PATHS' => '$(inherited)', 'CLANG_ENABLE_MODULES' => 'YES', 'ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES' => 'YES' }
 
 
@@ -29,23 +29,23 @@ Pod::Spec.new do |s|
 
   s.subspec 'UI' do |ss|
     ss.platform     = :ios, '9.3'
-    ss.ios.vendored_frameworks = "ZendeskSDK/5.1/ZendeskSDK.framework", "ZendeskSDK/5.1/CommonUISDK.framework"
-    ss.preserve_paths = "ZendeskSDK/5.1/*.framework"
+    ss.ios.vendored_frameworks = "ZendeskSDK/5.1.2/ZendeskSDK.framework", "ZendeskSDK/5.1.2/CommonUISDK.framework"
+    ss.preserve_paths = "ZendeskSDK/5.1.2/*.framework"
     ss.dependency 'ZendeskSDK/Providers'
     ss.dependency 'ZendeskSDK/Core'
   end
 
   s.subspec 'Providers' do |ss|
     ss.platform     = :ios, '9.3'
-    ss.ios.vendored_frameworks = "ZendeskSDK/5.1/ZendeskProviderSDK.framework"
-    ss.preserve_paths = "ZendeskSDK/5.1/ZendeskProviderSDK.framework"
+    ss.ios.vendored_frameworks = "ZendeskSDK/5.1.2/ZendeskProviderSDK.framework"
+    ss.preserve_paths = "ZendeskSDK/5.1.2/ZendeskProviderSDK.framework"
     ss.dependency 'ZendeskSDK/Core'
   end
 
   s.subspec 'Core' do |ss|
     ss.platform     = :ios, '9.3'
-    ss.ios.vendored_frameworks = "ZendeskSDK/5.1/ZendeskCoreSDK.framework"
-    ss.preserve_paths = "ZendeskSDK/5.1/ZendeskCoreSDK.framework"
+    ss.ios.vendored_frameworks = "ZendeskSDK/5.1.2/ZendeskCoreSDK.framework"
+    ss.preserve_paths = "ZendeskSDK/5.1.2/ZendeskCoreSDK.framework"
   end
 
 end
