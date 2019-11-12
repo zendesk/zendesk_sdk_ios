@@ -15,7 +15,7 @@
  */
 
 
-@class ZDKComment, ZDKSupportUser;
+@class ZDKComment, ZDKSupportUser, ZDKCustomField;
 
 
 NS_ASSUME_NONNULL_BEGIN
@@ -98,11 +98,18 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, nonnull) NSArray<NSNumber *> *collaboratingIds;
 
 /**
- *  Array of agentd who publically commented on the request
+ *  Array of agents who publically commented on the request
  *
  *  @since 2.0.0.1
  */
 @property (nonatomic, strong, nonnull) NSArray<NSNumber *> *commentingAgentsIds;
+
+/**
+ *  Array of custom fields on the request
+ *
+ *  @since 4.0.0
+ */
+@property (nonatomic, strong, nullable) NSArray<ZDKCustomField *> *customFields;
 
 /**
  * Init with dictionary from API response.
