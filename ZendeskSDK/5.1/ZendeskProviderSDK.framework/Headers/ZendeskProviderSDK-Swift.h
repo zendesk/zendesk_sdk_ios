@@ -188,7 +188,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 @import Foundation;
 @import ObjectiveC;
-@import ZendeskCoreSDK;
 #endif
 
 #import <ZendeskProviderSDK/ZendeskProviderSDK.h>
@@ -231,6 +230,34 @@ SWIFT_CLASS_NAMED("ConversationsSettings")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class NSNumber;
+
+SWIFT_CLASS_NAMED("CustomField")
+@interface ZDKCustomField : NSObject
+/// Custom field ID
+@property (nonatomic, readonly) int64_t fieldId;
+/// Custom field value
+@property (nonatomic, readonly) id _Nullable value;
+/// Initializer for the CustomField
+/// @since 4.0.0
+/// \param fieldId custom field ID
+///
+/// \param value custom field value
+///
+- (nonnull instancetype)initWithFieldId:(NSNumber * _Nonnull)fieldId value:(id _Nullable)value;
+/// Initializer for the CustomField
+/// @since 4.0.0
+/// \param dictionary dictionary containing custom field ID and value in the following format: <code>["id": 1234456, "value": fieldValue]</code>
+///
+- (nonnull instancetype)initWithDictionary:(NSDictionary<NSString *, id> * _Nonnull)dictionary;
+/// Custom field represented as a dictionary.
+/// The format of the dictionary: <code>["id": 1234456, "value": fieldValue]</code>.
+/// @since 4.0.0
+@property (nonatomic, readonly, copy) NSDictionary<NSString *, id> * _Nonnull customFieldDictionary;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
 @class ZDKZendesk;
 @class NSURLResponse;
 
@@ -269,6 +296,11 @@ SWIFT_CLASS_NAMED("HelpCenterBlips")
 @end
 
 
+@interface ZDKHelpCenterBlips (SWIFT_EXTENSION(ZendeskProviderSDK))
++ (void)blipArticleViewed:(NSString * _Nonnull)pageTitle url:(NSString * _Nonnull)url navigatorLanguage:(NSString * _Nonnull)navigatorLanguage;
++ (void)blipSearchQuery:(NSString * _Nonnull)query;
++ (void)blipArticleVote:(NSString * _Nonnull)articleId vote:(NSInteger)vote;
+@end
 
 @class ZDKHelpCenterSectionViewModel;
 
@@ -332,6 +364,10 @@ SWIFT_CLASS_NAMED("RequestBlips")
 @end
 
 
+@interface ZDKRequestBlips (SWIFT_EXTENSION(ZendeskProviderSDK))
++ (void)requestCreatedBlip:(NSString * _Nonnull)requestId;
++ (void)requestUpdateBlip:(NSString * _Nonnull)requestId;
+@end
 
 
 SWIFT_CLASS_NAMED("RequestForStorage")
@@ -340,7 +376,12 @@ SWIFT_CLASS_NAMED("RequestForStorage")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
+@class ZDKRequest;
 
+@interface ZDKRequestForStorage (SWIFT_EXTENSION(ZendeskProviderSDK))
++ (ZDKRequestForStorage * _Nonnull)createFromRequest:(ZDKRequest * _Nonnull)request readCommentCount:(NSInteger)readCommentCount SWIFT_WARN_UNUSED_RESULT;
+- (void)incrementCommentCounts;
+@end
 
 
 SWIFT_CLASS_NAMED("RequestStorage")
@@ -352,6 +393,10 @@ SWIFT_CLASS_NAMED("RequestStorage")
 @end
 
 
+@interface ZDKRequestStorage (SWIFT_EXTENSION(ZendeskProviderSDK))
+- (NSArray<NSString *> * _Nonnull)getRequestIds SWIFT_WARN_UNUSED_RESULT;
+- (BOOL)storeRequest:(ZDKRequestForStorage * _Nullable)request;
+@end
 
 
 /// RequestUpdates object contains information about
@@ -462,7 +507,6 @@ SWIFT_CLASS("_TtC18ZendeskProviderSDK29ZDKHelpCenterSettingsProvider")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class ZDKRequest;
 
 @interface ZDKRequestProvider (SWIFT_EXTENSION(ZendeskProviderSDK))
 /// Gets details of any updates to requests for this device.
@@ -508,11 +552,6 @@ SWIFT_CLASS("_TtC18ZendeskProviderSDK30ZDKTicketFormsSettingsProvider")
 @interface ZDKTicketFormsSettingsProvider : NSObject
 + (void)getTicketFormsSettingsWithCallback:(void (^ _Nonnull)(ZDKTicketFormsSettings * _Nullable))callback;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-@end
-
-
-@interface ZDKZendesk (SWIFT_EXTENSION(ZendeskProviderSDK))
-@property (nonatomic, readonly, copy) NSString * _Nonnull zendeskUrl;
 @end
 
 #if __has_attribute(external_source_symbol)
@@ -706,7 +745,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 @import Foundation;
 @import ObjectiveC;
-@import ZendeskCoreSDK;
 #endif
 
 #import <ZendeskProviderSDK/ZendeskProviderSDK.h>
@@ -749,6 +787,34 @@ SWIFT_CLASS_NAMED("ConversationsSettings")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class NSNumber;
+
+SWIFT_CLASS_NAMED("CustomField")
+@interface ZDKCustomField : NSObject
+/// Custom field ID
+@property (nonatomic, readonly) int64_t fieldId;
+/// Custom field value
+@property (nonatomic, readonly) id _Nullable value;
+/// Initializer for the CustomField
+/// @since 4.0.0
+/// \param fieldId custom field ID
+///
+/// \param value custom field value
+///
+- (nonnull instancetype)initWithFieldId:(NSNumber * _Nonnull)fieldId value:(id _Nullable)value;
+/// Initializer for the CustomField
+/// @since 4.0.0
+/// \param dictionary dictionary containing custom field ID and value in the following format: <code>["id": 1234456, "value": fieldValue]</code>
+///
+- (nonnull instancetype)initWithDictionary:(NSDictionary<NSString *, id> * _Nonnull)dictionary;
+/// Custom field represented as a dictionary.
+/// The format of the dictionary: <code>["id": 1234456, "value": fieldValue]</code>.
+/// @since 4.0.0
+@property (nonatomic, readonly, copy) NSDictionary<NSString *, id> * _Nonnull customFieldDictionary;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
 @class ZDKZendesk;
 @class NSURLResponse;
 
@@ -787,6 +853,11 @@ SWIFT_CLASS_NAMED("HelpCenterBlips")
 @end
 
 
+@interface ZDKHelpCenterBlips (SWIFT_EXTENSION(ZendeskProviderSDK))
++ (void)blipArticleViewed:(NSString * _Nonnull)pageTitle url:(NSString * _Nonnull)url navigatorLanguage:(NSString * _Nonnull)navigatorLanguage;
++ (void)blipSearchQuery:(NSString * _Nonnull)query;
++ (void)blipArticleVote:(NSString * _Nonnull)articleId vote:(NSInteger)vote;
+@end
 
 @class ZDKHelpCenterSectionViewModel;
 
@@ -850,6 +921,10 @@ SWIFT_CLASS_NAMED("RequestBlips")
 @end
 
 
+@interface ZDKRequestBlips (SWIFT_EXTENSION(ZendeskProviderSDK))
++ (void)requestCreatedBlip:(NSString * _Nonnull)requestId;
++ (void)requestUpdateBlip:(NSString * _Nonnull)requestId;
+@end
 
 
 SWIFT_CLASS_NAMED("RequestForStorage")
@@ -858,7 +933,12 @@ SWIFT_CLASS_NAMED("RequestForStorage")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
+@class ZDKRequest;
 
+@interface ZDKRequestForStorage (SWIFT_EXTENSION(ZendeskProviderSDK))
++ (ZDKRequestForStorage * _Nonnull)createFromRequest:(ZDKRequest * _Nonnull)request readCommentCount:(NSInteger)readCommentCount SWIFT_WARN_UNUSED_RESULT;
+- (void)incrementCommentCounts;
+@end
 
 
 SWIFT_CLASS_NAMED("RequestStorage")
@@ -870,6 +950,10 @@ SWIFT_CLASS_NAMED("RequestStorage")
 @end
 
 
+@interface ZDKRequestStorage (SWIFT_EXTENSION(ZendeskProviderSDK))
+- (NSArray<NSString *> * _Nonnull)getRequestIds SWIFT_WARN_UNUSED_RESULT;
+- (BOOL)storeRequest:(ZDKRequestForStorage * _Nullable)request;
+@end
 
 
 /// RequestUpdates object contains information about
@@ -980,7 +1064,6 @@ SWIFT_CLASS("_TtC18ZendeskProviderSDK29ZDKHelpCenterSettingsProvider")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class ZDKRequest;
 
 @interface ZDKRequestProvider (SWIFT_EXTENSION(ZendeskProviderSDK))
 /// Gets details of any updates to requests for this device.
@@ -1026,11 +1109,6 @@ SWIFT_CLASS("_TtC18ZendeskProviderSDK30ZDKTicketFormsSettingsProvider")
 @interface ZDKTicketFormsSettingsProvider : NSObject
 + (void)getTicketFormsSettingsWithCallback:(void (^ _Nonnull)(ZDKTicketFormsSettings * _Nullable))callback;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-@end
-
-
-@interface ZDKZendesk (SWIFT_EXTENSION(ZendeskProviderSDK))
-@property (nonatomic, readonly, copy) NSString * _Nonnull zendeskUrl;
 @end
 
 #if __has_attribute(external_source_symbol)
@@ -1228,7 +1306,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 @import Foundation;
 @import ObjectiveC;
-@import ZendeskCoreSDK;
 #endif
 
 #import <ZendeskProviderSDK/ZendeskProviderSDK.h>
@@ -1271,6 +1348,34 @@ SWIFT_CLASS_NAMED("ConversationsSettings")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class NSNumber;
+
+SWIFT_CLASS_NAMED("CustomField")
+@interface ZDKCustomField : NSObject
+/// Custom field ID
+@property (nonatomic, readonly) int64_t fieldId;
+/// Custom field value
+@property (nonatomic, readonly) id _Nullable value;
+/// Initializer for the CustomField
+/// @since 4.0.0
+/// \param fieldId custom field ID
+///
+/// \param value custom field value
+///
+- (nonnull instancetype)initWithFieldId:(NSNumber * _Nonnull)fieldId value:(id _Nullable)value;
+/// Initializer for the CustomField
+/// @since 4.0.0
+/// \param dictionary dictionary containing custom field ID and value in the following format: <code>["id": 1234456, "value": fieldValue]</code>
+///
+- (nonnull instancetype)initWithDictionary:(NSDictionary<NSString *, id> * _Nonnull)dictionary;
+/// Custom field represented as a dictionary.
+/// The format of the dictionary: <code>["id": 1234456, "value": fieldValue]</code>.
+/// @since 4.0.0
+@property (nonatomic, readonly, copy) NSDictionary<NSString *, id> * _Nonnull customFieldDictionary;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
 @class ZDKZendesk;
 @class NSURLResponse;
 
@@ -1309,6 +1414,11 @@ SWIFT_CLASS_NAMED("HelpCenterBlips")
 @end
 
 
+@interface ZDKHelpCenterBlips (SWIFT_EXTENSION(ZendeskProviderSDK))
++ (void)blipArticleViewed:(NSString * _Nonnull)pageTitle url:(NSString * _Nonnull)url navigatorLanguage:(NSString * _Nonnull)navigatorLanguage;
++ (void)blipSearchQuery:(NSString * _Nonnull)query;
++ (void)blipArticleVote:(NSString * _Nonnull)articleId vote:(NSInteger)vote;
+@end
 
 @class ZDKHelpCenterSectionViewModel;
 
@@ -1372,6 +1482,10 @@ SWIFT_CLASS_NAMED("RequestBlips")
 @end
 
 
+@interface ZDKRequestBlips (SWIFT_EXTENSION(ZendeskProviderSDK))
++ (void)requestCreatedBlip:(NSString * _Nonnull)requestId;
++ (void)requestUpdateBlip:(NSString * _Nonnull)requestId;
+@end
 
 
 SWIFT_CLASS_NAMED("RequestForStorage")
@@ -1380,7 +1494,12 @@ SWIFT_CLASS_NAMED("RequestForStorage")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
+@class ZDKRequest;
 
+@interface ZDKRequestForStorage (SWIFT_EXTENSION(ZendeskProviderSDK))
++ (ZDKRequestForStorage * _Nonnull)createFromRequest:(ZDKRequest * _Nonnull)request readCommentCount:(NSInteger)readCommentCount SWIFT_WARN_UNUSED_RESULT;
+- (void)incrementCommentCounts;
+@end
 
 
 SWIFT_CLASS_NAMED("RequestStorage")
@@ -1392,6 +1511,10 @@ SWIFT_CLASS_NAMED("RequestStorage")
 @end
 
 
+@interface ZDKRequestStorage (SWIFT_EXTENSION(ZendeskProviderSDK))
+- (NSArray<NSString *> * _Nonnull)getRequestIds SWIFT_WARN_UNUSED_RESULT;
+- (BOOL)storeRequest:(ZDKRequestForStorage * _Nullable)request;
+@end
 
 
 /// RequestUpdates object contains information about
@@ -1502,7 +1625,6 @@ SWIFT_CLASS("_TtC18ZendeskProviderSDK29ZDKHelpCenterSettingsProvider")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class ZDKRequest;
 
 @interface ZDKRequestProvider (SWIFT_EXTENSION(ZendeskProviderSDK))
 /// Gets details of any updates to requests for this device.
@@ -1548,11 +1670,6 @@ SWIFT_CLASS("_TtC18ZendeskProviderSDK30ZDKTicketFormsSettingsProvider")
 @interface ZDKTicketFormsSettingsProvider : NSObject
 + (void)getTicketFormsSettingsWithCallback:(void (^ _Nonnull)(ZDKTicketFormsSettings * _Nullable))callback;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-@end
-
-
-@interface ZDKZendesk (SWIFT_EXTENSION(ZendeskProviderSDK))
-@property (nonatomic, readonly, copy) NSString * _Nonnull zendeskUrl;
 @end
 
 #if __has_attribute(external_source_symbol)
@@ -1746,7 +1863,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 @import Foundation;
 @import ObjectiveC;
-@import ZendeskCoreSDK;
 #endif
 
 #import <ZendeskProviderSDK/ZendeskProviderSDK.h>
@@ -1789,6 +1905,34 @@ SWIFT_CLASS_NAMED("ConversationsSettings")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class NSNumber;
+
+SWIFT_CLASS_NAMED("CustomField")
+@interface ZDKCustomField : NSObject
+/// Custom field ID
+@property (nonatomic, readonly) int64_t fieldId;
+/// Custom field value
+@property (nonatomic, readonly) id _Nullable value;
+/// Initializer for the CustomField
+/// @since 4.0.0
+/// \param fieldId custom field ID
+///
+/// \param value custom field value
+///
+- (nonnull instancetype)initWithFieldId:(NSNumber * _Nonnull)fieldId value:(id _Nullable)value;
+/// Initializer for the CustomField
+/// @since 4.0.0
+/// \param dictionary dictionary containing custom field ID and value in the following format: <code>["id": 1234456, "value": fieldValue]</code>
+///
+- (nonnull instancetype)initWithDictionary:(NSDictionary<NSString *, id> * _Nonnull)dictionary;
+/// Custom field represented as a dictionary.
+/// The format of the dictionary: <code>["id": 1234456, "value": fieldValue]</code>.
+/// @since 4.0.0
+@property (nonatomic, readonly, copy) NSDictionary<NSString *, id> * _Nonnull customFieldDictionary;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
 @class ZDKZendesk;
 @class NSURLResponse;
 
@@ -1827,6 +1971,11 @@ SWIFT_CLASS_NAMED("HelpCenterBlips")
 @end
 
 
+@interface ZDKHelpCenterBlips (SWIFT_EXTENSION(ZendeskProviderSDK))
++ (void)blipArticleViewed:(NSString * _Nonnull)pageTitle url:(NSString * _Nonnull)url navigatorLanguage:(NSString * _Nonnull)navigatorLanguage;
++ (void)blipSearchQuery:(NSString * _Nonnull)query;
++ (void)blipArticleVote:(NSString * _Nonnull)articleId vote:(NSInteger)vote;
+@end
 
 @class ZDKHelpCenterSectionViewModel;
 
@@ -1890,6 +2039,10 @@ SWIFT_CLASS_NAMED("RequestBlips")
 @end
 
 
+@interface ZDKRequestBlips (SWIFT_EXTENSION(ZendeskProviderSDK))
++ (void)requestCreatedBlip:(NSString * _Nonnull)requestId;
++ (void)requestUpdateBlip:(NSString * _Nonnull)requestId;
+@end
 
 
 SWIFT_CLASS_NAMED("RequestForStorage")
@@ -1898,7 +2051,12 @@ SWIFT_CLASS_NAMED("RequestForStorage")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
+@class ZDKRequest;
 
+@interface ZDKRequestForStorage (SWIFT_EXTENSION(ZendeskProviderSDK))
++ (ZDKRequestForStorage * _Nonnull)createFromRequest:(ZDKRequest * _Nonnull)request readCommentCount:(NSInteger)readCommentCount SWIFT_WARN_UNUSED_RESULT;
+- (void)incrementCommentCounts;
+@end
 
 
 SWIFT_CLASS_NAMED("RequestStorage")
@@ -1910,6 +2068,10 @@ SWIFT_CLASS_NAMED("RequestStorage")
 @end
 
 
+@interface ZDKRequestStorage (SWIFT_EXTENSION(ZendeskProviderSDK))
+- (NSArray<NSString *> * _Nonnull)getRequestIds SWIFT_WARN_UNUSED_RESULT;
+- (BOOL)storeRequest:(ZDKRequestForStorage * _Nullable)request;
+@end
 
 
 /// RequestUpdates object contains information about
@@ -2020,7 +2182,6 @@ SWIFT_CLASS("_TtC18ZendeskProviderSDK29ZDKHelpCenterSettingsProvider")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class ZDKRequest;
 
 @interface ZDKRequestProvider (SWIFT_EXTENSION(ZendeskProviderSDK))
 /// Gets details of any updates to requests for this device.
@@ -2066,11 +2227,6 @@ SWIFT_CLASS("_TtC18ZendeskProviderSDK30ZDKTicketFormsSettingsProvider")
 @interface ZDKTicketFormsSettingsProvider : NSObject
 + (void)getTicketFormsSettingsWithCallback:(void (^ _Nonnull)(ZDKTicketFormsSettings * _Nullable))callback;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-@end
-
-
-@interface ZDKZendesk (SWIFT_EXTENSION(ZendeskProviderSDK))
-@property (nonatomic, readonly, copy) NSString * _Nonnull zendeskUrl;
 @end
 
 #if __has_attribute(external_source_symbol)

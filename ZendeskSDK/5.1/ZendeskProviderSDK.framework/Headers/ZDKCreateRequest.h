@@ -15,7 +15,7 @@
  */
 
 #import <Foundation/Foundation.h>
-#import "ZDKCustomField.h"
+@class ZDKCustomField;
 
 /**
  *  A request sent by the user.
@@ -61,9 +61,9 @@
  *
  *  @see <a href="https://developer.zendesk.com/embeddables/docs/ios/providers#using-custom-fields-and-custom-forms">Custom fields and forms documentation</a>
  *
- *  @since 1.6.0.1
+ *  @since 4.0.0
  */
-@property (nonatomic, copy) NSArray<ZDKCustomField*> *customTicketFields;
+@property (nonatomic, copy) NSArray<ZDKCustomField*> *customFields;
 
 
 /**

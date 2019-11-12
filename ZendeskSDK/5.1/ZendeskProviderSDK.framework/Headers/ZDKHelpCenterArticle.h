@@ -67,13 +67,6 @@
 @property (nonatomic, copy) NSNumber *author_id;
 
 /**
- *  Appears at the end of an article, contains the author name and creation date.
- *
- *  @since 0.9.3.1
- */
-@property (nonatomic, copy) NSString *article_details __attribute__((deprecated("Use author_name and created_at instead")));
-
-/**
  *  A string containing the category and section an article belongs to. This can be nil.
  *
  *  @since 0.9.3.1

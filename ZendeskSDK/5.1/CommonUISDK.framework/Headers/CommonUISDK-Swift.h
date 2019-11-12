@@ -323,6 +323,43 @@ SWIFT_CLASS("_TtC11CommonUISDK28TypingIndicatorTableViewCell")
 
 
 
+@protocol ZDKUiConfiguration;
+
+SWIFT_CLASS_NAMED("UIConfigurations")
+@interface ZDKUIConfigurations : NSObject
+@property (nonatomic, readonly, copy) NSArray<id <ZDKUiConfiguration>> * _Nonnull configs;
+/// Initializes a new SDKConfiguration object.
+/// \param configs A array of <code>UiConfiguration</code> objects.
+///
+///
+/// returns:
+/// A SDKConfiguration object.
+- (nonnull instancetype)initWithConfigs:(NSArray<id <ZDKUiConfiguration>> * _Nonnull)configs OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+@interface ZDKUIConfigurations (SWIFT_EXTENSION(CommonUISDK))
+/// Inserts a <code>UiConfiguration</code> object into the array
+/// \param configuration The configuration to inserted into the internal array
+///
+- (void)insert:(id <ZDKUiConfiguration> _Nonnull)configuration;
+- (id <ZDKUiConfiguration> _Nonnull)objectAtIndexedSubscript:(NSInteger)index SWIFT_WARN_UNUSED_RESULT;
+/// Returns the position immediately after the given index.
+/// \param i A valid index of the collection. i must be less than endIndex.
+///
+///
+/// returns:
+/// The index value immediately after i.
+- (NSInteger)indexAfter:(NSInteger)i SWIFT_WARN_UNUSED_RESULT;
+/// Creates a default type of UiConfiguration for the Type passed in and
+/// adds it to the internal array
+/// \param type The type that we want a default config created for.
+///
+- (void)addDefaultConfigIfNeeded:(id <ZDKUiConfiguration> _Nonnull)config;
+@end
+
 
 
 
@@ -340,6 +377,13 @@ SWIFT_PROTOCOL_NAMED("UiConfiguration")
 @protocol ZDKUiConfiguration <NSObject>
 - (nonnull instancetype)init;
 @end
+
+/// Enum for UiConfiguration error
+typedef SWIFT_ENUM(NSInteger, UiConfigurationError, open) {
+/// error case for no UI Configuration present
+  UiConfigurationErrorNoConfig = 0,
+};
+static NSString * _Nonnull const UiConfigurationErrorDomain = @"CommonUISDK.UiConfigurationError";
 
 #if __has_attribute(external_source_symbol)
 # pragma clang attribute pop
@@ -667,6 +711,43 @@ SWIFT_CLASS("_TtC11CommonUISDK28TypingIndicatorTableViewCell")
 
 
 
+@protocol ZDKUiConfiguration;
+
+SWIFT_CLASS_NAMED("UIConfigurations")
+@interface ZDKUIConfigurations : NSObject
+@property (nonatomic, readonly, copy) NSArray<id <ZDKUiConfiguration>> * _Nonnull configs;
+/// Initializes a new SDKConfiguration object.
+/// \param configs A array of <code>UiConfiguration</code> objects.
+///
+///
+/// returns:
+/// A SDKConfiguration object.
+- (nonnull instancetype)initWithConfigs:(NSArray<id <ZDKUiConfiguration>> * _Nonnull)configs OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+@interface ZDKUIConfigurations (SWIFT_EXTENSION(CommonUISDK))
+/// Inserts a <code>UiConfiguration</code> object into the array
+/// \param configuration The configuration to inserted into the internal array
+///
+- (void)insert:(id <ZDKUiConfiguration> _Nonnull)configuration;
+- (id <ZDKUiConfiguration> _Nonnull)objectAtIndexedSubscript:(NSInteger)index SWIFT_WARN_UNUSED_RESULT;
+/// Returns the position immediately after the given index.
+/// \param i A valid index of the collection. i must be less than endIndex.
+///
+///
+/// returns:
+/// The index value immediately after i.
+- (NSInteger)indexAfter:(NSInteger)i SWIFT_WARN_UNUSED_RESULT;
+/// Creates a default type of UiConfiguration for the Type passed in and
+/// adds it to the internal array
+/// \param type The type that we want a default config created for.
+///
+- (void)addDefaultConfigIfNeeded:(id <ZDKUiConfiguration> _Nonnull)config;
+@end
+
 
 
 
@@ -684,6 +765,13 @@ SWIFT_PROTOCOL_NAMED("UiConfiguration")
 @protocol ZDKUiConfiguration <NSObject>
 - (nonnull instancetype)init;
 @end
+
+/// Enum for UiConfiguration error
+typedef SWIFT_ENUM(NSInteger, UiConfigurationError, open) {
+/// error case for no UI Configuration present
+  UiConfigurationErrorNoConfig = 0,
+};
+static NSString * _Nonnull const UiConfigurationErrorDomain = @"CommonUISDK.UiConfigurationError";
 
 #if __has_attribute(external_source_symbol)
 # pragma clang attribute pop
@@ -1015,6 +1103,43 @@ SWIFT_CLASS("_TtC11CommonUISDK28TypingIndicatorTableViewCell")
 
 
 
+@protocol ZDKUiConfiguration;
+
+SWIFT_CLASS_NAMED("UIConfigurations")
+@interface ZDKUIConfigurations : NSObject
+@property (nonatomic, readonly, copy) NSArray<id <ZDKUiConfiguration>> * _Nonnull configs;
+/// Initializes a new SDKConfiguration object.
+/// \param configs A array of <code>UiConfiguration</code> objects.
+///
+///
+/// returns:
+/// A SDKConfiguration object.
+- (nonnull instancetype)initWithConfigs:(NSArray<id <ZDKUiConfiguration>> * _Nonnull)configs OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+@interface ZDKUIConfigurations (SWIFT_EXTENSION(CommonUISDK))
+/// Inserts a <code>UiConfiguration</code> object into the array
+/// \param configuration The configuration to inserted into the internal array
+///
+- (void)insert:(id <ZDKUiConfiguration> _Nonnull)configuration;
+- (id <ZDKUiConfiguration> _Nonnull)objectAtIndexedSubscript:(NSInteger)index SWIFT_WARN_UNUSED_RESULT;
+/// Returns the position immediately after the given index.
+/// \param i A valid index of the collection. i must be less than endIndex.
+///
+///
+/// returns:
+/// The index value immediately after i.
+- (NSInteger)indexAfter:(NSInteger)i SWIFT_WARN_UNUSED_RESULT;
+/// Creates a default type of UiConfiguration for the Type passed in and
+/// adds it to the internal array
+/// \param type The type that we want a default config created for.
+///
+- (void)addDefaultConfigIfNeeded:(id <ZDKUiConfiguration> _Nonnull)config;
+@end
+
 
 
 
@@ -1032,6 +1157,13 @@ SWIFT_PROTOCOL_NAMED("UiConfiguration")
 @protocol ZDKUiConfiguration <NSObject>
 - (nonnull instancetype)init;
 @end
+
+/// Enum for UiConfiguration error
+typedef SWIFT_ENUM(NSInteger, UiConfigurationError, open) {
+/// error case for no UI Configuration present
+  UiConfigurationErrorNoConfig = 0,
+};
+static NSString * _Nonnull const UiConfigurationErrorDomain = @"CommonUISDK.UiConfigurationError";
 
 #if __has_attribute(external_source_symbol)
 # pragma clang attribute pop
@@ -1359,6 +1491,43 @@ SWIFT_CLASS("_TtC11CommonUISDK28TypingIndicatorTableViewCell")
 
 
 
+@protocol ZDKUiConfiguration;
+
+SWIFT_CLASS_NAMED("UIConfigurations")
+@interface ZDKUIConfigurations : NSObject
+@property (nonatomic, readonly, copy) NSArray<id <ZDKUiConfiguration>> * _Nonnull configs;
+/// Initializes a new SDKConfiguration object.
+/// \param configs A array of <code>UiConfiguration</code> objects.
+///
+///
+/// returns:
+/// A SDKConfiguration object.
+- (nonnull instancetype)initWithConfigs:(NSArray<id <ZDKUiConfiguration>> * _Nonnull)configs OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+@interface ZDKUIConfigurations (SWIFT_EXTENSION(CommonUISDK))
+/// Inserts a <code>UiConfiguration</code> object into the array
+/// \param configuration The configuration to inserted into the internal array
+///
+- (void)insert:(id <ZDKUiConfiguration> _Nonnull)configuration;
+- (id <ZDKUiConfiguration> _Nonnull)objectAtIndexedSubscript:(NSInteger)index SWIFT_WARN_UNUSED_RESULT;
+/// Returns the position immediately after the given index.
+/// \param i A valid index of the collection. i must be less than endIndex.
+///
+///
+/// returns:
+/// The index value immediately after i.
+- (NSInteger)indexAfter:(NSInteger)i SWIFT_WARN_UNUSED_RESULT;
+/// Creates a default type of UiConfiguration for the Type passed in and
+/// adds it to the internal array
+/// \param type The type that we want a default config created for.
+///
+- (void)addDefaultConfigIfNeeded:(id <ZDKUiConfiguration> _Nonnull)config;
+@end
+
 
 
 
@@ -1376,6 +1545,13 @@ SWIFT_PROTOCOL_NAMED("UiConfiguration")
 @protocol ZDKUiConfiguration <NSObject>
 - (nonnull instancetype)init;
 @end
+
+/// Enum for UiConfiguration error
+typedef SWIFT_ENUM(NSInteger, UiConfigurationError, open) {
+/// error case for no UI Configuration present
+  UiConfigurationErrorNoConfig = 0,
+};
+static NSString * _Nonnull const UiConfigurationErrorDomain = @"CommonUISDK.UiConfigurationError";
 
 #if __has_attribute(external_source_symbol)
 # pragma clang attribute pop

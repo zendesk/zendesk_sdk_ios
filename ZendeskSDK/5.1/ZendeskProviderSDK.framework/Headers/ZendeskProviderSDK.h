@@ -29,7 +29,6 @@
 #import "ZDKCommentWithUser.h"
 #import "ZDKCommentsResponse.h"
 #import "ZDKCreateRequest.h"
-#import "ZDKCustomField.h"
 #import "ZDKDateUtil.h"
 #import "ZDKDeviceInfo.h"
 #import "ZDKDictionaryCreatable.h"

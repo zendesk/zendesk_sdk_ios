@@ -240,8 +240,76 @@ SWIFT_CLASS_NAMED("ArticleUiConfiguration")
 @property (nonatomic) BOOL deflectionEnabled;
 @end
 
+@protocol ZDKContainerChildControllerDelegate;
+
+SWIFT_PROTOCOL_NAMED("ContainerChild")
+@protocol ZDKContainerChild <NSObject>
+@property (nonatomic, strong) id <ZDKContainerChildControllerDelegate> _Nullable childDelegate;
+@end
+
+@class UINavigationItem;
+
+SWIFT_PROTOCOL_NAMED("ContainerChildControllerDelegate")
+@protocol ZDKContainerChildControllerDelegate <NSObject>
+- (void)willDismiss;
+@property (nonatomic, readonly, strong) UINavigationItem * _Nullable navItem;
+@end
+
+@class NSBundle;
+@class NSCoder;
+
+SWIFT_CLASS("_TtC10ZendeskSDK23ContainerViewController")
+@interface ContainerViewController : UIViewController
+- (void)viewDidLoad;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@interface ContainerViewController (SWIFT_EXTENSION(ZendeskSDK)) <ZDKContainerChildControllerDelegate>
+@property (nonatomic, readonly, strong) UINavigationItem * _Nullable navItem;
+- (void)willDismiss;
+@end
+
+@protocol ZDKCoordinator;
+
+SWIFT_CLASS_NAMED("CoordinatingViewController")
+@interface ZDKCoordinatingViewController : ContainerViewController
+- (nonnull instancetype)initWithCoordinator:(id <ZDKCoordinator> _Nonnull)coordinator OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
+- (void)viewDidLoad;
+- (void)viewWillAppear:(BOOL)animated;
+- (void)viewDidAppear:(BOOL)animated;
+- (void)viewDidDisappear:(BOOL)animated;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil SWIFT_UNAVAILABLE;
+@end
+
+
+SWIFT_PROTOCOL_NAMED("Coordinator")
+@protocol ZDKCoordinator
+- (void)startWithPresent:(void (^ _Nonnull)(UIViewController <ZDKContainerChild> * _Nonnull))present with:(id <ZDKContainerChildControllerDelegate> _Nonnull)containerDelegate;
+@end
+
+@class UINavigationController;
+@class UIBarButtonItem;
+
+SWIFT_CLASS_NAMED("DismissUtil")
+@interface ZDKDismissUtil : NSObject
+/// Decide based on the contents of the nav stack whether to pop
+/// the given view controller off the stack, or whether to
+/// dismiss the given view controller.
+/// \param viewController a view controller which should be removed from a screen.
+///
+/// \param navigationController a navigation controller for inspection.
+///
++ (void)remove:(UIViewController * _Nullable)viewController from:(UINavigationController * _Nullable)navigationController;
++ (BOOL)navigationController:(UINavigationController * _Nullable)navigationController didPush:(UIViewController * _Nullable)viewController SWIFT_WARN_UNUSED_RESULT;
++ (UIBarButtonItem * _Nonnull)barButtonFor:(UIViewController * _Nonnull)viewController embededIn:(UINavigationController * _Nullable)navigationController action:(SEL _Nonnull)action SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
 /// Enum that represents the file types that zendesk supports
-typedef SWIFT_ENUM_NAMED(NSInteger, ZDKFileType, "FileType", closed) {
+typedef SWIFT_ENUM_NAMED(NSInteger, ZDKFileType, "FileType", open) {
   ZDKFileTypePng = 0,
   ZDKFileTypeJpg = 1,
   ZDKFileTypePdf = 2,
@@ -268,7 +336,6 @@ SWIFT_CLASS("_TtC10ZendeskSDK30HelpCenterArticleVotingHandler")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
-@class UIViewController;
 @class ZDKZendesk;
 
 SWIFT_CLASS_NAMED("HelpCenterContactUsRouter")
@@ -276,6 +343,15 @@ SWIFT_CLASS_NAMED("HelpCenterContactUsRouter")
 - (nonnull instancetype)initWithPresentingViewController:(UIViewController * _Nonnull)presentingViewController uiConfigs:(NSArray<id <ZDKUiConfiguration>> * _Nonnull)uiConfigs zendesk:(ZDKZendesk * _Nonnull)zendesk isDeflectionEnabled:(BOOL)isDeflectionEnabled OBJC_DESIGNATED_INITIALIZER;
 - (void)decideButtonActionForNavBar;
 - (void)decideButtonActionForEmptySearch;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS_NAMED("HelpCenterCoordinator")
+@interface ZDKHelpCenterCoordinator : NSObject <ZDKCoordinator>
+- (nonnull instancetype)initWithHelpCenterController:(UIViewController <ZDKContainerChild> * _Nonnull)helpCenterController uiConfigurations:(NSArray<id <ZDKUiConfiguration>> * _Nonnull)uiConfigurations OBJC_DESIGNATED_INITIALIZER;
+- (void)startWithPresent:(void (^ _Nonnull)(UIViewController <ZDKContainerChild> * _Nonnull))present with:(id <ZDKContainerChildControllerDelegate> _Nonnull)containerDelegate;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -372,7 +448,8 @@ SWIFT_CLASS_NAMED("RequestAttachment")
 
 
 SWIFT_CLASS("_TtC10ZendeskSDK18RequestCoordinator")
-@interface RequestCoordinator : NSObject
+@interface RequestCoordinator : NSObject <ZDKCoordinator>
+- (void)startWithPresent:(void (^ _Nonnull)(UIViewController <ZDKContainerChild> * _Nonnull))present with:(id <ZDKContainerChildControllerDelegate> _Nonnull)containerDelegate;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -440,8 +517,8 @@ SWIFT_CLASS_NAMED("RequestUiConfiguration")
 @property (nonatomic, copy) NSArray<NSString *> * _Nonnull tags;
 /// Custom Fields set in any created tickets
 /// version:
-/// 2.0.0
-@property (nonatomic, copy) NSArray<ZDKCustomField *> * _Nonnull fields;
+/// 4.0.0
+@property (nonatomic, copy) NSArray<ZDKCustomField *> * _Nonnull customFields;
 /// The ticket form of any created tickets.
 /// If this property is set <code>fields</code> must also be set. Any ticket fields set will be associated with <code>tickerFormID</code>.
 /// version:
@@ -806,8 +883,76 @@ SWIFT_CLASS_NAMED("ArticleUiConfiguration")
 @property (nonatomic) BOOL deflectionEnabled;
 @end
 
+@protocol ZDKContainerChildControllerDelegate;
+
+SWIFT_PROTOCOL_NAMED("ContainerChild")
+@protocol ZDKContainerChild <NSObject>
+@property (nonatomic, strong) id <ZDKContainerChildControllerDelegate> _Nullable childDelegate;
+@end
+
+@class UINavigationItem;
+
+SWIFT_PROTOCOL_NAMED("ContainerChildControllerDelegate")
+@protocol ZDKContainerChildControllerDelegate <NSObject>
+- (void)willDismiss;
+@property (nonatomic, readonly, strong) UINavigationItem * _Nullable navItem;
+@end
+
+@class NSBundle;
+@class NSCoder;
+
+SWIFT_CLASS("_TtC10ZendeskSDK23ContainerViewController")
+@interface ContainerViewController : UIViewController
+- (void)viewDidLoad;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@interface ContainerViewController (SWIFT_EXTENSION(ZendeskSDK)) <ZDKContainerChildControllerDelegate>
+@property (nonatomic, readonly, strong) UINavigationItem * _Nullable navItem;
+- (void)willDismiss;
+@end
+
+@protocol ZDKCoordinator;
+
+SWIFT_CLASS_NAMED("CoordinatingViewController")
+@interface ZDKCoordinatingViewController : ContainerViewController
+- (nonnull instancetype)initWithCoordinator:(id <ZDKCoordinator> _Nonnull)coordinator OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
+- (void)viewDidLoad;
+- (void)viewWillAppear:(BOOL)animated;
+- (void)viewDidAppear:(BOOL)animated;
+- (void)viewDidDisappear:(BOOL)animated;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil SWIFT_UNAVAILABLE;
+@end
+
+
+SWIFT_PROTOCOL_NAMED("Coordinator")
+@protocol ZDKCoordinator
+- (void)startWithPresent:(void (^ _Nonnull)(UIViewController <ZDKContainerChild> * _Nonnull))present with:(id <ZDKContainerChildControllerDelegate> _Nonnull)containerDelegate;
+@end
+
+@class UINavigationController;
+@class UIBarButtonItem;
+
+SWIFT_CLASS_NAMED("DismissUtil")
+@interface ZDKDismissUtil : NSObject
+/// Decide based on the contents of the nav stack whether to pop
+/// the given view controller off the stack, or whether to
+/// dismiss the given view controller.
+/// \param viewController a view controller which should be removed from a screen.
+///
+/// \param navigationController a navigation controller for inspection.
+///
++ (void)remove:(UIViewController * _Nullable)viewController from:(UINavigationController * _Nullable)navigationController;
++ (BOOL)navigationController:(UINavigationController * _Nullable)navigationController didPush:(UIViewController * _Nullable)viewController SWIFT_WARN_UNUSED_RESULT;
++ (UIBarButtonItem * _Nonnull)barButtonFor:(UIViewController * _Nonnull)viewController embededIn:(UINavigationController * _Nullable)navigationController action:(SEL _Nonnull)action SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
 /// Enum that represents the file types that zendesk supports
-typedef SWIFT_ENUM_NAMED(NSInteger, ZDKFileType, "FileType", closed) {
+typedef SWIFT_ENUM_NAMED(NSInteger, ZDKFileType, "FileType", open) {
   ZDKFileTypePng = 0,
   ZDKFileTypeJpg = 1,
   ZDKFileTypePdf = 2,
@@ -834,7 +979,6 @@ SWIFT_CLASS("_TtC10ZendeskSDK30HelpCenterArticleVotingHandler")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
-@class UIViewController;
 @class ZDKZendesk;
 
 SWIFT_CLASS_NAMED("HelpCenterContactUsRouter")
@@ -842,6 +986,15 @@ SWIFT_CLASS_NAMED("HelpCenterContactUsRouter")
 - (nonnull instancetype)initWithPresentingViewController:(UIViewController * _Nonnull)presentingViewController uiConfigs:(NSArray<id <ZDKUiConfiguration>> * _Nonnull)uiConfigs zendesk:(ZDKZendesk * _Nonnull)zendesk isDeflectionEnabled:(BOOL)isDeflectionEnabled OBJC_DESIGNATED_INITIALIZER;
 - (void)decideButtonActionForNavBar;
 - (void)decideButtonActionForEmptySearch;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS_NAMED("HelpCenterCoordinator")
+@interface ZDKHelpCenterCoordinator : NSObject <ZDKCoordinator>
+- (nonnull instancetype)initWithHelpCenterController:(UIViewController <ZDKContainerChild> * _Nonnull)helpCenterController uiConfigurations:(NSArray<id <ZDKUiConfiguration>> * _Nonnull)uiConfigurations OBJC_DESIGNATED_INITIALIZER;
+- (void)startWithPresent:(void (^ _Nonnull)(UIViewController <ZDKContainerChild> * _Nonnull))present with:(id <ZDKContainerChildControllerDelegate> _Nonnull)containerDelegate;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -938,7 +1091,8 @@ SWIFT_CLASS_NAMED("RequestAttachment")
 
 
 SWIFT_CLASS("_TtC10ZendeskSDK18RequestCoordinator")
-@interface RequestCoordinator : NSObject
+@interface RequestCoordinator : NSObject <ZDKCoordinator>
+- (void)startWithPresent:(void (^ _Nonnull)(UIViewController <ZDKContainerChild> * _Nonnull))present with:(id <ZDKContainerChildControllerDelegate> _Nonnull)containerDelegate;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -1006,8 +1160,8 @@ SWIFT_CLASS_NAMED("RequestUiConfiguration")
 @property (nonatomic, copy) NSArray<NSString *> * _Nonnull tags;
 /// Custom Fields set in any created tickets
 /// version:
-/// 2.0.0
-@property (nonatomic, copy) NSArray<ZDKCustomField *> * _Nonnull fields;
+/// 4.0.0
+@property (nonatomic, copy) NSArray<ZDKCustomField *> * _Nonnull customFields;
 /// The ticket form of any created tickets.
 /// If this property is set <code>fields</code> must also be set. Any ticket fields set will be associated with <code>tickerFormID</code>.
 /// version:
@@ -1376,8 +1530,76 @@ SWIFT_CLASS_NAMED("ArticleUiConfiguration")
 @property (nonatomic) BOOL deflectionEnabled;
 @end
 
+@protocol ZDKContainerChildControllerDelegate;
+
+SWIFT_PROTOCOL_NAMED("ContainerChild")
+@protocol ZDKContainerChild <NSObject>
+@property (nonatomic, strong) id <ZDKContainerChildControllerDelegate> _Nullable childDelegate;
+@end
+
+@class UINavigationItem;
+
+SWIFT_PROTOCOL_NAMED("ContainerChildControllerDelegate")
+@protocol ZDKContainerChildControllerDelegate <NSObject>
+- (void)willDismiss;
+@property (nonatomic, readonly, strong) UINavigationItem * _Nullable navItem;
+@end
+
+@class NSBundle;
+@class NSCoder;
+
+SWIFT_CLASS("_TtC10ZendeskSDK23ContainerViewController")
+@interface ContainerViewController : UIViewController
+- (void)viewDidLoad;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@interface ContainerViewController (SWIFT_EXTENSION(ZendeskSDK)) <ZDKContainerChildControllerDelegate>
+@property (nonatomic, readonly, strong) UINavigationItem * _Nullable navItem;
+- (void)willDismiss;
+@end
+
+@protocol ZDKCoordinator;
+
+SWIFT_CLASS_NAMED("CoordinatingViewController")
+@interface ZDKCoordinatingViewController : ContainerViewController
+- (nonnull instancetype)initWithCoordinator:(id <ZDKCoordinator> _Nonnull)coordinator OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
+- (void)viewDidLoad;
+- (void)viewWillAppear:(BOOL)animated;
+- (void)viewDidAppear:(BOOL)animated;
+- (void)viewDidDisappear:(BOOL)animated;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil SWIFT_UNAVAILABLE;
+@end
+
+
+SWIFT_PROTOCOL_NAMED("Coordinator")
+@protocol ZDKCoordinator
+- (void)startWithPresent:(void (^ _Nonnull)(UIViewController <ZDKContainerChild> * _Nonnull))present with:(id <ZDKContainerChildControllerDelegate> _Nonnull)containerDelegate;
+@end
+
+@class UINavigationController;
+@class UIBarButtonItem;
+
+SWIFT_CLASS_NAMED("DismissUtil")
+@interface ZDKDismissUtil : NSObject
+/// Decide based on the contents of the nav stack whether to pop
+/// the given view controller off the stack, or whether to
+/// dismiss the given view controller.
+/// \param viewController a view controller which should be removed from a screen.
+///
+/// \param navigationController a navigation controller for inspection.
+///
++ (void)remove:(UIViewController * _Nullable)viewController from:(UINavigationController * _Nullable)navigationController;
++ (BOOL)navigationController:(UINavigationController * _Nullable)navigationController didPush:(UIViewController * _Nullable)viewController SWIFT_WARN_UNUSED_RESULT;
++ (UIBarButtonItem * _Nonnull)barButtonFor:(UIViewController * _Nonnull)viewController embededIn:(UINavigationController * _Nullable)navigationController action:(SEL _Nonnull)action SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
 /// Enum that represents the file types that zendesk supports
-typedef SWIFT_ENUM_NAMED(NSInteger, ZDKFileType, "FileType", closed) {
+typedef SWIFT_ENUM_NAMED(NSInteger, ZDKFileType, "FileType", open) {
   ZDKFileTypePng = 0,
   ZDKFileTypeJpg = 1,
   ZDKFileTypePdf = 2,
@@ -1404,7 +1626,6 @@ SWIFT_CLASS("_TtC10ZendeskSDK30HelpCenterArticleVotingHandler")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
-@class UIViewController;
 @class ZDKZendesk;
 
 SWIFT_CLASS_NAMED("HelpCenterContactUsRouter")
@@ -1412,6 +1633,15 @@ SWIFT_CLASS_NAMED("HelpCenterContactUsRouter")
 - (nonnull instancetype)initWithPresentingViewController:(UIViewController * _Nonnull)presentingViewController uiConfigs:(NSArray<id <ZDKUiConfiguration>> * _Nonnull)uiConfigs zendesk:(ZDKZendesk * _Nonnull)zendesk isDeflectionEnabled:(BOOL)isDeflectionEnabled OBJC_DESIGNATED_INITIALIZER;
 - (void)decideButtonActionForNavBar;
 - (void)decideButtonActionForEmptySearch;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS_NAMED("HelpCenterCoordinator")
+@interface ZDKHelpCenterCoordinator : NSObject <ZDKCoordinator>
+- (nonnull instancetype)initWithHelpCenterController:(UIViewController <ZDKContainerChild> * _Nonnull)helpCenterController uiConfigurations:(NSArray<id <ZDKUiConfiguration>> * _Nonnull)uiConfigurations OBJC_DESIGNATED_INITIALIZER;
+- (void)startWithPresent:(void (^ _Nonnull)(UIViewController <ZDKContainerChild> * _Nonnull))present with:(id <ZDKContainerChildControllerDelegate> _Nonnull)containerDelegate;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -1508,7 +1738,8 @@ SWIFT_CLASS_NAMED("RequestAttachment")
 
 
 SWIFT_CLASS("_TtC10ZendeskSDK18RequestCoordinator")
-@interface RequestCoordinator : NSObject
+@interface RequestCoordinator : NSObject <ZDKCoordinator>
+- (void)startWithPresent:(void (^ _Nonnull)(UIViewController <ZDKContainerChild> * _Nonnull))present with:(id <ZDKContainerChildControllerDelegate> _Nonnull)containerDelegate;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -1576,8 +1807,8 @@ SWIFT_CLASS_NAMED("RequestUiConfiguration")
 @property (nonatomic, copy) NSArray<NSString *> * _Nonnull tags;
 /// Custom Fields set in any created tickets
 /// version:
-/// 2.0.0
-@property (nonatomic, copy) NSArray<ZDKCustomField *> * _Nonnull fields;
+/// 4.0.0
+@property (nonatomic, copy) NSArray<ZDKCustomField *> * _Nonnull customFields;
 /// The ticket form of any created tickets.
 /// If this property is set <code>fields</code> must also be set. Any ticket fields set will be associated with <code>tickerFormID</code>.
 /// version:
@@ -1942,8 +2173,76 @@ SWIFT_CLASS_NAMED("ArticleUiConfiguration")
 @property (nonatomic) BOOL deflectionEnabled;
 @end
 
+@protocol ZDKContainerChildControllerDelegate;
+
+SWIFT_PROTOCOL_NAMED("ContainerChild")
+@protocol ZDKContainerChild <NSObject>
+@property (nonatomic, strong) id <ZDKContainerChildControllerDelegate> _Nullable childDelegate;
+@end
+
+@class UINavigationItem;
+
+SWIFT_PROTOCOL_NAMED("ContainerChildControllerDelegate")
+@protocol ZDKContainerChildControllerDelegate <NSObject>
+- (void)willDismiss;
+@property (nonatomic, readonly, strong) UINavigationItem * _Nullable navItem;
+@end
+
+@class NSBundle;
+@class NSCoder;
+
+SWIFT_CLASS("_TtC10ZendeskSDK23ContainerViewController")
+@interface ContainerViewController : UIViewController
+- (void)viewDidLoad;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@interface ContainerViewController (SWIFT_EXTENSION(ZendeskSDK)) <ZDKContainerChildControllerDelegate>
+@property (nonatomic, readonly, strong) UINavigationItem * _Nullable navItem;
+- (void)willDismiss;
+@end
+
+@protocol ZDKCoordinator;
+
+SWIFT_CLASS_NAMED("CoordinatingViewController")
+@interface ZDKCoordinatingViewController : ContainerViewController
+- (nonnull instancetype)initWithCoordinator:(id <ZDKCoordinator> _Nonnull)coordinator OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
+- (void)viewDidLoad;
+- (void)viewWillAppear:(BOOL)animated;
+- (void)viewDidAppear:(BOOL)animated;
+- (void)viewDidDisappear:(BOOL)animated;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil SWIFT_UNAVAILABLE;
+@end
+
+
+SWIFT_PROTOCOL_NAMED("Coordinator")
+@protocol ZDKCoordinator
+- (void)startWithPresent:(void (^ _Nonnull)(UIViewController <ZDKContainerChild> * _Nonnull))present with:(id <ZDKContainerChildControllerDelegate> _Nonnull)containerDelegate;
+@end
+
+@class UINavigationController;
+@class UIBarButtonItem;
+
+SWIFT_CLASS_NAMED("DismissUtil")
+@interface ZDKDismissUtil : NSObject
+/// Decide based on the contents of the nav stack whether to pop
+/// the given view controller off the stack, or whether to
+/// dismiss the given view controller.
+/// \param viewController a view controller which should be removed from a screen.
+///
+/// \param navigationController a navigation controller for inspection.
+///
++ (void)remove:(UIViewController * _Nullable)viewController from:(UINavigationController * _Nullable)navigationController;
++ (BOOL)navigationController:(UINavigationController * _Nullable)navigationController didPush:(UIViewController * _Nullable)viewController SWIFT_WARN_UNUSED_RESULT;
++ (UIBarButtonItem * _Nonnull)barButtonFor:(UIViewController * _Nonnull)viewController embededIn:(UINavigationController * _Nullable)navigationController action:(SEL _Nonnull)action SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
 /// Enum that represents the file types that zendesk supports
-typedef SWIFT_ENUM_NAMED(NSInteger, ZDKFileType, "FileType", closed) {
+typedef SWIFT_ENUM_NAMED(NSInteger, ZDKFileType, "FileType", open) {
   ZDKFileTypePng = 0,
   ZDKFileTypeJpg = 1,
   ZDKFileTypePdf = 2,
@@ -1970,7 +2269,6 @@ SWIFT_CLASS("_TtC10ZendeskSDK30HelpCenterArticleVotingHandler")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
-@class UIViewController;
 @class ZDKZendesk;
 
 SWIFT_CLASS_NAMED("HelpCenterContactUsRouter")
@@ -1978,6 +2276,15 @@ SWIFT_CLASS_NAMED("HelpCenterContactUsRouter")
 - (nonnull instancetype)initWithPresentingViewController:(UIViewController * _Nonnull)presentingViewController uiConfigs:(NSArray<id <ZDKUiConfiguration>> * _Nonnull)uiConfigs zendesk:(ZDKZendesk * _Nonnull)zendesk isDeflectionEnabled:(BOOL)isDeflectionEnabled OBJC_DESIGNATED_INITIALIZER;
 - (void)decideButtonActionForNavBar;
 - (void)decideButtonActionForEmptySearch;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS_NAMED("HelpCenterCoordinator")
+@interface ZDKHelpCenterCoordinator : NSObject <ZDKCoordinator>
+- (nonnull instancetype)initWithHelpCenterController:(UIViewController <ZDKContainerChild> * _Nonnull)helpCenterController uiConfigurations:(NSArray<id <ZDKUiConfiguration>> * _Nonnull)uiConfigurations OBJC_DESIGNATED_INITIALIZER;
+- (void)startWithPresent:(void (^ _Nonnull)(UIViewController <ZDKContainerChild> * _Nonnull))present with:(id <ZDKContainerChildControllerDelegate> _Nonnull)containerDelegate;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -2074,7 +2381,8 @@ SWIFT_CLASS_NAMED("RequestAttachment")
 
 
 SWIFT_CLASS("_TtC10ZendeskSDK18RequestCoordinator")
-@interface RequestCoordinator : NSObject
+@interface RequestCoordinator : NSObject <ZDKCoordinator>
+- (void)startWithPresent:(void (^ _Nonnull)(UIViewController <ZDKContainerChild> * _Nonnull))present with:(id <ZDKContainerChildControllerDelegate> _Nonnull)containerDelegate;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -2142,8 +2450,8 @@ SWIFT_CLASS_NAMED("RequestUiConfiguration")
 @property (nonatomic, copy) NSArray<NSString *> * _Nonnull tags;
 /// Custom Fields set in any created tickets
 /// version:
-/// 2.0.0
-@property (nonatomic, copy) NSArray<ZDKCustomField *> * _Nonnull fields;
+/// 4.0.0
+@property (nonatomic, copy) NSArray<ZDKCustomField *> * _Nonnull customFields;
 /// The ticket form of any created tickets.
 /// If this property is set <code>fields</code> must also be set. Any ticket fields set will be associated with <code>tickerFormID</code>.
 /// version:

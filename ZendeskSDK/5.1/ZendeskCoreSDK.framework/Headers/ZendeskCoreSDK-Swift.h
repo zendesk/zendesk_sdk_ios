@@ -238,7 +238,15 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) BOOL hasAuth;)
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
-typedef SWIFT_ENUM_NAMED(NSInteger, ZDKLogLevel, "LogLevel", closed) {
+
+SWIFT_PROTOCOL("_TtP14ZendeskCoreSDK17IdentityMigration_")
+@protocol IdentityMigration <NSObject>
+- (NSString * _Nullable)getMigratedAnonymousName SWIFT_WARN_UNUSED_RESULT;
+- (NSString * _Nullable)getMigratedAnonymousEmail SWIFT_WARN_UNUSED_RESULT;
+- (NSString * _Nullable)getMigratedJwtIdentifier SWIFT_WARN_UNUSED_RESULT;
+@end
+
+typedef SWIFT_ENUM_NAMED(NSInteger, ZDKLogLevel, "LogLevel", open) {
   ZDKLogLevelError = 0,
   ZDKLogLevelWarn = 1,
   ZDKLogLevelInfo = 2,
@@ -487,6 +495,7 @@ SWIFT_CLASS("_TtC14ZendeskCoreSDK15ZDKUserProvider")
 
 SWIFT_CLASS_NAMED("Zendesk")
 @interface ZDKZendesk : NSObject
+@property (nonatomic, readonly, copy) NSString * _Nonnull zendeskUrl;
 + (void)initializeWithAppId:(NSString * _Nonnull)appId clientId:(NSString * _Nonnull)clientId zendeskUrl:(NSString * _Nonnull)zendeskUrl;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
@@ -745,7 +754,15 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) BOOL hasAuth;)
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
-typedef SWIFT_ENUM_NAMED(NSInteger, ZDKLogLevel, "LogLevel", closed) {
+
+SWIFT_PROTOCOL("_TtP14ZendeskCoreSDK17IdentityMigration_")
+@protocol IdentityMigration <NSObject>
+- (NSString * _Nullable)getMigratedAnonymousName SWIFT_WARN_UNUSED_RESULT;
+- (NSString * _Nullable)getMigratedAnonymousEmail SWIFT_WARN_UNUSED_RESULT;
+- (NSString * _Nullable)getMigratedJwtIdentifier SWIFT_WARN_UNUSED_RESULT;
+@end
+
+typedef SWIFT_ENUM_NAMED(NSInteger, ZDKLogLevel, "LogLevel", open) {
   ZDKLogLevelError = 0,
   ZDKLogLevelWarn = 1,
   ZDKLogLevelInfo = 2,
@@ -994,6 +1011,7 @@ SWIFT_CLASS("_TtC14ZendeskCoreSDK15ZDKUserProvider")
 
 SWIFT_CLASS_NAMED("Zendesk")
 @interface ZDKZendesk : NSObject
+@property (nonatomic, readonly, copy) NSString * _Nonnull zendeskUrl;
 + (void)initializeWithAppId:(NSString * _Nonnull)appId clientId:(NSString * _Nonnull)clientId zendeskUrl:(NSString * _Nonnull)zendeskUrl;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
@@ -1256,7 +1274,15 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) BOOL hasAuth;)
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
-typedef SWIFT_ENUM_NAMED(NSInteger, ZDKLogLevel, "LogLevel", closed) {
+
+SWIFT_PROTOCOL("_TtP14ZendeskCoreSDK17IdentityMigration_")
+@protocol IdentityMigration <NSObject>
+- (NSString * _Nullable)getMigratedAnonymousName SWIFT_WARN_UNUSED_RESULT;
+- (NSString * _Nullable)getMigratedAnonymousEmail SWIFT_WARN_UNUSED_RESULT;
+- (NSString * _Nullable)getMigratedJwtIdentifier SWIFT_WARN_UNUSED_RESULT;
+@end
+
+typedef SWIFT_ENUM_NAMED(NSInteger, ZDKLogLevel, "LogLevel", open) {
   ZDKLogLevelError = 0,
   ZDKLogLevelWarn = 1,
   ZDKLogLevelInfo = 2,
@@ -1505,6 +1531,7 @@ SWIFT_CLASS("_TtC14ZendeskCoreSDK15ZDKUserProvider")
 
 SWIFT_CLASS_NAMED("Zendesk")
 @interface ZDKZendesk : NSObject
+@property (nonatomic, readonly, copy) NSString * _Nonnull zendeskUrl;
 + (void)initializeWithAppId:(NSString * _Nonnull)appId clientId:(NSString * _Nonnull)clientId zendeskUrl:(NSString * _Nonnull)zendeskUrl;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
@@ -1763,7 +1790,15 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) BOOL hasAuth;)
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
-typedef SWIFT_ENUM_NAMED(NSInteger, ZDKLogLevel, "LogLevel", closed) {
+
+SWIFT_PROTOCOL("_TtP14ZendeskCoreSDK17IdentityMigration_")
+@protocol IdentityMigration <NSObject>
+- (NSString * _Nullable)getMigratedAnonymousName SWIFT_WARN_UNUSED_RESULT;
+- (NSString * _Nullable)getMigratedAnonymousEmail SWIFT_WARN_UNUSED_RESULT;
+- (NSString * _Nullable)getMigratedJwtIdentifier SWIFT_WARN_UNUSED_RESULT;
+@end
+
+typedef SWIFT_ENUM_NAMED(NSInteger, ZDKLogLevel, "LogLevel", open) {
   ZDKLogLevelError = 0,
   ZDKLogLevelWarn = 1,
   ZDKLogLevelInfo = 2,
@@ -2012,6 +2047,7 @@ SWIFT_CLASS("_TtC14ZendeskCoreSDK15ZDKUserProvider")
 
 SWIFT_CLASS_NAMED("Zendesk")
 @interface ZDKZendesk : NSObject
+@property (nonatomic, readonly, copy) NSString * _Nonnull zendeskUrl;
 + (void)initializeWithAppId:(NSString * _Nonnull)appId clientId:(NSString * _Nonnull)clientId zendeskUrl:(NSString * _Nonnull)zendeskUrl;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
